@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing Page</title>
+	<script src="testing.js"></script>
+	<style>
+		#div1 {
+			width: 300px;
+			height: 300px;
+			padding: 10px;
+			border: 1px solid #aaaaaa;
+			left: 1000px;
+			position: absolute;
+			margin:auto;
+		}
+		#drag1 {
+			position: absolute; 
+			width: 200px;
+			height: 200px;
+			padding: 10px;
+			background-color: rgb(250, 0, 0);
+			left: 200px;
+			margin:auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br>
+	<div id="drag1" draggable="true" ondragstart="drag(event)"></div>
+</body>
+</html>

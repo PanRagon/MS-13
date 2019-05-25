@@ -9,20 +9,30 @@
 
 //Nested function used to define unique ID in User constructor
 var countIDUser = (function() {
-   var id = 1;
-   return function() { return id++; };
+	var id = 1;
+	return function() { 
+   		return id++; 
+	};
 })();
 
 var countIDAddress = (function() {
-   var id = 1;
-   return function() { return id++; };
+	var id = 1;
+	return function() { 
+   		return id++; 
+	};
 })();
 
 //Array of users
 var users = [];
 
+//Declare output divs
+var outputDiv = document.getElementById("div1")
+
+//var userElement = document.getElementById("div1");
+
 //User constructor
 function User(firstName, middleName, lastName, email) {
+	var ID = countIDUser();
 	this.firstName = firstName;
 	this.middleName = middleName;
 		//Remove middle name if user has none
@@ -30,8 +40,16 @@ function User(firstName, middleName, lastName, email) {
 			delete this.middleName;
 		}
 	this.lastName = lastName;
+	this.fullName = this.firstName + " " + this.middleName + " " + this.lastName + " ";
 	this.email = email;
-	this.ID = countIDUser();
+	this.ID = ID;
+		//Create the user in HTML
+		var el = document.createElement("p");
+		el.innerHTML = "This is user " + this.ID + 
+		"<br> name: " + this.fullName +
+		"<br> email: " + email;
+
+		outputDiv.appendChild(el);
 
 	//Push this user into array
 	users.push(this);
@@ -42,18 +60,21 @@ var addresses = [];
 
 //Nested function used to create ID in Address constructor
 var countIDAddress = (function() {
-   var id = 1;
-   return function() { return id++; };
+	var id = 1;
+	return function() { 
+		return id++; 
+	};
 })();
 
 //Address constructor
 function Address(street, postcode, city, state, country) {
+	var ID = countIDAddress();
 	this.street = street;
 	this.postcode = postcode;
 	this.city = city;
 	this.state = state;
 	this.country = country;
-	this.ID = countIDAddress();
+	this.ID = ID;
 
 	addresses.push(this);
 }
@@ -92,8 +113,10 @@ console.log(addresses);
 
 //Nested function used to create ID in constructor
 var countIDProject = (function() {
-   var id = 1;
-   return function() { return id++; };
+   	var id = 1;
+   	return function() { 
+   		return id++; 
+   	};
 })();
 
 //Array of projects
@@ -101,8 +124,9 @@ var projects = [];
 
 //Project constructor
 function Project(title) {
+	var ID = countIDProject();
 	this.title = title;
-	this.ID = countIDProject();
+	this.ID = ID;
 	//Push this project into array
 	projects.push(this);
 }
@@ -162,8 +186,10 @@ function setTask(project, task) {
 
 //Nested function used to create ID in constructor of task
 var countIDTask = (function() {
-   var id = 1;
-   return function() { return id++; };
+   	var id = 1;
+	return function() { 
+		return id++; 
+   	};
 })();
 
 //Array of tasks
@@ -171,11 +197,26 @@ var tasks = []
 
 //Task constructor
 function Task(title) {
-  this.title = title;
-  this.status = "TODO";
-  this.ID = countIDTask();
-  //Push this task into array
-  tasks.push(this);
+	var ID = countIDTask();
+  	this.title = title;
+  	this.status = "TODO";
+  	this.ID = ID;
+  	//Push this task into array
+  	tasks.push(this);
+}
+
+//Nested function used to create ID in constructor of category
+var countIDCategory = (function() {
+	var id = 1;
+	return function() { 
+		return id++; 
+	};
+});
+
+//Category constructor
+function Category(name) {
+	this.name = name;
+	this.ID = countIDCategory();
 }
 
 //Setters
@@ -264,3 +305,24 @@ setTask(project1, [task1, task2]);
 
 
 console.log(project1);
+
+var project1Element = document.createElement("p")
+
+//var checkOwnerProject1 = project1.owners.indexOf(this.ID = 1);
+//console.log(checkOwnerProject1);
+if (project1.owners.indexOf(user1) >= 0) {
+	for(i=0; i <= project1.task.length; i++);
+		if (project1.task[i].owners.indexOf(user1) >= 0) {
+			console.log("got here");
+			var myTasks = task1.title;
+			console.log(myTasks)
+	}
+		project1Element.innerHTML = "<br> Welcome " + user1.firstName +
+			"<br> This is your current project: <br>" + 
+			project1.title + 
+			"<br> Your tasks today are the following " +
+			myTasks;
+
+		outputDiv.appendChild(project1Element);
+}
+//	project1Element.innerhtml = ""

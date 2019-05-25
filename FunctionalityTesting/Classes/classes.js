@@ -23,15 +23,16 @@ var users = [];
 
 //User constructor
 function User(firstName, middleName, lastName, email) {
+//Remove middle name if user has none
+	this.ID = countIDUser();
 	this.firstName = firstName;
 	this.middleName = middleName;
-		//Remove middle name if user has none
-		if(this.middleName === undefined || this.middleName === null || this.middleName === "") {
+	if(this.middleName === undefined || this.middleName === null || this.middleName === "") {
 			delete this.middleName;
 		}
 	this.lastName = lastName;
 	this.email = email;
-	this.ID = countIDUser();
+	this.log = [];
 
 	//Push this user into array
 	users.push(this);
@@ -48,12 +49,12 @@ var countIDAddress = (function() {
 
 //Address constructor
 function Address(street, postcode, city, state, country) {
+	this.ID = countIDAddress();
 	this.street = street;
 	this.postcode = postcode;
 	this.city = city;
 	this.state = state;
 	this.country = country;
-	this.ID = countIDAddress();
 
 	addresses.push(this);
 }
@@ -101,8 +102,9 @@ var projects = [];
 
 //Project constructor
 function Project(title) {
-	this.title = title;
 	this.ID = countIDProject();
+	this.title = title;
+	this.log = [];
 	//Push this project into array
 	projects.push(this);
 }
@@ -171,10 +173,11 @@ var tasks = []
 
 //Task constructor
 function Task(title) {
-  this.title = title;
-  this.status = "TODO";
-  this.ID = countIDTask();
-  //Push this task into array
+	this.ID = countIDTask();
+	this.title = title;
+	this.status = "TODO";
+	this.log = [];
+	//Push this task into array
   tasks.push(this);
 }
 
@@ -247,6 +250,58 @@ console.log(tasks);
 /*
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
+	LOG CLASS
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+*/
+
+// Temp. log array for unhandled types
+var logArray = [];
+
+// Counter for log IDs
+let countIDLog = (function () {
+	var id = 0;
+	return function () { return id++;}
+})();
+
+// Appends a leading zero if input ≤ 9
+function appendLeadingZeroes(n){
+	if(n <= 9){
+		return "0" + n;
+	}
+	return n
+}
+// Formats Date-object into "YYYY-MM-DD HH:MM:SS" string
+function dateFormatter(date){
+	return date.getFullYear() + "-" + appendLeadingZeroes(date.getMonth() + 1) + "-" + appendLeadingZeroes(date.getDate()) + " " + appendLeadingZeroes(date.getHours()) + ":" + appendLeadingZeroes(date.getMinutes()) + ":" + appendLeadingZeroes(date.getSeconds())
+}
+
+// Types must be "User", "Project" or "Task". Else
+class Log {
+	constructor(loggerID, type, typeID, action) {
+		this.ID = countIDLog();
+		this.loggerID = loggerID;
+		this.date = dateFormatter(new Date());
+		this.type = type;
+		this.typeID = typeID;
+		this.action = action;
+
+		// Find target-array for log
+		let target = this.type === "User" ? users : this.type === "Project" ? projects : this.type === "Task" ? tasks : logArray;
+		// Push Log to target log array
+		if (target === logArray) {
+			// Error handling if TYPE is not "User", "Project" or "Task".
+			target.push(this);
+		}
+		else {
+			target.find(element => element.ID === this.typeID).log.push(this);
+		}
+	}
+}
+
+/*
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
 	CREATING PROJECTS
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
@@ -257,10 +312,17 @@ var project1 = new Project("Make a game");
 
 setProjectDescription(project1, "We are going to make a new Fortnite and get rich!");
 
-setProjectOwners(project1, [user1, user2]);
+setProjectOwners(project1, [users[1], users[2]]);
 
 setProjectMembers(project1, [user3, user4, user5]);
 setTask(project1, [task1, task2]);
 
+// Creates a log to user with ID and prints to console
+new Log(1, "User", 5, "Spist plomme");
+console.table(users.find(e => e.ID === 5).log);
+new Log(3, "Project", 1, "Laget kake");
+console.table(projects.find(e => e.ID === 1).log);
+new Log(3, "Task", 2, "Laget kake");
+console.table(tasks.find(e => e.ID === 2).log);
 
 console.log(project1);

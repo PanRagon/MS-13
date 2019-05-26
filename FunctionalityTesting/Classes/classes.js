@@ -152,6 +152,10 @@ function setTask(project, task) {
 	})
 }
 
+function getUserProjects(userID) {
+	return projects.filter(project => project.members.find(member => member.ID === userID) || project.owners.find(owner => owner.ID === userID));
+}
+
 
 /*
 ----------------------------------------------------------------------------------------------
@@ -217,10 +221,17 @@ function setTaskMembers(task, members) {
 	})
 }
 
+// Find all tasks assigned to a user (both owner and member).
+function getUserTasks(userID) {
+	return tasks.filter(task => task.members.find(member => member.ID === userID) || task.owners.find(owner => owner.ID === userID));
+}
+
 //Building tasks
 var task1 = new Task("Make graphics");
 
 var task2 = new Task("Build an engine");
+
+var task3 = new Task("Eat pie");
 
 setTaskDescription(task1, "Make it look nice");
 
@@ -242,9 +253,17 @@ setTaskOwners(task2, [user1, user3]);
 
 setTaskMembers(task2, [user4, user5]);
 
+setTaskDescription(task3, "Must make the best pie and eat it");
+
+setTaskStartDate(task3, "12.10.2019");
+
+setTaskEndDate(task3, "13.10.2010");
+
+setTaskOwners(task3, [user1, user3]);
+
+setTaskMembers(task3, [user4, user5]);
 
 console.log(tasks);
-
 
 
 /*
@@ -290,13 +309,18 @@ class Log {
 		let target = this.type === "User" ? users : this.type === "Project" ? projects : this.type === "Task" ? tasks : logArray;
 		// Push Log to target log array
 		if (target === logArray) {
-			// Error handling if TYPE is not "User", "Project" or "Task".
-			target.push(this);
+			alert("Error: Wrong input type for log ID " + this.ID + ". " + this.type + " is not a valid log type.");
 		}
 		else {
+			// Push to target array and logArray (for easier data extraction)
 			target.find(element => element.ID === this.typeID).log.push(this);
+			logArray.push(this);
 		}
 	}
+}
+
+function getUserLogs(userID) {
+	return logArray.filter(log => log.loggerID === userID);
 }
 
 /*
@@ -312,7 +336,7 @@ var project1 = new Project("Make a game");
 
 setProjectDescription(project1, "We are going to make a new Fortnite and get rich!");
 
-setProjectOwners(project1, [users[1], users[2]]);
+setProjectOwners(project1, [user1, user2]);
 
 setProjectMembers(project1, [user3, user4, user5]);
 setTask(project1, [task1, task2]);
@@ -325,4 +349,4 @@ console.table(projects.find(e => e.ID === 1).log);
 new Log(3, "Task", 2, "Laget kake");
 console.table(tasks.find(e => e.ID === 2).log);
 
-console.log(project1);
+console.table(project1);

@@ -9,17 +9,26 @@
 
 //Nested function used to define unique ID in User constructor
 var countIDUser = (function() {
-   var id = 1;
-   return function() { return id++; };
+	var id = 1;
+	return function() { 
+   		return id++; 
+	};
 })();
 
 var countIDAddress = (function() {
-   var id = 1;
-   return function() { return id++; };
+	var id = 1;
+	return function() { 
+   		return id++; 
+	};
 })();
 
 //Array of users
 var users = [];
+
+//Declare output divs
+var outputDiv = document.getElementById("div1")
+
+//var userElement = document.getElementById("div1");
 
 //User constructor
 function User(firstName, middleName, lastName, email) {
@@ -31,8 +40,16 @@ function User(firstName, middleName, lastName, email) {
 			delete this.middleName;
 		}
 	this.lastName = lastName;
+	this.fullName = this.firstName + " " + this.middleName + " " + this.lastName + " ";
 	this.email = email;
 	this.log = [];
+		
+  //Create the user in HTML
+		var el = document.createElement("p");
+		el.innerHTML = "This is user " + this.ID + 
+		"<br> name: " + this.fullName +
+		"<br> email: " + email;
+		outputDiv.appendChild(el);
 
 	//Push this user into array
 	users.push(this);
@@ -43,8 +60,10 @@ var addresses = [];
 
 //Nested function used to create ID in Address constructor
 var countIDAddress = (function() {
-   var id = 1;
-   return function() { return id++; };
+	var id = 1;
+	return function() { 
+		return id++; 
+	};
 })();
 
 //Address constructor
@@ -93,8 +112,10 @@ console.log(addresses);
 
 //Nested function used to create ID in constructor
 var countIDProject = (function() {
-   var id = 1;
-   return function() { return id++; };
+   	var id = 1;
+   	return function() { 
+   		return id++; 
+   	};
 })();
 
 //Array of projects
@@ -105,6 +126,7 @@ function Project(title) {
 	this.ID = countIDProject();
 	this.title = title;
 	this.log = [];
+  
 	//Push this project into array
 	projects.push(this);
 }
@@ -168,8 +190,10 @@ function getUserProjects(userID) {
 
 //Nested function used to create ID in constructor of task
 var countIDTask = (function() {
-   var id = 1;
-   return function() { return id++; };
+   	var id = 1;
+	return function() { 
+		return id++; 
+   	};
 })();
 
 //Array of tasks
@@ -183,6 +207,20 @@ function Task(title) {
 	this.log = [];
 	//Push this task into array
   tasks.push(this);
+}
+
+//Nested function used to create ID in constructor of category
+var countIDCategory = (function() {
+	var id = 1;
+	return function() { 
+		return id++; 
+	};
+});
+
+//Category constructor
+function Category(name) {
+	this.name = name;
+	this.ID = countIDCategory();
 }
 
 //Setters
@@ -350,3 +388,24 @@ new Log(3, "Task", 2, "Laget kake");
 console.table(tasks.find(e => e.ID === 2).log);
 
 console.table(project1);
+
+var project1Element = document.createElement("p")
+
+//var checkOwnerProject1 = project1.owners.indexOf(this.ID = 1);
+//console.log(checkOwnerProject1);
+if (project1.owners.indexOf(user1) >= 0) {
+	for(i=0; i <= project1.task.length; i++);
+		if (project1.task[i].owners.indexOf(user1) >= 0) {
+			console.log("got here");
+			var myTasks = task1.title;
+			console.log(myTasks)
+	}
+		project1Element.innerHTML = "<br> Welcome " + user1.firstName +
+			"<br> This is your current project: <br>" + 
+			project1.title + 
+			"<br> Your tasks today are the following " +
+			myTasks;
+
+		outputDiv.appendChild(project1Element);
+}
+//	project1Element.innerhtml = ""

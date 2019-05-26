@@ -32,23 +32,23 @@ var outputDiv = document.getElementById("div1")
 
 //User constructor
 function User(firstName, middleName, lastName, email) {
-	var ID = countIDUser();
+//Remove middle name if user has none
+	this.ID = countIDUser();
 	this.firstName = firstName;
 	this.middleName = middleName;
-		//Remove middle name if user has none
-		if(this.middleName === undefined || this.middleName === null || this.middleName === "") {
+	if(this.middleName === undefined || this.middleName === null || this.middleName === "") {
 			delete this.middleName;
 		}
 	this.lastName = lastName;
 	this.fullName = this.firstName + " " + this.middleName + " " + this.lastName + " ";
 	this.email = email;
-	this.ID = ID;
-		//Create the user in HTML
+	this.log = [];
+		
+  //Create the user in HTML
 		var el = document.createElement("p");
 		el.innerHTML = "This is user " + this.ID + 
 		"<br> name: " + this.fullName +
 		"<br> email: " + email;
-
 		outputDiv.appendChild(el);
 
 	//Push this user into array
@@ -68,13 +68,12 @@ var countIDAddress = (function() {
 
 //Address constructor
 function Address(street, postcode, city, state, country) {
-	var ID = countIDAddress();
+	this.ID = countIDAddress();
 	this.street = street;
 	this.postcode = postcode;
 	this.city = city;
 	this.state = state;
 	this.country = country;
-	this.ID = ID;
 
 	addresses.push(this);
 }
@@ -124,9 +123,10 @@ var projects = [];
 
 //Project constructor
 function Project(title) {
-	var ID = countIDProject();
+	this.ID = countIDProject();
 	this.title = title;
-	this.ID = ID;
+	this.log = [];
+  
 	//Push this project into array
 	projects.push(this);
 }
@@ -174,6 +174,10 @@ function setTask(project, task) {
 	})
 }
 
+function getUserProjects(userID) {
+	return projects.filter(project => project.members.find(member => member.ID === userID) || project.owners.find(owner => owner.ID === userID));
+}
+
 
 /*
 ----------------------------------------------------------------------------------------------
@@ -197,12 +201,12 @@ var tasks = []
 
 //Task constructor
 function Task(title) {
-	var ID = countIDTask();
-  	this.title = title;
-  	this.status = "TODO";
-  	this.ID = ID;
-  	//Push this task into array
-  	tasks.push(this);
+	this.ID = countIDTask();
+	this.title = title;
+	this.status = "TODO";
+	this.log = [];
+	//Push this task into array
+  tasks.push(this);
 }
 
 //Nested function used to create ID in constructor of category
@@ -255,10 +259,17 @@ function setTaskMembers(task, members) {
 	})
 }
 
+// Find all tasks assigned to a user (both owner and member).
+function getUserTasks(userID) {
+	return tasks.filter(task => task.members.find(member => member.ID === userID) || task.owners.find(owner => owner.ID === userID));
+}
+
 //Building tasks
 var task1 = new Task("Make graphics");
 
 var task2 = new Task("Build an engine");
+
+var task3 = new Task("Eat pie");
 
 setTaskDescription(task1, "Make it look nice");
 
@@ -280,10 +291,75 @@ setTaskOwners(task2, [user1, user3]);
 
 setTaskMembers(task2, [user4, user5]);
 
+setTaskDescription(task3, "Must make the best pie and eat it");
+
+setTaskStartDate(task3, "12.10.2019");
+
+setTaskEndDate(task3, "13.10.2010");
+
+setTaskOwners(task3, [user1, user3]);
+
+setTaskMembers(task3, [user4, user5]);
 
 console.log(tasks);
 
 
+/*
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+	LOG CLASS
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+*/
+
+// Temp. log array for unhandled types
+var logArray = [];
+
+// Counter for log IDs
+let countIDLog = (function () {
+	var id = 0;
+	return function () { return id++;}
+})();
+
+// Appends a leading zero if input ≤ 9
+function appendLeadingZeroes(n){
+	if(n <= 9){
+		return "0" + n;
+	}
+	return n
+}
+// Formats Date-object into "YYYY-MM-DD HH:MM:SS" string
+function dateFormatter(date){
+	return date.getFullYear() + "-" + appendLeadingZeroes(date.getMonth() + 1) + "-" + appendLeadingZeroes(date.getDate()) + " " + appendLeadingZeroes(date.getHours()) + ":" + appendLeadingZeroes(date.getMinutes()) + ":" + appendLeadingZeroes(date.getSeconds())
+}
+
+// Types must be "User", "Project" or "Task". Else
+class Log {
+	constructor(loggerID, type, typeID, action) {
+		this.ID = countIDLog();
+		this.loggerID = loggerID;
+		this.date = dateFormatter(new Date());
+		this.type = type;
+		this.typeID = typeID;
+		this.action = action;
+
+		// Find target-array for log
+		let target = this.type === "User" ? users : this.type === "Project" ? projects : this.type === "Task" ? tasks : logArray;
+		// Push Log to target log array
+		if (target === logArray) {
+			alert("Error: Wrong input type for log ID " + this.ID + ". " + this.type + " is not a valid log type.");
+		}
+		else {
+			// Push to target array and logArray (for easier data extraction)
+			target.find(element => element.ID === this.typeID).log.push(this);
+			logArray.push(this);
+		}
+	}
+}
+
+function getUserLogs(userID) {
+	return logArray.filter(log => log.loggerID === userID);
+}
 
 /*
 ----------------------------------------------------------------------------------------------
@@ -303,8 +379,15 @@ setProjectOwners(project1, [user1, user2]);
 setProjectMembers(project1, [user3, user4, user5]);
 setTask(project1, [task1, task2]);
 
+// Creates a log to user with ID and prints to console
+new Log(1, "User", 5, "Spist plomme");
+console.table(users.find(e => e.ID === 5).log);
+new Log(3, "Project", 1, "Laget kake");
+console.table(projects.find(e => e.ID === 1).log);
+new Log(3, "Task", 2, "Laget kake");
+console.table(tasks.find(e => e.ID === 2).log);
 
-console.log(project1);
+console.table(project1);
 
 var project1Element = document.createElement("p")
 

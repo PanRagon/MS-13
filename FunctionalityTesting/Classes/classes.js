@@ -32,15 +32,17 @@ var outputDiv = document.getElementById("div1")
 
 //User constructor
 function User(firstName, middleName, lastName, email) {
-//Remove middle name if user has none
 	this.ID = countIDUser();
 	this.firstName = firstName;
-	this.middleName = middleName;
-	if(this.middleName === undefined || this.middleName === null || this.middleName === "") {
-			delete this.middleName;
-		}
 	this.lastName = lastName;
-	this.fullName = this.firstName + " " + this.middleName + " " + this.lastName + " ";
+	this.middleName = middleName;
+		//Remove middle name if user has none
+		if(this.middleName === undefined || this.middleName === null || this.middleName === "") {
+			delete this.middleName;
+			this.fullName = this.firstName + " " + this.lastName;
+		} else {
+			this.fullName = this.firstName + " " + this.middleName + " " + this.lastName + " ";
+		}
 	this.email = email;
 	this.log = [];
 		
@@ -93,8 +95,8 @@ function setAddress(user, street, postcode, city, state, country) {
 	});
 }
 
-setAddress(user1, "Kunnskapsveien 10", 2007, "Kjeller", "Akershus", "Norway");
-setAddress(user2, "oslo", 2007, "oslo", "debug", "oslo");
+setAddress(user1, "Street 2", 0070, "City", "Oslo", "Norway");
+setAddress(user2, "Street 44", 0070, "City", "Oslo", "Norway");
 
 
 console.log(users);
@@ -177,6 +179,53 @@ function setTask(project, task) {
 function getUserProjects(userID) {
 	return projects.filter(project => project.members.find(member => member.ID === userID) || project.owners.find(owner => owner.ID === userID));
 }
+
+
+/*
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+	ROLE CLASS
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+*/
+
+
+//Nested function used to define unique ID in Role constructor
+var countIDRole = (function() {
+	var id = 1;
+	return function() { 
+   		return id++; 
+	};
+})();
+
+var roles = [];
+
+function Role(name, level, type) {
+	this.ID = countIDRole();
+	this.name = name;
+	this.level = level;
+	this.type = type;
+
+		if(level < 0) {
+			console.log("The access level is too low, use a value between 0 and 10");
+			delete this;
+		} else if(level > 10) {
+			console.log("The access level is too high, use a value between 0 and 10");
+			delete this;
+		}
+
+	roles.push(this);
+}
+
+new Role("Project admin", 10, "Administrator");
+
+new Role("Head of Design", 8, "Designer");
+
+new Role("Code Monkey", 2, "Developer");
+
+new Role("Pixel Pusher", 2, "Designer");
+
+console.log(roles);
 
 
 /*
@@ -388,7 +437,7 @@ new Log(3, "Task", 2, "Laget kake");
 console.table(tasks.find(e => e.ID === 2).log);
 
 console.table(project1);
-
+/*
 var project1Element = document.createElement("p")
 
 //var checkOwnerProject1 = project1.owners.indexOf(this.ID = 1);
@@ -409,3 +458,4 @@ if (project1.owners.indexOf(user1) >= 0) {
 		outputDiv.appendChild(project1Element);
 }
 //	project1Element.innerhtml = ""
+*/

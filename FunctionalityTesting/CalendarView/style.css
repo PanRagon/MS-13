@@ -1,0 +1,35 @@
+body {
+    background: #000;
+}
+
+#calendarContainer{
+    position: relative;
+    margin: auto;
+    width: 800px;
+    height: 200px;
+    top: 200px;
+
+    display: grid;
+    grid-row-gap: 5px;
+
+    overflow: auto;
+
+    background: white;
+}
+
+.calendarItem{
+    background: gray;
+}
+
+#task1{
+    grid-column-start: 1;
+    grid-column-end: 50;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.calendarDate{
+    margin: auto;
+
+    background: red;
+}

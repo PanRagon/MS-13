@@ -4,29 +4,55 @@
 	<title>Testing Page</title>
 	<script src="testing.js"></script>
 	<style>
-		#div1 {
+		
+		
+		.dropBox {
 			width: 300px;
 			height: 300px;
 			padding: 10px;
 			border: 1px solid #aaaaaa;
-			left: 1000px;
 			position: absolute;
-			margin:auto;
 		}
-		#drag1 {
+		#dropBox1 {
+			left: 1050px;
+		}
+		#dropBox2 {
+			left: 550px;
+		}
+		#dropBox3 {
+			left: 50px;
+		}
+
+		.draggable {
 			position: absolute; 
 			width: 200px;
 			height: 200px;
 			padding: 10px;
 			background-color: rgb(250, 0, 0);
-			left: 200px;
 			margin:auto;
 		}
+		#drag1 {
+			left: 20px;
+			bottom: 0px;
+		}
+		#drag2 {
+			left: 420px;
+			bottom: 0px;  
+		}
+
+
+
+
 	</style>
 </head>
 <body>
-	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-	<br>
-	<div id="drag1" draggable="true" ondragstart="drag(event)"></div>
+	<div id="container">
+
+		<div class="dropBox" id="dropBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="dropBox" id="dropBox2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="dropBox" id="dropBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="draggable" id="drag1" draggable="true" ondragstart="drag(event)"></div>
+		<div class="draggable" id="drag2" draggable="true" ondragstart="drag(event)"></div>
+	</div>
 </body>
 </html>

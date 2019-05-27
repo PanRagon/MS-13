@@ -249,11 +249,8 @@ function Category(name) {
 
 //Setters
 function setTaskDescription(task, description) {
-	Object.defineProperty(task, "description", {
-		value: description,
-		writable: true
-	})
-}
+	task.description = description
+	};
 
 function setTaskStartDate(task, date) {
 	Object.defineProperty(task, "startDate", {

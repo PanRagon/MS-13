@@ -1,11 +1,5 @@
 /*  ----------------------------------------
     REMIX av CalendarView
-
-    TO-DO:
-    * Ikke nøyaktig på halve dager.
-    * Startkolonne en for stor.
-    * ++
-
 ----------------------------------------    */
 
 // TASKS:
@@ -34,10 +28,9 @@ let calendarDiv = document.getElementById("calendarContainer");
 
 function setCalendarStyle(taskArray){
     let totalColumns = calculateTotalCalendarColumns(taskArray);
-    console.log(calculateTotalCalendarColumns(taskArray))
     let totalRows = taskArray.length + 1;
 
-    let style =  "grid-template-columns: repeat(" + totalColumns + ", 30px); grid-template-rows: repeat(" + totalRows + ", auto);";
+    let style =  "grid-template-columns: repeat(" + totalColumns + ", 5px); grid-template-rows: repeat(" + totalRows + ", auto);";
     calendarDiv.setAttribute("style", style);
 }
 
@@ -81,18 +74,22 @@ function calculateDaysBetween(firstDate, secondDate){
 
 // Used to calculate how many rows a task must fill.
 function calculateCalendarColumns(task){
-    return calculateDaysBetween(task.startDate, task.endDate) * 2 + 2;
+    let dayColumns = calculateDaysBetween(task.startDate, task.endDate) * 24;
+    let hourColumns = task.endDate.getHours() - task.startDate.getHours();
+    return dayColumns + hourColumns;
 }
 
 // Used to calculate total amount of grid rows needed in the calendar.
 function calculateTotalCalendarColumns(array) {
     // Days between today and biggest date multiplied by two for amount of rows. Add 2 rows for last day.
-    return calculateDaysBetween(currentDate, getBiggestEndDate(array)) * 2 + 2;
+    return (calculateDaysBetween(currentDate, getBiggestEndDate(array)) + 1) * 24;
 }
 
 // Calculates what row a task should start on.
 function calculateStartRow(task){
-    return  calculateDaysBetween(currentDate, task.startDate) * 2 + 2;
+    let dayColumns = calculateDaysBetween(currentDate, task.startDate) * 24;
+    let hourColumns = task.startDate.getHours();
+    return dayColumns + hourColumns;
 }
 
 function renderDatesToCalendar (taskArray) {
@@ -100,9 +97,9 @@ function renderDatesToCalendar (taskArray) {
     let totalColumns = calculateTotalCalendarColumns(taskArray);
     let totalCalendarRows = tasks.length + 1;
 
-    for (let i = 1; i <= totalColumns; i += 2){
+    for (let i = 1; i <= totalColumns; i += 24){
         let startColumn = i;
-        let endColumn = i + 2;
+        let endColumn = i + 24;
         let rowStyle = "grid-column-start: " + startColumn + "; grid-column-end: " + endColumn + "; grid-row-start: " + totalCalendarRows + "; grid-row-end: " + totalCalendarRows + ";";
 
         let calendarDateDiv = document.createElement("div");
@@ -119,9 +116,7 @@ function renderTasksToCalendar (taskArray) {
     taskArray.forEach((e, i) => {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("calendarItem");
-        console.log(e.startDate);
         let startColumn = calculateStartRow(e);
-        // let endColumn = calculateDaysBetween(e.startDate, e.endDate) + startColumn;
         let endColumn = calculateCalendarColumns(e) + startColumn;
         let row = i + 1;
         let taskStyle = "grid-column-start: " + startColumn + "; grid-column-end: " + endColumn+ "; grid-row-start: " + row + "; grid-row-end: " + row + ";";
@@ -131,18 +126,25 @@ function renderTasksToCalendar (taskArray) {
     })
 }
 
+function renderCalendar(taskArray){
+    setCalendarStyle(taskArray);
+    renderTasksToCalendar(taskArray);
+    renderDatesToCalendar(taskArray);
+}
+
 // TEST:
 // Set up tasks
 
 new Task("Egg");
-tasks[0].startDate = new Date(2019, 4, 26, 10, 30);
-tasks[0].endDate = new Date(2019, 5, 18, 20, 30);
+tasks[0].startDate = new Date(2019, 4, 28, 10, 30);
+tasks[0].endDate = new Date(2019, 4, 30, 20, 30);
+
 
 new Task("Bread");
 tasks[1].startDate = new Date(2019, 5, 12, 8, 0);
 tasks[1].endDate = new Date(2019, 5, 22, 10, 30);
 
-setCalendarStyle(tasks);
-// Render the calendar dates for all tasks
-renderTasksToCalendar(tasks);
-renderDatesToCalendar(tasks);
+console.table(tasks);
+
+// Render the calendar
+renderCalendar(tasks);

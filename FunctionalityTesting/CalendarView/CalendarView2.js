@@ -116,6 +116,12 @@ function renderTasksToCalendar (taskArray) {
     taskArray.forEach((e, i) => {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("calendarItem");
+
+        // Add title to taskDiv
+        let titleDiv = document.createElement("div");
+        titleDiv.innerText = e.title;
+        taskDiv.appendChild(titleDiv);
+
         let startColumn = calculateStartRow(e);
         let endColumn = calculateCalendarColumns(e) + startColumn;
         let row = i + 1;
@@ -133,12 +139,11 @@ function renderCalendar(taskArray){
 }
 
 // TEST:
-// Set up tasks
 
+// Set up tasks
 new Task("Egg");
 tasks[0].startDate = new Date(2019, 4, 28, 10, 30);
 tasks[0].endDate = new Date(2019, 4, 30, 20, 30);
-
 
 new Task("Bread");
 tasks[1].startDate = new Date(2019, 5, 12, 8, 0);

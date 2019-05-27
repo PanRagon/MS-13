@@ -1,346 +1,337 @@
-/*
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-	USER & ADDRESS CLASS
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-*/
+/* ----------------------------------------------------------------------------------------------------
+§
+§   * CLASS FILE 2.0:
+$
+§   * All classes has a Class.setup method for testing
+§   * Must be called in this order:
+§   -   User.setup(); Project.setup(); TaskCategory.setup(); Task.setup(), Log.setup();
+§
+§
+§   * Only use Date()-objects for startDate and endDate
+$   * Input of month must be 1 lower than expected (0 = January, 1 = February etc.)
+§   -   new Date(2019, 4, 31); results in the date 31.05.2019
+§
+§   * addOwner- and addMember-methods accept userID-number.
+§
+§   * Log must have STRING of value "user", "project" og "task" as type-input!
+§   -   new Log(1, "task", 0, "Called Dog.bark();");
+§
+---------------------------------------------------------------------------------------------------- */
 
+class User {
 
-//Nested function used to define unique ID in User constructor
-var countIDUser = (function() {
-	var id = 1;
-	return function() { 
-   		return id++; 
-	};
-})();
+	static array = [];
+	static idCounter = 0;
 
-var countIDAddress = (function() {
-	var id = 1;
-	return function() { 
-   		return id++; 
-	};
-})();
+	constructor (firstName, middleName, lastName, email, location) {
+		this.ID = User.idCounter++;
+		this.log = [];
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.setFullName();
+		this.email = email;
+		this.location = location;
 
-//Array of users
-var users = [];
+		// Push to global User-array
+		User.array.push(this)
+	}
 
-//Declare output divs
-var outputDiv = document.getElementById("div1")
+	// SETTERS:
+	setFirstName(firstName) {
+		this.firstName = firstName;
+		this.setFullName();
+	}
 
-//var userElement = document.getElementById("div1");
+	setMiddleName(middleName) {
+		this.middleName = middleName;
+		this.setFullName();
+	}
 
-//User constructor
-function User(firstName, middleName, lastName, email) {
-	this.ID = countIDUser();
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.middleName = middleName;
-		//Remove middle name if user has none
+	setLastName(lastName) {
+		this.lastName = lastName;
+		this.setFullName();
+	}
+
+	setFullName(){
 		if(this.middleName === undefined || this.middleName === null || this.middleName === "") {
-			delete this.middleName;
 			this.fullName = this.firstName + " " + this.lastName;
 		} else {
-			this.fullName = this.firstName + " " + this.middleName + " " + this.lastName + " ";
+			this.fullName = this.firstName + " " + this.middleName + " " + this.lastName ;
 		}
-	this.email = email;
-	this.log = [];
-		
-  //Create the user in HTML
-		var el = document.createElement("p");
-		el.innerHTML = "This is user " + this.ID + 
-		"<br> name: " + this.fullName +
-		"<br> email: " + email;
-		outputDiv.appendChild(el);
-
-	//Push this user into array
-	users.push(this);
-}
-
-//Array of addresses
-var addresses = [];
-
-//Nested function used to create ID in Address constructor
-var countIDAddress = (function() {
-	var id = 1;
-	return function() { 
-		return id++; 
-	};
-})();
-
-//Address constructor
-function Address(street, postcode, city, state, country) {
-	this.ID = countIDAddress();
-	this.street = street;
-	this.postcode = postcode;
-	this.city = city;
-	this.state = state;
-	this.country = country;
-
-	addresses.push(this);
-}
-
-//Address setter
-function setAddress(user, street, postcode, city, state, country) {
-	Object.defineProperty(user, "address", {
-		value : address = new Address(street, postcode, city, state, country),
-		writable: true
-	});
-}
-
-
-/*
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-	PROJECT CLASS
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-*/
-
-
-//Nested function used to create ID in constructor
-var countIDProject = (function() {
-   	var id = 1;
-   	return function() { 
-   		return id++; 
-   	};
-})();
-
-//Array of projects
-var projects = [];
-
-//Project constructor
-function Project(title) {
-	this.ID = countIDProject();
-	this.title = title;
-	this.log = [];
-  
-	//Push this project into array
-	projects.push(this);
-}
-
-//Setters
-function setProjectDescription(project, description) {
-	Object.defineProperty(project, "description", {
-		value: description,
-		writable: true
-	})
-}
-
-function setProjectStartDate(project, date) {
-	Object.defineProperty(project, "startDate", {
-		value: date,
-		writable: true
-	})
-}
-
-function setProjectEndDate(project, date) {
-	Object.defineProperty(project, "endDate", {
-		value: date,
-		writable: true
-	})
-}
-
-function setProjectOwners(project, owners) {
-	Object.defineProperty(project, "owners", {
-		value: owners,
-		writable: true
-	})
-}
-
-function setProjectMembers(project, members) {
-	Object.defineProperty(project, "members", {
-		value: members,
-		writable: true
-	})
-}
-
-function setTask(project, task) {
-	Object.defineProperty(project, "task", {
-		value: task,
-		writable: true
-	})
-}
-
-function getUserProjects(userID) {
-	return projects.filter(project => project.members.find(member => member.ID === userID) || project.owners.find(owner => owner.ID === userID));
-}
-
-
-/*
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-	ROLE CLASS
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-*/
-
-
-//Nested function used to define unique ID in Role constructor
-var countIDRole = (function() {
-	var id = 1;
-	return function() { 
-   		return id++; 
-	};
-})();
-
-var roles = [];
-
-function Role(name, level, type) {
-	this.ID = countIDRole();
-	this.name = name;
-	this.level = level;
-	this.type = type;
-
-		if(level < 0) {
-			console.log("The access level is too low, use a value between 0 and 10");
-			delete this;
-		} else if(level > 10) {
-			console.log("The access level is too high, use a value between 0 and 10");
-			delete this;
-		}
-
-	roles.push(this);
-}
-
-/*
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-	TASK CLASS
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-*/
-
-
-//Nested function used to create ID in constructor of task
-var countIDTask = (function() {
-   	var id = 1;
-	return function() { 
-		return id++; 
-   	};
-})();
-
-//Array of tasks
-var tasks = []
-
-//Task constructor
-function Task(title) {
-	this.ID = countIDTask();
-	this.title = title;
-	this.status = "TODO";
-	this.log = [];
-	//Push this task into array
-  tasks.push(this);
-}
-
-//Nested function used to create ID in constructor of category
-var countIDCategory = (function() {
-	var id = 1;
-	return function() { 
-		return id++; 
-	};
-});
-
-//Category constructor
-function Category(name) {
-	this.name = name;
-	this.ID = countIDCategory();
-}
-
-//Setters
-function setTaskDescription(task, description) {
-	Object.defineProperty(task, "description", {
-		value: description,
-		writable: true
-	})
-}
-
-function setTaskStartDate(task, date) {
-	Object.defineProperty(task, "startDate", {
-		value: date,
-		writable: true
-	})
-}
-
-function setTaskEndDate(task, date) {
-	Object.defineProperty(task, "endDate", {
-		value: date,
-		writable: true
-	})
-}
-
-function setTaskOwners(task, owners) {
-	Object.defineProperty(task, "owners", {
-		value: owners,
-		writable: true
-	})
-}
-
-function setTaskMembers(task, members) {
-	Object.defineProperty(task, "members", {
-		value: members,
-		writable: true
-	})
-}
-
-// Find all tasks assigned to a user (both owner and member).
-function getUserTasks(userID) {
-	return tasks.filter(task => task.members.find(member => member.ID === userID) || task.owners.find(owner => owner.ID === userID));
-}
-/*
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-	LOG CLASS
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-*/
-
-// Temp. log array for unhandled types
-var logArray = [];
-
-// Counter for log IDs
-let countIDLog = (function () {
-	var id = 1;
-	return function () { return id++;}
-})();
-
-// Appends a leading zero if input ≤ 9
-function appendLeadingZeroes(n){
-	if(n <= 9){
-		return "0" + n;
 	}
-	return n
-}
-// Formats Date-object into "YYYY-MM-DD HH:MM:SS" string
-function dateFormatter(date){
-	return date.getFullYear() + "-" + appendLeadingZeroes(date.getMonth() + 1) + "-" + appendLeadingZeroes(date.getDate()) + " " + 
-	appendLeadingZeroes(date.getHours()) + ":" + appendLeadingZeroes(date.getMinutes()) + ":" + appendLeadingZeroes(date.getSeconds())
+
+	setEmail(email) {
+		this.email = email;
+	}
+
+	setLocation(location) {
+		this.location = location;
+	}
+
+	// GETTERS:
+	getProjects() {
+		return Project.array.filter(project => project.members.find(member => member.ID === this.ID) || project.owners.find(owner => owner.ID === this.ID));
+	}
+
+	getTasks() {
+		return Task.array.filter(task => task.members.find(member => member.ID === this.ID) || task.owners.find(owner => owner.ID === this.ID));
+	}
+
+	getLogs() {
+		return Log.array.filter(log => log.loggerID === this.ID);
+	}
+
+	static setup() {
+		new User("Erik", "Magnus Eriksen", "Olseng", "e.olseng@gmail.com", "Oslo, Norway");
+		new User("Christian", "N.", "Iversen", "christian.nicolai.iversen@gmail.com"), "Oslo, Norway";
+		new User("Gyda", "Lovise", "Hjemaas", "gyda.hjemaas@gmail.com", "Oslo Norway");
+		new User("Morten", "Lervik", "Sandvold", "morten.sandvold@gmail.com", "Bardufoss, Norway");
+		new User("Ludvik", "", "Blunck", "ludvik.blunck@gmail.com", "Stange, Norway");
+	}
 }
 
-// Types must be "User", "Project" or "Task". Else
+class Project {
+
+	static array = [];
+	static idCounter = 0;
+
+	constructor(title) {
+		this.ID = Project.idCounter++;
+		this.log = [];
+		this.title = title;
+		this.description = null;
+		this.startDate = null;
+		this.endDate = null;
+		this.owners = [];
+		this.members = [];
+		this.tasks =[];
+
+		//Push to global Project-array
+		Project.array.push(this);
+	}
+
+	// Setters
+	setTitle(title) {
+		this.title = title;
+	}
+
+	setDescription(description) {
+		this.description = description;
+	}
+
+	setStartDate(startDate) {
+		this.startDate = startDate;
+	}
+
+	setEndDate(endDate) {
+		this.endDate = endDate;
+	}
+
+	// Adders
+	addOwner(ownerID) {
+		this.owners.push(User.array.find(user => user.ID === ownerID));
+	}
+
+	addMember(memberID) {
+		this.members.push(User.array.find(user => user.ID === memberID));
+	}
+
+	addTask(task) {
+		this.tasks.push(task);
+	}
+
+	// Removers
+	removeOwner(ownerID) {
+		this.owners = this.owners.filter(owner => owner.ID !== ownerID);
+	}
+
+	removeMember(memberID) {
+		this.members = this.members.filter(member => member.ID !== memberID);
+	}
+
+	delete() {
+		// Delete all logs on this Project
+		this.log.forEach(log => log.delete());
+
+		// Delete all logs on tasks on this Project
+		this.tasks.forEach(task => task.log.forEach(log => log.delete()));
+
+		// Delete all tasks on this Project
+		this.tasks.forEach(task => task.delete());
+
+		// Delete this Project
+		Project.array = Project.array.filter(project => project.ID !== this.ID);
+	}
+
+	static setup() {
+		new Project("Test løsningen");
+		let testProject = Project.array.find(e => e.ID === 0);
+
+		testProject.setTitle("Kose seg");
+		testProject.setDescription("Vi må teste at prosjektet fungerer godt.");
+		testProject.setStartDate(new Date());
+		testProject.setEndDate(new Date(2019, 5, 7));
+		//testProject.addOwner(User.array.find(user => user.firstName === "Erik"));
+		testProject.addOwner(User.array.find(user => user.firstName === "Erik").ID);
+		testProject.addMember(User.array.find(user => user.firstName === "Morten").ID);
+	}
+}
+
+class Task {
+
+	static array = [];
+	static idCounter = 0;
+
+	constructor(projectID, title) {
+		this.ID = Task.idCounter++;
+		this.log = [];
+		this.status = "TODO";
+		this.category = null;
+		this.title = title;
+		this.description = null;
+		this.startDate = null;
+		this.endDate = null;
+		this.owners = [];
+		this.members = [];
+
+		// Push to target project Task-array
+		Project.array.find(project => project.ID === projectID).tasks.push(this);
+		// Push to gobal Task-array
+		Task.array.push(this);
+	}
+
+	// Setters
+	setStatus(status) {
+		this.status = status;
+	}
+
+	setCategory(category) {
+		this.category = category;
+	}
+
+	setTitle(title) {
+		this.title = title;
+	}
+
+	setDescription(description) {
+		this.description = description;
+	}
+
+	setStartDate(startDate) {
+		this.startDate = startDate;
+	}
+
+	setEndDate(endDate) {
+		this.endDate = endDate;
+	}
+
+	// Adders
+	addOwner(ownerID) {
+		this.owners.push(User.array.find(user => user.ID === ownerID));
+	}
+
+	addMember(memberID) {
+		this.members.push(User.array.find(user => user.ID === memberID));
+	}
+
+	// Removers
+	removeOwner(ownerID) {
+		this.owners = this.owners.filter(owner => owner.ID !== ownerID);
+	}
+
+	removeMember(memberID) {
+		this.members = this.members.filter(member => member.ID !== memberID);
+	}
+
+	delete() {
+		Task.array = Task.array.filter(e => e.ID !== this.ID);
+		Project.array.forEach(project => project.tasks = project.tasks.filter(task => task.ID !== this.ID));
+	}
+
+	static setup() {
+		new Task(0, "Teste task");
+		let testTask = Task.array.find(e => e.ID === 0);
+
+		testTask.setStatus("InProgress");
+		testTask.setCategory(TaskCategory.array.find(e => e.ID === 0));
+		testTask.setTitle("Testing Tasks");
+		testTask.setDescription("We need to test the Task class");
+		testTask.setStartDate(new Date(2019, 4, 31));
+		testTask.setEndDate(new Date(2019, 5, 30));
+		testTask.addOwner(User.array.find(e => e.firstName === "Erik").ID);
+		testTask.addMember(User.array.find(e => e.firstName === "Morten").ID);
+	}
+}
+
+class TaskCategory {
+
+	static array = [];
+	static idCounter = 0;
+
+	constructor(name) {
+		this.ID = TaskCategory.idCounter++;
+		this.name = name;
+
+		// Push to global TaskCategory-array
+		TaskCategory.array.push(this);
+	}
+
+	delete() {
+		// Delete category from all tasks
+		// Hjelp og trøste, denne ble syk
+		// Gå igjennom hvert prosjekt. For hvert prosjekt gå igjennom alle tasks. For hver task se på kategorien sin ID. Er denne IDen samme verdi som this.ID - i så fall sett verdi til null, ellers la verdien stå.
+		Project.array.forEach(project => project.tasks.forEach(task => task.category = task.category.ID === this.ID ? null : task.category));
+
+		TaskCategory.array = TaskCategory.array.filter(e => e.ID !== this.ID);
+	}
+
+	static setup() {
+		new TaskCategory("Development");
+		new TaskCategory("UX");
+	}
+}
+
 class Log {
+
+	static array = [];
+	static idCounter = 0;
+
 	constructor(loggerID, type, typeID, action) {
-		this.ID = countIDLog();
+		this.ID = Log.idCounter++;
 		this.loggerID = loggerID;
-		this.date = dateFormatter(new Date());
-		this.type = type;
+		this.date = new Date();
+		this.type = type.toLowerCase();;
 		this.typeID = typeID;
 		this.action = action;
 
-		// Find target-array for log
-		let target = this.type === "User" ? users : this.type === "Project" ? projects : this.type === "Task" ? tasks : logArray;
-		// Push Log to target log array
-		if (target === logArray) {
-			alert("Error: Wrong input type for log ID " + this.ID + ". " + this.type + " is not a valid log type.");
-		}
-		else {
-			// Push to target array and logArray (for easier data extraction)
+		// Push to global Log-array
+		Log.array.push(this);
+		// Push to target array
+		let target = this.type === "user" ? User.array : this.type === "project" ? Project.array : this.type === "task" ? Task.array : Log.array;
+		if (target === Log.array){
+			console.log("Error! Log ID " + this.ID + " has invalid type.");
+		} else {
 			target.find(element => element.ID === this.typeID).log.push(this);
-			logArray.push(this);
 		}
+	}
+
+	delete() {
+		Log.array = Log.array.filter(log => log.ID !== this.ID);
+		Task.array.forEach(task => task.log = task.log.filter(log => log.ID !== this.ID));
+		Project.array.forEach(project => project.log = project.log.filter(log => log.ID !== this.ID));
+		User.array.forEach(user => user.log = user.log.filter(log => log.ID !== this.ID));
+	}
+
+	static setup() {
+		new Log(0, "user", 0, "Tested test task");
+		new Log(2, "project", 0, "Tested test task");
+		new Log(3, "task", 0, "Tested test task");
 	}
 }
 
-function getUserLogs(userID) {
-	return logArray.filter(log => log.loggerID === userID);
-}
+User.setup();
+Project.setup();
+TaskCategory.setup();
+Task.setup();
+Log.setup();

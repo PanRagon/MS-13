@@ -286,7 +286,7 @@ function setTaskMembers(task, members) {
 // Find all tasks assigned to a user (both owner and member).
 function getUserTasks(userID) {
 	return tasks.filter(task => task.members.find(member => member.ID === userID) || task.owners.find(owner => owner.ID === userID));
-
+}
 /*
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
@@ -344,34 +344,3 @@ class Log {
 function getUserLogs(userID) {
 	return logArray.filter(log => log.loggerID === userID);
 }
-
-/*
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-	CREATING PROJECTS
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-*/
-
-/*
-var project1Element = document.createElement("p")
-
-//var checkOwnerProject1 = project1.owners.indexOf(this.ID = 1);
-//console.log(checkOwnerProject1);
-if (project1.owners.indexOf(user1) >= 0) {
-	for(i=0; i <= project1.task.length; i++);
-		if (project1.task[i].owners.indexOf(user1) >= 0) {
-			console.log("got here");
-			var myTasks = task1.title;
-			console.log(myTasks)
-	}
-		project1Element.innerHTML = "<br> Welcome " + user1.firstName +
-			"<br> This is your current project: <br>" + 
-			project1.title + 
-			"<br> Your tasks today are the following " +
-			myTasks;
-
-		outputDiv.appendChild(project1Element);
-}
-//	project1Element.innerhtml = ""
-*/

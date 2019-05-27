@@ -1,7 +1,5 @@
 /*
-
     CalendarView / Linjalen
-
  */
 
 var tasks = [];
@@ -35,7 +33,7 @@ tasks[0].endDate = new Date(2019, 5, 18, 20, 30);
 
 new Task("Bread");
 tasks[1].startDate = new Date(2019, 5, 12, 8, 0);
-tasks[1].endDate = new Date(2019, 5, 24, 10, 30);
+tasks[1].endDate = new Date(2019, 5, 22, 10, 30);
 
 // Setup calendar:
 var calendarDiv = document.getElementById("calendarContainer");

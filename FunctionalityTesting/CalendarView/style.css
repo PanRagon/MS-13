@@ -21,13 +21,6 @@ body {
     background: gray;
 }
 
-#task1{
-    grid-column-start: 1;
-    grid-column-end: 50;
-    grid-row-start: 1;
-    grid-row-end: 1;
-}
-
 .calendarDate{
     margin: auto;
 

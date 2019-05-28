@@ -184,9 +184,9 @@ class Project {
 		testProject2.setDescription("Create the best oranization solution ever - Org.ie");
 		testProject2.setStartDate(new Date(2019, 5, 1));
 		testProject2.setEndDate(new Date(2019, 6, 1));
-		testProject2.addOwner(User.array.find(user => user.firstName === "Ludvik"));
-		testProject2.addMember(User.array.find(user => user.firstName === "Gyda"));
-		testProject2.addMember(User.array.find(user => user.firstName === "Christian"));
+		testProject2.addOwner(User.array.find(user => user.firstName === "Erik").ID);
+		testProject2.addMember(User.array.find(user => user.firstName === "Gyda").ID);
+		testProject2.addMember(User.array.find(user => user.firstName === "Christian").ID);
 	}
 }
 
@@ -254,6 +254,13 @@ class Task {
 
 	removeMember(memberID) {
 		this.members = this.members.filter(member => member.ID !== memberID);
+	}
+
+	// Methods:
+	daysToDeadline() {
+		let currentDate = getStartOfDate(new Date());
+		let deadlineDate = getStartOfDate(this.endDate);
+		return calculateDaysBetween(currentDate, deadlineDate);
 	}
 
 	delete() {

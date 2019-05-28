@@ -1,6 +1,7 @@
-let taskContainerDiv = document.getElementById("taskContainer");
 
-function renderTasks(taskArray) {
+function renderDashboardTasks(taskArray) {
+    let taskContainerDiv = document.getElementById("taskContainer");
+
     taskArray.forEach(task => {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("task");
@@ -60,10 +61,9 @@ function renderTasks(taskArray) {
             usersDiv.appendChild(ownerDiv);
         });
         // Countdown:
-        // TODO: Make calulateCountdown-function
         let countdownDiv = document.createElement("div");
         countdownDiv.classList.add("taskCountdown");
-        countdownDiv.innerText = calendarDateFormatter(task.endDate);
+        countdownDiv.innerText = task.daysToDeadline();
 
         // Compose:
         rightBarDiv.appendChild(usersDiv);
@@ -75,4 +75,4 @@ function renderTasks(taskArray) {
     })
 }
 
-renderTasks(Task.array);
+renderDashboardTasks(Task.array);

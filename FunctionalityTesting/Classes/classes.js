@@ -376,3 +376,4 @@ Project.setup();
 TaskCategory.setup();
 Task.setup();
 Log.setup();
+console.log(Project.array);

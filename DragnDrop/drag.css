@@ -1,0 +1,64 @@
+.taskCard {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.held {
+  border: solid 10px black;
+  background-color: black;
+}
+
+.status {
+  width: 110px;
+  margin: 10px;
+  background-color: gray;
+  display: inline-block;
+}
+.statusContainer {
+	width: 110px;
+	margin: 10px;
+	height: 500px;
+	display: inline-block;
+}
+
+#todoContainer {
+	top: 200px;
+	left: 100px;
+}
+#todo {
+	height: 30px;
+	top: 200px;
+	left:100px;
+}
+
+#inProgressContainer {
+	top: 200px;
+	left: 400px;
+}
+#inProgress {
+	height: 30px;
+	top: 200px;
+	left: 400px;
+}
+
+#finished {
+	height: 30px;
+	top: 200px;
+	left: 700px;
+}
+
+.invisible {
+  display: none;
+}
+
+#wrapper {
+  margin: auto;
+  top: 100px;
+  width: 1000px;
+  position: relative;
+}

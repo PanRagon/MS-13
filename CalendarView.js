@@ -18,18 +18,25 @@ $
 §
 ---------------------------------------------------------------------------------------------------- */
 
-// TODO - Fix view if startDate.getDate() is > today
+// TODO - Fix view if startDate.getDate() is > today.
+// TODO - Fix length of last day in array. Now cuts early.
+// TODO - Render information about each task inside "calendarTask"-div (renderTasksToCalendar()-method).
 
 // Configuration
 let currentDate = new Date();
 let calendarDiv = document.getElementById("calendarContainer");
+
+// Clears the innerHTML of calendar
+function clearCalendar() {
+    calendarDiv.innerHTML = "";
+}
 
 // Defines amount of grid columns and rows in the calendar
 function setCalendarStyle(taskArray){
     let totalColumns = calculateTotalCalendarColumns(taskArray);
     let totalRows = taskArray.length + 1;
 
-    let style =  "grid-template-columns: repeat(" + totalColumns + ", 5px); grid-template-rows: repeat(" + totalRows + ", auto);";
+    let style =  "grid-template-columns: repeat(" + totalColumns + ", 3px); grid-template-rows: repeat(" + totalRows + ", auto);";
     calendarDiv.setAttribute("style", style);
 }
 
@@ -95,7 +102,7 @@ function calculateStartRow(task){
 function renderDatesToCalendar (taskArray) {
     let date = new Date();
     let totalColumns = calculateTotalCalendarColumns(taskArray);
-    let totalCalendarRows = tasks.length + 1;
+    let totalCalendarRows = taskArray.length + 1;
 
     for (let i = 1; i <= totalColumns; i += 24){
         let startColumn = i;
@@ -118,24 +125,76 @@ function renderTasksToCalendar (taskArray) {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("calendarItem");
 
+        // Add status to taskDiv
+        let statusDiv = document.createElement("div");
+        statusDiv.classList.add("calendarItemStatus")
+        if (e.status.toLowerCase() === "todo") {
+            statusDiv.innerText = "T";
+            statusDiv.classList.add("calendarItemStatusToDo");
+        } else if (e.status.toLowerCase() === "inprogress") {
+            statusDiv.innerText = "I";
+            statusDiv.classList.add("calendarItemStatusInProgress");
+        } else if (e.status.toLowerCase() === "done") {
+            statusDiv.innerText = "D";
+            statusDiv.classList.add("calendarItemStatusDone");
+        } else {
+            statusDiv.innerText = "?";
+            statusDiv.classList.add("calendarItemStatusUnkown");
+        }
+        taskDiv.appendChild(statusDiv);
+
         // Add title to taskDiv
         let titleDiv = document.createElement("div");
+        titleDiv.classList.add("calendarItemTitle");
         titleDiv.innerText = e.title;
         taskDiv.appendChild(titleDiv);
 
+        // Add owners to taskDiv
+        let ownersDiv = document.createElement("div");
+        ownersDiv.classList.add("calendarItemOwners");
+        e.owners.forEach(owner => {
+            let div = document.createElement("div");
+            div.classList.add("calendarOwner");
+            div.innerText = owner.shortName;
+            ownersDiv.appendChild(div);
+        });
+        taskDiv.appendChild(ownersDiv);
+
+        // Add members to taskDiv
+        let membersDiv = document.createElement("div");
+        membersDiv.classList.add("calendarIteMembers");
+        e.members.forEach(member => {
+            let div = document.createElement("div");
+            div.classList.add("calendarMember");
+            div.innerText = member.shortName;
+            membersDiv.appendChild(div);
+        });
+        taskDiv.appendChild(membersDiv);
+
+
+        // Style taskDiv
         let startColumn = calculateStartRow(e);
         let endColumn = calculateCalendarColumns(e) + startColumn;
         let row = i + 1;
         let taskStyle = "grid-column-start: " + startColumn + "; grid-column-end: " + endColumn+ "; grid-row-start: " + row + "; grid-row-end: " + row + ";";
-
         taskDiv.setAttribute("style", taskStyle);
+
+
         calendarDiv.appendChild(taskDiv);
     })
 }
 
 // Renders a calendar based on input array to a div with ID "calendarContainer".
 function renderCalendar(taskArray){
-    setCalendarStyle(taskArray);
-    renderTasksToCalendar(taskArray);
-    renderDatesToCalendar(taskArray);
+
+    // Non-destructively sorts input-array by startDate
+    let localArray = Array.from(taskArray);
+    localArray.sort(function (a,b) {
+        return a.startDate - b.startDate;
+    });
+
+    clearCalendar();
+    setCalendarStyle(localArray);
+    renderTasksToCalendar(localArray);
+    renderDatesToCalendar(localArray);
 }

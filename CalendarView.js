@@ -1,31 +1,30 @@
-/*  ----------------------------------------
-    REMIX av CalendarView
-----------------------------------------    */
+/* ----------------------------------------------------------------------------------------------------
+§
+§   * CALENDAR RENDERER:
+$
+§   * Use renderCalendar(inputArray) to render calendar
+§   * Gets rendered to a div with ID "calendarContainer"
+§
+§   * The calendar consists of a grid with 24 columns for each day from today to the end of the last .endDate in the input array.
+§   * Calendar items gets placed based on start date and time and with correct duration.
+§
+§   * HTML-tags:
+§   -   Calendar container:     class="calendarContainer"   MUST BE PREMADE BEFORE rendarCalendar() IS CALLED!
+§   -   Task Items in calendar: class="calendarItem"
+§   -   Date Item in calendar:  class="calendarDate"
+§
+§   * DO NOT USE HTML-STYING TO STYLE THE ITEMS!
+§   -   Must be styled via .CSS
+§
+---------------------------------------------------------------------------------------------------- */
 
-// TASKS:
-var tasks = [];
+// TODO - Fix view if startDate.getDate() is > today
 
-var countIDTask = (function() {
-    var id = 1;
-    return function() {
-        return id++;
-    };
-})();
-
-function Task (title) {
-    this.ID = countIDTask();
-    this.title = title;
-    this.status = "TODO";
-    this.log = [];
-    tasks.push(this);
-
-}
-
-// CALENDAR Functions
-
+// Configuration
 let currentDate = new Date();
 let calendarDiv = document.getElementById("calendarContainer");
 
+// Defines amount of grid columns and rows in the calendar
 function setCalendarStyle(taskArray){
     let totalColumns = calculateTotalCalendarColumns(taskArray);
     let totalRows = taskArray.length + 1;
@@ -63,7 +62,7 @@ function getBiggestEndDate(array){
     return biggestEndDate;
 }
 
-// Used to calculate the amount of dates between two dates. Does not include the full second date.
+// Calculate the amount of dates between two dates. Does not include the full second date.
 function calculateDaysBetween(firstDate, secondDate){
     let msToDays = 1000 * 60 * 60 * 24;
     firstDate = getStartOfDate(firstDate);
@@ -72,14 +71,14 @@ function calculateDaysBetween(firstDate, secondDate){
     return (secondDate.getTime() - firstDate.getTime())/msToDays;
 }
 
-// Used to calculate how many rows a task must fill.
+// Calculate how many rows a task must fill.
 function calculateCalendarColumns(task){
     let dayColumns = calculateDaysBetween(task.startDate, task.endDate) * 24;
     let hourColumns = task.endDate.getHours() - task.startDate.getHours();
     return dayColumns + hourColumns;
 }
 
-// Used to calculate total amount of grid rows needed in the calendar.
+// Calculate total amount of grid rows needed in the calendar.
 function calculateTotalCalendarColumns(array) {
     // Days between today and biggest date multiplied by two for amount of rows. Add 2 rows for last day.
     return (calculateDaysBetween(currentDate, getBiggestEndDate(array)) + 1) * 24;
@@ -92,6 +91,7 @@ function calculateStartRow(task){
     return dayColumns + hourColumns;
 }
 
+// Renders the calendarDates to the calendar
 function renderDatesToCalendar (taskArray) {
     let date = new Date();
     let totalColumns = calculateTotalCalendarColumns(taskArray);
@@ -112,6 +112,7 @@ function renderDatesToCalendar (taskArray) {
     }
 }
 
+// Renders the calendarItems to the calendar
 function renderTasksToCalendar (taskArray) {
     taskArray.forEach((e, i) => {
         let taskDiv = document.createElement("div");
@@ -132,24 +133,9 @@ function renderTasksToCalendar (taskArray) {
     })
 }
 
+// Renders a calendar based on input array to a div with ID "calendarContainer".
 function renderCalendar(taskArray){
     setCalendarStyle(taskArray);
     renderTasksToCalendar(taskArray);
     renderDatesToCalendar(taskArray);
 }
-
-// TEST:
-
-// Set up tasks
-new Task("Egg");
-tasks[0].startDate = new Date(2019, 4, 28, 10, 30);
-tasks[0].endDate = new Date(2019, 4, 30, 20, 30);
-
-new Task("Bread");
-tasks[1].startDate = new Date(2019, 5, 12, 8, 0);
-tasks[1].endDate = new Date(2019, 5, 22, 10, 30);
-
-console.table(tasks);
-
-// Render the calendar
-renderCalendar(tasks);

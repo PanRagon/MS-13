@@ -95,7 +95,7 @@ function calculateStartRow(task){
 function renderDatesToCalendar (taskArray) {
     let date = new Date();
     let totalColumns = calculateTotalCalendarColumns(taskArray);
-    let totalCalendarRows = tasks.length + 1;
+    let totalCalendarRows = taskArray.length + 1;
 
     for (let i = 1; i <= totalColumns; i += 24){
         let startColumn = i;

@@ -162,15 +162,23 @@ class Project {
 
 	static setup() {
 		new Project("Test løsningen");
-		let testProject = Project.array.find(e => e.ID === 0);
+		let testProject1 = Project.array.find(e => e.ID === 0);
 
-		testProject.setTitle("Kose seg");
-		testProject.setDescription("Vi må teste at prosjektet fungerer godt.");
-		testProject.setStartDate(new Date());
-		testProject.setEndDate(new Date(2019, 5, 7));
-		//testProject.addOwner(User.array.find(user => user.firstName === "Erik"));
-		testProject.addOwner(User.array.find(user => user.firstName === "Erik").ID);
-		testProject.addMember(User.array.find(user => user.firstName === "Morten").ID);
+		testProject1.setTitle("Kose seg");
+		testProject1.setDescription("Vi må teste at prosjektet fungerer godt.");
+		testProject1.setStartDate(new Date());
+		testProject1.setEndDate(new Date(2019, 5, 7));
+		testProject1.addOwner(User.array.find(user => user.firstName === "Erik").ID);
+		testProject1.addMember(User.array.find(user => user.firstName === "Morten").ID);
+
+		new Project("Org.ie Development");
+		let testProject2 = Project.array.find(e => e.ID === 1);
+		testProject2.setDescription("Create the best oranization solution ever - Org.ie");
+		testProject2.setStartDate(new Date(2019, 5, 1));
+		testProject2.setEndDate(new Date(2019, 6, 1));
+		testProject2.addOwner(User.array.find(user => user.firstName === "Ludvik"));
+		testProject2.addMember(User.array.find(user => user.firstName === "Gyda"));
+		testProject2.addMember(User.array.find(user => user.firstName === "Christian"));
 	}
 }
 
@@ -246,17 +254,55 @@ class Task {
 	}
 
 	static setup() {
-		new Task(0, "Teste task");
+		new Task(0, "Lage kalenderoversikt");
 		let testTask = Task.array.find(e => e.ID === 0);
-
 		testTask.setStatus("InProgress");
 		testTask.setCategory(TaskCategory.array.find(e => e.ID === 0));
-		testTask.setTitle("Testing Tasks");
 		testTask.setDescription("We need to test the Task class");
 		testTask.setStartDate(new Date(2019, 4, 31));
 		testTask.setEndDate(new Date(2019, 5, 30));
 		testTask.addOwner(User.array.find(e => e.firstName === "Erik").ID);
 		testTask.addMember(User.array.find(e => e.firstName === "Morten").ID);
+		
+		new Task(1, "Spise plommer");
+		let testTask2 = Task.array.find(e => e.ID === 1);
+		testTask2.setStatus("ToDo");
+		testTask2.setCategory(TaskCategory.array.find(e => e.ID === 1));
+		testTask2.setDescription("Det er et stort behov for oss å spise nok plommer");
+		testTask2.setStartDate(new Date(2019, 5, 1));
+		testTask2.setEndDate(new Date(2019, 5, 6));
+		testTask2.addOwner(User.array.find(e => e.firstName === "Gyda").ID);
+		testTask2.addMember(User.array.find(e => e.firstName === "Ludvik").ID);
+
+		new Task(0, "Lage egg");
+		let testTask3 = Task.array.find(e => e.ID === 1);
+		testTask3.setStatus("ToDo");
+		testTask3.setCategory(TaskCategory.array.find(e => e.ID === 0));
+		testTask3.setDescription("Vi må lage egg så vi kan lage en kake");
+		testTask3.setStartDate(new Date(2019, 5, 8));
+		testTask3.setEndDate(new Date(2019, 5, 18));
+		testTask3.addOwner(User.array.find(e => e.firstName === "Morten").ID);
+		testTask3.addMember(User.array.find(e => e.firstName === "Erik").ID);
+
+		new Task(0, "Egge på seg Kongen");
+		let testTask4 = Task.array.find(e => e.ID === 1);
+		testTask4.setStatus("ToDo");
+		testTask4.setCategory(TaskCategory.array.find(e => e.ID === 0));
+		testTask4.setDescription("Vi må lage egg så vi kan lage en kake");
+		testTask4.setStartDate(new Date(2019, 5, 1));
+		testTask4.setEndDate(new Date(2019, 5, 14));
+		testTask4.addOwner(User.array.find(e => e.firstName === "Erik").ID);
+		testTask4.addMember(User.array.find(e => e.firstName === "Morten").ID);
+
+		new Task(0, "Redde svanen");
+		let testTask5 = Task.array.find(e => e.ID === 1);
+		testTask5.setStatus("ToDo");
+		testTask5.setCategory(TaskCategory.array.find(e => e.ID === 1));
+		testTask5.setDescription("Det er en svane vi må redde");
+		testTask5.setStartDate(new Date(2019, 5, 4));
+		testTask5.setEndDate(new Date(2019, 5, 12));
+		testTask5.addOwner(User.array.find(e => e.firstName === "Erik").ID);
+		testTask5.addMember(User.array.find(e => e.firstName === "Morten").ID);
 	}
 }
 

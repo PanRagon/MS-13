@@ -1,9 +1,12 @@
 class DragDrop {
     static init() {
-        DragDrop.taskCard = document.getElementsByClassName("taskCard")[0];
 
-        DragDrop.taskCard.addEventListener("dragstart", DragDrop.dragstart);
-        DragDrop.taskCard.addEventListener("dragend", DragDrop.dragend);
+        DragDrop.taskCards = document.getElementsByClassName("taskCard");
+
+        for(const taskCard of DragDrop.taskCards) {
+            taskCard.addEventListener("dragstart", DragDrop.dragstart);
+            taskCard.addEventListener("dragend", DragDrop.dragend);
+        }
 
         DragDrop.todo = document.getElementById("todo");
         DragDrop.inProgress = document.getElementById("inProgress");
@@ -70,8 +73,11 @@ class DragDrop {
         }
     }
 
+    static card = "";
+
     static dragstart() {
         console.log(this.parentElement);
+        DragDrop.card = this;
         this.className += " held";
         DragDrop.removeHeight(this.parentElement.id);
 
@@ -118,17 +124,17 @@ class DragDrop {
     static drop() {
         console.log("drop");
         if(this.id == "todoContainer") {
-            DragDrop.todo.append(DragDrop.taskCard);
+            DragDrop.todo.append(DragDrop.card);
             //DragDrop.setDivHeight();
             //DragDrop.todoHeight += 100;
             //DragDrop.todo.setAttribute("style", "height: " + DragDrop.todoHeight + "px;");
         } else if(this.id == "inProgressContainer") {
-            DragDrop.inProgress.append(DragDrop.taskCard);
+            DragDrop.inProgress.append(DragDrop.card);
             //DragDrop.setDivHeight();
             //DragDrop.inProgressHeight += 100 
             //DragDrop.inProgress.setAttribute("style", "height: " + DragDrop.inProgressHeight + "px;");
         } else if(this.id == "finishedContainer") {
-            DragDrop.finished.append(DragDrop.taskCard);
+            DragDrop.finished.append(DragDrop.card);
             //DragDrop.finishedHeight += 100;
             //DragDrop.finished.setAttribute("style", "height: " + DragDrop.finishedHeight + "px;");
         }

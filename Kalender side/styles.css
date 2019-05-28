@@ -180,7 +180,69 @@ body {
     padding-bottom: 1rem;
 }
 
+#calendarContainer{
+    position: relative;
+    margin: auto;
 
+    display: grid;
+    grid-row-gap: 5px;
+
+    overflow: auto;
+
+    background: white;
+}
+
+.calendarItem {
+
+}
+
+/* Status Wrapper */
+.calendarItemStatus {
+
+}
+
+.calendarItemStatusToDo {
+
+}
+
+.calendarItemStatusInProgress {
+
+}
+
+.calendarItemStatusDone {
+
+}
+
+.calendarItemStatusUnkown {
+
+}
+
+.calendarItemTitle {
+
+}
+
+/* Wrapper for all owners */
+.calendarItemOwners {
+
+}
+/* Individual owners */
+.calendarOwner {
+
+}
+
+/* Wrapper for all members */
+.calendarItemMembers {
+
+}
+
+/* Individual members */
+.calendarMember {
+
+}
+
+.calendarDate{
+    margin: auto;
+}
 
 /* GRID */
 /* .tasks{

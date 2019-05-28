@@ -9,7 +9,7 @@ $
 §   * Calendar items gets placed based on start date and time and with correct duration.
 §
 §   * HTML-tags:
-§   -   Calendar container:     class="calendarContainer"   MUST BE PREMADE BEFORE rendarCalendar() IS CALLED!
+§   -   Calendar container:     id="calendarContainer"   MUST BE PREMADE BEFORE rendarCalendar() IS CALLED!
 §   -   Task Items in calendar: class="calendarItem"
 §   -   Date Item in calendar:  class="calendarDate"
 §
@@ -127,7 +127,7 @@ function renderTasksToCalendar (taskArray) {
 
         // Add status to taskDiv
         let statusDiv = document.createElement("div");
-        statusDiv.classList.add("calendarItemStatus")
+        statusDiv.classList.add("calendarItemStatus");
         if (e.status.toLowerCase() === "todo") {
             statusDiv.innerText = "T";
             statusDiv.classList.add("calendarItemStatusToDo");
@@ -185,11 +185,11 @@ function renderTasksToCalendar (taskArray) {
 }
 
 // Renders a calendar based on input array to a div with ID "calendarContainer".
-function renderCalendar(taskArray){
+function renderCalendar(taskArray) {
 
     // Non-destructively sorts input-array by startDate
     let localArray = Array.from(taskArray);
-    localArray.sort(function (a,b) {
+    localArray.sort(function (a, b) {
         return a.startDate - b.startDate;
     });
 
@@ -197,3 +197,4 @@ function renderCalendar(taskArray){
     setCalendarStyle(localArray);
     renderTasksToCalendar(localArray);
     renderDatesToCalendar(localArray);
+}

@@ -58,7 +58,7 @@ class User {
 	}
 
 	setShortName() {
-		this.shortName = this.firstName.toString()[0] + ". " + this.lastName;
+		this.shortName = this.firstName.toString()[0] + this.lastName.toString()[0];
 	}
 
 	setFullName(){

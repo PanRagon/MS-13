@@ -137,16 +137,9 @@ class Project {
 		this.members.push(User.array.find(user => user.ID === memberID));
 	}
 
-<<<<<<< HEAD
-//Setters
-function setTaskDescription(task, description) {
-	task.description = description
-	};
-=======
 	addTask(task) {
 		this.tasks.push(task);
 	}
->>>>>>> bdb0339b89975d41a6564d9e0df3994b24969746
 
 	// Removers
 	removeOwner(ownerID) {
@@ -342,3 +335,4 @@ Project.setup();
 TaskCategory.setup();
 Task.setup();
 Log.setup();
+console.log(Project.array);

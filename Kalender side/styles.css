@@ -160,7 +160,7 @@ body {
 
 
 .calendar {
-    height: 35vh;
+    min-height: 35vh;
     width: 82.8vw;
     border: solid 0.3px #FFFAFF;
     margin: 0 auto;
@@ -189,59 +189,80 @@ body {
 
     overflow: auto;
 
-    background: white;
+    background: transparent;
+    padding: 10px;
 }
 
 .calendarItem {
-
+    border: 1px solid #fffaff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    color: var(--main-txt-color);
 }
 
 /* Status Wrapper */
 .calendarItemStatus {
-
+    color: var(--task-three);
+    
 }
 
 .calendarItemStatusToDo {
+    
+}
 
+.calendarItemStatusToDo:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f164";
+    display: inline-block;
 }
 
 .calendarItemStatusInProgress {
-
+    color: brown;
 }
 
 .calendarItemStatusDone {
-
+    color: yellow;
 }
 
 .calendarItemStatusUnkown {
-
+    color: cyan;
 }
 
 .calendarItemTitle {
-
+    color: #2FBF71;
 }
 
 /* Wrapper for all owners */
 .calendarItemOwners {
-
+    color: #c47425;
 }
 /* Individual owners */
 .calendarOwner {
-
+    color: #5C6784;
+    display: inline-block;
+    border: 1px solid #fffaff;
+    border-radius: 50%;
+    padding: 2px;
 }
 
 /* Wrapper for all members */
 .calendarItemMembers {
-
+    color: var(--task-three);
 }
 
 /* Individual members */
 .calendarMember {
-
+    color: #6edd79;
+    border: 1px solid #fffaff;
+    border-radius: 50%;
+    padding: 2px;
 }
 
 .calendarDate{
     margin: auto;
+    color: var(--main-txt-color);
 }
 
 /* GRID */

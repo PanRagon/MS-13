@@ -1,4 +1,4 @@
-/* Color variables */
+    /* Color variables */
 :root {
     --main-bg-color: #424248;
     --secondary-bg-color: #303036;
@@ -277,7 +277,10 @@ body {
 
 /* FLEXBOX */
 
-.tasks {
+    /* --------------------
+        TASKS START:
+    -------------------- */
+#taskContainer {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -297,7 +300,7 @@ body {
     letter-spacing: 2px;
 }
 
-.boxes {
+.task {
     display: flex;
     border: 1px solid #fffaff;
     width: 26.6vw;
@@ -305,12 +308,57 @@ body {
     padding: 10px;
 }
 
-.box1,
-.box2,
-.box3 {
-    margin: 10px;
+.taskTopBar {
+
 }
 
+.taskStatus {
+
+}
+
+.taskCategory {
+
+}
+
+.taskLeftBar {
+
+}
+
+.taskTitle {
+
+}
+
+.taskDescription {
+
+}
+
+.taskRightBar {
+
+}
+
+.taskUsersWrap {
+
+}
+
+.taskUser {
+
+}
+
+.taskOwner {
+
+}
+
+.taskMember {
+
+}
+
+.taskCountdownWrap {
+
+}
+
+    /* --------------------
+            PROJECT START:
+    -------------------- */
 .projects {
     display: flex;
     flex-direction: row;
@@ -330,13 +378,6 @@ body {
     color: var(--main-txt-color);
     letter-spacing: 2px;
 }
-
-.box4,
-.box5,
-.box6 {
-    margin: 10px;
-}
-
 
 .highlight {
     color: var(--task-one);

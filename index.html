@@ -53,10 +53,7 @@
 
     </nav>
 
-    
-
     <div class="calendarWrap">
-
         <h3 class="calendarHeading">
             <span class="highlight">project</span> calendar
         </h3>
@@ -67,32 +64,16 @@
     </div>
 
     <h3 class="taskHeading">recommended <span class="highlight">tasks</span></h3>
-    <section class="tasks">
-        <div class="boxes box1">
-
-        </div>
-        <div class="boxes box2">
-
-        </div>
-        <div class="boxes box3">
-
-        </div>
+    <section id="taskContainer">
+        <!--TASKS GENERATED VIA JAVASCRIPT-->
     </section>
 
     <h3 class="projectHeading">
         your <span class="highlight">projects</span>
     </h3>
 
-    <section class="projects">
-        <div class="boxes box4">
-
-        </div>
-        <div class="boxes box5">
-
-        </div>
-        <div class="boxes box6">
-
-        </div>
+    <section id="projectContainer">
+        <!--PROJECTS GENERATED VIA JAVASCRIPT-->
     </section>
 
     <footer class="mainFooter">
@@ -118,6 +99,7 @@
     <script>
         renderCalendar(Task.array);
     </script>
+    <script src="tasks.js"></script>
 </body>
 
 </html>

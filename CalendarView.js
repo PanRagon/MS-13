@@ -149,6 +149,26 @@ function renderTasksToCalendar (taskArray) {
         titleDiv.innerText = e.title;
         taskDiv.appendChild(titleDiv);
 
+        // Add users to taskDiv
+        let userWrapDiv = document.createElement("div");
+        userWrapDiv.classList.add("calendarUserWrap");
+        e.owners.forEach(owner => {
+            let div = document.createElement("div");
+            div.classList.add("calendarItemUser");
+            div.classList.add("calendarItemOwner");
+            div.innerText = owner.shortName;
+            userWrapDiv.appendChild(div);
+        });
+        e.members.forEach(member => {
+            let div = document.createElement("div");
+            div.classList.add("calendarItemUser");
+            div.classList.add("calendarItemMember");
+            div.innerText = member.shortName;
+            userWrapDiv.appendChild(div);
+        });
+        taskDiv.appendChild(userWrapDiv);
+
+        /*
         // Add owners to taskDiv
         let ownersDiv = document.createElement("div");
         ownersDiv.classList.add("calendarItemOwners");
@@ -162,7 +182,7 @@ function renderTasksToCalendar (taskArray) {
 
         // Add members to taskDiv
         let membersDiv = document.createElement("div");
-        membersDiv.classList.add("calendarIteMembers");
+        membersDiv.classList.add("calendarItemMembers");
         e.members.forEach(member => {
             let div = document.createElement("div");
             div.classList.add("calendarMember");
@@ -170,7 +190,7 @@ function renderTasksToCalendar (taskArray) {
             membersDiv.appendChild(div);
         });
         taskDiv.appendChild(membersDiv);
-
+        */
 
         // Style taskDiv
         let startColumn = calculateStartRow(e);

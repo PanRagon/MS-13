@@ -61,9 +61,9 @@ function getStartOfDate(date){
 // Finds the biggest .endDate-property in the array.
 function getBiggestEndDate(array){
     let biggestEndDate = new Date();
-    array.forEach(e => {
-        if(biggestEndDate < e.endDate){
-            biggestEndDate = e.endDate;
+    array.forEach(task => {
+        if(biggestEndDate < task.endDate){
+            biggestEndDate = task.endDate;
         }
     });
     return biggestEndDate;
@@ -92,7 +92,7 @@ function calculateTotalCalendarColumns(array) {
 }
 
 // Calculates what row a task should start on.
-function calculateStartRow(task){
+function calculateStartColumn(task){
     let dayColumns = calculateDaysBetween(currentDate, task.startDate) * 24;
     let hourColumns = task.startDate.getHours();
     return dayColumns + hourColumns;
@@ -121,45 +121,41 @@ function renderDatesToCalendar (taskArray) {
 
 // Renders the calendarItems to the calendar
 function renderTasksToCalendar (taskArray) {
-    taskArray.forEach((e, i) => {
+    taskArray.forEach((task, i) => {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("calendarItem");
 
         // Add status to taskDiv
         let statusDiv = document.createElement("div");
         statusDiv.classList.add("calendarItemStatus");
-        if (e.status.toLowerCase() === "todo") {
-            statusDiv.innerText = "T";
+        if (task.status.toLowerCase() === "todo") {
             statusDiv.classList.add("calendarItemStatusToDo");
-        } else if (e.status.toLowerCase() === "inprogress") {
-            statusDiv.innerText = "I";
+        } else if (task.status.toLowerCase() === "inprogress") {
             statusDiv.classList.add("calendarItemStatusInProgress");
-        } else if (e.status.toLowerCase() === "done") {
-            statusDiv.innerText = "D";
+        } else if (task.status.toLowerCase() === "done") {
             statusDiv.classList.add("calendarItemStatusDone");
         } else {
-            statusDiv.innerText = "?";
-            statusDiv.classList.add("calendarItemStatusUnkown");
+            statusDiv.classList.add("calendarItemStatusUnknown");
         }
         taskDiv.appendChild(statusDiv);
 
         // Add title to taskDiv
         let titleDiv = document.createElement("div");
         titleDiv.classList.add("calendarItemTitle");
-        titleDiv.innerText = e.title;
+        titleDiv.innerText = task.title;
         taskDiv.appendChild(titleDiv);
 
         // Add users to taskDiv
         let userWrapDiv = document.createElement("div");
         userWrapDiv.classList.add("calendarUserWrap");
-        e.owners.forEach(owner => {
+        task.owners.forEach(owner => {
             let div = document.createElement("div");
             div.classList.add("calendarItemUser");
             div.classList.add("calendarItemOwner");
             div.innerText = owner.shortName;
             userWrapDiv.appendChild(div);
         });
-        e.members.forEach(member => {
+        task.members.forEach(member => {
             let div = document.createElement("div");
             div.classList.add("calendarItemUser");
             div.classList.add("calendarItemMember");
@@ -168,33 +164,9 @@ function renderTasksToCalendar (taskArray) {
         });
         taskDiv.appendChild(userWrapDiv);
 
-        /*
-        // Add owners to taskDiv
-        let ownersDiv = document.createElement("div");
-        ownersDiv.classList.add("calendarItemOwners");
-        e.owners.forEach(owner => {
-            let div = document.createElement("div");
-            div.classList.add("calendarOwner");
-            div.innerText = owner.shortName;
-            ownersDiv.appendChild(div);
-        });
-        taskDiv.appendChild(ownersDiv);
-
-        // Add members to taskDiv
-        let membersDiv = document.createElement("div");
-        membersDiv.classList.add("calendarItemMembers");
-        e.members.forEach(member => {
-            let div = document.createElement("div");
-            div.classList.add("calendarMember");
-            div.innerText = member.shortName;
-            membersDiv.appendChild(div);
-        });
-        taskDiv.appendChild(membersDiv);
-        */
-
-        // Style taskDiv
-        let startColumn = calculateStartRow(e);
-        let endColumn = calculateCalendarColumns(e) + startColumn;
+        // Columnise taskDiv
+        let startColumn = calculateStartColumn(task);
+        let endColumn = calculateCalendarColumns(task) + startColumn;
         let row = i + 1;
         let taskStyle = "grid-column-start: " + startColumn + "; grid-column-end: " + endColumn+ "; grid-row-start: " + row + "; grid-row-end: " + row + ";";
         taskDiv.setAttribute("style", taskStyle);

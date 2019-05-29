@@ -1,21 +1,21 @@
 
 function renderDashboardTasks(taskArray) {
-    let taskContainerDiv = document.getElementById("taskContainer");
+    let taskContainerDiv = document.getElementById("dashboardTaskContainer");
 
     taskArray.forEach(task => {
         let taskDiv = document.createElement("div");
-        taskDiv.classList.add("task");
+        taskDiv.classList.add("dashboardTask");
 
         // TOP BAR GENERATION:
         let topBarDiv = document.createElement("div");
-        topBarDiv.classList.add("taskTopBar");
+        topBarDiv.classList.add("dashboardTaskTopBar");
         // Status:
         let statusDiv = document.createElement("div");
-        statusDiv.classList.add("taskStatus");
+        statusDiv.classList.add("dashboardTaskStatus");
         statusDiv.innerText = task.status;
         // Category:
         let categoryDiv = document.createElement("div");
-        categoryDiv.classList.add("taskCategory");
+        categoryDiv.classList.add("dashboardTaskCategory");
         categoryDiv.innerText = task.category.name;
         // Compose top bar:
         topBarDiv.appendChild(statusDiv);
@@ -24,14 +24,14 @@ function renderDashboardTasks(taskArray) {
 
         // LEFT BAR GENERATION:
         let leftBarDiv = document.createElement("div");
-        leftBarDiv.classList.add("taskLeftBar");
+        leftBarDiv.classList.add("dashboardTaskLeftBar");
         // Title:
         let titleDiv = document.createElement("div");
-        titleDiv.classList.add("taskTitle");
+        titleDiv.classList.add("dashboardTaskTitle");
         titleDiv.innerText = task.title;
         // Description:
         let descriptionDiv = document.createElement("div");
-        descriptionDiv.classList.add("taskDescription");
+        descriptionDiv.classList.add("dashboardTaskDescription");
         descriptionDiv.innerText = task.description;
         // Compose left bar:
         leftBarDiv.appendChild(titleDiv);
@@ -40,30 +40,31 @@ function renderDashboardTasks(taskArray) {
 
         // RIGHT BAR GENERATION:
         let rightBarDiv = document.createElement("div");
-        rightBarDiv.classList.add("taskRightBar");
+        rightBarDiv.classList.add("dashboardTaskRightBar");
         // Users:
         let usersDiv = document.createElement("div");
-        usersDiv.classList.add("taskUsers");
+        usersDiv.classList.add("dashboardTaskUserWrap");
             // Owners:
         task.owners.forEach(owner => {
             let ownerDiv = document.createElement("div");
-            ownerDiv.classList.add("taskUser");
-            ownerDiv.classList.add("taskOwner");
+            ownerDiv.classList.add("dashboardTaskUser");
+            ownerDiv.classList.add("dashboardTaskOwner");
             ownerDiv.innerText = owner.shortName;
             usersDiv.appendChild(ownerDiv);
         });
             // Members:
         task.members.forEach(member => {
             let ownerDiv = document.createElement("div");
-            ownerDiv.classList.add("taskUser");
-            ownerDiv.classList.add("taskMember");
+            ownerDiv.classList.add("dashboardTaskUser");
+            ownerDiv.classList.add("dashboardTaskMember");
             ownerDiv.innerText = member.shortName;
             usersDiv.appendChild(ownerDiv);
         });
         // Countdown:
         let countdownDiv = document.createElement("div");
-        countdownDiv.classList.add("taskCountdown");
-        countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
+        countdownDiv.classList.add("dashboardTaskCountdown");
+        // TODO: DAY / DAYS
+        countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline()) + "\nDAYS";
 
         // Compose:
         rightBarDiv.appendChild(usersDiv);

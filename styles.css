@@ -280,7 +280,7 @@ body {
 /* --------------------
     TASKS START:
 -------------------- */
-#taskContainer {
+#dashboardTaskContainer {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -290,7 +290,7 @@ body {
     justify-content: center;
 }
 
-.taskHeading {
+.dashboardTaskHeading {
     position: relative;
     top: 50px;
     font-size: 14px;
@@ -300,7 +300,7 @@ body {
     letter-spacing: 2px;
 }
 
-.task {
+.dashboardTask {
     display: flex;
     border: 1px solid #fffaff;
     width: 26.6vw;
@@ -308,58 +308,58 @@ body {
     padding: 10px;
 }
 
-.taskTopBar {
+.dashboardTaskTopBar {
 
 }
 
-.taskStatus {
+.dashboardTaskStatus {
 
 }
 
-.taskCategory {
+.dashboardTaskCategory {
 
 }
 
-.taskLeftBar {
+.dashboardTaskLeftBar {
 
 }
 
-.taskTitle {
+.dashboardTaskTitle {
 
 }
 
-.taskDescription {
+.dashboardTaskDescription {
 
 }
 
-.taskRightBar {
+.dashboardTaskRightBar {
 
 }
 
-.taskUsersWrap {
+.dashboardTaskUsersWrap {
 
 }
 
-.taskUser {
+.dashboardTaskUser {
 
 }
 
-.taskOwner {
+.dashboardTaskOwner {
 
 }
 
-.taskMember {
+.dashboardTaskMember {
 
 }
 
-.taskCountdownWrap {
+.dashboardTaskCountdown {
 
 }
 
 /* --------------------
-    PROJECTS START:
+    DASHBOARD PROJECTS START:
 -------------------- */
-#projectContainer {
+#dashboardProjectContainer {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -369,7 +369,7 @@ body {
     justify-content: center;
 }
 
-.projectHeading {
+.dashboardProjectHeading {
     position: relative;
     top: 50px;
     font-size: 14px;
@@ -379,7 +379,7 @@ body {
     letter-spacing: 2px;
 }
 
-.project {
+.dashboardProject {
     display: flex;
     border: 1px solid #fffaff;
     width: 26.6vw;
@@ -387,65 +387,65 @@ body {
     padding: 10px;
 }
 
-.projectTopBar {
+.dashboardProjectTopBar {
 
 }
 
-.projectDate {
+.dashboardProjectDate {
 
 }
-.projectStartDate {
+.dashboardProjectStartDate {
 
 }
-.projectEndDate {
-
-}
-
-.projectTitle {
+.dashboardProjectEndDate {
 
 }
 
-.projectDescription {
+.dashboardProjectTitle {
 
 }
 
-.projectUserWrap {
+.dashboardProjectDescription {
 
 }
 
-.projectOwnerWrap {
+.dashboardProjectUserWrap {
 
 }
 
-.projectOwner {
+.dashboardProjectOwnerWrap {
 
 }
 
-.projectMemberWrap {
+.dashboardProjectOwner {
 
 }
 
-.projectMember {
+.dashboardProjectMemberWrap {
 
 }
 
-.projectTaskWrap {
+.dashboardProjectMember {
 
 }
 
-.projectTask {
+.dashboardProjectTaskWrap {
 
 }
 
-.projectTaskToDo {
+.dashboardProjectTask {
 
 }
 
-.projectTaskInProgress {
+.dashboardProjectTaskToDo {
 
 }
 
-.projectTaskDone {
+.dashboardProjectTaskInProgress {
+
+}
+
+.dashboardProjectTaskDone {
 
 }
 

@@ -3,6 +3,9 @@ function renderDashboardTasks(taskArray) {
     let taskContainerDiv = document.getElementById("dashboardTaskContainer");
 
     taskArray.forEach(task => {
+        let taskDivWrap = document.createElement("div");
+        taskDivWrap.classList.add("dashboardTaskWrap");
+
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("dashboardTask");
 
@@ -70,9 +73,10 @@ function renderDashboardTasks(taskArray) {
         rightBarDiv.appendChild(usersDiv);
         rightBarDiv.appendChild(countdownDiv);
         taskDiv.appendChild(rightBarDiv);
+        taskDivWrap.appendChild(taskDiv)
 
         // Render task to container
-        taskContainerDiv.appendChild(taskDiv);
+        taskContainerDiv.appendChild(taskDivWrap);
     })
 }
 

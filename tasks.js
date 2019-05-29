@@ -9,41 +9,30 @@ function renderDashboardTasks(taskArray) {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("dashboardTask");
 
-        // TOP BAR GENERATION:
-        let topBarDiv = document.createElement("div");
-        topBarDiv.classList.add("dashboardTaskTopBar");
         // Status:
         let statusDiv = document.createElement("div");
         statusDiv.classList.add("dashboardTaskStatus");
         statusDiv.innerText = task.status;
+        taskDiv.appendChild(statusDiv);
+
         // Category:
         let categoryDiv = document.createElement("div");
         categoryDiv.classList.add("dashboardTaskCategory");
         categoryDiv.innerText = task.category.name;
-        // Compose top bar:
-        topBarDiv.appendChild(statusDiv);
-        topBarDiv.appendChild(categoryDiv);
-        taskDiv.appendChild(topBarDiv);
+        taskDiv.appendChild(categoryDiv);
 
-        // LEFT BAR GENERATION:
-        let leftBarDiv = document.createElement("div");
-        leftBarDiv.classList.add("dashboardTaskLeftBar");
         // Title:
         let titleDiv = document.createElement("div");
         titleDiv.classList.add("dashboardTaskTitle");
         titleDiv.innerText = task.title;
+        taskDiv.appendChild(titleDiv);
+
         // Description:
         let descriptionDiv = document.createElement("div");
         descriptionDiv.classList.add("dashboardTaskDescription");
         descriptionDiv.innerText = task.description;
-        // Compose left bar:
-        leftBarDiv.appendChild(titleDiv);
-        leftBarDiv.appendChild(descriptionDiv);
-        taskDiv.appendChild(leftBarDiv);
+        taskDiv.appendChild(descriptionDiv);
 
-        // RIGHT BAR GENERATION:
-        let rightBarDiv = document.createElement("div");
-        rightBarDiv.classList.add("dashboardTaskRightBar");
         // Users:
         let usersDiv = document.createElement("div");
         usersDiv.classList.add("dashboardTaskUserWrap");
@@ -63,16 +52,17 @@ function renderDashboardTasks(taskArray) {
             ownerDiv.innerText = member.shortName;
             usersDiv.appendChild(ownerDiv);
         });
+        // Compose:
+        taskDiv.appendChild(usersDiv);
+        
         // Countdown:
         let countdownDiv = document.createElement("div");
         countdownDiv.classList.add("dashboardTaskCountdown");
         // TODO: DAY / DAYS
         countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline()) + "\nDAYS";
+        taskDiv.appendChild(countdownDiv);
 
-        // Compose:
-        rightBarDiv.appendChild(usersDiv);
-        rightBarDiv.appendChild(countdownDiv);
-        taskDiv.appendChild(rightBarDiv);
+        // Wrap it up
         taskDivWrap.appendChild(taskDiv)
 
         // Render task to container

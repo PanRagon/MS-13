@@ -10,29 +10,25 @@ function renderDashboardProjects(projectArray) {
         let projectDiv = document.createElement("div");
         projectDiv.classList.add("dashboardProject");
 
-        // TOP BAR GENERATION:
-        let topBarDiv = document.createElement("div");
-        topBarDiv.classList.add("dashboardProjectTopBar");
         // Start date:
         let startDateDiv = document.createElement("div");
         startDateDiv.classList.add("dashboardProjectStartDate");
         startDateDiv.innerText = dayMonthDateFormatter(project.startDate);
+        projectDiv.appendChild(startDateDiv);
+
         // Title:
         let titleDiv = document.createElement("div");
         titleDiv.classList.add("dashboardProjectTitle");
         titleDiv.innerText = project.title;
+        projectDiv.appendChild(titleDiv);
+
         // End date:
         let endDateDiv = document.createElement("div");
         endDateDiv.classList.add("dashboardProjectEndDate");
         endDateDiv.innerText = dayMonthDateFormatter(project.endDate);
+        projectDiv.appendChild(endDateDiv);
 
-        // Compose:
-        topBarDiv.appendChild(startDateDiv);
-        topBarDiv.appendChild(titleDiv);
-        topBarDiv.appendChild(endDateDiv);
-        projectDiv.appendChild(topBarDiv);
-
-        // DESCRIPTION:
+        // Description:
         let descriptionDiv = document.createElement("div");
         descriptionDiv.classList.add("dashboardProjectDescription");
         descriptionDiv.innerText = project.description;
@@ -57,11 +53,10 @@ function renderDashboardProjects(projectArray) {
             memberDiv.innerText = member.shortName;
             usersDiv.appendChild(memberDiv);
         });
-
         // Compose:
         projectDiv.appendChild(usersDiv);
 
-        // TASK GENERATION:
+        // TASK BAR:
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("dashboardProjectTaskWrap");
         // To-Do:
@@ -69,21 +64,20 @@ function renderDashboardProjects(projectArray) {
         toDoDiv.classList.add("dashboardProjectTask");
         toDoDiv.classList.add("dashboardProjectTaskToDo");
         toDoDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "todo").length;
+        taskDiv.appendChild(toDoDiv);
         // InProgress:
         let inProgressDiv = document.createElement("div");
         inProgressDiv.classList.add("dashboardProjectTask");
         inProgressDiv.classList.add("dashboardProjectTaskInProgress");
         inProgressDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "inprogress").length;
+        taskDiv.appendChild(inProgressDiv);
         // Done:
         let doneDiv = document.createElement("div");
         doneDiv.classList.add("dashboardProjectTask");
         doneDiv.classList.add("dashboardProjectTaskDone");
         doneDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "done").length;
-
-        // Compose:
-        taskDiv.appendChild(toDoDiv);
-        taskDiv.appendChild(inProgressDiv);
         taskDiv.appendChild(doneDiv);
+        // Compose:
         projectDiv.appendChild(taskDiv);
 
         // Render project to container

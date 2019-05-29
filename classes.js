@@ -274,7 +274,7 @@ class Task {
 		testTask.setStatus("InProgress");
 		testTask.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask.setDescription("We need to test the Task class");
-		testTask.setStartDate(new Date(2019, 4, 31));
+		testTask.setStartDate(new Date(2019, 5, 5));
 		testTask.setEndDate(new Date(2019, 5, 12));
 		testTask.addOwner(User.array.find(e => e.firstName === "Erik").ID);
 		testTask.addMember(User.array.find(e => e.firstName === "Morten").ID);
@@ -315,7 +315,7 @@ class Task {
 		testTask5.setStatus("ToDo");
 		testTask5.setCategory(TaskCategory.array.find(e => e.ID === 1));
 		testTask5.setDescription("Det er en svane vi må redde");
-		testTask5.setStartDate(new Date(2019, 4, 29));
+		testTask5.setStartDate(new Date(2019, 4, 31));
 		testTask5.setEndDate(new Date(2019, 5, 1));
 		testTask5.addOwner(User.array.find(e => e.firstName === "Erik").ID);
 		testTask5.addMember(User.array.find(e => e.firstName === "Morten").ID);

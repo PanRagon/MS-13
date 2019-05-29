@@ -33,6 +33,7 @@ class User {
 		this.setFullName();
 		this.email = email;
 		this.location = location;
+		this.role = null;
 
 		// Push to global User-array
 		User.array.push(this)
@@ -77,6 +78,10 @@ class User {
 		this.location = location;
 	}
 
+	setRole(role) {
+		this.role = role;
+	}
+
 	// GETTERS:
 	getProjects() {
 		return Project.array.filter(project => project.members.find(member => member.ID === this.ID) || project.owners.find(owner => owner.ID === this.ID));
@@ -92,7 +97,7 @@ class User {
 
 	static setup() {
 		new User("Erik", "Magnus Eriksen", "Olseng", "e.olseng@gmail.com", "Oslo, Norway");
-		new User("Christian", "N.", "Iversen", "christian.nicolai.iversen@gmail.com"), "Oslo, Norway";
+		new User("Christian", "N.", "Iversen", "christian.nicolai.iversen@gmail.com", "Oslo, Norway");
 		new User("Gyda", "Lovise", "Hjemaas", "gyda.hjemaas@gmail.com", "Oslo Norway");
 		new User("Morten", "Lervik", "Sandvold", "morten.sandvold@gmail.com", "Bardufoss, Norway");
 		new User("Ludvik", "", "Blunck", "ludvik.blunck@gmail.com", "Stange, Norway");

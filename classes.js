@@ -281,7 +281,7 @@ class Task {
 
 		new Task(1, "Spise plommer");
 		let testTask2 = Task.array.find(e => e.ID === 1);
-		testTask2.setStatus("ToDo");
+		testTask2.setStatus("Done");
 		testTask2.setCategory(TaskCategory.array.find(e => e.ID === 1));
 		testTask2.setDescription("Det er et stort behov for oss å spise nok plommer");
 		testTask2.setStartDate(new Date(2019, 5, 1));

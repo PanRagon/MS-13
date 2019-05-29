@@ -63,7 +63,7 @@ function renderDashboardTasks(taskArray) {
         // Countdown:
         let countdownDiv = document.createElement("div");
         countdownDiv.classList.add("taskCountdown");
-        countdownDiv.innerText = task.daysToDeadline();
+        countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
 
         // Compose:
         rightBarDiv.appendChild(usersDiv);

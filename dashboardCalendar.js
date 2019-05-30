@@ -19,9 +19,7 @@ $
 §
 ---------------------------------------------------------------------------------------------------- */
 
-// TODO: Error in rendering if function is called a second time.
-
-// SUPPORT-FUNCTIONS:
+// UTILITY FUNCTIONS:
 // Formats a date as DD.MM for visual output
 function calendarDateFormatter(date){
     return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1);

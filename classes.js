@@ -273,6 +273,10 @@ class Task {
 		return calculateDaysBetween(currentDate, deadlineDate);
 	}
 
+	getProject() {
+		return Project.array.find(project => project.tasks.find(task => task.ID === this.ID));
+	}
+
 	delete() {
 		Task.array = Task.array.filter(e => e.ID !== this.ID);
 		Project.array.forEach(project => project.tasks = project.tasks.filter(task => task.ID !== this.ID));
@@ -285,7 +289,7 @@ class Task {
 		testTask.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask.setDescription("We need to test the Task class");
 		testTask.setStartDate(new Date(2019, 4, 26, 12));
-		testTask.setEndDate(new Date(2019, 5, 12));
+		testTask.setEndDate(new Date(2019, 5, 5));
 		testTask.setPriority(1);
 		testTask.addOwner(User.array.find(e => e.firstName === "Erik").ID);
 		testTask.addMember(User.array.find(e => e.firstName === "Morten").ID);

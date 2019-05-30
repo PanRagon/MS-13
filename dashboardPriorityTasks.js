@@ -80,9 +80,10 @@ function renderDashboardTasks(taskArray) {
 
         // Countdown:
         let countdownDiv = document.createElement("div");
+        let dayUnit = "\nDAYS"
+        if(task.daysToDeadline() === 1) {dayUnit = "\nDAY"}
         countdownDiv.classList.add("dashboardTaskCountdown");
-        // TODO: DAY / DAYS
-        countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline()) + "\nDAYS";
+        countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline()) + dayUnit;
         taskDiv.appendChild(countdownDiv);
 
         // Wrap it up

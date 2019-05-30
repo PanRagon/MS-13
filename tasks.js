@@ -10,6 +10,8 @@ function renderDashboardTasks(taskArray) {
     taskArray.forEach(task => {
         let taskDivWrap = document.createElement("div");
         taskDivWrap.classList.add("dashboardTaskWrap");
+        taskDivWrap.setAttribute("taskID", task.ID);
+        taskDivWrap.setAttribute("taskStatus", task.status.toLowerCase());
 
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("dashboardTask");
@@ -17,12 +19,22 @@ function renderDashboardTasks(taskArray) {
         // Status:
         let statusDiv = document.createElement("div");
         statusDiv.classList.add("dashboardTaskStatus");
+        if (task.status.toLowerCase() === "todo") {
+            statusDiv.classList.add("dashboardTaskStatusToDo");
+        } else if (task.status.toLowerCase() === "inprogress") {
+            statusDiv.classList.add("cdashboardTaskStatusInProgress");
+        } else if (task.status.toLowerCase() === "done") {
+            statusDiv.classList.add("dashboardTaskStatusDone");
+        } else {
+            statusDiv.classList.add("dashboardTaskStatusUnknown");
+        }
         statusDiv.innerText = task.status;
         taskDiv.appendChild(statusDiv);
 
         // Category:
         let categoryDiv = document.createElement("div");
         categoryDiv.classList.add("dashboardTaskCategory");
+        categoryDiv.classList.add("dashboardTaskCategory" + task.category.name);
         categoryDiv.innerText = task.category.name;
         taskDiv.appendChild(categoryDiv);
 

@@ -1,6 +1,7 @@
 
 function renderDashboardTasks(taskArray) {
     let taskContainerDiv = document.getElementById("dashboardTaskContainer");
+    taskContainerDiv.innerHTML = "";
 
     taskArray.forEach(task => {
         let taskDivWrap = document.createElement("div");
@@ -54,7 +55,7 @@ function renderDashboardTasks(taskArray) {
         });
         // Compose:
         taskDiv.appendChild(usersDiv);
-        
+
         // Countdown:
         let countdownDiv = document.createElement("div");
         countdownDiv.classList.add("dashboardTaskCountdown");

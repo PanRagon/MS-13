@@ -1,8 +1,14 @@
 
 function renderDashboardTasks(taskArray) {
 
-    // Remove tasks with status "done"
+    // Remove tasks with status "Done" from array
     taskArray = taskArray.filter(task => task.status.toLowerCase() !== "done");
+
+    // Sort taskArray on endDate
+    taskArray = Array.from(taskArray);
+    taskArray.sort(function (a, b) {
+        return a.endDate - b.endDate;
+    });
 
     let taskContainerDiv = document.getElementById("dashboardTaskContainer");
     taskContainerDiv.innerHTML = "";
@@ -22,7 +28,7 @@ function renderDashboardTasks(taskArray) {
         if (task.status.toLowerCase() === "todo") {
             statusDiv.classList.add("dashboardTaskStatusToDo");
         } else if (task.status.toLowerCase() === "inprogress") {
-            statusDiv.classList.add("cdashboardTaskStatusInProgress");
+            statusDiv.classList.add("dashboardTaskStatusInProgress");
         } else if (task.status.toLowerCase() === "done") {
             statusDiv.classList.add("dashboardTaskStatusDone");
         } else {

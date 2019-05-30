@@ -1,5 +1,9 @@
 
 function renderDashboardTasks(taskArray) {
+
+    // Remove tasks with status "done"
+    taskArray = taskArray.filter(task => task.status.toLowerCase() !== "done");
+
     let taskContainerDiv = document.getElementById("dashboardTaskContainer");
     taskContainerDiv.innerHTML = "";
 

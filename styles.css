@@ -161,9 +161,8 @@ body {
 
 
 .calendar {
-    min-height: 35vh;
     width: 82.8vw;
-    border: solid 0.3px #FFFAFF;
+    border: solid 1px #FFFAFF;
     margin: 0 auto;
 }
 
@@ -431,9 +430,11 @@ body {
 .dashboardTaskCountdown {
     grid-column: 2;
     grid-row: 3;
-    /*align-self: center;
-    justify-self: center;*/
     margin: auto;
+
+    height: 115px;
+    width: 115px;
+
     text-align: center;
     font-size: 20px;
     border: 16px solid var(--red-light);

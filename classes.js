@@ -284,7 +284,7 @@ class Task {
 		testTask.setStatus("InProgress");
 		testTask.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask.setDescription("We need to test the Task class");
-		testTask.setStartDate(new Date(2019, 5, 5));
+		testTask.setStartDate(new Date(2019, 4, 26, 12));
 		testTask.setEndDate(new Date(2019, 5, 12));
 		testTask.setPriority(1);
 		testTask.addOwner(User.array.find(e => e.firstName === "Erik").ID);
@@ -302,13 +302,13 @@ class Task {
 		testTask2.addOwner(User.array.find(e => e.firstName === "Christian").ID);
 		testTask2.addMember(User.array.find(e => e.firstName === "Ludvik").ID);
 
-		new Task(0, "Lage egg");
+		new Task(0, "Kjøpe egg");
 		let testTask3 = Task.array.find(e => e.ID === 2);
 		testTask3.setStatus("ToDo");
 		testTask3.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask3.setDescription("Vi må lage egg så vi kan lage en kake");
 		testTask3.setStartDate(new Date(2019, 5, 8));
-		testTask3.setEndDate(new Date(2019, 5, 18));
+		testTask3.setEndDate(new Date(2019, 5, 18, 12));
 		testTask3.setPriority(2);
 		testTask3.addOwner(User.array.find(e => e.firstName === "Morten").ID);
 		testTask3.addMember(User.array.find(e => e.firstName === "Erik").ID);

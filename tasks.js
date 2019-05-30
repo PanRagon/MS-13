@@ -86,5 +86,3 @@ function renderDashboardTasks(taskArray) {
         taskContainerDiv.appendChild(taskDivWrap);
     })
 }
-
-renderDashboardTasks(Task.array);

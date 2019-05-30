@@ -2,45 +2,26 @@
 §
 §   * CALENDAR RENDERER:
 $
-§   * Use renderCalendar(inputArray) to render calendar
+§   * Use renderDashboardCalendar(inputArray) to render calendar
 §   * Gets rendered to a div with ID "calendarContainer"
 §
 §   * The calendar consists of a grid with 24 columns for each day from today to the end of the last .endDate in the input array.
 §   * Calendar items gets placed based on start date and time and with correct duration.
 §
 §   * HTML-tags:
-§   -   Calendar container:     id="calendarContainer"   MUST BE PREMADE BEFORE rendarCalendar() IS CALLED!
+§   -   Calendar container: id="calendarContainer"   MUST BE PREMADE BEFORE rendarCalendar() IS CALLED!
 §   -   Task Items in calendar: class="calendarItem"
-§   -   Date Item in calendar:  class="calendarDate"
+§   -   Date Item in calendar: class="calendarDate"
+§   -   Current Date Item in calendar: class="calendarDateToday"
 §
 §   * DO NOT USE HTML-STYING TO STYLE THE ITEMS!
 §   -   Must be styled via .CSS
 §
 ---------------------------------------------------------------------------------------------------- */
 
-// TODO - Fix view if startDate.getDate() is > today.
-// TODO - Fix length of last day in array. Now cuts early.
-// TODO - Render information about each task inside "calendarTask"-div (renderTasksToCalendar()-method).
+// SUPPORT-FUNCTIONS:
 
-// Configuration
-let currentDate = new Date();
-let calendarDiv = document.getElementById("calendarContainer");
-
-// Clears the innerHTML of calendar
-function clearCalendar() {
-    calendarDiv.innerHTML = "";
-}
-
-// Defines amount of grid columns and rows in the calendar
-function setCalendarStyle(taskArray){
-    let totalColumns = calculateTotalCalendarColumns(taskArray);
-    let totalRows = taskArray.length + 1;
-
-    let style =  "grid-template-columns: repeat(" + totalColumns + ", 3px); grid-template-rows: repeat(" + totalRows + ", auto);";
-    calendarDiv.setAttribute("style", style);
-}
-
-// Formats a date as DD.MM
+// Formats a date as DD.MM for visual output
 function calendarDateFormatter(date){
     return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1);
 }
@@ -53,15 +34,31 @@ function appendLeadingZeroes(n){
     return n
 }
 
-// Sets the date to DD:MM:YY 00:00:00 for easier calculations.
+// Sets time to YYYY.MM.DD 00:00
 function getStartOfDate(date){
     return new Date(date.getFullYear() + "-" + Number(date.getMonth() + 1) + "-" + date.getDate());
 }
 
-// Finds the biggest .endDate-property in the array.
-function getBiggestEndDate(array){
-    let biggestEndDate = new Date();
-    array.forEach(task => {
+// Finds the first .startDate in the array.
+function getCalendarStartDate(taskArray) {
+    let currentDate = getStartOfDate(new Date());
+    let firstStartDate = getStartOfDate(new Date());
+    taskArray.forEach(task => {
+        if(firstStartDate > task.startDate){
+            firstStartDate = task.startDate;
+        }
+    });
+
+    if (firstStartDate > currentDate) {
+        firstStartDate = currentDate;
+    }
+    return firstStartDate;
+}
+
+// Finds the last .endDate in the array.
+function getCalendarEndDate(taskArray){
+    let biggestEndDate = getStartOfDate(new Date());
+    taskArray.forEach(task => {
         if(biggestEndDate < task.endDate){
             biggestEndDate = task.endDate;
         }
@@ -69,7 +66,7 @@ function getBiggestEndDate(array){
     return biggestEndDate;
 }
 
-// Calculate the amount of dates between two dates. Does not include the full second date.
+// Calculate the amount of days between two dates - does not count the last day
 function calculateDaysBetween(firstDate, secondDate){
     let msToDays = 1000 * 60 * 60 * 24;
     firstDate = getStartOfDate(firstDate);
@@ -78,52 +75,37 @@ function calculateDaysBetween(firstDate, secondDate){
     return (secondDate.getTime() - firstDate.getTime())/msToDays;
 }
 
-// Calculate how many rows a task must fill.
-function calculateCalendarColumns(task){
-    let dayColumns = calculateDaysBetween(task.startDate, task.endDate) * 24;
-    let hourColumns = task.endDate.getHours() - task.startDate.getHours();
-    return dayColumns + hourColumns;
-}
+// MAIN RENDER CALENDAR TO DASHBOARD FUNCTION
+function renderDashboardCalendar (taskArray) {
 
-// Calculate total amount of grid rows needed in the calendar.
-function calculateTotalCalendarColumns(array) {
-    // Days between today and biggest date multiplied by two for amount of rows. Add 2 rows for last day.
-    return (calculateDaysBetween(currentDate, getBiggestEndDate(array)) + 1) * 24;
-}
+    // Remove tasks with status "Done" from array
+    taskArray = taskArray.filter(task => task.status.toLowerCase() !== "done");
+    // Sort taskArray on startDate
+    taskArray = Array.from(taskArray);
+    taskArray.sort(function (a, b) {
+        return a.startDate - b.startDate;
+    });
 
-// Calculates what row a task should start on.
-function calculateStartColumn(task){
-    let dayColumns = calculateDaysBetween(currentDate, task.startDate) * 24;
-    let hourColumns = task.startDate.getHours();
-    return dayColumns + hourColumns;
-}
+    let calendarDiv = document.getElementById("calendarContainer");
+    let currentDate = getStartOfDate(new Date());
+    let calendarStartDate = getCalendarStartDate(taskArray);
+    let calendarEndDate = getCalendarEndDate(taskArray);
 
-// Renders the calendarDates to the calendar
-function renderDatesToCalendar (taskArray) {
-    let date = new Date();
-    let totalColumns = calculateTotalCalendarColumns(taskArray);
-    let totalCalendarRows = taskArray.length + 1;
+    // Clears calendar HTML-div
+    calendarDiv.innerHTML = "";
 
-    for (let i = 1; i <= totalColumns; i += 24){
-        let startColumn = i;
-        let endColumn = i + 24;
-        let rowStyle = "grid-column-start: " + startColumn + "; grid-column-end: " + endColumn + "; grid-row-start: " + totalCalendarRows + "; grid-row-end: " + totalCalendarRows + ";";
+    // Set grid rows and columns for calendar div
+    let calendarTotalColumns = (calculateDaysBetween(calendarStartDate, calendarEndDate) + 1) * 24;
+    let calendarTotalRows = taskArray.length + 1;
+    let calendarStyle = "grid-template-columns: repeat(" + calendarTotalColumns + ", 3px); grid-template-rows: repeat(" + calendarTotalRows + ", auto);";
+    calendarDiv.setAttribute("style", calendarStyle);
 
-        let calendarDateDiv = document.createElement("div");
-        calendarDateDiv.classList.add("calendarDate");
-        calendarDateDiv.setAttribute("style", rowStyle);
-        calendarDateDiv.innerText = calendarDateFormatter(date);
-        calendarDiv.appendChild(calendarDateDiv);
-
-        date.setDate(date.getDate() + 1);
-    }
-}
-
-// Renders the calendarItems to the calendar
-function renderTasksToCalendar (taskArray) {
+    // Render tasks to calendar
     taskArray.forEach((task, i) => {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("calendarItem");
+        taskDiv.setAttribute("taskID", task.ID);
+        taskDiv.setAttribute("taskStatus", task.status.toLowerCase());
 
         // Add status to taskDiv
         let statusDiv = document.createElement("div");
@@ -164,29 +146,32 @@ function renderTasksToCalendar (taskArray) {
         });
         taskDiv.appendChild(userWrapDiv);
 
-        // Columnise taskDiv
-        let startColumn = calculateStartColumn(task);
-        let endColumn = calculateCalendarColumns(task) + startColumn;
-        let row = i + 1;
-        let taskStyle = "grid-column-start: " + startColumn + "; grid-column-end: " + endColumn+ "; grid-row-start: " + row + "; grid-row-end: " + row + ";";
+        // Set task start- and end-column and row.
+        let taskStartColumn = calculateDaysBetween(calendarStartDate, task.startDate) * 24 + task.startDate.getHours() + 1;
+        let taskEndColumn = taskStartColumn + calculateDaysBetween(task.startDate, task.endDate) * 24 + task.endDate.getHours() - task.startDate.getHours();
+        let taskRow = i + 1;
+        let taskStyle = "grid-column-start: " + taskStartColumn + "; grid-column-end: " + taskEndColumn+ "; grid-row-start: " + taskRow + "; grid-row-end: " + taskRow + ";";
         taskDiv.setAttribute("style", taskStyle);
-
 
         calendarDiv.appendChild(taskDiv);
     })
-}
 
-// Renders a calendar based on input array to a div with ID "calendarContainer".
-function renderCalendar(taskArray) {
+    // Render dates to calendar
+    let dateToPrint = calendarStartDate;
+    for (let i = 1; i <= calendarTotalColumns; i += 24) {
+        let startColumn = i;
+        let endColumn = i + 24;
+        let rowStyle = "grid-column-start: " + startColumn + "; grid-column-end: " + endColumn + "; grid-row-start: " + calendarTotalRows + "; grid-row-end: " + calendarTotalRows + ";";
 
-    // Non-destructively sorts input-array by startDate
-    let localArray = Array.from(taskArray);
-    localArray.sort(function (a, b) {
-        return a.startDate - b.startDate;
-    });
+        let calendarDateDiv = document.createElement("div");
+        calendarDateDiv.classList.add("calendarDate");
+        if (getStartOfDate(dateToPrint).getTime() == getStartOfDate(currentDate).getTime()) {
+            calendarDateDiv.classList.add("calenderDateToday");
+        }
+        calendarDateDiv.setAttribute("style", rowStyle);
+        calendarDateDiv.innerText = calendarDateFormatter(dateToPrint);
+        calendarDiv.appendChild(calendarDateDiv);
 
-    clearCalendar();
-    setCalendarStyle(localArray);
-    renderTasksToCalendar(localArray);
-    renderDatesToCalendar(localArray);
+        dateToPrint.setDate(dateToPrint.getDate() + 1);
+    }
 }

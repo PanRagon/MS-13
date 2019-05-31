@@ -1,6 +1,6 @@
 // UTILITY FUNCTIONS:
 function bigTaskDateRender(date) {
-    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1) + "." + date.getFullYear() + " " + appendLeadingZeroes(date.getHours()) + ":" + appendLeadingZeroes(date.getMinutes());
+    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1) + "." + date.getFullYear();
 }
 
 function renderBigTask(task) {
@@ -124,14 +124,14 @@ function renderBigTask(task) {
     let startDateDiv = document.createElement("div");
     startDateDiv.classList.add("bigTaskStartDate");
     startDateDiv.setAttribute("taskID", task.ID);
-    startDateDiv.innerText = bigTaskDateRender(task.startDate);
+    startDateDiv.innerText = "Start: " + bigTaskDateRender(task.startDate);
     taskDiv.appendChild(startDateDiv);
 
     // End date:
     let endDateDiv = document.createElement("div");
     endDateDiv.classList.add("bigTaskEndDate");
     endDateDiv.setAttribute("taskID", task.ID);
-    endDateDiv.innerText = bigTaskDateRender(task.endDate);
+    endDateDiv.innerText = "End: " + bigTaskDateRender(task.endDate);
     taskDiv.appendChild(endDateDiv);
 
     bigTaskWrapper.appendChild(taskDiv);

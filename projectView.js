@@ -1,16 +1,3 @@
-function dayMonthDateFormatter(date) {
-    let months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-    return appendLeadingZeroes(date.getDay()) + " " + months[date.getMonth()];
-}
-
-// Adds a 0 if number is >=9
-function appendLeadingZeroes(n){
-    if(n <= 9){
-        return "0" + n;
-    }
-    return n
-}
-
 function renderProjectView(project) {
     let projectContainerDiv = document.getElementById("projectViewContainer");
 

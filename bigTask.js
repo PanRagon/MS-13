@@ -3,27 +3,6 @@ function bigTaskDateRender(date) {
     return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1) + "." + date.getFullYear() + " " + appendLeadingZeroes(date.getHours()) + ":" + appendLeadingZeroes(date.getMinutes());
 }
 
-function appendLeadingZeroes(n){
-    if(n <= 9){
-        return "0" + n;
-    }
-    return n
-}
-
-// Sets time to YYYY.MM.DD 00:00
-function getStartOfDate(date) {
-    return new Date(date.getFullYear() + "-" + Number(date.getMonth() + 1) + "-" + date.getDate());
-}
-
-function calculateDaysBetween(firstDate, secondDate) {
-    let msToDays = 1000 * 60 * 60 * 24;
-    firstDate = getStartOfDate(firstDate);
-    secondDate = getStartOfDate(secondDate);
-
-    return (secondDate.getTime() - firstDate.getTime())/msToDays;
-}
-
-
 function renderBigTask(task) {
     let bigTaskWrapper = document.getElementById("bigTaskContainer");
     let taskDiv = document.createElement("div");

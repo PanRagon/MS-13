@@ -711,12 +711,19 @@ body {
 }
 .projectViewProject {
     margin: auto;
-    width: 82.8vh;
+    width: 82.8vw;
+    max-width: 900px;
+    color: var(--main-txt-color);
+    padding: 20px;
+    border: solid 1px white;
 }
 
 .projectViewTopBar {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 20px;
+    align-items: baseline;
+    border-bottom: solid 1px #fffaff;
 }
 
 .projectViewDate {
@@ -731,13 +738,20 @@ body {
 
 }
 
-.projectViewTitle {
 
-}
+.projectViewTitle {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 26px;
+}   
 
 .projectViewDropDown {
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-top: 20px;
+    border-bottom: solid 1px #fffaff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .projectViewDescription {
@@ -750,11 +764,21 @@ body {
 }
 
 .projectViewUser {
-
+    
 }
 
 .projectViewUserIcon {
+    width: 30px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
     display: inline-block;
+    margin-right: 20px;
 }
 
 .projectViewUserName {
@@ -773,6 +797,7 @@ body {
 .projectViewTaskWrap {
     display: grid;
     grid-template-columns: 33.33% auto 33.33%;
+    grid-column-gap: 10px;
 }
 
 .projectViewToDoWrap {
@@ -787,47 +812,68 @@ body {
     grid-column: 3;
 }
 
-.projectViewStatusTitleToDo {
+.projectViewStatusTitle{
+    padding: 10px;
+}
 
+.projectViewStatusTitleToDo {
+    background-color: var(--red-light);
 }
 
 .projectViewStatusTitleInProgress {
-
+    background-color: var(--orange-light);
 }
 
 .projectViewStatusTitleDone {
-
+    background-color: var(--green-light);
 }
 
 .projectViewTask {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 30px auto 30px;
+    padding: 10px;
+    border: solid 1px #fffaff;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 
 .projectViewTaskStatus {
-    grid-column: 1;
-    grid-row: 1;
+    grid-column: 2;
+    grid-row: 3;
+    display: none;
 }
 
 .projectViewTaskCategory {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
 }
 
 .projectViewTaskTitle {
-    grid-column: 1;
+    grid-column: 1 / span 2;
     grid-row: 2;
 }
 
 .projectViewTaskUserWrap {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 3;
+    text-align: right;
+    
 }
 
 .projectViewTaskUser {
+    width: 30px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
     display: inline-block;
+    margin-left: 5px;
 }
 
 .projectViewTaskOwner {
@@ -845,7 +891,8 @@ body {
 
 .projectViewTaskEndDate {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 1;
+    text-align: right;
 }
 
 .projectViewTaskToDoWrap {

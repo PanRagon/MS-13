@@ -833,6 +833,101 @@ body {
 }
 
 
+/* --------------------
+    DASHBOARD PROJECTS START:
+-------------------- */
+
+.bigTaskContainer {
+
+}
+
+.bigTask {
+    margin: auto;
+    width: 82.8vh;
+    display: grid;
+    grid-template-columns: repeat(12, 50px);
+    grid-template-rows: 50px auto 50px auto;
+}
+
+.bigTaskStatus {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+}
+
+.bigTaskStatusToDo {
+
+}
+
+.bigTaskStatusInProgress {
+
+}
+
+.bigTaskStatusDone {
+
+}
+
+.bigTaskPriority {
+    grid-column: 5 / span 4;
+    grid-row: 1;
+}
+
+.bigTaskCategory {
+    grid-column: 9 / span 4;
+    grid-row: 1;
+}
+
+.bigTaskTitle {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskDescription {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskUserWrap {
+    grid-column: 7 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskUser {
+
+}
+
+.bigTaskOwner {
+
+}
+
+.bigTaskMember {
+
+}
+
+.bigTaskCountdown {
+    grid-column: 7 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskCountdownUnit {
+
+}
+
+.bigTaskProject {
+    grid-column: 1 / span 6;
+    grid-row: 3;
+}
+
+.bigTaskStartDate {
+    grid-column: 7 / span 6;
+    grid-row: 3;
+}
+
+.bigTaskEndDate {
+    grid-column: 7 / span 6;
+    grid-row: 3;
+
+}
+
 /* -------------------- */
 /* -------------------- */
 

@@ -110,7 +110,7 @@ function renderBigTask(task) {
 
     // Countdown:
     let countdownDiv = document.createElement("div");
-    let dayUnit = "DAYS"
+    let dayUnit = "DAYS";
     if(task.daysToDeadline() === 1) {dayUnit = "DAY"}
     countdownDiv.classList.add("bigTaskCountdown");
     countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());

@@ -82,7 +82,7 @@ function renderDashboardTasks(taskArray) {
         let countdownDiv = document.createElement("div");
         let dayUnit = "DAYS"
         if(task.daysToDeadline() === 1) {dayUnit = "DAY"}
-        countdownDiv.classList.add("dashboardTaskCountdown");
+
         countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
         let dayUnitDiv = document.createElement("div");
         dayUnitDiv.classList.add("dashboardTaskCountdownUnit");
@@ -95,5 +95,8 @@ function renderDashboardTasks(taskArray) {
 
         // Render task to container
         taskContainerDiv.appendChild(taskDivWrap);
+
+        buildChart(task, countdownDiv);
+        
     })
 }

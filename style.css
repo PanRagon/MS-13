@@ -300,22 +300,8 @@ body {
 }
 
 .calendarRowLine {
-    background: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%);
 }
-
-
-
-/* GRID */
-/* .tasks{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-content: center;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-    margin: 0 auto;
-} */
-
-/* FLEXBOX */
 
 /* --------------------
     TASKS START:
@@ -327,18 +313,12 @@ body {
     white-space: nowrap;
     color: #fffaff;
     border-radius: 10px;
-    box-shadow: 
-        
-        inset -5px 0px 5px -5px rgba(0,0,0,0.75),
-        inset 5px 0px 5px -5px rgba(0,0,0,0.75);
-        
-
-
+    box-shadow:
+        inset -5px 0 5px -5px rgba(0,0,0,0.75),
+        inset 5px 0 5px -5px rgba(0,0,0,0.75);
 }
 
 .dashboardTaskHeading {
-    /*position: relative;
-    top: 50px;*/
     display: block;
     font-size: 18px;
     text-transform: uppercase;
@@ -443,11 +423,16 @@ body {
     width: 115px;
 
     text-align: center;
-    font-size: 20px;
+    font-size: 26px;
     border: 16px solid var(--red-light);
     border-radius: 50%;
     padding: 15px;
     box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.75);
+}
+
+.dashboardTaskCountdownUnit {
+    font-size: 12px;
+    line-height: 12px;
 }
 
 /* --------------------
@@ -542,6 +527,101 @@ body {
 }
 
 .dashboardProjectTaskDone {
+
+}
+
+/* --------------------
+    DASHBOARD PROJECTS START:
+-------------------- */
+
+.bigTaskContainer {
+
+}
+
+.bigTask {
+    margin: auto;
+    width: 82.8vh;
+    display: grid;
+    grid-template-columns: repeat(12, 50px);
+    grid-template-rows: 50px auto 50px auto;
+}
+
+.bigTaskStatus {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+}
+
+.bigTaskStatusToDo {
+
+}
+
+.bigTaskStatusInProgress {
+
+}
+
+.bigTaskStatusDone {
+
+}
+
+.bigTaskPriority {
+    grid-column: 5 / span 4;
+    grid-row: 1;
+}
+
+.bigTaskCategory {
+    grid-column: 9 / span 4;
+    grid-row: 1;
+}
+
+.bigTaskTitle {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskDescription {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskUserWrap {
+    grid-column: 7 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskUser {
+
+}
+
+.bigTaskOwner {
+
+}
+
+.bigTaskMember {
+
+}
+
+.bigTaskCountdown {
+    grid-column: 7 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskCountdownUnit {
+
+}
+
+.bigTaskProject {
+    grid-column: 1 / span 6;
+    grid-row: 3;
+}
+
+.bigTaskStartDate {
+    grid-column: 7 / span 6;
+    grid-row: 3;
+}
+
+.bigTaskEndDate {
+    grid-column: 7 / span 6;
+    grid-row: 3;
 
 }
 

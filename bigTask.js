@@ -45,6 +45,14 @@ function renderBigTask(task) {
     }
     statusDiv.innerText = task.status;
     taskDiv.appendChild(statusDiv);
+
+    // Priority:
+    let priorityDiv = document.createElement("div");
+    priorityDiv.classList.add("bigTaskPriority");
+    priorityDiv.classList.add("bigTaskPriority" + task.priority);
+    priorityDiv.setAttribute("taskID", task.ID);
+    priorityDiv.innerText = task.priority;
+    taskDiv.appendChild(priorityDiv);
     
     // Category:
     let categoryDiv = document.createElement("div");
@@ -54,20 +62,6 @@ function renderBigTask(task) {
     categoryDiv.innerText = task.category.name;
     taskDiv.appendChild(categoryDiv);
 
-    // Priority:
-    let priorityDiv = document.createElement("div");
-    priorityDiv.classList.add("bigTaskPriority");
-    priorityDiv.classList.add("bigTaskPriority" + task.priority);
-    priorityDiv.setAttribute("taskID", task.ID);
-    priorityDiv.innerText = task.priority;
-    taskDiv.appendChild(priorityDiv);
-
-    // Project:
-    let projectDiv = document.createElement("div");
-    projectDiv.classList.add("bigTaskProject");
-    projectDiv.setAttribute("taskID", task.ID);
-    projectDiv.innerText = task.getProject().title;
-    taskDiv.appendChild(projectDiv);
 
     // Title:
     let titleDiv = document.createElement("div");
@@ -107,6 +101,25 @@ function renderBigTask(task) {
     });
     taskDiv.appendChild(usersDiv);
 
+    // Countdown:
+    let countdownDiv = document.createElement("div");
+    let dayUnit = "DAYS"
+    if(task.daysToDeadline() === 1) {dayUnit = "DAY"}
+    countdownDiv.classList.add("bigTaskCountdown");
+    countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
+    let dayUnitDiv = document.createElement("div");
+    dayUnitDiv.classList.add("bigTaskCountdownUnit");
+    dayUnitDiv.innerText = dayUnit;
+    countdownDiv.appendChild(dayUnitDiv);
+    taskDiv.appendChild(countdownDiv);
+
+    // Project:
+    let projectDiv = document.createElement("div");
+    projectDiv.classList.add("bigTaskProject");
+    projectDiv.setAttribute("taskID", task.ID);
+    projectDiv.innerText = task.getProject().title;
+    taskDiv.appendChild(projectDiv);
+
     // Start date:
     let startDateDiv = document.createElement("div");
     startDateDiv.classList.add("bigTaskStartDate");
@@ -121,14 +134,7 @@ function renderBigTask(task) {
     endDateDiv.innerText = bigTaskDateRender(task.endDate);
     taskDiv.appendChild(endDateDiv);
 
-    // Countdown:
-    let countdownDiv = document.createElement("div");
-    let dayUnit = "\nDAYS";
-    if(task.daysToDeadline() === 1) {dayUnit = "\nDAY"}
-    countdownDiv.classList.add("bigTaskCountdown");
-    countdownDiv.setAttribute("taskID", task.ID)
-    countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline()) + dayUnit;
-    taskDiv.appendChild(countdownDiv);
+
 
     bigTaskWrapper.appendChild(taskDiv);
 

@@ -70,13 +70,13 @@ function renderBigTask(task) {
     // Owners:
     task.owners.forEach(owner => {
         let userDiv = document.createElement("div");
-        userDiv.classList.add("projectViewUser");
+        userDiv.classList.add("bigTaskUser");
         let ownerDiv = document.createElement("div");
-        ownerDiv.classList.add("projectViewUserIcon");
-        ownerDiv.classList.add("projectViewOwner");
+        ownerDiv.classList.add("bigTaskUserIcon");
+        ownerDiv.classList.add("bigTaskOwner");
         ownerDiv.innerText = owner.shortName;
         let ownerNameDiv = document.createElement("div");
-        ownerNameDiv.classList.add("projectViewUserName");
+        ownerNameDiv.classList.add("bigTaskUserName");
         ownerNameDiv.innerText = owner.fullName;
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
@@ -85,13 +85,13 @@ function renderBigTask(task) {
     // Members:
     task.members.forEach(member => {
         let userDiv = document.createElement("div");
-        userDiv.classList.add("projectViewUser");
+        userDiv.classList.add("bigTaskUser");
         let memberDiv = document.createElement("div");
-        memberDiv.classList.add("projectViewUserIcon");
-        memberDiv.classList.add("projectViewMember");
+        memberDiv.classList.add("bigTaskUserIcon");
+        memberDiv.classList.add("bigTaskMember");
         memberDiv.innerText = member.shortName;
         let memberNameDiv = document.createElement("div");
-        memberNameDiv.classList.add("projectViewUserName");
+        memberNameDiv.classList.add("bigTaskUserName");
         memberNameDiv.innerText = member.fullName;
         userDiv.appendChild(memberDiv);
         userDiv.appendChild(memberNameDiv);

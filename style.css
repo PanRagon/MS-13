@@ -575,7 +575,8 @@ body {
 
 .bigTask {
     margin: 0 auto;
-    width: 82.8vh;
+    width: 82.8vw;
+    max-width: 700px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 50px auto 50px auto;
@@ -588,19 +589,19 @@ body {
     grid-row: 1;
     padding: 0 8px;
     line-height: 50px;
-    background-color: var(--orange-light);
+    
 }
 
 .bigTaskStatusToDo {
-
+    background-color: var(--red-light);
 }
 
 .bigTaskStatusInProgress {
-
+    background-color: var(--orange-light);
 }
 
 .bigTaskStatusDone {
-
+    background-color: var(--green-light);
 }
 
 .bigTaskPriority {
@@ -626,6 +627,11 @@ body {
 
 .bigTaskTitle {
     margin: 20px;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .bigTaskDescription {
@@ -637,17 +643,25 @@ body {
     grid-row: 2;
 }
 .bigTaskUserWrap {
-
+    margin: 20px;
 }
 
-.bigTaskUser {
-    display: inline-block;
+.bigTaskUserIcon {
+    width: 30px;
+    height: 30px;
     border: 2px solid;
     border-radius: 50%;
     padding: 3px;
-    margin-right: 5px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.bigTaskUserName{
+    display: inline-block;
 }
 
 .bigTaskOwner {
@@ -659,28 +673,33 @@ body {
 }
 
 .bigTaskCountdown {
-
+    text-align: center;
 }
 
 .bigTaskCountdownUnit {
-
 }
 
 .bigTaskProject {
     grid-column: 1 / span 6;
     grid-row: 3;
-    margin: 20px;
+    margin-left: 20px;
+    line-height: 50px;
 }
 
 .bigTaskStartDate {
-    grid-column: 7 / span 6;
+    grid-column: 7 / span 3;
     grid-row: 3;
+    text-align: left;
+    font-size: 12px;
+    line-height: 50px;
 }
 
 .bigTaskEndDate {
-    grid-column: 7 / span 6;
+    grid-column: 10 / span 3;
     grid-row: 3;
-
+    text-align: right;
+    font-size: 12px;
+    line-height: 50px;
 }
 
 /* ------------------------------

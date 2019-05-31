@@ -1,8 +1,3 @@
-function dayMonthDateFormatter(date) {
-    let months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-    return appendLeadingZeroes(date.getDay()) + " " + months[date.getMonth()];
-}
-
 function renderDashboardProjects(projectArray) {
     let projectContainerDiv = document.getElementById("dashboardProjectContainer");
 

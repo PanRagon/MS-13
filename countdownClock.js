@@ -13,18 +13,21 @@ function buildChart(task) {
 	let chartDiv = document.createElement("div");
 	chartDiv.className = "ct-chart ct-golden-section";
 	chartDiv.id = chartID;
+	chartDiv.style.width = "115px";
 	document.body.appendChild(chartDiv);
 
 	let daysLeftPercent = getPercentageLeft(task);
 	let totalDaysPercent = 100 - daysLeftPercent;
 	new Chartist.Pie("#" + chartID, {
   	series: [daysLeftPercent, totalDaysPercent],
-	}, {
-	  donut: true,
-	  donutWidth: 60,
-	  donutSolid: true,
-	  startAngle: 0,
-	  showLabel: false
+    },
+	{
+		width: "115px",
+		donut: true,
+		donutWidth: 10,
+		donutSolid: true,
+		startAngle: 0,
+		showLabel: false
 	});
 }
 

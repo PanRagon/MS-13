@@ -84,6 +84,7 @@ function renderProjectView(project) {
     toDoHeaderDiv.classList.add("projectViewStatusTitleToDo");
     toDoHeaderDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "todo").length.toString() + " To do";
     toDoDiv.appendChild(toDoHeaderDiv);
+
         // Render to do tasks
     project.tasks.forEach(task => {
         if(task.status.toLowerCase() === "todo"){
@@ -154,7 +155,8 @@ function renderProjectView(project) {
     inProgressDiv.classList.add("projectViewInProgressWrap");
         // Header / Title
     let inProgressHeaderDiv = document.createElement("div");
-    inProgressHeaderDiv.classList.add("projectViewTaskTitleInProgress");
+    inProgressHeaderDiv.classList.add("projectViewStatusTitle");
+    inProgressHeaderDiv.classList.add("projectViewStatusTitleInProgress");
     inProgressHeaderDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "inprogress").length.toString() + " In progress";
     inProgressDiv.appendChild(inProgressHeaderDiv);
         // Render in progress tasks
@@ -227,8 +229,8 @@ function renderProjectView(project) {
     doneDiv.classList.add("projectViewDoneWrap");
         // Header / Title
     let doneHeaderDiv = document.createElement("div");
-    doneHeaderDiv.classList.add("projectViewTaskTitle");
-    doneHeaderDiv.classList.add("projectViewTaskTitleDone");
+    doneHeaderDiv.classList.add("projectViewStatusTitle");
+    doneHeaderDiv.classList.add("projectViewStatusTitleDone");
     doneHeaderDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "done").length.toString() + " Done";
     doneDiv.appendChild(doneHeaderDiv);
         // Render done tasks

@@ -1,6 +1,6 @@
 // UTILITY FUNCTIONS:
 function bigTaskDateRender(date) {
-    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1) + "." + date.getFullYear() + " " + appendLeadingZeroes(date.getHours()) + ":" + appendLeadingZeroes(date.getMinutes());
+    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1) + "." + date.getFullYear();
 }
 
 function renderBigTask(task) {
@@ -69,21 +69,33 @@ function renderBigTask(task) {
     usersDiv.setAttribute("taskID", task.ID);
     // Owners:
     task.owners.forEach(owner => {
+        let userDiv = document.createElement("div");
+        userDiv.classList.add("bigTaskUser");
         let ownerDiv = document.createElement("div");
-        ownerDiv.classList.add("bigTaskUser");
+        ownerDiv.classList.add("bigTaskUserIcon");
         ownerDiv.classList.add("bigTaskOwner");
-        ownerDiv.setAttribute("taskID", task.ID);
         ownerDiv.innerText = owner.shortName;
-        usersDiv.appendChild(ownerDiv);
+        let ownerNameDiv = document.createElement("div");
+        ownerNameDiv.classList.add("bigTaskUserName");
+        ownerNameDiv.innerText = owner.fullName;
+        userDiv.appendChild(ownerDiv);
+        userDiv.appendChild(ownerNameDiv);
+        usersDiv.appendChild(userDiv);
     });
     // Members:
     task.members.forEach(member => {
+        let userDiv = document.createElement("div");
+        userDiv.classList.add("bigTaskUser");
         let memberDiv = document.createElement("div");
-        memberDiv.classList.add("bigTaskUser");
+        memberDiv.classList.add("bigTaskUserIcon");
         memberDiv.classList.add("bigTaskMember");
-        memberDiv.setAttribute("taskID", task.ID);
         memberDiv.innerText = member.shortName;
-        usersDiv.appendChild(memberDiv);
+        let memberNameDiv = document.createElement("div");
+        memberNameDiv.classList.add("bigTaskUserName");
+        memberNameDiv.innerText = member.fullName;
+        userDiv.appendChild(memberDiv);
+        userDiv.appendChild(memberNameDiv);
+        usersDiv.appendChild(userDiv);
     });
     rightBarDiv.appendChild(usersDiv);
 
@@ -112,14 +124,14 @@ function renderBigTask(task) {
     let startDateDiv = document.createElement("div");
     startDateDiv.classList.add("bigTaskStartDate");
     startDateDiv.setAttribute("taskID", task.ID);
-    startDateDiv.innerText = bigTaskDateRender(task.startDate);
+    startDateDiv.innerText = "Start: " + bigTaskDateRender(task.startDate);
     taskDiv.appendChild(startDateDiv);
 
     // End date:
     let endDateDiv = document.createElement("div");
     endDateDiv.classList.add("bigTaskEndDate");
     endDateDiv.setAttribute("taskID", task.ID);
-    endDateDiv.innerText = bigTaskDateRender(task.endDate);
+    endDateDiv.innerText = "End: " + bigTaskDateRender(task.endDate);
     taskDiv.appendChild(endDateDiv);
 
     bigTaskWrapper.appendChild(taskDiv);

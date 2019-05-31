@@ -69,21 +69,33 @@ function renderBigTask(task) {
     usersDiv.setAttribute("taskID", task.ID);
     // Owners:
     task.owners.forEach(owner => {
+        let userDiv = document.createElement("div");
+        userDiv.classList.add("projectViewUser");
         let ownerDiv = document.createElement("div");
-        ownerDiv.classList.add("bigTaskUser");
-        ownerDiv.classList.add("bigTaskOwner");
-        ownerDiv.setAttribute("taskID", task.ID);
+        ownerDiv.classList.add("projectViewUserIcon");
+        ownerDiv.classList.add("projectViewOwner");
         ownerDiv.innerText = owner.shortName;
-        usersDiv.appendChild(ownerDiv);
+        let ownerNameDiv = document.createElement("div");
+        ownerNameDiv.classList.add("projectViewUserName");
+        ownerNameDiv.innerText = owner.fullName;
+        userDiv.appendChild(ownerDiv);
+        userDiv.appendChild(ownerNameDiv);
+        usersDiv.appendChild(userDiv);
     });
     // Members:
     task.members.forEach(member => {
+        let userDiv = document.createElement("div");
+        userDiv.classList.add("projectViewUser");
         let memberDiv = document.createElement("div");
-        memberDiv.classList.add("bigTaskUser");
-        memberDiv.classList.add("bigTaskMember");
-        memberDiv.setAttribute("taskID", task.ID);
+        memberDiv.classList.add("projectViewUserIcon");
+        memberDiv.classList.add("projectViewMember");
         memberDiv.innerText = member.shortName;
-        usersDiv.appendChild(memberDiv);
+        let memberNameDiv = document.createElement("div");
+        memberNameDiv.classList.add("projectViewUserName");
+        memberNameDiv.innerText = member.fullName;
+        userDiv.appendChild(memberDiv);
+        userDiv.appendChild(memberNameDiv);
+        usersDiv.appendChild(userDiv);
     });
     rightBarDiv.appendChild(usersDiv);
 

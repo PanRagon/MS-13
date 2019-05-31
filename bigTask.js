@@ -134,8 +134,6 @@ function renderBigTask(task) {
     endDateDiv.innerText = bigTaskDateRender(task.endDate);
     taskDiv.appendChild(endDateDiv);
 
-
-
     bigTaskWrapper.appendChild(taskDiv);
 
 }

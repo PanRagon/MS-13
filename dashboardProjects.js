@@ -12,6 +12,7 @@ function renderDashboardProjects(projectArray) {
 
         // Start date:
         let startDateDiv = document.createElement("div");
+        startDateDiv.classList.add("dashboardProjectDate");
         startDateDiv.classList.add("dashboardProjectStartDate");
         startDateDiv.innerText = dayMonthDateFormatter(project.startDate);
         projectDiv.appendChild(startDateDiv);
@@ -24,6 +25,7 @@ function renderDashboardProjects(projectArray) {
 
         // End date:
         let endDateDiv = document.createElement("div");
+        endDateDiv.classList.add("dashboardProjectDate");
         endDateDiv.classList.add("dashboardProjectEndDate");
         endDateDiv.innerText = dayMonthDateFormatter(project.endDate);
         projectDiv.appendChild(endDateDiv);

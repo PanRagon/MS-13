@@ -461,48 +461,51 @@ body {
 }
 
 .dashboardProject {
-    display: flex;
+    display: grid;
+
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: 30px auto auto 50px;
+
     border: 1px solid #fffaff;
     width: 26.6vw;
     height: 35vh;
     padding: 10px;
 }
 
-.dashboardProjectTopBar {
-
-}
-
 .dashboardProjectDate {
 
 }
+
 .dashboardProjectStartDate {
+    grid-column: 1;
+    grid-row: 1;
 
 }
 .dashboardProjectEndDate {
-
+    grid-column: 6;
+    grid-row: 1;
 }
 
 .dashboardProjectTitle {
-
+    grid-column: 2 / span 4;
+    grid-row: 1;
 }
 
 .dashboardProjectDescription {
-
+    grid-column: 1 / span 6;
+    grid-row: 2;
 }
 
 .dashboardProjectUserWrap {
-
+    grid-column: 1 / span 6;
+    grid-row: 3;
 }
 
-.dashboardProjectOwnerWrap {
+.dashboardProjectUser {
 
 }
 
 .dashboardProjectOwner {
-
-}
-
-.dashboardProjectMemberWrap {
 
 }
 
@@ -511,7 +514,8 @@ body {
 }
 
 .dashboardProjectTaskWrap {
-
+    grid-column: 1 / span 6;
+    grid-row: 4;
 }
 
 .dashboardProjectTask {

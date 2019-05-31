@@ -63,20 +63,27 @@ function renderBigTask(task) {
     taskDiv.appendChild(categoryDiv);
 
 
+    // Left bar:
+    let leftBarDiv = document.createElement("div");
+    leftBarDiv.classList.add("bigTaskLeftBar");
     // Title:
     let titleDiv = document.createElement("div");
     titleDiv.classList.add("bigTaskTitle");
     titleDiv.setAttribute("taskID", task.ID);
     titleDiv.innerText = task.title;
-    taskDiv.appendChild(titleDiv);
+    leftBarDiv.appendChild(titleDiv);
 
     // Description:
     let descriptionDiv = document.createElement("div");
     descriptionDiv.classList.add("bigTaskDescription");
     descriptionDiv.setAttribute("taskID", task.ID);
     descriptionDiv.innerText = task.description;
-    taskDiv.appendChild(descriptionDiv);
+    leftBarDiv.appendChild(descriptionDiv);
+    taskDiv.appendChild(leftBarDiv);
 
+    // Right bar:
+    let rightBarDiv = document.createElement("div");
+    rightBarDiv.classList.add("bigTaskRightBar");
     // Users:
     let usersDiv = document.createElement("div");
     usersDiv.classList.add("bigTaskUserWrap");
@@ -99,7 +106,7 @@ function renderBigTask(task) {
         memberDiv.innerText = member.shortName;
         usersDiv.appendChild(memberDiv);
     });
-    taskDiv.appendChild(usersDiv);
+    rightBarDiv.appendChild(usersDiv);
 
     // Countdown:
     let countdownDiv = document.createElement("div");
@@ -111,7 +118,9 @@ function renderBigTask(task) {
     dayUnitDiv.classList.add("bigTaskCountdownUnit");
     dayUnitDiv.innerText = dayUnit;
     countdownDiv.appendChild(dayUnitDiv);
-    taskDiv.appendChild(countdownDiv);
+    rightBarDiv.appendChild(countdownDiv);
+    // Compose
+    taskDiv.appendChild(rightBarDiv);
 
     // Project:
     let projectDiv = document.createElement("div");

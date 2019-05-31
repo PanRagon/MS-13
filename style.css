@@ -607,19 +607,23 @@ body {
     grid-row: 1;
 }
 
-.bigTaskTitle {
+.bigTaskLeftBar {
     grid-column: 1 / span 6;
     grid-row: 2;
+}
+
+.bigTaskTitle {
 }
 
 .bigTaskDescription {
-    grid-column: 1 / span 6;
-    grid-row: 2;
 }
 
-.bigTaskUserWrap {
+.bigTaskRightBar {
     grid-column: 7 / span 6;
     grid-row: 2;
+}
+.bigTaskUserWrap {
+
 }
 
 .bigTaskUser {
@@ -635,8 +639,7 @@ body {
 }
 
 .bigTaskCountdown {
-    grid-column: 7 / span 6;
-    grid-row: 2;
+
 }
 
 .bigTaskCountdownUnit {

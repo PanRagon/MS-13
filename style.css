@@ -427,7 +427,9 @@ body {
     border: 16px solid var(--red-light);
     border-radius: 50%;
     padding: 15px;
-    box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.75);
+    box-shadow:
+            0 0 5px 1px rgba(0,0,0,0.75),
+            inset 0 0 5px 1px rgba(0,0,0,0.75);
 }
 
 .dashboardTaskCountdownUnit {
@@ -485,6 +487,8 @@ body {
 .dashboardProjectEndDate {
     grid-column: 6;
     grid-row: 1;
+
+    text-align: right;
 }
 
 .dashboardProjectTitle {
@@ -548,21 +552,15 @@ body {
 }
 
 .dashboardProjectTaskToDo {
-    /*margin-left: 40px;
-    margin-right: 40px;*/
     background-color: var(--red-light);
     
 }
 
 .dashboardProjectTaskInProgress {
-    /*margin-left: 40px;
-    margin-right: 40px;*/
     background-color: var(--orange-light);
 }
 
 .dashboardProjectTaskDone {
-    /*margin-left: 40px;
-    margin-right: 40px;*/
     background-color: var(--green-light);
 }
 
@@ -660,6 +658,177 @@ body {
     grid-row: 3;
 
 }
+
+/* ------------------------------
+    PROJECT VIEW START:
+------------------------------ */
+
+#projectViewContainer {
+
+}
+.projectViewProject {
+    margin: auto;
+    width: 82.8vh;
+}
+
+.projectViewTopBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectViewDate {
+
+}
+
+.projectViewStartDate {
+
+}
+
+.projectViewEndDate {
+
+}
+
+.projectViewTitle {
+
+}
+
+.projectViewDropDown {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.projectViewDescription {
+    grid-column: 1;
+}
+
+.projectViewUserWrap {
+    grid-column: 2;
+
+}
+
+.projectViewUser {
+
+}
+
+.projectViewUserIcon {
+    display: inline-block;
+}
+
+.projectViewUserName {
+    display: inline-block;
+}
+
+.projectViewOwner {
+
+}
+
+
+.projectViewMember {
+
+}
+
+.projectViewTaskWrap {
+    display: grid;
+    grid-template-columns: 33.33% auto 33.33%;
+}
+
+.projectViewToDoWrap {
+    grid-column: 1;
+}
+
+.projectViewInProgressWrap {
+    grid-column: 2;
+}
+
+.projectViewDoneWrap {
+    grid-column: 3;
+}
+
+.projectViewStatusTitleToDo {
+
+}
+
+.projectViewStatusTitleInProgress {
+
+}
+
+.projectViewStatusTitleDone {
+
+}
+
+.projectViewTask {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30px auto 30px;
+}
+
+
+.projectViewTaskStatus {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.projectViewTaskCategory {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.projectViewTaskTitle {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.projectViewTaskUserWrap {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.projectViewTaskUser {
+    display: inline-block;
+}
+
+.projectViewTaskOwner {
+
+}
+
+.projectViewTaskMember {
+
+}
+
+.projectViewTaskProject {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.projectViewTaskEndDate {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.projectViewTaskToDoWrap {
+
+}
+
+.projectViewTaskInProgressWrap {
+
+}
+
+.projectViewTaskDoneWrap {
+
+}
+
+.projectViewTaskStatusToDo {
+
+}
+
+.projectViewTaskStatusInProgress {
+
+}
+
+.projectViewTaskDone {
+
+}
+
 
 /* -------------------- */
 /* -------------------- */

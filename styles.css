@@ -295,6 +295,10 @@ body {
     color: var(--main-txt-color);
 }
 
+.calendarDateToday {
+    color: var(--extra-one);
+}
+
 .calendarRowLine {
     background: rgba(0, 0, 0, 0.1);
 }

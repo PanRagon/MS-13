@@ -34,6 +34,7 @@ class User {
 		this.email = email;
 		this.location = location;
 		this.role = null;
+		this.comments = [];
 
 		// Push to global User-array
 		User.array.push(this)
@@ -119,6 +120,7 @@ class Project {
 		this.owners = [];
 		this.members = [];
 		this.tasks =[];
+		this.comments = [];
 
 		//Push to global Project-array
 		Project.array.push(this);
@@ -212,6 +214,7 @@ class Task {
 		this.priority = null;
 		this.owners = [];
 		this.members = [];
+		this.comments = [];
 
 		// Push to target project Task-array
 		Project.array.find(project => project.ID === projectID).tasks.push(this);
@@ -368,6 +371,30 @@ class TaskCategory {
 	}
 }
 
+class Comment {
+	static array = [];
+	static idCounter = 0;
+
+	constructor(commenterID, type, typeID, comment) {
+		this.ID = Comment.idCounter++;
+		this.commenterID = commenterID;
+		this.date = new Date();
+		this.type = type.toLowerCase();
+		this.typeID = typeID;
+		this.comment = comment;
+
+		// Push to global comment array
+		Comment.array.push(this);
+		// Push to target array
+		let target = this.type === "user" ? User.array : this.type === "project" ? Project.array : this.type === "task" ? Task.array : Comment.array;
+		if (target === Comment.array){
+			console.log("Error! Log ID " + this.ID + " has invalid type.");
+		} else {
+			target.find(element => element.ID === this.typeID).comments.push(this);
+		}
+	}
+}
+
 class Log {
 
 	static array = [];
@@ -377,7 +404,7 @@ class Log {
 		this.ID = Log.idCounter++;
 		this.loggerID = loggerID;
 		this.date = new Date();
-		this.type = type.toLowerCase();;
+		this.type = type.toLowerCase();
 		this.typeID = typeID;
 		this.action = action;
 

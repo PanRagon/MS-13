@@ -177,7 +177,7 @@ function renderDashboardCalendar (taskArray) {
         let calendarDateDiv = document.createElement("div");
         calendarDateDiv.classList.add("calendarDate");
         if (getStartOfDate(dateToPrint).getTime() === getStartOfDate(currentDate).getTime()) {
-            calendarDateDiv.classList.add("calenderDateToday");
+            calendarDateDiv.classList.add("calendarDateToday");
         }
         calendarDateDiv.setAttribute("style", rowStyle);
         calendarDateDiv.innerText = calendarDateFormatter(dateToPrint);

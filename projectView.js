@@ -186,7 +186,7 @@ function renderProjectView(project) {
             taskDiv.appendChild(titleDiv);
             // Users
             let usersDiv = document.createElement("div");
-            usersDiv.classList.add("projectViewTaskWrap");
+            usersDiv.classList.add("projectViewTaskUserWrap");
             usersDiv.setAttribute("taskID", task.ID);
             // Owners:
             task.owners.forEach(owner => {
@@ -260,7 +260,7 @@ function renderProjectView(project) {
             taskDiv.appendChild(titleDiv);
             // Users
             let usersDiv = document.createElement("div");
-            usersDiv.classList.add("projectViewTaskWrap");
+            usersDiv.classList.add("projectViewTaskUserWrap");
             usersDiv.setAttribute("taskID", task.ID);
             // Owners:
             task.owners.forEach(owner => {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/ceo4svg.css">
+
+    <script src="classes.js"></script>
+    <script src="dropdown.js"></script>
+</head>
+
+<body>
+
+<nav class="mainNav">
+
+    <div class="iWrapper">
+        <i class="fas fa-tools fa-2x" id="logo"></i>
+        <span class="text">
+                    project
+                </span>
+        <span class="underText">
+                    planner
+                </span>
+        <i class="fas fa-grip-lines-vertical fa-2x" id="verticalLine"></i>
+        <span class="catchphrase">
+                    <span class="highlight">we help you </span> do the things you gotta do
+                </span>
+    </div>
+
+    <ul>
+        <li><a href="#" class="active">overview</a></li>
+        <span class="slash">/</span>
+        <li><a href="#">tasks</a></li>
+        <span class="slash">/</span>
+        <li><a href="#">projects</a></li>
+    </ul>
+
+    <!--dropdown menu-->
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">&#9776;</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#home">overview</a>
+            <a href="#about">tasks</a>
+            <a href="#contact">projects</a>
+        </div>
+    </div>
+
+</nav>
+
+<div id="projectViewContainer"></div>
+
+<script src="projectView.js"></script>
+</body>
+
+</html>

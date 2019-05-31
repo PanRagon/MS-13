@@ -427,7 +427,9 @@ body {
     border: 16px solid var(--red-light);
     border-radius: 50%;
     padding: 15px;
-    box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.75);
+    box-shadow:
+            0 0 5px 1px rgba(0,0,0,0.75),
+            inset 0 0 5px 1px rgba(0,0,0,0.75);
 }
 
 .dashboardTaskCountdownUnit {
@@ -467,9 +469,10 @@ body {
     grid-template-rows: 30px auto auto 50px;
 
     border: 1px solid #fffaff;
-    width: 26.6vw;
+    width: 400px;
     height: 35vh;
     padding: 10px;
+    color: var(--main-txt-color);
 }
 
 .dashboardProjectDate {
@@ -484,54 +487,81 @@ body {
 .dashboardProjectEndDate {
     grid-column: 6;
     grid-row: 1;
+
+    text-align: right;
 }
 
 .dashboardProjectTitle {
     grid-column: 2 / span 4;
     grid-row: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .dashboardProjectDescription {
     grid-column: 1 / span 6;
     grid-row: 2;
+    margin-top: 20px;
 }
 
 .dashboardProjectUserWrap {
     grid-column: 1 / span 6;
     grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dashboardProjectUser {
-
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 5px;
+    font-size: 13px;
+    font-weight: 800;
 }
 
 .dashboardProjectOwner {
-
+    font-size: 30px;
+    border-color: #1B998B;
+    height: 50px;
 }
 
 .dashboardProjectMember {
-
+    border-color: #2FBF71;
+    height: 30px;
 }
 
 .dashboardProjectTaskWrap {
     grid-column: 1 / span 6;
     grid-row: 4;
+    display: flex;
+    justify-content: space-around;
 }
 
 .dashboardProjectTask {
-
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 800;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
 }
 
 .dashboardProjectTaskToDo {
-
+    background-color: var(--red-light);
+    
 }
 
 .dashboardProjectTaskInProgress {
-
+    background-color: var(--orange-light);
 }
 
 .dashboardProjectTaskDone {
-
+    background-color: var(--green-light);
 }
 
 /* --------------------
@@ -628,6 +658,177 @@ body {
     grid-row: 3;
 
 }
+
+/* ------------------------------
+    PROJECT VIEW START:
+------------------------------ */
+
+#projectViewContainer {
+
+}
+.projectViewProject {
+    margin: auto;
+    width: 82.8vh;
+}
+
+.projectViewTopBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectViewDate {
+
+}
+
+.projectViewStartDate {
+
+}
+
+.projectViewEndDate {
+
+}
+
+.projectViewTitle {
+
+}
+
+.projectViewDropDown {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.projectViewDescription {
+    grid-column: 1;
+}
+
+.projectViewUserWrap {
+    grid-column: 2;
+
+}
+
+.projectViewUser {
+
+}
+
+.projectViewUserIcon {
+    display: inline-block;
+}
+
+.projectViewUserName {
+    display: inline-block;
+}
+
+.projectViewOwner {
+
+}
+
+
+.projectViewMember {
+
+}
+
+.projectViewTaskWrap {
+    display: grid;
+    grid-template-columns: 33.33% auto 33.33%;
+}
+
+.projectViewToDoWrap {
+    grid-column: 1;
+}
+
+.projectViewInProgressWrap {
+    grid-column: 2;
+}
+
+.projectViewDoneWrap {
+    grid-column: 3;
+}
+
+.projectViewStatusTitleToDo {
+
+}
+
+.projectViewStatusTitleInProgress {
+
+}
+
+.projectViewStatusTitleDone {
+
+}
+
+.projectViewTask {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30px auto 30px;
+}
+
+
+.projectViewTaskStatus {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.projectViewTaskCategory {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.projectViewTaskTitle {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.projectViewTaskUserWrap {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.projectViewTaskUser {
+    display: inline-block;
+}
+
+.projectViewTaskOwner {
+
+}
+
+.projectViewTaskMember {
+
+}
+
+.projectViewTaskProject {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.projectViewTaskEndDate {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.projectViewTaskToDoWrap {
+
+}
+
+.projectViewTaskInProgressWrap {
+
+}
+
+.projectViewTaskDoneWrap {
+
+}
+
+.projectViewTaskStatusToDo {
+
+}
+
+.projectViewTaskStatusInProgress {
+
+}
+
+.projectViewTaskDone {
+
+}
+
 
 /* -------------------- */
 /* -------------------- */

@@ -205,6 +205,7 @@ body {
     align-items: center;
     padding: 0.4rem;
     color: var(--main-txt-color);
+    background: var(--main-bg-color);
 }
 
 /* Status Wrapper */
@@ -294,7 +295,9 @@ body {
     color: var(--main-txt-color);
 }
 
-
+.calendarRowLine {
+    background: rgba(0, 0, 0, 0.1);
+}
 
 
 

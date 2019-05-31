@@ -99,6 +99,18 @@ function renderDashboardCalendar (taskArray) {
     let calendarStyle = "grid-template-columns: repeat(" + calendarTotalColumns + ", 3px); grid-template-rows: repeat(" + calendarTotalRows + ", auto);";
     calendarDiv.setAttribute("style", calendarStyle);
 
+    // Render lines to calendar
+    for (let i = 1; i <= calendarTotalColumns; i += 24) {
+        let column = i;
+        let endRow = calendarTotalRows + 1;
+        let rowStyle = "grid-column-start: " + column + "; grid-column-end: " + column + "; grid-row-start: " + 1 + "; grid-row-end: " + endRow + ";";
+
+        let rowLineDiv = document.createElement("div");
+        rowLineDiv.classList.add("calendarRowLine");
+        rowLineDiv.setAttribute("style", rowStyle);
+        calendarDiv.appendChild(rowLineDiv);
+    }
+
     // Render tasks to calendar
     taskArray.forEach((task, i) => {
         let taskDiv = document.createElement("div");
@@ -173,4 +185,8 @@ function renderDashboardCalendar (taskArray) {
 
         dateToPrint.setDate(dateToPrint.getDate() + 1);
     }
+
+
+
+
 }

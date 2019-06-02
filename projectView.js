@@ -78,6 +78,7 @@ function renderProjectView(project) {
     // To-Do:
     let toDoDiv = document.createElement("div");
     toDoDiv.classList.add("projectViewToDoWrap");
+    toDoDiv.classList.add("projectViewStatusWrap");
         // Header / Title
     let toDoHeaderDiv = document.createElement("div");
     toDoHeaderDiv.classList.add("projectViewStatusTitle");
@@ -153,6 +154,7 @@ function renderProjectView(project) {
     // In progress:
     let inProgressDiv = document.createElement("div");
     inProgressDiv.classList.add("projectViewInProgressWrap");
+    inProgressDiv.classList.add("projectViewStatusWrap");
         // Header / Title
     let inProgressHeaderDiv = document.createElement("div");
     inProgressHeaderDiv.classList.add("projectViewStatusTitle");
@@ -227,6 +229,7 @@ function renderProjectView(project) {
     // Done
     let doneDiv = document.createElement("div");
     doneDiv.classList.add("projectViewDoneWrap");
+    doneDiv.classList.add("projectViewStatusWrap");
         // Header / Title
     let doneHeaderDiv = document.createElement("div");
     doneHeaderDiv.classList.add("projectViewStatusTitle");

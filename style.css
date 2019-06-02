@@ -589,7 +589,7 @@ body {
     grid-row: 1;
     padding: 0 8px;
     line-height: 50px;
-    
+
 }
 
 .bigTaskStatusToDo {
@@ -600,7 +600,7 @@ body {
     background-color: var(--orange-light);
 }
 
-.bigTaskStatusDone {
+.bigTaskStatusDone {
     background-color: var(--green-light);
 }
 

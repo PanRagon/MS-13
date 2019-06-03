@@ -221,7 +221,7 @@ body {
 }
 
 .calendarItemStatusToDo {
-    
+
 }
 
 .calendarItemStatusToDo:before {
@@ -242,7 +242,7 @@ body {
     display: inline-block;
     background-color: var(--orange-light);
     border-radius: 50%;
-} 
+}
 
 .calendarItemStatusDone {
     color: var(--green-light);
@@ -286,7 +286,7 @@ body {
 }
 
 /* Individual members */
-.calendarItemMember { 
+.calendarItemMember {
     border-color: #72BDA3;
 }
 
@@ -375,7 +375,7 @@ body {
     grid-row: 2;
     margin: auto auto 5px 0;
     text-align: left;
-    padding-left: 8px; 
+    padding-left: 8px;
     font-weight: 600;
     font-size: 16px;
     text-transform: uppercase;
@@ -564,7 +564,7 @@ body {
 
 .dashboardProjectTaskToDo {
     background-color: var(--red-light);
-    
+
 }
 
 .dashboardProjectTaskInProgress {
@@ -620,6 +620,7 @@ body {
     text-align: center;
     background-color: #72BDA3;
     line-height: 50px;
+
 }
 
 .bigTaskCategory {
@@ -753,7 +754,7 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 26px;
-}   
+}
 
 .projectViewDropDown {
     display: grid;
@@ -774,7 +775,7 @@ body {
 }
 
 .projectViewUser {
-    
+
 }
 
 .projectViewUserIcon {
@@ -847,6 +848,7 @@ body {
     border: solid 1px var(--main-txt-color);
     border-radius: 10px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 
@@ -854,16 +856,19 @@ body {
     grid-column: 2;
     grid-row: 3;
     display: none;
+    pointer-events: none;
 }
 
 .projectViewTaskCategory {
     grid-column: 1;
     grid-row: 1;
+    pointer-events: none;
 }
 
 .projectViewTaskTitle {
     grid-column: 1 / span 2;
     grid-row: 2;
+    pointer-events: none;
 }
 
 .invisible {
@@ -873,7 +878,9 @@ body {
     grid-column: 2;
     grid-row: 3;
     text-align: right;
-    
+    pointer-events: none;
+    user-select: none
+
 }
 
 .projectViewTaskUser {
@@ -888,20 +895,28 @@ body {
     margin-bottom: 10px;
     display: inline-block;
     margin-left: 5px;
+    pointer-events: none;
+    user-select: none
 }
 
 
 .projectViewTaskOwner {
     border-color: #4D7EA8;
+    pointer-events: none;
+    user-select: none
 }
 
 .projectViewTaskMember {
     border-color: #72BDA3;
+    pointer-events: none;
+    user-select: none
 }
 
 .projectViewTaskProject {
     grid-column: 1;
     grid-row: 3;
+    pointer-events: none;
+    user-select: none
 }
 
 .projectViewTaskEndDate {
@@ -941,6 +956,17 @@ body {
 .invisible {
   display: none;
 }
+.held {
+  border: solid 1px white;
+  background-color: #424248;
+  min-height: 100px;
+  min-width: 200px;
+}
+
+/*.unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+} */
 
 /* -------------------- */
 /* -------------------- */
@@ -982,7 +1008,7 @@ body {
     .catchphrase, #verticalLine{
         display: none;
     }
-    
+
 }
 
 /* CSS for eksempelknapp */
@@ -1006,7 +1032,7 @@ body {
 
 .btn:hover {
     background-color: #6edd79;
-    
+
 }
 
 

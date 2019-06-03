@@ -155,7 +155,7 @@ function renderDashboardCalendar (taskArray) {
     });
 
     // Render dates to calendar
-    let dateToPrint = calendarStartDate;
+    let dateToPrint = new Date(calendarStartDate);
     for (let i = 1; i <= calendarTotalColumns; i += 24) {
         let startColumn = i;
         let endColumn = i + 24;
@@ -172,8 +172,4 @@ function renderDashboardCalendar (taskArray) {
 
         dateToPrint.setDate(dateToPrint.getDate() + 1);
     }
-
-
-
-
 }

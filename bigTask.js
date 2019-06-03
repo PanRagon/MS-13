@@ -1,6 +1,6 @@
 // UTILITY FUNCTIONS:
-function bigTaskDateRender(date) {
-    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1) + "." + date.getFullYear();
+function bigTaskDateRender(date) {
+    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() + 1) + "." + date.getFullYear();
 }
 
 function renderBigTask(task) {
@@ -20,7 +20,7 @@ function renderBigTask(task) {
     statusDiv.addEventListener("change", e => {
         task.status = statusDiv.value;
         // Update status-class on element
-        if (task.status.toLowerCase() ==="todo") {
+        if (task.status.toLowerCase() === "todo") {
             statusDiv.classList.remove('bigTaskStatusInProgress');
             statusDiv.classList.remove('bigTaskStatusDone');
             statusDiv.classList.add("bigTaskStatusToDo");
@@ -32,6 +32,11 @@ function renderBigTask(task) {
             statusDiv.classList.remove("bigTaskStatusToDo");
             statusDiv.classList.remove('bigTaskStatusInProgress');
             statusDiv.classList.add("bigTaskStatusDone");
+            confetti.start();
+            setTimeout(function () {
+                confetti.stop()
+            }, 2000);
+
         } else {
             statusDiv.classList.remove("bigTaskStatusToDo");
             statusDiv.classList.remove('bigTaskStatusInProgress');
@@ -50,7 +55,7 @@ function renderBigTask(task) {
     doneOption.setAttribute("value", "done");
     doneOption.innerText = "Done";
 
-    if (task.status.toLowerCase() ==="todo") {
+    if (task.status.toLowerCase() === "todo") {
         toDoOption.setAttribute("selected", "");
         statusDiv.classList.add("bigTaskStatusToDo");
     } else if (task.status.toLowerCase() === "inprogress") {
@@ -76,7 +81,7 @@ function renderBigTask(task) {
     priorityDiv.setAttribute("taskID", task.ID);
     priorityDiv.innerText = task.priority;
     taskDiv.appendChild(priorityDiv);
-    
+
     // Category:
     let categoryDiv = document.createElement("div");
     categoryDiv.classList.add("bigTaskCategory");
@@ -154,7 +159,9 @@ function renderBigTask(task) {
     // Countdown:
     let countdownDiv = document.createElement("div");
     let dayUnit = "DAYS";
-    if(task.daysToDeadline() === 1) {dayUnit = "DAY"}
+    if (task.daysToDeadline() === 1) {
+        dayUnit = "DAY"
+    }
     countdownDiv.classList.add("bigTaskCountdown");
     countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
     let dayUnitDiv = document.createElement("div");

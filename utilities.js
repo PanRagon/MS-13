@@ -36,6 +36,7 @@ function dayMonthDateFormatter(date) {
 //Get the percentage of days remaining
 function getPercentageLeft(task) {
     let totalDays = calculateDaysBetween(task.startDate, task.endDate);
+    console.log(totalDays);
     let daysLeft = task.daysToDeadline();
     let daysLeftPercent = (daysLeft / totalDays) * 100;
     if(daysLeftPercent <= 0) {

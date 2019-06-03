@@ -11,6 +11,7 @@ function renderBigTask(task) {
     let taskDiv = document.createElement("div");
     taskDiv.classList.add("bigTask");
     taskDiv.setAttribute("taskID", task.ID);
+    bigTaskWrapper.appendChild(taskDiv);
 
     // Status:
     let statusDiv = document.createElement("select");
@@ -164,6 +165,8 @@ function renderBigTask(task) {
     rightBarDiv.appendChild(countdownDiv);
     // Compose
     taskDiv.appendChild(rightBarDiv);
+    buildChart(task, countdownDiv);
+
 
     // Project:
     let projectDiv = document.createElement("div");
@@ -186,7 +189,10 @@ function renderBigTask(task) {
     endDateDiv.innerText = "End: " + bigTaskDateRender(task.endDate);
     taskDiv.appendChild(endDateDiv);
 
-    bigTaskWrapper.appendChild(taskDiv);
+   // bigTaskWrapper.appendChild(taskDiv);
+    //let countdownDiv = document.createElement("div");
+   // bigTaskWrapper.appendChild(countdownDiv);
+    //buildChart(task, countdownDiv);
 
 }
 

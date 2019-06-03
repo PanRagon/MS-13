@@ -25,7 +25,7 @@ class DragDrop {
         this.className += " held";
 
 
-        setTimeout(()=>this.className="invisible", 0);
+        setTimeout(()=>this.className="invisible", 1);
     }
 
     static dragend() {

@@ -92,6 +92,7 @@ function renderProjectView(project) {
             let taskDiv = document.createElement("div");
             taskDiv.classList.add("projectViewTask");
             taskDiv.classList.add("projectViewTaskToDo");
+            taskDiv.setAttribute("draggable", true);
             // Status
             let statusDiv = document.createElement("div");
             statusDiv.classList.add("projectViewTaskStatus");
@@ -167,22 +168,27 @@ function renderProjectView(project) {
             let taskDiv = document.createElement("div");
             taskDiv.classList.add("projectViewTask");
             taskDiv.classList.add("projectViewTaskInProgress");
+
+            taskDiv.setAttribute("draggable", true);
             // Status
             let statusDiv = document.createElement("div");
             statusDiv.classList.add("projectViewTaskStatus");
             statusDiv.classList.add("projectViewTaskStatusInProgress");
+            statusDiv.classList.add("unselectable");
             statusDiv.innerText = task.status;
             taskDiv.appendChild(statusDiv);
             // Category
             let categoryDiv = document.createElement("div");
             categoryDiv.classList.add("projectViewTaskCategory");
             categoryDiv.classList.add("projectViewTaskCategory" + task.category.name);
+            categoryDiv.classList.add("unselectable");
             categoryDiv.setAttribute("taskID", task.ID);
             categoryDiv.innerText = task.category.name;
             taskDiv.appendChild(categoryDiv);
             // Title
             let titleDiv = document.createElement("div");
             titleDiv.classList.add("projectViewTaskTitle");
+            titleDiv.classList.add("unselectable");
             titleDiv.setAttribute("taskID", task.ID);
             titleDiv.innerText = task.title;
             taskDiv.appendChild(titleDiv);
@@ -218,6 +224,7 @@ function renderProjectView(project) {
             // End date
             let endDateDiv = document.createElement("div");
             endDateDiv.classList.add("projectViewTaskEndDate");
+            endDateDiv.classList.add("unselectable");
             endDateDiv.setAttribute("taskID", task.ID);
             endDateDiv.innerText = dayMonthDateFormatter(task.endDate);
             taskDiv.appendChild(endDateDiv);
@@ -242,6 +249,7 @@ function renderProjectView(project) {
             let taskDiv = document.createElement("div");
             taskDiv.classList.add("projectViewTask");
             taskDiv.classList.add("projectViewTaskDone");
+            taskDiv.setAttribute("draggable", true);
             // Status
             let statusDiv = document.createElement("div");
             statusDiv.classList.add("projectViewTaskStatus");

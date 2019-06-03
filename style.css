@@ -593,17 +593,7 @@ body {
     grid-row: 1;
     padding: 0 8px;
     line-height: 50px;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-
-=======
-
-
->>>>>>> Stashed changes
-=======
     margin-right: 10px;
->>>>>>> Stashed changes
 }
 
 .bigTaskStatusToDo {
@@ -624,11 +614,7 @@ body {
     text-align: center;
     background-color: #72BDA3;
     line-height: 50px;
-<<<<<<< Updated upstream
-
-=======
     margin-right: 10px;
->>>>>>> Stashed changes
 }
 
 .bigTaskCategory {
@@ -856,6 +842,7 @@ body {
     border: solid 1px var(--main-txt-color);
     border-radius: 10px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 
@@ -863,16 +850,19 @@ body {
     grid-column: 2;
     grid-row: 3;
     display: none;
+    pointer-events: none;
 }
 
 .projectViewTaskCategory {
     grid-column: 1;
     grid-row: 1;
+    pointer-events: none;
 }
 
 .projectViewTaskTitle {
     grid-column: 1 / span 2;
     grid-row: 2;
+    pointer-events: none;
 }
 
 .invisible {
@@ -882,6 +872,8 @@ body {
     grid-column: 2;
     grid-row: 3;
     text-align: right;
+    pointer-events: none;
+    user-select: none
     
 }
 
@@ -897,20 +889,28 @@ body {
     margin-bottom: 10px;
     display: inline-block;
     margin-left: 5px;
+    pointer-events: none;
+    user-select: none
 }
 
 
 .projectViewTaskOwner {
     border-color: #4D7EA8;
+    pointer-events: none;
+    user-select: none
 }
 
 .projectViewTaskMember {
     border-color: #72BDA3;
+    pointer-events: none;
+    user-select: none
 }
 
 .projectViewTaskProject {
     grid-column: 1;
     grid-row: 3;
+    pointer-events: none;
+    user-select: none
 }
 
 .projectViewTaskEndDate {
@@ -950,6 +950,17 @@ body {
 .invisible {
   display: none;
 }
+.held {
+  border: solid 1px white;
+  background-color: #424248;
+  min-height: 100px;
+  min-width: 200px;
+}
+
+/*.unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;  
+} */
 
 /* -------------------- */
 /* -------------------- */

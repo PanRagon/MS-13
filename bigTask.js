@@ -17,8 +17,29 @@ function renderBigTask(task) {
     let statusDiv = document.createElement("select");
     statusDiv.classList.add("bigTaskStatus");
     statusDiv.setAttribute("taskID", task.ID);
-    statusDiv.innerText = task.status;
-    statusDiv.addEventListener("change", e => {
+    // Add status-options to select-element
+    let toDoOption = document.createElement("option");
+    toDoOption.setAttribute("value", "toDo");
+    toDoOption.innerText = "To do";
+    let inProgressOption = document.createElement("option");
+    inProgressOption.setAttribute("value", "inProgress");
+    inProgressOption.innerText = "In progress";
+    let doneOption = document.createElement("option");
+    doneOption.setAttribute("value", "done");
+    doneOption.innerText = "Done";
+    if (task.status.toLowerCase() === "todo") {
+        toDoOption.setAttribute("selected", "");
+        statusDiv.classList.add("bigTaskStatusToDo");
+    } else if (task.status.toLowerCase() === "inprogress") {
+        inProgressOption.setAttribute("selected", "");
+        statusDiv.classList.add("bigTaskStatusInProgress");
+    } else if (task.status.toLowerCase() === "done") {
+        doneOption.setAttribute("selected", "");
+        statusDiv.classList.add("bigTaskStatusDone");
+    } else {
+        statusDiv.classList.add("bigTaskStatusUnknown");
+    }
+    statusDiv.addEventListener("change", () => {
         task.status = statusDiv.value;
         // Update status-class on element
         if (task.status.toLowerCase() === "todo") {
@@ -45,29 +66,7 @@ function renderBigTask(task) {
             statusDiv.classList.add("bigTaskStatusUnknown");
         }
     });
-    // Add status-options to select-element
-    let toDoOption = document.createElement("option");
-    toDoOption.setAttribute("value", "toDo");
-    toDoOption.innerText = "To do";
-    let inProgressOption = document.createElement("option");
-    inProgressOption.setAttribute("value", "inProgress");
-    inProgressOption.innerText = "In progress";
-    let doneOption = document.createElement("option");
-    doneOption.setAttribute("value", "done");
-    doneOption.innerText = "Done";
 
-    if (task.status.toLowerCase() === "todo") {
-        toDoOption.setAttribute("selected", "");
-        statusDiv.classList.add("bigTaskStatusToDo");
-    } else if (task.status.toLowerCase() === "inprogress") {
-        inProgressOption.setAttribute("selected", "");
-        statusDiv.classList.add("bigTaskStatusInProgress");
-    } else if (task.status.toLowerCase() === "done") {
-        doneOption.setAttribute("selected", "");
-        statusDiv.classList.add("bigTaskStatusDone");
-    } else {
-        statusDiv.classList.add("bigTaskStatusUnknown");
-    }
     // Compose
     statusDiv.appendChild(toDoOption);
     statusDiv.appendChild(inProgressOption);
@@ -76,20 +75,63 @@ function renderBigTask(task) {
     taskDiv.appendChild(statusDiv);
 
     // Priority:
-    let priorityDiv = document.createElement("div");
+    let priorityDiv = document.createElement("select");
     priorityDiv.classList.add("bigTaskPriority");
     priorityDiv.classList.add("bigTaskPriority" + task.priority);
     priorityDiv.setAttribute("taskID", task.ID);
-    priorityDiv.innerText = task.priority;
+        // Create priority options
+    let lowOption = document.createElement("option");
+    lowOption.setAttribute("value", "1");
+    lowOption.innerText = "Low priority";
+    priorityDiv.appendChild(lowOption);
+    let mediumOption = document.createElement("option");
+    mediumOption.setAttribute("value", "2");
+    mediumOption.innerText = "Medium priority";
+    priorityDiv.appendChild(mediumOption);
+    let highOption = document.createElement("option");
+    highOption.setAttribute("value", "3");
+    highOption.innerText = "High priority";
+    priorityDiv.appendChild(highOption);
+        // Update priority based on select
+    priorityDiv.addEventListener("change", () => {
+        if (priorityDiv.value === "1") {
+            task.priority = 1;
+            priorityDiv.classList.remove("bigTaskPriority2", "bigTaskPriority3");
+            priorityDiv.classList.add("bigTaskPriority1");
+        } else if (priorityDiv.value === "2") {
+            task.priority = 2;
+            priorityDiv.classList.remove("bigTaskPriority1", "bigTaskPriority3");
+            priorityDiv.classList.add("bigTaskPriority2");
+        } else if (priorityDiv.value === "3") {
+            task.priority = 3;
+            priorityDiv.classList.remove("bigTaskPriority1", "bigTaskPriority2");
+            priorityDiv.classList.add("bigTaskPriority3");
+        }
+    });
+
+
     taskDiv.appendChild(priorityDiv);
 
     // Category:
-    let categoryDiv = document.createElement("div");
-    categoryDiv.classList.add("bigTaskCategory");
-    categoryDiv.classList.add("bigTaskCategory" + task.category.name);
-    categoryDiv.setAttribute("taskID", task.ID);
-    categoryDiv.innerText = task.category.name;
-    taskDiv.appendChild(categoryDiv);
+    let categorySelect = document.createElement("select");
+    categorySelect.classList.add("bigTaskCategory");
+    categorySelect.classList.add("bigTaskCategory" + task.category.name);
+    categorySelect.setAttribute("taskID", task.ID);
+    // categoryDiv.innerText = task.category.name;
+
+    TaskCategory.array.forEach(category => {
+        let categoryOption = document.createElement("option");
+        categoryOption.setAttribute("value", category.ID);
+        categoryOption.innerText = category.name;
+        categorySelect.appendChild(categoryOption);
+    });
+    categorySelect.addEventListener("change", () => {
+        task.category = TaskCategory.array.find(category => category.ID === Number(categorySelect.value));
+        categorySelect.className = "";
+        categorySelect.classList.add("bigTaskCategory", "bigTaskCategory" + task.category.name);
+    });
+
+    taskDiv.appendChild(categorySelect);
 
 
     // Left bar:
@@ -101,7 +143,7 @@ function renderBigTask(task) {
     titleDiv.setAttribute("taskID", task.ID);
     titleDiv.setAttribute("type", "text");
     titleDiv.setAttribute("value", task.title);
-    titleDiv.addEventListener("keyup", e => {
+    titleDiv.addEventListener("keyup", () => {
         task.title = titleDiv.value;
     });
     leftBarDiv.appendChild(titleDiv);
@@ -112,7 +154,7 @@ function renderBigTask(task) {
     descriptionDiv.setAttribute("taskID", task.ID);
     descriptionDiv.setAttribute("type", "text");
     descriptionDiv.setAttribute("value", task.description);
-    descriptionDiv.addEventListener("keyup", e => {
+    descriptionDiv.addEventListener("keyup", () => {
         task.description = descriptionDiv.value;
     });
     leftBarDiv.appendChild(descriptionDiv);

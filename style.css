@@ -27,6 +27,12 @@ body {
     /*font-family: supria-sans-condensed, sans-serif;*/
 }
 
+select {
+    border-radius: 0;
+    border: none;
+    -webkit-appearance: none;
+}
+
 .mainNav {
     text-transform: uppercase;
     background-color: var(--secondary-bg-color);
@@ -642,7 +648,6 @@ body {
     text-align: left;
     font-weight: 600;
     font-size: 18px;
-    text-transform: uppercase;
 }
 
 .bigTaskDescription {

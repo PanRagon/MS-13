@@ -25,19 +25,6 @@ function calendarDateFormatter(date){
     return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1);
 }
 
-// Adds a 0 if number is >=9
-function appendLeadingZeroes(n){
-    if(n <= 9){
-        return "0" + n;
-    }
-    return n
-}
-
-// Sets time to YYYY.MM.DD 00:00
-function getStartOfDate(date) {
-    return new Date(date.getFullYear() + "-" + Number(date.getMonth() + 1) + "-" + date.getDate());
-}
-
 // Finds the first .startDate in the array.
 function getCalendarStartDate(taskArray) {
     let currentDate = getStartOfDate(new Date());
@@ -99,6 +86,18 @@ function renderDashboardCalendar (taskArray) {
     let calendarStyle = "grid-template-columns: repeat(" + calendarTotalColumns + ", 3px); grid-template-rows: repeat(" + calendarTotalRows + ", auto);";
     calendarDiv.setAttribute("style", calendarStyle);
 
+    // Render lines to calendar
+    for (let i = 1; i <= calendarTotalColumns; i += 24) {
+        let column = i;
+        let endRow = calendarTotalRows + 1;
+        let rowStyle = "grid-column-start: " + column + "; grid-column-end: " + column + "; grid-row-start: " + 1 + "; grid-row-end: " + endRow + ";";
+
+        let rowLineDiv = document.createElement("div");
+        rowLineDiv.classList.add("calendarRowLine");
+        rowLineDiv.setAttribute("style", rowStyle);
+        calendarDiv.appendChild(rowLineDiv);
+    }
+
     // Render tasks to calendar
     taskArray.forEach((task, i) => {
         let taskDiv = document.createElement("div");
@@ -156,7 +155,7 @@ function renderDashboardCalendar (taskArray) {
     });
 
     // Render dates to calendar
-    let dateToPrint = calendarStartDate;
+    let dateToPrint = new Date(calendarStartDate);
     for (let i = 1; i <= calendarTotalColumns; i += 24) {
         let startColumn = i;
         let endColumn = i + 24;
@@ -165,7 +164,7 @@ function renderDashboardCalendar (taskArray) {
         let calendarDateDiv = document.createElement("div");
         calendarDateDiv.classList.add("calendarDate");
         if (getStartOfDate(dateToPrint).getTime() === getStartOfDate(currentDate).getTime()) {
-            calendarDateDiv.classList.add("calenderDateToday");
+            calendarDateDiv.classList.add("calendarDateToday");
         }
         calendarDateDiv.setAttribute("style", rowStyle);
         calendarDateDiv.innerText = calendarDateFormatter(dateToPrint);

@@ -20,25 +20,6 @@ $
 ---------------------------------------------------------------------------------------------------- */
 
 // SUPPORT-FUNCTIONS:
-
-// Formats a date as DD.MM for visual output
-function calendarDateFormatter(date){
-    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1);
-}
-
-// Adds a 0 if number is >=9
-function appendLeadingZeroes(n){
-    if(n <= 9){
-        return "0" + n;
-    }
-    return n
-}
-
-// Sets time to YYYY.MM.DD 00:00
-function getStartOfDate(date){
-    return new Date(date.getFullYear() + "-" + Number(date.getMonth() + 1) + "-" + date.getDate());
-}
-
 // Finds the first .startDate in the array.
 function getCalendarStartDate(taskArray) {
     let currentDate = getStartOfDate(new Date());
@@ -64,15 +45,6 @@ function getCalendarEndDate(taskArray){
         }
     });
     return biggestEndDate;
-}
-
-// Calculate the amount of days between two dates - does not count the last day
-function calculateDaysBetween(firstDate, secondDate){
-    let msToDays = 1000 * 60 * 60 * 24;
-    firstDate = getStartOfDate(firstDate);
-    secondDate = getStartOfDate(secondDate);
-
-    return (secondDate.getTime() - firstDate.getTime())/msToDays;
 }
 
 // MAIN RENDER CALENDAR TO DASHBOARD FUNCTION

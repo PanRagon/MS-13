@@ -7,21 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/ceo4svg.css">
 
+    <script src="utilities.js"></script>
     <script src="classes.js"></script>
     <script src="dropdown.js"></script>
 </head>
 
 <body>
-
+    <section class="stickyNav">
     <nav class="mainNav">
         
             <div class="iWrapper">
-                <i class="fas fa-tools fa-2x" id="logo"></i>
+                <a href="index.html"><i class="fas fa-sitemap fa-2x" id="logo"></i></a>
                 <span class="text">
                     project
                 </span>
@@ -37,9 +38,9 @@
         <ul>
             <li><a href="#" class="active">overview</a></li>
             <span class="slash">/</span>
-            <li><a href="#">tasks</a></li>
+            <li><a href="task.html">tasks</a></li>
             <span class="slash">/</span>
-            <li><a href="#">projects</a></li>
+            <li><a href="projectView.html">projects</a></li>
         </ul>
 
         <!--dropdown menu-->
@@ -53,6 +54,7 @@
             </div>
 
     </nav>
+</section>
 
     <h3 class="calendarHeading">
         <span class="highlight">project</span> calendar
@@ -95,7 +97,11 @@
                 </span>
             </button>
         </div>
--->
+--> 
+    <!--Chartist -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.js"></script>
+
     <script src="dashboardCalendar.js"></script>
     <script src="dashboardPriorityTasks.js"></script>
     <script src="dashboardProjects.js"></script>

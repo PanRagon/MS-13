@@ -1,66 +1,221 @@
 // UTILITY FUNCTIONS:
-function bigTaskDateRender(date) {
-    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() +1) + "." + date.getFullYear() + " " + appendLeadingZeroes(date.getHours()) + ":" + appendLeadingZeroes(date.getMinutes());
+function bigTaskDateRender(date) {
+    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() + 1) + "." + date.getFullYear();
 }
-
-function appendLeadingZeroes(n){
-    if(n <= 9){
-        return "0" + n;
-    }
-    return n
-}
-
-// Sets time to YYYY.MM.DD 00:00
-function getStartOfDate(date) {
-    return new Date(date.getFullYear() + "-" + Number(date.getMonth() + 1) + "-" + date.getDate());
-}
-
-function calculateDaysBetween(firstDate, secondDate) {
-    let msToDays = 1000 * 60 * 60 * 24;
-    firstDate = getStartOfDate(firstDate);
-    secondDate = getStartOfDate(secondDate);
-
-    return (secondDate.getTime() - firstDate.getTime())/msToDays;
-}
-
 
 function renderBigTask(task) {
+
     let bigTaskWrapper = document.getElementById("bigTaskContainer");
+    bigTaskWrapper.innerHTML = "";
+
     let taskDiv = document.createElement("div");
     taskDiv.classList.add("bigTask");
     taskDiv.setAttribute("taskID", task.ID);
+    bigTaskWrapper.appendChild(taskDiv);
 
     // Status:
-    let statusDiv = document.createElement("div");
+    let statusDiv = document.createElement("select");
     statusDiv.classList.add("bigTaskStatus");
     statusDiv.setAttribute("taskID", task.ID);
+    // Add status-options to select-element
+    let toDoOption = document.createElement("option");
+    toDoOption.setAttribute("value", "toDo");
+    toDoOption.innerText = "To do";
+    let inProgressOption = document.createElement("option");
+    inProgressOption.setAttribute("value", "inProgress");
+    inProgressOption.innerText = "In progress";
+    let doneOption = document.createElement("option");
+    doneOption.setAttribute("value", "done");
+    doneOption.innerText = "Done";
     if (task.status.toLowerCase() === "todo") {
+        toDoOption.setAttribute("selected", "");
         statusDiv.classList.add("bigTaskStatusToDo");
     } else if (task.status.toLowerCase() === "inprogress") {
+        inProgressOption.setAttribute("selected", "");
         statusDiv.classList.add("bigTaskStatusInProgress");
     } else if (task.status.toLowerCase() === "done") {
+        doneOption.setAttribute("selected", "");
         statusDiv.classList.add("bigTaskStatusDone");
     } else {
         statusDiv.classList.add("bigTaskStatusUnknown");
     }
-    statusDiv.innerText = task.status;
+    statusDiv.addEventListener("change", () => {
+        task.status = statusDiv.value;
+        // Update status-class on element
+        if (task.status.toLowerCase() === "todo") {
+            statusDiv.classList.remove('bigTaskStatusInProgress');
+            statusDiv.classList.remove('bigTaskStatusDone');
+            statusDiv.classList.add("bigTaskStatusToDo");
+        } else if (task.status.toLowerCase() === "inprogress") {
+            statusDiv.classList.remove("bigTaskStatusToDo");
+            statusDiv.classList.remove('bigTaskStatusDone');
+            statusDiv.classList.add("bigTaskStatusInProgress");
+        } else if (task.status.toLowerCase() === "done") {
+            statusDiv.classList.remove("bigTaskStatusToDo");
+            statusDiv.classList.remove('bigTaskStatusInProgress');
+            statusDiv.classList.add("bigTaskStatusDone");
+            confetti.start();
+            setTimeout(function () {
+                confetti.stop()
+            }, 2000);
+
+        } else {
+            statusDiv.classList.remove("bigTaskStatusToDo");
+            statusDiv.classList.remove('bigTaskStatusInProgress');
+            statusDiv.classList.remove('bigTaskStatusDone');
+            statusDiv.classList.add("bigTaskStatusUnknown");
+        }
+    });
+
+    // Compose
+    statusDiv.appendChild(toDoOption);
+    statusDiv.appendChild(inProgressOption);
+    statusDiv.appendChild(doneOption);
+
     taskDiv.appendChild(statusDiv);
-    
-    // Category:
-    let categoryDiv = document.createElement("div");
-    categoryDiv.classList.add("bigTaskCategory");
-    categoryDiv.classList.add("bigTaskCategory" + task.category.name);
-    categoryDiv.setAttribute("taskID", task.ID);
-    categoryDiv.innerText = task.category.name;
-    taskDiv.appendChild(categoryDiv);
 
     // Priority:
-    let priorityDiv = document.createElement("div");
+    let priorityDiv = document.createElement("select");
     priorityDiv.classList.add("bigTaskPriority");
     priorityDiv.classList.add("bigTaskPriority" + task.priority);
     priorityDiv.setAttribute("taskID", task.ID);
-    priorityDiv.innerText = task.priority;
+        // Create priority options
+    let lowOption = document.createElement("option");
+    lowOption.setAttribute("value", "1");
+    lowOption.innerText = "Low priority";
+    priorityDiv.appendChild(lowOption);
+    let mediumOption = document.createElement("option");
+    mediumOption.setAttribute("value", "2");
+    mediumOption.innerText = "Medium priority";
+    priorityDiv.appendChild(mediumOption);
+    let highOption = document.createElement("option");
+    highOption.setAttribute("value", "3");
+    highOption.innerText = "High priority";
+    priorityDiv.appendChild(highOption);
+        // Update priority based on select
+    priorityDiv.addEventListener("change", () => {
+        if (priorityDiv.value === "1") {
+            task.priority = 1;
+            priorityDiv.classList.remove("bigTaskPriority2", "bigTaskPriority3");
+            priorityDiv.classList.add("bigTaskPriority1");
+        } else if (priorityDiv.value === "2") {
+            task.priority = 2;
+            priorityDiv.classList.remove("bigTaskPriority1", "bigTaskPriority3");
+            priorityDiv.classList.add("bigTaskPriority2");
+        } else if (priorityDiv.value === "3") {
+            task.priority = 3;
+            priorityDiv.classList.remove("bigTaskPriority1", "bigTaskPriority2");
+            priorityDiv.classList.add("bigTaskPriority3");
+        }
+    });
+
+
     taskDiv.appendChild(priorityDiv);
+
+    // Category:
+    let categorySelect = document.createElement("select");
+    categorySelect.classList.add("bigTaskCategory");
+    categorySelect.classList.add("bigTaskCategory" + task.category.name);
+    categorySelect.setAttribute("taskID", task.ID);
+    // categoryDiv.innerText = task.category.name;
+
+    TaskCategory.array.forEach(category => {
+        let categoryOption = document.createElement("option");
+        categoryOption.setAttribute("value", category.ID);
+        categoryOption.innerText = category.name;
+        categorySelect.appendChild(categoryOption);
+    });
+    categorySelect.addEventListener("change", () => {
+        task.category = TaskCategory.array.find(category => category.ID === Number(categorySelect.value));
+        categorySelect.className = "";
+        categorySelect.classList.add("bigTaskCategory", "bigTaskCategory" + task.category.name);
+    });
+
+    taskDiv.appendChild(categorySelect);
+
+
+    // Left bar:
+    let leftBarDiv = document.createElement("div");
+    leftBarDiv.classList.add("bigTaskLeftBar");
+    // Title:
+    let titleDiv = document.createElement("input");
+    titleDiv.classList.add("bigTaskTitle");
+    titleDiv.setAttribute("taskID", task.ID);
+    titleDiv.setAttribute("type", "text");
+    titleDiv.setAttribute("value", task.title);
+    titleDiv.addEventListener("keyup", () => {
+        task.title = titleDiv.value;
+    });
+    leftBarDiv.appendChild(titleDiv);
+
+    // Description:
+    let descriptionDiv = document.createElement("input");
+    descriptionDiv.classList.add("bigTaskDescription");
+    descriptionDiv.setAttribute("taskID", task.ID);
+    descriptionDiv.setAttribute("type", "text");
+    descriptionDiv.setAttribute("value", task.description);
+    descriptionDiv.addEventListener("keyup", () => {
+        task.description = descriptionDiv.value;
+    });
+    leftBarDiv.appendChild(descriptionDiv);
+    taskDiv.appendChild(leftBarDiv);
+
+    // Right bar:
+    let rightBarDiv = document.createElement("div");
+    rightBarDiv.classList.add("bigTaskRightBar");
+    // Users:
+    let usersDiv = document.createElement("div");
+    usersDiv.classList.add("bigTaskUserWrap");
+    usersDiv.setAttribute("taskID", task.ID);
+    // Owners:
+    task.owners.forEach(owner => {
+        let userDiv = document.createElement("div");
+        userDiv.classList.add("bigTaskUser");
+        let ownerDiv = document.createElement("div");
+        ownerDiv.classList.add("bigTaskUserIcon");
+        ownerDiv.classList.add("bigTaskOwner");
+        ownerDiv.innerText = owner.shortName;
+        let ownerNameDiv = document.createElement("div");
+        ownerNameDiv.classList.add("bigTaskUserName");
+        ownerNameDiv.innerText = owner.fullName;
+        userDiv.appendChild(ownerDiv);
+        userDiv.appendChild(ownerNameDiv);
+        usersDiv.appendChild(userDiv);
+    });
+    // Members:
+    task.members.forEach(member => {
+        let userDiv = document.createElement("div");
+        userDiv.classList.add("bigTaskUser");
+        let memberDiv = document.createElement("div");
+        memberDiv.classList.add("bigTaskUserIcon");
+        memberDiv.classList.add("bigTaskMember");
+        memberDiv.innerText = member.shortName;
+        let memberNameDiv = document.createElement("div");
+        memberNameDiv.classList.add("bigTaskUserName");
+        memberNameDiv.innerText = member.fullName;
+        userDiv.appendChild(memberDiv);
+        userDiv.appendChild(memberNameDiv);
+        usersDiv.appendChild(userDiv);
+    });
+    rightBarDiv.appendChild(usersDiv);
+
+    // Countdown:
+    let countdownDiv = document.createElement("div");
+    let dayUnit = "DAYS";
+    if (task.daysToDeadline() === 1) {
+        dayUnit = "DAY"
+    }
+    countdownDiv.classList.add("bigTaskCountdown");
+    countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
+    let dayUnitDiv = document.createElement("div");
+    dayUnitDiv.classList.add("bigTaskCountdownUnit");
+    dayUnitDiv.innerText = dayUnit;
+    countdownDiv.appendChild(dayUnitDiv);
+    rightBarDiv.appendChild(countdownDiv);
+    // Compose
+    taskDiv.appendChild(rightBarDiv);
+    buildChart(task, countdownDiv);
+
 
     // Project:
     let projectDiv = document.createElement("div");
@@ -69,68 +224,24 @@ function renderBigTask(task) {
     projectDiv.innerText = task.getProject().title;
     taskDiv.appendChild(projectDiv);
 
-    // Title:
-    let titleDiv = document.createElement("div");
-    titleDiv.classList.add("bigTaskTitle");
-    titleDiv.setAttribute("taskID", task.ID);
-    titleDiv.innerText = task.title;
-    taskDiv.appendChild(titleDiv);
-
-    // Description:
-    let descriptionDiv = document.createElement("div");
-    descriptionDiv.classList.add("bigTaskDescription");
-    descriptionDiv.setAttribute("taskID", task.ID);
-    descriptionDiv.innerText = task.description;
-    taskDiv.appendChild(descriptionDiv);
-
-    // Users:
-    let usersDiv = document.createElement("div");
-    usersDiv.classList.add("bigTaskUserWrap");
-    usersDiv.setAttribute("taskID", task.ID);
-    // Owners:
-    task.owners.forEach(owner => {
-        let ownerDiv = document.createElement("div");
-        ownerDiv.classList.add("bigTaskUser");
-        ownerDiv.classList.add("bigTaskOwner");
-        ownerDiv.setAttribute("taskID", task.ID);
-        ownerDiv.innerText = owner.shortName;
-        usersDiv.appendChild(ownerDiv);
-    });
-    // Members:
-    task.members.forEach(member => {
-        let memberDiv = document.createElement("div");
-        memberDiv.classList.add("bigTaskUser");
-        memberDiv.classList.add("bigTaskMember");
-        memberDiv.setAttribute("taskID", task.ID);
-        memberDiv.innerText = member.shortName;
-        usersDiv.appendChild(memberDiv);
-    });
-    taskDiv.appendChild(usersDiv);
-
     // Start date:
     let startDateDiv = document.createElement("div");
     startDateDiv.classList.add("bigTaskStartDate");
     startDateDiv.setAttribute("taskID", task.ID);
-    startDateDiv.innerText = bigTaskDateRender(task.startDate);
+    startDateDiv.innerText = "Start: " + bigTaskDateRender(task.startDate);
     taskDiv.appendChild(startDateDiv);
 
     // End date:
     let endDateDiv = document.createElement("div");
     endDateDiv.classList.add("bigTaskEndDate");
     endDateDiv.setAttribute("taskID", task.ID);
-    endDateDiv.innerText = bigTaskDateRender(task.endDate);
+    endDateDiv.innerText = "End: " + bigTaskDateRender(task.endDate);
     taskDiv.appendChild(endDateDiv);
 
-    // Countdown:
-    let countdownDiv = document.createElement("div");
-    let dayUnit = "\nDAYS";
-    if(task.daysToDeadline() === 1) {dayUnit = "\nDAY"}
-    countdownDiv.classList.add("bigTaskCountdown");
-    countdownDiv.setAttribute("taskID", task.ID)
-    countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline()) + dayUnit;
-    taskDiv.appendChild(countdownDiv);
-
-    bigTaskWrapper.appendChild(taskDiv);
+   // bigTaskWrapper.appendChild(taskDiv);
+    //let countdownDiv = document.createElement("div");
+   // bigTaskWrapper.appendChild(countdownDiv);
+    //buildChart(task, countdownDiv);
 
 }
 

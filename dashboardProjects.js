@@ -1,8 +1,3 @@
-function dayMonthDateFormatter(date) {
-    let months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-    return appendLeadingZeroes(date.getDay()) + " " + months[date.getMonth()];
-}
-
 function renderDashboardProjects(projectArray) {
     let projectContainerDiv = document.getElementById("dashboardProjectContainer");
 
@@ -12,6 +7,7 @@ function renderDashboardProjects(projectArray) {
 
         // Start date:
         let startDateDiv = document.createElement("div");
+        startDateDiv.classList.add("dashboardProjectDate");
         startDateDiv.classList.add("dashboardProjectStartDate");
         startDateDiv.innerText = dayMonthDateFormatter(project.startDate);
         projectDiv.appendChild(startDateDiv);
@@ -24,6 +20,7 @@ function renderDashboardProjects(projectArray) {
 
         // End date:
         let endDateDiv = document.createElement("div");
+        endDateDiv.classList.add("dashboardProjectDate");
         endDateDiv.classList.add("dashboardProjectEndDate");
         endDateDiv.innerText = dayMonthDateFormatter(project.endDate);
         projectDiv.appendChild(endDateDiv);
@@ -63,19 +60,19 @@ function renderDashboardProjects(projectArray) {
         let toDoDiv = document.createElement("div");
         toDoDiv.classList.add("dashboardProjectTask");
         toDoDiv.classList.add("dashboardProjectTaskToDo");
-        toDoDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "todo").length;
+        toDoDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "todo").length.toString();
         taskDiv.appendChild(toDoDiv);
         // InProgress:
         let inProgressDiv = document.createElement("div");
         inProgressDiv.classList.add("dashboardProjectTask");
         inProgressDiv.classList.add("dashboardProjectTaskInProgress");
-        inProgressDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "inprogress").length;
+        inProgressDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "inprogress").length.toString();
         taskDiv.appendChild(inProgressDiv);
         // Done:
         let doneDiv = document.createElement("div");
         doneDiv.classList.add("dashboardProjectTask");
         doneDiv.classList.add("dashboardProjectTaskDone");
-        doneDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "done").length;
+        doneDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "done").length.toString();
         taskDiv.appendChild(doneDiv);
         // Compose:
         projectDiv.appendChild(taskDiv);

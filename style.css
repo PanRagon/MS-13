@@ -1,0 +1,1052 @@
+    /* Color variables */
+:root {
+    --main-bg-color: #424248;
+    --secondary-bg-color: #303036;
+    --main-txt-color: #FFFAFF;
+
+    --green-light: #6edd79;
+    --orange-light: #f0cb5c;
+    --red-light: #dc6f6f;
+
+    --task-one: #3E8989;
+    --task-two: #5C6784;
+    --task-three: #c47425;
+
+    --extra-one: #2FBF71;
+    --extra-two: #1B998B;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: roboto-mono, monospace;
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-bg-color);
+    /*font-family: supria-sans-condensed, sans-serif;*/
+}
+
+select {
+    border-radius: 0;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.mainNav {
+    text-transform: uppercase;
+    background-color: var(--secondary-bg-color);
+    border-bottom: solid 0.7px var(--main-txt-color);
+    height: 64.69px;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+}
+
+.mainNav ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 0;
+    margin: 0;
+    font-size: 12px;
+    padding-top: 0.6rem;
+}
+
+.mainNav li {
+    padding: 1rem;
+}
+
+.mainNav a {
+    text-decoration: none;
+    color: var(--main-txt-color);
+    padding: 0.48rem;
+}
+
+.mainNav a:hover {
+    color: var(--task-one);
+}
+
+.active {
+    color: #3E8989 !important;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: var(--main-txt-color);
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: none;
+    float: right;
+    padding: 1rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    margin-top: 16px;
+}
+
+.dropdown-content a {
+    color: var(--main-txt-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.show {
+    display: block;
+}
+
+#logo {
+    color: var(--task-one);
+}
+
+#verticalLine {
+    color: var(--main-txt-color);
+}
+
+.stickyNav{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.catchphrase{
+    color: var(--main-txt-color);
+    position: relative;
+    top: -4px;
+    padding-left: 1rem;
+    font-size: 12px;
+}
+
+.iWrapper {
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}
+
+.text {
+    position: relative;
+    left: 40px;
+    color: #fffaff;
+    top: -10px;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.underText {
+    position: relative;
+    top: 5px;
+    left: -20px;
+    color: var(--task-one);
+    letter-spacing: 2px;
+    font-size: 17px;
+}
+
+.slash {
+    color: var(--task-one);
+    font-size: 20px;
+}
+
+
+.calendar {
+    width: 82.8vw;
+    border: solid 1px var(--main-txt-color);
+    margin: 0 auto;
+}
+
+.calendarWrap {
+    padding-bottom: 3.5rem;
+}
+
+.calendarHeading {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--main-txt-color);
+    letter-spacing: 2px;
+    width: 82.8vw;
+    margin: auto;
+    padding: 8px;
+}
+
+#calendarContainer{
+    position: relative;
+    margin: auto;
+
+    display: grid;
+    grid-row-gap: 10px;
+
+    overflow: auto;
+
+    background: transparent;
+    padding: 10px 0px;
+    box-shadow: inset 0 0 7px 4px rgba(0,0,0,0.75);
+}
+
+.calendarItem {
+    border: 1px solid var(--main-txt-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0.4rem;
+    color: var(--main-txt-color);
+    background: var(--main-bg-color);
+}
+
+/* Status Wrapper */
+.calendarItemStatus {
+    color: var(--red-light);
+    margin-left: 15px;
+}
+
+.calendarItemStatusToDo {
+
+}
+
+.calendarItemStatusToDo:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f111";
+    display: inline-block;
+    background-color: var(--red-light);
+    border-radius: 50%;
+}
+
+.calendarItemStatusInProgress {
+    color: var(--orange-light);
+}
+
+.calendarItemStatusInProgress:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f111";
+    display: inline-block;
+    background-color: var(--orange-light);
+    border-radius: 50%;
+}
+
+.calendarItemStatusDone {
+    color: var(--green-light);
+}
+
+.calendarItemStatusDone:before{
+    color: var(--green-light);
+    font-family: "Font Awesome 5 Free";
+    content: "\f111";
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--green-light);
+}
+
+.calendarItemStatusUnkown {
+    color: cyan;
+}
+
+.calendarItemTitle {
+    font-size: 16px;
+    margin-left: 15px;
+    margin-right: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Wrapper for all users on task */
+.calendarItemUser {
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* Individual owners */
+.calendarItemOwner{
+    border-color: #4D7EA8;
+}
+
+/* Individual members */
+.calendarItemMember {
+    border-color: #72BDA3;
+}
+
+.calendarDate{
+    text-align: center;
+    color: var(--main-txt-color);
+}
+
+.calendarDateToday {
+    color: var(--extra-one);
+}
+
+.calendarRowLine {
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%);
+}
+
+/* --------------------
+    TASKS START:
+-------------------- */
+#dashboardTaskContainer {
+    margin: 0 auto 3.5rem auto;
+    width: 82.8vw;
+    overflow: auto;
+    white-space: nowrap;
+    color: var(--main-txt-color);
+    border-radius: 10px;
+    box-shadow:
+        inset -5px 0 5px -5px rgba(0,0,0,0.75),
+        inset 5px 0 5px -5px rgba(0,0,0,0.75);
+}
+
+.dashboardTaskHeading {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--main-txt-color);
+    letter-spacing: 2px;
+    width: 82.8vw;
+    margin: auto;
+    padding: 8px;
+}
+
+.dashboardTaskWrap{
+    display: inline-block;
+    border: 1px solid var(--main-txt-color);
+    width: 400px;
+    overflow: hidden;
+    height: 245px;
+    padding: 0;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.dashboardTaskWrap:last-of-type{
+    margin-right: 0;
+}
+
+.dashboardTask {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 30px 50px auto;
+    height: 100%;
+}
+
+
+.dashboardTaskStatus {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 8px;
+    line-height: 30px;
+    background-color: var(--orange-light);
+}
+
+.dashboardTaskCategory {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: var(--task-two);
+    padding: 0 8px;
+    line-height: 30px;
+}
+
+
+.dashboardTaskTitle {
+    grid-column: 1;
+    grid-row: 2;
+    margin: auto auto 5px 0;
+    text-align: left;
+    padding-left: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.dashboardTaskDescription {
+    grid-column: 1;
+    grid-row: 3;
+    white-space: normal;
+    padding: 0 8px;
+}
+
+
+.dashboardTaskUserWrap {
+    grid-column: 2;
+    grid-row: 2;
+    margin: auto auto 5px 0;
+    padding-left: 8px;
+}
+
+.dashboardTaskUser {
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
+    margin-right: 5px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.dashboardTaskOwner {
+    border-color: #4D7EA8;
+}
+
+.dashboardTaskMember {
+    border-color: #72BDA3;
+}
+
+.dashboardTaskCountdown {
+    grid-column: 2;
+    grid-row: 3;
+    margin: auto;
+
+    height: 115px;
+    width: 115px;
+
+    text-align: center;
+    font-size: 26px;
+    border: 16px solid var(--red-light);
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow:
+            0 0 5px 1px rgba(0,0,0,0.75),
+            inset 0 0 5px 1px rgba(0,0,0,0.75);
+}
+
+.dashboardTaskCountdownUnit {
+    font-size: 12px;
+    line-height: 12px;
+    position: relative;
+}
+
+/* --------------------
+    DASHBOARD PROJECTS START:
+-------------------- */
+#dashboardProjectContainer {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding-bottom: 3.5rem;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+
+.dashboardProjectHeading {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--main-txt-color);
+    letter-spacing: 2px;
+    width: 82.8vw;
+    margin: auto;
+    padding: 8px;
+}
+
+.dashboardProject {
+    display: grid;
+
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: 30px auto 60px 60px;
+
+    border: 1px solid var(--main-txt-color);
+    width: 400px;
+    height: 35vh;
+    padding: 10px;
+    color: var(--main-txt-color);
+    margin-right: 15px;
+}
+
+.dashboardProject:last-of-type{
+    margin-right: 0;
+}
+
+.dashboardProjectDate {
+
+}
+
+.dashboardProjectStartDate {
+    grid-column: 1;
+    grid-row: 1;
+
+}
+.dashboardProjectEndDate {
+    grid-column: 6;
+    grid-row: 1;
+
+    text-align: right;
+}
+
+.dashboardProjectTitle {
+    grid-column: 2 / span 4;
+    grid-row: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.dashboardProjectDescription {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+    margin-top: 20px;
+}
+
+.dashboardProjectUserWrap {
+    grid-column: 1 / span 6;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px var(--main-txt-color);
+}
+
+.dashboardProjectUser {
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    font-weight: 800;
+
+}
+
+
+.dashboardProjectOwner {
+    font-size: 20px;
+    border-color: #4d7ea8;
+    height: 40px;
+}
+
+.dashboardProjectMember {
+    border-color: #72BDA3;
+    height: 30px;
+}
+
+.dashboardProjectTaskWrap {
+    grid-column: 1 / span 6;
+    grid-row: 4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dashboardProjectTask {
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 800;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.dashboardProjectTaskToDo {
+    background-color: var(--red-light);
+
+}
+
+.dashboardProjectTaskInProgress {
+    background-color: var(--orange-light);
+}
+
+.dashboardProjectTaskDone {
+    background-color: var(--green-light);
+}
+
+/* --------------------
+    BIG TASK START:
+-------------------- */
+
+.bigTaskContainer {
+
+}
+
+.bigTask {
+    margin: 0 auto;
+    width: 82.8vw;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px auto 50px auto;
+    color: var(--main-txt-color);
+    border: solid 1px var(--main-txt-color);
+    padding: 20px;
+}
+
+.bigTaskStatus {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+    padding: 0 8px;
+    line-height: 50px;
+}
+
+.bigTaskStatusToDo {
+    background-color: var(--red-light);
+}
+
+.bigTaskStatusInProgress {
+    background-color: var(--orange-light);
+}
+
+.bigTaskStatusDone {
+    background-color: var(--green-light);
+}
+
+.bigTaskPriority {
+    grid-column: 5 / span 4;
+    grid-row: 1;
+    text-align: center;
+    background-color: #72BDA3;
+    line-height: 50px;
+
+}
+
+.bigTaskCategory {
+    grid-column: 9 / span 4;
+    grid-row: 1;
+    background-color: var(--task-two);
+    padding: 0 8px;
+    line-height: 50px;
+}
+
+.bigTaskLeftBar {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+}
+
+.bigTaskTitle {
+    margin: 20px;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.bigTaskDescription {
+    margin: 20px;
+}
+
+.bigTaskRightBar {
+    grid-column: 7 / span 6;
+    grid-row: 2;
+}
+.bigTaskUserWrap {
+    margin: 20px;
+}
+
+.bigTaskUserIcon {
+    width: 30px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.bigTaskUserName{
+    display: inline-block;
+}
+
+.bigTaskOwner {
+    border-color: #4D7EA8;
+}
+
+.bigTaskMember {
+    border-color: #72BDA3;
+}
+
+.bigTaskCountdown {
+    text-align: center;
+}
+
+.bigTaskCountdownUnit {
+}
+
+.bigTaskProject {
+    grid-column: 1 / span 6;
+    grid-row: 3;
+    margin-left: 20px;
+    line-height: 50px;
+}
+
+.bigTaskStartDate {
+    grid-column: 7 / span 3;
+    grid-row: 3;
+    text-align: left;
+    font-size: 12px;
+    line-height: 50px;
+}
+
+.bigTaskEndDate {
+    grid-column: 10 / span 3;
+    grid-row: 3;
+    text-align: right;
+    font-size: 12px;
+    line-height: 50px;
+}
+
+/* ------------------------------
+    PROJECT VIEW START:
+------------------------------ */
+
+#projectViewContainer {
+
+}
+.projectViewProject {
+    margin: auto;
+    width: 82.8vw;
+    max-width: 900px;
+    color: var(--main-txt-color);
+    padding: 20px;
+    border: solid 1px var(--main-txt-color);
+}
+
+.projectViewTopBar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    align-items: baseline;
+    border-bottom: solid 1px var(--main-txt-color);
+}
+
+.projectViewDate {
+
+}
+
+.projectViewStartDate {
+
+}
+
+.projectViewEndDate {
+
+}
+
+
+.projectViewTitle {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.projectViewDropDown {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 20px;
+    border-bottom: solid 1px var(--main-txt-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.projectViewDescription {
+    grid-column: 1;
+}
+
+.projectViewUserWrap {
+    grid-column: 2;
+
+}
+
+.projectViewUser {
+
+}
+
+.projectViewUserIcon {
+    width: 30px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.projectViewUserName {
+    display: inline-block;
+}
+
+
+.projectViewOwner {
+    border-color: #4d7ea8;
+}
+
+
+.projectViewMember {
+    border-color: #72BDA3;
+}
+
+.projectViewTaskWrap {
+    display: grid;
+    grid-template-columns: 33.33% auto 33.33%;
+    grid-column-gap: 10px;
+}
+
+.projectViewToDoWrap {
+    grid-column: 1;
+}
+
+.projectViewInProgressWrap {
+    grid-column: 2;
+}
+
+.projectViewDoneWrap {
+    grid-column: 3;
+}
+
+.projectViewStatusTitle{
+    padding: 10px;
+}
+
+.projectViewStatusTitleToDo {
+    background-color: var(--red-light);
+}
+
+.projectViewStatusTitleInProgress {
+    background-color: var(--orange-light);
+}
+
+.projectViewStatusTitleDone {
+    background-color: var(--green-light);
+}
+
+.projectViewTask {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30px auto 30px;
+    padding: 10px;
+    border: solid 1px var(--main-txt-color);
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.projectViewTaskStatus {
+    grid-column: 2;
+    grid-row: 3;
+    display: none;
+    pointer-events: none;
+}
+
+.projectViewTaskCategory {
+    grid-column: 1;
+    grid-row: 1;
+    pointer-events: none;
+}
+
+.projectViewTaskTitle {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    pointer-events: none;
+}
+
+.invisible {
+  display: none;
+}
+.projectViewTaskUserWrap {
+    grid-column: 2;
+    grid-row: 3;
+    text-align: right;
+    pointer-events: none;
+    user-select: none
+
+}
+
+.projectViewTaskUser {
+    width: 30px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-left: 5px;
+    pointer-events: none;
+    user-select: none
+}
+
+
+.projectViewTaskOwner {
+    border-color: #4D7EA8;
+    pointer-events: none;
+    user-select: none
+}
+
+.projectViewTaskMember {
+    border-color: #72BDA3;
+    pointer-events: none;
+    user-select: none
+}
+
+.projectViewTaskProject {
+    grid-column: 1;
+    grid-row: 3;
+    pointer-events: none;
+    user-select: none
+}
+
+.projectViewTaskEndDate {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+}
+
+.projectViewStatusWrap {
+
+}
+
+.projectViewTaskToDoWrap {
+
+}
+
+.projectViewTaskInProgressWrap {
+
+}
+
+.projectViewTaskDoneWrap {
+
+}
+
+.projectViewTaskStatusToDo {
+
+}
+
+.projectViewTaskStatusInProgress {
+
+}
+
+.projectViewTaskDone {
+
+}
+
+.invisible {
+  display: none;
+}
+.held {
+  border: solid 1px white;
+  background-color: #424248;
+  min-height: 100px;
+  min-width: 200px;
+}
+
+/*.unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+} */
+
+/* -------------------- */
+/* -------------------- */
+
+.highlight {
+    color: var(--task-one);
+}
+
+.mainFooter {
+    text-align: center;
+    color: var(--main-txt-color);
+    height: 64.69px;
+    background-color: var(--secondary-bg-color);
+    border-top: solid 0.7px var(--main-txt-color);
+    margin-top: 3.5rem;
+}
+
+/* media queries */
+
+@media(max-width: 568px){
+    .projects, .tasks{
+        flex-direction: column;
+        align-items: center;
+    }
+    .boxes{
+        width: 82.8vw;
+        height: 35vh;
+    }
+    .dropdown{
+        display:block;
+    }
+    .mainNav ul{
+        display: none;
+    }
+
+}
+
+@media(max-width: 880px){
+    .catchphrase, #verticalLine{
+        display: none;
+    }
+
+}
+
+/* CSS for eksempelknapp */
+/*.btn {
+    padding: 0.5rem 1rem;
+    margin-top: 50px;
+    background-color: transparent;
+    border: solid 2px #fffaff;
+    border-radius: 5px;
+    color: #fffaff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 130px;
+    top: 10%;
+    cursor: pointer;
+}
+
+
+.btn:hover {
+    background-color: #6edd79;
+
+}
+
+
+.btn-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    font-size: 15px;
+    padding-left: 0.5rem;
+}*/

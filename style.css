@@ -122,6 +122,12 @@ body {
     color: var(--main-txt-color);
 }
 
+.stickyNav{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
 .catchphrase{
     color: var(--main-txt-color);
     position: relative;
@@ -429,6 +435,7 @@ body {
 .dashboardTaskCountdownUnit {
     font-size: 12px;
     line-height: 12px;
+    position: relative;
 }
 
 /* --------------------
@@ -552,7 +559,7 @@ body {
     width: 40px;
     height: 40px;
     text-align: center;
-    line-height: 30px;
+    line-height: 35px;
 }
 
 .dashboardProjectTaskToDo {
@@ -593,17 +600,6 @@ body {
     grid-row: 1;
     padding: 0 8px;
     line-height: 50px;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-
-=======
-
-
->>>>>>> Stashed changes
-=======
-    margin-right: 10px;
->>>>>>> Stashed changes
 }
 
 .bigTaskStatusToDo {
@@ -624,11 +620,6 @@ body {
     text-align: center;
     background-color: #72BDA3;
     line-height: 50px;
-<<<<<<< Updated upstream
-
-=======
-    margin-right: 10px;
->>>>>>> Stashed changes
 }
 
 .bigTaskCategory {

@@ -422,6 +422,7 @@ select {
 
 .dashboardTaskCountdown {
     position: relative;
+    text-align: center;
 }
 
 .dashboardTaskCountdownDaysUnit {
@@ -429,22 +430,24 @@ select {
     display: inline-block;
     position: absolute;
     bottom: 69px;
-    left: 73px;
+    /*left: 73px;*/
 
 }
 
 .dashboardTaskCountdownDays {
+    width: 20px;
 }
 
 .dashboardTaskCountdownUnit {
     font-size: 12px;
     line-height: 12px;
     position: relative;
+    width: 20px;
 }
 .ct-chart {
     position: absolute;
     bottom: -20px;
-    left: -10px;
+    /*left: -10px;*/
 }
 
 /* --------------------

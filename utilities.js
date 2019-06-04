@@ -67,6 +67,19 @@ function buildChart(task, div) {
         donutWidth: 10,
         donutSolid: false,
         startAngle: 0,
-        showLabel: false
+        showLabel: false,
     })
+}
+
+function findPriorityRating(task) {
+    let ttd = task.endDate - task.startDate;
+    let priority = 0;
+    if(task.priority == 1) {
+        priority = 0.5;
+    } else if(task.priority == 2) {
+        priority = 1;
+    } else if(task.priority == 3) {
+        priority = 1.5; 
+    }
+    return ttd * priority;
 }

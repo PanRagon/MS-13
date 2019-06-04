@@ -86,229 +86,99 @@ function renderProjectView(project) {
     toDoHeaderDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "todo").length.toString() + " To do";
     toDoDiv.appendChild(toDoHeaderDiv);
 
-        // Render to do tasks
-    project.tasks.forEach(task => {
-        if(task.status.toLowerCase() === "todo"){
-            let taskDiv = document.createElement("div");
-            taskDiv.classList.add("projectViewTask");
-            taskDiv.classList.add("projectViewTaskToDo");
-            taskDiv.setAttribute("draggable", true);
-            // Status
-            let statusDiv = document.createElement("div");
-            statusDiv.classList.add("projectViewTaskStatus");
-            statusDiv.classList.add("projectViewTaskStatusToDo");
-            statusDiv.innerText = task.status;
-            taskDiv.appendChild(statusDiv);
-            // Category
-            let categoryDiv = document.createElement("div");
-            categoryDiv.classList.add("projectViewTaskCategory");
-            categoryDiv.classList.add("projectViewTaskCategory" + task.category.name);
-            categoryDiv.setAttribute("taskID", task.ID);
-            categoryDiv.innerText = task.category.name;
-            taskDiv.appendChild(categoryDiv);
-            // Title
-            let titleDiv = document.createElement("div");
-            titleDiv.classList.add("projectViewTaskTitle");
-            titleDiv.setAttribute("taskID", task.ID);
-            titleDiv.innerText = task.title;
-            taskDiv.appendChild(titleDiv);
-            // Users
-            let usersDiv = document.createElement("div");
-            usersDiv.classList.add("projectViewTaskUserWrap");
-            usersDiv.setAttribute("taskID", task.ID);
-            // Owners:
-            task.owners.forEach(owner => {
-                let ownerDiv = document.createElement("div");
-                ownerDiv.classList.add("projectViewTaskUser");
-                ownerDiv.classList.add("projectViewTaskOwner");
-                ownerDiv.setAttribute("taskID", task.ID);
-                ownerDiv.innerText = owner.shortName;
-                usersDiv.appendChild(ownerDiv);
-            });
-            // Members:
-            task.members.forEach(member => {
-                let memberDiv = document.createElement("div");
-                memberDiv.classList.add("projectViewTaskUser");
-                memberDiv.classList.add("projectViewTaskMember");
-                memberDiv.setAttribute("taskID", task.ID);
-                memberDiv.innerText = member.shortName;
-                usersDiv.appendChild(memberDiv);
-            });
-            taskDiv.appendChild(usersDiv);
-            // Project
-            let projectDiv = document.createElement("div");
-            projectDiv.classList.add("projectViewTaskProject");
-            projectDiv.setAttribute("taskID", task.ID);
-            projectDiv.innerText = task.getProject().title;
-            taskDiv.appendChild(projectDiv);
-            // End date
-            let endDateDiv = document.createElement("div");
-            endDateDiv.classList.add("projectViewTaskEndDate");
-            endDateDiv.setAttribute("taskID", task.ID);
-            endDateDiv.innerText = dayMonthDateFormatter(task.endDate);
-            taskDiv.appendChild(endDateDiv);
-
-            toDoDiv.appendChild(taskDiv);
-        }
-    });
-    taskWrapDiv.appendChild(toDoDiv);
     // In progress:
     let inProgressDiv = document.createElement("div");
     inProgressDiv.classList.add("projectViewInProgressWrap");
     inProgressDiv.classList.add("projectViewStatusWrap");
-        // Header / Title
+    // Header / Title
     let inProgressHeaderDiv = document.createElement("div");
     inProgressHeaderDiv.classList.add("projectViewStatusTitle");
     inProgressHeaderDiv.classList.add("projectViewStatusTitleInProgress");
     inProgressHeaderDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "inprogress").length.toString() + " In progress";
     inProgressDiv.appendChild(inProgressHeaderDiv);
-        // Render in progress tasks
-    project.tasks.forEach(task => {
-        if(task.status.toLowerCase() === "inprogress"){
-            let taskDiv = document.createElement("div");
-            taskDiv.classList.add("projectViewTask");
-            taskDiv.classList.add("projectViewTaskInProgress");
 
-            taskDiv.setAttribute("draggable", true);
-            // Status
-            let statusDiv = document.createElement("div");
-            statusDiv.classList.add("projectViewTaskStatus");
-            statusDiv.classList.add("projectViewTaskStatusInProgress");
-            statusDiv.classList.add("unselectable");
-            statusDiv.innerText = task.status;
-            taskDiv.appendChild(statusDiv);
-            // Category
-            let categoryDiv = document.createElement("div");
-            categoryDiv.classList.add("projectViewTaskCategory");
-            categoryDiv.classList.add("projectViewTaskCategory" + task.category.name);
-            categoryDiv.classList.add("unselectable");
-            categoryDiv.setAttribute("taskID", task.ID);
-            categoryDiv.innerText = task.category.name;
-            taskDiv.appendChild(categoryDiv);
-            // Title
-            let titleDiv = document.createElement("div");
-            titleDiv.classList.add("projectViewTaskTitle");
-            titleDiv.classList.add("unselectable");
-            titleDiv.setAttribute("taskID", task.ID);
-            titleDiv.innerText = task.title;
-            taskDiv.appendChild(titleDiv);
-            // Users
-            let usersDiv = document.createElement("div");
-            usersDiv.classList.add("projectViewTaskUserWrap");
-            usersDiv.setAttribute("taskID", task.ID);
-            // Owners:
-            task.owners.forEach(owner => {
-                let ownerDiv = document.createElement("div");
-                ownerDiv.classList.add("projectViewTaskUser");
-                ownerDiv.classList.add("projectViewTaskOwner");
-                ownerDiv.setAttribute("taskID", task.ID);
-                ownerDiv.innerText = owner.shortName;
-                usersDiv.appendChild(ownerDiv);
-            });
-            // Members:
-            task.members.forEach(member => {
-                let memberDiv = document.createElement("div");
-                memberDiv.classList.add("projectViewTaskUser");
-                memberDiv.classList.add("projectViewTaskMember");
-                memberDiv.setAttribute("taskID", task.ID);
-                memberDiv.innerText = member.shortName;
-                usersDiv.appendChild(memberDiv);
-            });
-            taskDiv.appendChild(usersDiv);
-            // Project
-            let projectDiv = document.createElement("div");
-            projectDiv.classList.add("projectViewTaskProject");
-            projectDiv.setAttribute("taskID", task.ID);
-            projectDiv.innerText = task.getProject().title;
-            taskDiv.appendChild(projectDiv);
-            // End date
-            let endDateDiv = document.createElement("div");
-            endDateDiv.classList.add("projectViewTaskEndDate");
-            endDateDiv.classList.add("unselectable");
-            endDateDiv.setAttribute("taskID", task.ID);
-            endDateDiv.innerText = dayMonthDateFormatter(task.endDate);
-            taskDiv.appendChild(endDateDiv);
-
-            inProgressDiv.appendChild(taskDiv);
-        }
-    });
-    taskWrapDiv.appendChild(inProgressDiv);
     // Done
     let doneDiv = document.createElement("div");
     doneDiv.classList.add("projectViewDoneWrap");
     doneDiv.classList.add("projectViewStatusWrap");
-        // Header / Title
+    // Header / Title
     let doneHeaderDiv = document.createElement("div");
     doneHeaderDiv.classList.add("projectViewStatusTitle");
     doneHeaderDiv.classList.add("projectViewStatusTitleDone");
     doneHeaderDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "done").length.toString() + " Done";
     doneDiv.appendChild(doneHeaderDiv);
-        // Render done tasks
-    project.tasks.forEach(task => {
-        if(task.status.toLowerCase() === "done"){
-            let taskDiv = document.createElement("div");
-            taskDiv.classList.add("projectViewTask");
-            taskDiv.classList.add("projectViewTaskDone");
-            taskDiv.setAttribute("draggable", true);
-            // Status
-            let statusDiv = document.createElement("div");
-            statusDiv.classList.add("projectViewTaskStatus");
-            statusDiv.classList.add("projectViewTaskStatusDone");
-            statusDiv.innerText = task.status;
-            taskDiv.appendChild(statusDiv);
-            // Category
-            let categoryDiv = document.createElement("div");
-            categoryDiv.classList.add("projectViewTaskCategory");
-            categoryDiv.classList.add("projectViewTaskCategory" + task.category.name);
-            categoryDiv.setAttribute("taskID", task.ID);
-            categoryDiv.innerText = task.category.name;
-            taskDiv.appendChild(categoryDiv);
-            // Title
-            let titleDiv = document.createElement("div");
-            titleDiv.classList.add("projectViewTaskTitle");
-            titleDiv.setAttribute("taskID", task.ID);
-            titleDiv.innerText = task.title;
-            taskDiv.appendChild(titleDiv);
-            // Users
-            let usersDiv = document.createElement("div");
-            usersDiv.classList.add("projectViewTaskUserWrap");
-            usersDiv.setAttribute("taskID", task.ID);
-            // Owners:
-            task.owners.forEach(owner => {
-                let ownerDiv = document.createElement("div");
-                ownerDiv.classList.add("projectViewTaskUser");
-                ownerDiv.classList.add("projectViewTaskOwner");
-                ownerDiv.setAttribute("taskID", task.ID);
-                ownerDiv.innerText = owner.shortName;
-                usersDiv.appendChild(ownerDiv);
-            });
-            // Members:
-            task.members.forEach(member => {
-                let memberDiv = document.createElement("div");
-                memberDiv.classList.add("projectViewTaskUser");
-                memberDiv.classList.add("projectViewTaskMember");
-                memberDiv.setAttribute("taskID", task.ID);
-                memberDiv.innerText = member.shortName;
-                usersDiv.appendChild(memberDiv);
-            });
-            taskDiv.appendChild(usersDiv);
-            // Project
-            let projectDiv = document.createElement("div");
-            projectDiv.classList.add("projectViewTaskProject");
-            projectDiv.setAttribute("taskID", task.ID);
-            projectDiv.innerText = task.getProject().title;
-            taskDiv.appendChild(projectDiv);
-            // End date
-            let endDateDiv = document.createElement("div");
-            endDateDiv.classList.add("projectViewTaskEndDate");
-            endDateDiv.setAttribute("taskID", task.ID);
-            endDateDiv.innerText = dayMonthDateFormatter(task.endDate);
-            taskDiv.appendChild(endDateDiv);
 
-            doneDiv.appendChild(taskDiv);
+    // Render tasks
+    project.tasks.forEach(task => {
+        let taskDiv = document.createElement("div");
+        taskDiv.classList.add("projectViewTask");
+        taskDiv.setAttribute("draggable", true);
+        // Category
+        let categoryDiv = document.createElement("div");
+        categoryDiv.classList.add("projectViewTaskCategory");
+        categoryDiv.classList.add("projectViewTaskCategory" + task.category.name);
+        categoryDiv.setAttribute("taskID", task.ID);
+        categoryDiv.innerText = task.category.name;
+        taskDiv.appendChild(categoryDiv);
+        // Title
+        let titleDiv = document.createElement("div");
+        titleDiv.classList.add("projectViewTaskTitle");
+        titleDiv.setAttribute("taskID", task.ID);
+        titleDiv.innerText = task.title;
+        taskDiv.appendChild(titleDiv);
+        // Users
+        let usersDiv = document.createElement("div");
+        usersDiv.classList.add("projectViewTaskUserWrap");
+        usersDiv.setAttribute("taskID", task.ID);
+        // Owners:
+        task.owners.forEach(owner => {
+            let ownerDiv = document.createElement("div");
+            ownerDiv.classList.add("projectViewTaskUser");
+            ownerDiv.classList.add("projectViewTaskOwner");
+            ownerDiv.setAttribute("taskID", task.ID);
+            ownerDiv.innerText = owner.shortName;
+            usersDiv.appendChild(ownerDiv);
+        });
+        // Members:
+        task.members.forEach(member => {
+            let memberDiv = document.createElement("div");
+            memberDiv.classList.add("projectViewTaskUser");
+            memberDiv.classList.add("projectViewTaskMember");
+            memberDiv.setAttribute("taskID", task.ID);
+            memberDiv.innerText = member.shortName;
+            usersDiv.appendChild(memberDiv);
+        });
+        taskDiv.appendChild(usersDiv);
+        // Project
+        let projectDiv = document.createElement("div");
+        projectDiv.classList.add("projectViewTaskProject");
+        projectDiv.setAttribute("taskID", task.ID);
+        projectDiv.innerText = task.getProject().title;
+        taskDiv.appendChild(projectDiv);
+        // End date
+        let endDateDiv = document.createElement("div");
+        endDateDiv.classList.add("projectViewTaskEndDate");
+        endDateDiv.setAttribute("taskID", task.ID);
+        endDateDiv.innerText = dayMonthDateFormatter(task.endDate);
+        taskDiv.appendChild(endDateDiv);
+
+        // Render to correct column:
+        if (task.status.toLowerCase() === "todo") {
+            taskDiv.classList.add("projectViewTaskToDo");
+            toDoDiv.appendChild(taskDiv);
+        } else if (task.status.toLowerCase() === "inprogress") {
+            taskDiv.classList.add("projectViewTaskInProgress");
+            inProgressDiv.appendChild(taskDiv);
+        } else if (task.status.toLowerCase() === "done") {
+            taskDiv.classList.add("projectViewTaskDone");
+            toDoDiv.appendChild(taskDiv);
         }
     });
+
+    taskWrapDiv.appendChild(toDoDiv);
+    taskWrapDiv.appendChild(inProgressDiv);
     taskWrapDiv.appendChild(doneDiv);
+    
     // Compose:
     projectDiv.appendChild(taskWrapDiv);
 

@@ -27,6 +27,12 @@ body {
     /*font-family: supria-sans-condensed, sans-serif;*/
 }
 
+select {
+    border-radius: 0;
+    border: none;
+    -webkit-appearance: none;
+}
+
 .mainNav {
     text-transform: uppercase;
     background-color: var(--secondary-bg-color);
@@ -122,6 +128,12 @@ body {
     color: var(--main-txt-color);
 }
 
+.stickyNav{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
 .catchphrase{
     color: var(--main-txt-color);
     position: relative;
@@ -215,7 +227,7 @@ body {
 }
 
 .calendarItemStatusToDo {
-    
+
 }
 
 .calendarItemStatusToDo:before {
@@ -236,7 +248,7 @@ body {
     display: inline-block;
     background-color: var(--orange-light);
     border-radius: 50%;
-} 
+}
 
 .calendarItemStatusDone {
     color: var(--green-light);
@@ -280,7 +292,7 @@ body {
 }
 
 /* Individual members */
-.calendarItemMember { 
+.calendarItemMember {
     border-color: #72BDA3;
 }
 
@@ -369,7 +381,7 @@ body {
     grid-row: 2;
     margin: auto auto 5px 0;
     text-align: left;
-    padding-left: 8px; 
+    padding-left: 8px;
     font-weight: 600;
     font-size: 16px;
     text-transform: uppercase;
@@ -429,6 +441,7 @@ body {
 .dashboardTaskCountdownUnit {
     font-size: 12px;
     line-height: 12px;
+    position: relative;
 }
 
 /* --------------------
@@ -552,12 +565,12 @@ body {
     width: 40px;
     height: 40px;
     text-align: center;
-    line-height: 30px;
+    line-height: 35px;
 }
 
 .dashboardProjectTaskToDo {
     background-color: var(--red-light);
-    
+
 }
 
 .dashboardProjectTaskInProgress {
@@ -593,7 +606,6 @@ body {
     grid-row: 1;
     padding: 0 8px;
     line-height: 50px;
-    margin-right: 10px;
 }
 
 .bigTaskStatusToDo {
@@ -614,7 +626,7 @@ body {
     text-align: center;
     background-color: #72BDA3;
     line-height: 50px;
-    margin-right: 10px;
+
 }
 
 .bigTaskCategory {
@@ -636,7 +648,6 @@ body {
     text-align: left;
     font-weight: 600;
     font-size: 18px;
-    text-transform: uppercase;
 }
 
 .bigTaskDescription {
@@ -748,7 +759,7 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 26px;
-}   
+}
 
 .projectViewDropDown {
     display: grid;
@@ -769,7 +780,7 @@ body {
 }
 
 .projectViewUser {
-    
+
 }
 
 .projectViewUserIcon {
@@ -874,7 +885,7 @@ body {
     text-align: right;
     pointer-events: none;
     user-select: none
-    
+
 }
 
 .projectViewTaskUser {
@@ -959,7 +970,7 @@ body {
 
 /*.unselectable {
     -moz-user-select: none;
-    -webkit-user-select: none;  
+    -webkit-user-select: none;
 } */
 
 /* -------------------- */
@@ -1002,7 +1013,7 @@ body {
     .catchphrase, #verticalLine{
         display: none;
     }
-    
+
 }
 
 /* CSS for eksempelknapp */
@@ -1026,7 +1037,7 @@ body {
 
 .btn:hover {
     background-color: #6edd79;
-    
+
 }
 
 

@@ -209,22 +209,31 @@ function renderBigTask(task) {
 
     // Countdown:
     let countdownDiv = document.createElement("div");
-    let dayUnit = "DAYS";
-    if (task.daysToDeadline() === 1) {
-        dayUnit = "DAY"
-    }
-    countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
-
     countdownDiv.classList.add("bigTaskCountdown");
+    let countdownDaysDiv = document.createElement("div");
+    countdownDaysDiv.classList.add("bigTaskCountdownDaysUnit");
+
+    let dayUnit = "DAYS";
+    if (task.daysToDeadline() === 1) {dayUnit = "DAY"}
     let dayUnitDiv = document.createElement("div");
     dayUnitDiv.classList.add("bigTaskCountdownUnit");
     dayUnitDiv.innerText = dayUnit;
-    let chartDiv = document.createElement("div");
-    countdownDiv.appendChild(dayUnitDiv);
-    countdownDiv.appendChild(chartDiv)
+
+    let days = appendLeadingZeroes(task.daysToDeadline());
+    let daysDiv = document.createElement("div");
+    daysDiv.classList.add("bigTaskCountdownDays");
+    daysDiv.innerText = days;
+
+    countdownDaysDiv.appendChild(daysDiv);
+    countdownDaysDiv.appendChild(dayUnitDiv);
+    countdownDiv.appendChild(countdownDaysDiv);
     rightBarDiv.appendChild(countdownDiv);
     // Compose
     taskDiv.appendChild(rightBarDiv);
+
+    let chartDiv = document.createElement("div");
+    chartDiv.classList.add("bigTaskCountdownChart");
+    countdownDiv.appendChild(chartDiv);
     buildChart(task, chartDiv);
 
 

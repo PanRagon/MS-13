@@ -57,7 +57,7 @@ class DragDrop {
         this.append(DragDrop.card);
         DragDrop.card.classList.remove("projectViewTaskToDo", "projectViewTaskInProgress", "projectViewTaskDone");
         DragDrop.card.classList.add("projectViewTask" + this.getAttribute("status"));
-        Task.array.find(task => task.ID == DragDrop.card.getAttribute("taskid")).status = this.getAttribute("status");
+        Task.array.find(task => task.ID === Number(DragDrop.card.getAttribute("taskid"))).status = this.getAttribute("status");
     }
 }
 

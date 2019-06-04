@@ -498,7 +498,7 @@ class Task {
         
         new Task(2, "Backup på harddisk");
 		let testTask18 = Task.array.find(e => e.ID === 17);
-		testTask18.setStatus("InProgress");
+		testTask18.setStatus("Done");
 		testTask18.setCategory(TaskCategory.array.find(e => e.ID === 3));
 		testTask18.setDescription("Vi må lagre det vi har gjort på et sikkert sted");
 		testTask18.setStartDate(new Date(2019, 5, 3));
@@ -546,7 +546,7 @@ class Task {
         
         new Task(2, "Endre passord");
 		let testTask22 = Task.array.find(e => e.ID === 21);
-		testTask22.setStatus("ToDo");
+		testTask22.setStatus("Done");
 		testTask22.setCategory(TaskCategory.array.find(e => e.ID === 1));
 		testTask22.setDescription("Vi har hatt det samme passordet for lenge");
 		testTask22.setStartDate(new Date(2019, 5, 10));

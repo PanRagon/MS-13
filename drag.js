@@ -21,11 +21,12 @@ class DragDrop {
 
     static dragstart() {
         DragDrop.card = this;
-        this.className += " held";
-        setTimeout(() => this.className="invisible", 1);
+        this.classList.add("held");
+        setTimeout(() => this.classList.add("invisible"), 1);
     }
 
     static dragend() {
+        this.classList.remove("held", "invisible");
         updateProjectViewCounters();
     }
 
@@ -39,10 +40,9 @@ class DragDrop {
 
     static drop() {
         this.append(DragDrop.card);
-        Task.array.find(task => task.ID == DragDrop.card.getAttribute("taskid")).status = this.getAttribute("status");
-        DragDrop.card.className = "";
-        DragDrop.card.classList.add("projectViewTask");
+        DragDrop.card.classList.remove("projectViewTaskToDo", "projectViewTaskInProgress", "projectViewTaskDone");
         DragDrop.card.classList.add("projectViewTask" + this.getAttribute("status"));
+        Task.array.find(task => task.ID == DragDrop.card.getAttribute("taskid")).status = this.getAttribute("status");
     }
 }
 

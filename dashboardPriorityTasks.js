@@ -2,10 +2,13 @@
 function renderDashboardTasks(taskArray) {
 
     // Remove tasks with status "Done" from array
+    taskArray = Array.from(taskArray);
     taskArray = taskArray.filter(task => task.status.toLowerCase() !== "done");
 
     // Sort taskArray on endDate
-    taskArray = Array.from(taskArray);
+    for(task in taskArray) {
+        
+    }
     taskArray.sort(function (a, b) {
         return a.endDate - b.endDate;
     });

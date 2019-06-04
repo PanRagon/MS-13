@@ -163,16 +163,19 @@ function renderBigTask(task) {
     if (task.daysToDeadline() === 1) {
         dayUnit = "DAY"
     }
-    countdownDiv.classList.add("bigTaskCountdown");
     countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
+
+    countdownDiv.classList.add("bigTaskCountdown");
     let dayUnitDiv = document.createElement("div");
     dayUnitDiv.classList.add("bigTaskCountdownUnit");
     dayUnitDiv.innerText = dayUnit;
+    let chartDiv = document.createElement("div");
     countdownDiv.appendChild(dayUnitDiv);
+    countdownDiv.appendChild(chartDiv)
     rightBarDiv.appendChild(countdownDiv);
     // Compose
     taskDiv.appendChild(rightBarDiv);
-    buildChart(task, countdownDiv);
+    buildChart(task, chartDiv);
 
 
     // Project:

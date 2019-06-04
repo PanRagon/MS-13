@@ -5,12 +5,13 @@ function renderDashboardTasks(taskArray) {
     taskArray = Array.from(taskArray);
     taskArray = taskArray.filter(task => task.status.toLowerCase() !== "done");
 
+    console.log(taskArray);
     // Sort taskArray on endDate
-    for(task in taskArray) {
-        
+    for(let task of taskArray) {
+        task.rating = findPriorityRating(task)
     }
     taskArray.sort(function (a, b) {
-        return a.endDate - b.endDate;
+        return a.rating - b.rating;
     });
 
     let taskContainerDiv = document.getElementById("dashboardTaskContainer");
@@ -83,14 +84,24 @@ function renderDashboardTasks(taskArray) {
 
         // Countdown:
         let countdownDiv = document.createElement("div");
+        countdownDiv.classList.add("dashboardTaskCountdown");
+        let countdownDaysDiv = document.createElement("div");
+        countdownDaysDiv.classList.add("dashboardTaskCountdownDaysUnit");
+
         let dayUnit = "DAYS"
         if(task.daysToDeadline() === 1) {dayUnit = "DAY"}
-        // countdownDiv.classList.add("dashboardTaskCountdown");
-        countdownDiv.innerText = appendLeadingZeroes(task.daysToDeadline());
         let dayUnitDiv = document.createElement("div");
         dayUnitDiv.classList.add("dashboardTaskCountdownUnit");
         dayUnitDiv.innerText = dayUnit;
-        countdownDiv.appendChild(dayUnitDiv);
+
+        let days = appendLeadingZeroes(task.daysToDeadline());
+        let daysDiv = document.createElement("div")
+        daysDiv.classList.add("dashboardTaskCountdownDays")
+        daysDiv.innerText = days;
+
+        countdownDaysDiv.appendChild(daysDiv);
+        countdownDaysDiv.appendChild(dayUnitDiv);
+        countdownDiv.appendChild(countdownDaysDiv);
         taskDiv.appendChild(countdownDiv);
 
         // Wrap it up
@@ -99,6 +110,7 @@ function renderDashboardTasks(taskArray) {
         // Render task to container
         taskContainerDiv.appendChild(taskDivWrap);
 
+        //Build the countdown chart
         buildChart(task, countdownDiv);
         
     })

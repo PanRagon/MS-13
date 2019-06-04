@@ -77,7 +77,6 @@ function renderBigTask(task) {
     // Priority:
     let priorityDiv = document.createElement("select");
     priorityDiv.classList.add("bigTaskPriority");
-    priorityDiv.classList.add("bigTaskPriority" + task.priority);
     priorityDiv.setAttribute("taskID", task.ID);
         // Create priority options
     let lowOption = document.createElement("option");
@@ -92,20 +91,30 @@ function renderBigTask(task) {
     highOption.setAttribute("value", "3");
     highOption.innerText = "High priority";
     priorityDiv.appendChild(highOption);
+    if (task.priority === 1) {
+        priorityDiv.classList.add("bigTaskPriorityLow");
+        lowOption.setAttribute("selected", "");
+    } else if (task.priority === 2) {
+        priorityDiv.classList.add("bigTaskPriorityMedium");
+        mediumOption.setAttribute("selected", "");
+    } else if (task.priority === 3) {
+        priorityDiv.classList.add("bigTaskPriorityHigh");
+        highOption.setAttribute("selected", "");
+    }
         // Update priority based on select
     priorityDiv.addEventListener("change", () => {
         if (priorityDiv.value === "1") {
             task.priority = 1;
-            priorityDiv.classList.remove("bigTaskPriority2", "bigTaskPriority3");
-            priorityDiv.classList.add("bigTaskPriority1");
+            priorityDiv.classList.remove("bigTaskPriorityMedium", "bigTaskPriorityHigh");
+            priorityDiv.classList.add("bigTaskPriorityLow");
         } else if (priorityDiv.value === "2") {
             task.priority = 2;
-            priorityDiv.classList.remove("bigTaskPriority1", "bigTaskPriority3");
-            priorityDiv.classList.add("bigTaskPriority2");
+            priorityDiv.classList.remove("bigTaskPriorityLow", "bigTaskPriorityHigh");
+            priorityDiv.classList.add("bigTaskPriorityMedium");
         } else if (priorityDiv.value === "3") {
             task.priority = 3;
-            priorityDiv.classList.remove("bigTaskPriority1", "bigTaskPriority2");
-            priorityDiv.classList.add("bigTaskPriority3");
+            priorityDiv.classList.remove("bigTaskPriorityLow", "bigTaskPriorityMedium");
+            priorityDiv.classList.add("bigTaskPriorityHigh");
         }
     });
 

@@ -9,25 +9,31 @@ function renderDashboardProjects(projectArray) {
 
         let projectDiv = document.createElement("div");
         projectDiv.classList.add("dashboardProject");
-        // Start date:
+
+        // Top bar:
+        let topBarDiv = document.createElement("div");
+        topBarDiv.classList.add("dashboardProjectTopBar");
+            // Start date:
         let startDateDiv = document.createElement("div");
         startDateDiv.classList.add("dashboardProjectDate");
         startDateDiv.classList.add("dashboardProjectStartDate");
         startDateDiv.innerText = dayMonthDateFormatter(project.startDate);
-        projectDiv.appendChild(startDateDiv);
+        topBarDiv.appendChild(startDateDiv);
 
-        // Title:
+            // Title:
         let titleDiv = document.createElement("div");
         titleDiv.classList.add("dashboardProjectTitle");
         titleDiv.innerText = project.title;
-        projectDiv.appendChild(titleDiv);
+        topBarDiv.appendChild(titleDiv);
 
-        // End date:
+            // End date:
         let endDateDiv = document.createElement("div");
         endDateDiv.classList.add("dashboardProjectDate");
         endDateDiv.classList.add("dashboardProjectEndDate");
         endDateDiv.innerText = dayMonthDateFormatter(project.endDate);
-        projectDiv.appendChild(endDateDiv);
+        topBarDiv.appendChild(endDateDiv);
+        // Compose:
+        projectDiv.appendChild(topBarDiv);
 
         // Description:
         let descriptionDiv = document.createElement("div");

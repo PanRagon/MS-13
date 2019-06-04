@@ -322,7 +322,7 @@ class Task {
 		new Task(0, "Kjøpe egg");
 		let testTask2 = Task.array.find(e => e.ID === 1);
 		testTask2.setStatus("ToDo");
-		testTask2.setCategory(TaskCategory.array.find(e => e.ID === 0));
+		testTask2.setCategory(TaskCategory.array.find(e => e.ID === 2));
 		testTask2.setDescription("Vi må lage egg så vi kan lage en kake");
 		testTask2.setStartDate(new Date(2019, 5, 8));
 		testTask2.setEndDate(new Date(2019, 5, 18, 12));
@@ -344,7 +344,7 @@ class Task {
 		new Task(0, "Redde svanen");
 		let testTask4 = Task.array.find(e => e.ID === 3);
 		testTask4.setStatus("ToDo");
-		testTask4.setCategory(TaskCategory.array.find(e => e.ID === 1));
+		testTask4.setCategory(TaskCategory.array.find(e => e.ID === 3));
 		testTask4.setDescription("Det er en svane vi må redde");
 		testTask4.setStartDate(new Date(2019, 4, 31));
 		testTask4.setEndDate(new Date(2019, 5, 8));
@@ -366,7 +366,7 @@ class Task {
         new Task(0, "Støpe skulpturen");
 		let testTask6 = Task.array.find(e => e.ID === 5);
 		testTask6.setStatus("InProgress");
-		testTask6.setCategory(TaskCategory.array.find(e => e.ID === 1));
+		testTask6.setCategory(TaskCategory.array.find(e => e.ID === 2));
 		testTask6.setDescription("En majestetisk sluptur i gull");
 		testTask6.setStartDate(new Date(2019, 5, 2));
 		testTask6.setEndDate(new Date(2019, 5, 20));
@@ -377,7 +377,7 @@ class Task {
         new Task(0, "Male trappa");
 		let testTask7 = Task.array.find(e => e.ID === 6);
 		testTask7.setStatus("ToDo");
-		testTask7.setCategory(TaskCategory.array.find(e => e.ID === 1));
+		testTask7.setCategory(TaskCategory.array.find(e => e.ID === 3));
 		testTask7.setDescription("Finn frem malekosten");
 		testTask7.setStartDate(new Date(2019, 5, 14));
 		testTask7.setEndDate(new Date(2019, 5, 26));
@@ -465,7 +465,7 @@ class Task {
         new Task(1, "Harrytur til Sverige");
 		let testTask15 = Task.array.find(e => e.ID === 14);
 		testTask15.setStatus("ToDo");
-		testTask15.setCategory(TaskCategory.array.find(e => e.ID === 4));
+		testTask15.setCategory(TaskCategory.array.find(e => e.ID === 2));
 		testTask15.setDescription("Vi må laste bilen med bacon");
 		testTask15.setStartDate(new Date(2019, 5, 13));
 		testTask15.setEndDate(new Date(2019, 5, 22));
@@ -476,7 +476,7 @@ class Task {
         new Task(1, "Filosofere med Sokrates");
 		let testTask16 = Task.array.find(e => e.ID === 15);
 		testTask16.setStatus("Done");
-		testTask16.setCategory(TaskCategory.array.find(e => e.ID === 4));
+		testTask16.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask16.setDescription("Hva er egentlig meningen med livet?");
 		testTask16.setStartDate(new Date(2019, 5, 1));
 		testTask16.setEndDate(new Date(2019, 5, 8));
@@ -498,7 +498,7 @@ class Task {
         
         new Task(2, "Backup på harddisk");
 		let testTask18 = Task.array.find(e => e.ID === 17);
-		testTask18.setStatus("InProgress");
+		testTask18.setStatus("Done");
 		testTask18.setCategory(TaskCategory.array.find(e => e.ID === 3));
 		testTask18.setDescription("Vi må lagre det vi har gjort på et sikkert sted");
 		testTask18.setStartDate(new Date(2019, 5, 3));
@@ -535,7 +535,7 @@ class Task {
         new Task(2, "Kryptering av innhold");
 		let testTask21 = Task.array.find(e => e.ID === 20);
 		testTask21.setStatus("ToDo");
-		testTask21.setCategory(TaskCategory.array.find(e => e.ID === 4));
+		testTask21.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask21.setDescription("Løsningen skal være uleselig for andre");
 		testTask21.setStartDate(new Date(2019, 5, 9));
 		testTask21.setEndDate(new Date(2019, 5, 24));
@@ -546,7 +546,7 @@ class Task {
         
         new Task(2, "Endre passord");
 		let testTask22 = Task.array.find(e => e.ID === 21);
-		testTask22.setStatus("ToDo");
+		testTask22.setStatus("Done");
 		testTask22.setCategory(TaskCategory.array.find(e => e.ID === 1));
 		testTask22.setDescription("Vi har hatt det samme passordet for lenge");
 		testTask22.setStartDate(new Date(2019, 5, 10));
@@ -605,7 +605,7 @@ class Task {
         new Task(3, "Skru på ovnen");
 		let testTask27 = Task.array.find(e => e.ID === 26);
 		testTask27.setStatus("InProgress");
-		testTask27.setCategory(TaskCategory.array.find(e => e.ID === 4));
+		testTask27.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask27.setDescription("Ovnen skal ha en varme på 225grader");
 		testTask27.setStartDate(new Date(2019, 5, 8));
 		testTask27.setEndDate(new Date(2019, 5, 16));
@@ -649,7 +649,7 @@ class Task {
         new Task(3, "Ta en sigg");
 		let testTask31 = Task.array.find(e => e.ID === 30);
 		testTask31.setStatus("ToDo");
-		testTask31.setCategory(TaskCategory.array.find(e => e.ID === 4));
+		testTask31.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask31.setDescription("Roe nervene før levering");
 		testTask31.setStartDate(new Date(2019, 5, 20));
 		testTask31.setEndDate(new Date(2019, 5, 28));

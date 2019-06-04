@@ -26,7 +26,7 @@ class DragDrop {
     }
 
     static dragend() {
-        this.className = "projectViewTask";
+        updateProjectViewCounters();
     }
 
     static dragover(e) {
@@ -39,13 +39,10 @@ class DragDrop {
 
     static drop() {
         this.append(DragDrop.card);
-        
         Task.array.find(task => task.ID == DragDrop.card.getAttribute("taskid")).status = this.getAttribute("status");
-        console.table(Task.array.find(task => task.ID == DragDrop.card.getAttribute("taskid")));
-
-
-
-        //Task.array.find(task => task.ID === DragDrop.card.ID);
+        DragDrop.card.className = "";
+        DragDrop.card.classList.add("projectViewTask");
+        DragDrop.card.classList.add("projectViewTask" + this.getAttribute("status"));
     }
 }
 

@@ -77,7 +77,7 @@ function renderProjectView(project) {
 
     // To-Do:
     let toDoDiv = document.createElement("div");
-    toDoDiv.setAttribute("status", "todo");
+    toDoDiv.setAttribute("status", "ToDo");
     toDoDiv.classList.add("projectViewToDoWrap");
     toDoDiv.classList.add("projectViewStatusWrap");
         // Header / Title
@@ -89,7 +89,7 @@ function renderProjectView(project) {
 
     // In progress:
     let inProgressDiv = document.createElement("div");
-    inProgressDiv.setAttribute("status", "inprogress");
+    inProgressDiv.setAttribute("status", "InProgress");
     inProgressDiv.classList.add("projectViewInProgressWrap");
     inProgressDiv.classList.add("projectViewStatusWrap");
     // Header / Title
@@ -101,7 +101,7 @@ function renderProjectView(project) {
 
     // Done
     let doneDiv = document.createElement("div");
-    doneDiv.setAttribute("status", "done");
+    doneDiv.setAttribute("status", "Done");
     doneDiv.classList.add("projectViewDoneWrap");
     doneDiv.classList.add("projectViewStatusWrap");
     // Header / Title
@@ -188,6 +188,15 @@ function renderProjectView(project) {
 
     // Render project to container
     projectContainerDiv.appendChild(projectDiv);
+}
+
+function updateProjectViewCounters() {
+    let toDoCounter = document.querySelector('.projectViewStatusTitleToDo');
+    toDoCounter.innerHTML = document.getElementsByClassName("projectViewTaskToDo").length.toString() + " To do";
+    let inProgressCounter = document.querySelector('.projectViewStatusTitleInProgress');
+    inProgressCounter.innerHTML = document.getElementsByClassName("projectViewTaskInProgress").length.toString() + " In progress";
+    let doneCounter = document.querySelector('.projectViewStatusTitleDone');
+    doneCounter.innerHTML = document.getElementsByClassName("projectViewTaskDone").length.toString() + " Done";
 }
 
 renderProjectView(Project.array[0]);

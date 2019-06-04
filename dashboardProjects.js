@@ -2,9 +2,13 @@ function renderDashboardProjects(projectArray) {
     let projectContainerDiv = document.getElementById("dashboardProjectContainer");
 
     projectArray.forEach(project => {
+
+        // Wrap for inline-block-positioning
+        let projectWrapDiv = document.createElement("div");
+        projectWrapDiv.classList.add("dashboardProjectWrap");
+
         let projectDiv = document.createElement("div");
         projectDiv.classList.add("dashboardProject");
-
         // Start date:
         let startDateDiv = document.createElement("div");
         startDateDiv.classList.add("dashboardProjectDate");
@@ -77,8 +81,9 @@ function renderDashboardProjects(projectArray) {
         // Compose:
         projectDiv.appendChild(taskDiv);
 
+        projectWrapDiv.appendChild(projectDiv);
         // Render project to container
-        projectContainerDiv.appendChild(projectDiv);
+        projectContainerDiv.appendChild(projectWrapDiv);
     });
 }
 

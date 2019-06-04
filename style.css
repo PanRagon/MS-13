@@ -462,13 +462,14 @@ select {
     DASHBOARD PROJECTS START:
 -------------------- */
 #dashboardProjectContainer {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    padding-bottom: 3.5rem;
-    margin: 0 auto;
-    justify-content: center;
-
+    margin: 0 auto 3.5rem auto;
+    width: 82.8vw;
+    overflow: auto;
+    white-space: nowrap;
+    color: var(--main-txt-color);
+    box-shadow:
+        inset -5px 0 5px -5px rgba(0,0,0,0.75),
+        inset 5px 0 5px -5px rgba(0,0,0,0.75);
 }
 
 .dashboardProjectHeading {
@@ -483,23 +484,33 @@ select {
     padding: 8px;
 }
 
+.dashboardProjectWrap{
+    display: inline-block;
+    border: 1px solid var(--main-txt-color);
+    overflow: hidden;
+    height: 245px;
+    width: 400px;
+    padding: 0;
+    margin-right: 15px;
+}
+
+.dashboardProjectWrap:last-of-type{
+    margin-right: 0;
+}
+
 .dashboardProject {
     display: grid;
 
     grid-template-columns: repeat(6, auto);
-    grid-template-rows: 30px auto 60px 60px;
+    grid-template-rows: 30px auto 60px;
 
     border: 1px solid var(--main-txt-color);
-    width: 400px;
-    height: 35vh;
-    padding: 10px;
+    height: 100%;
     color: var(--main-txt-color);
-    margin-right: 15px;
+    padding: 0.5rem;
 }
 
-.dashboardProject:last-of-type{
-    margin-right: 0;
-}
+
 
 .dashboardProjectDate {
 
@@ -523,29 +534,37 @@ select {
     text-align: center;
     text-transform: uppercase;
     font-weight: 600;
+    font-size: 18px
 }
 
 .dashboardProjectDescription {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 4;
     grid-row: 2;
-    margin-top: 20px;
+    margin-top: 10px;
+    white-space: normal;
 }
 
 .dashboardProjectUserWrap {
-    grid-column: 1 / span 6;
-    grid-row: 3;
+    grid-column: 5 / span 2;
+    grid-row: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: solid 1px var(--main-txt-color);
 }
 
 .dashboardProjectUser {
-    border: 2px solid;
+    /*border: 2px solid;
     border-radius: 50%;
     padding: 5px;
-    margin-right: 15px;
+    margin-right: 5px;
     margin-bottom: 30px;
+    font-size: 13px;
+    font-weight: 800;*/
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
+    margin-right: 5px;
     font-size: 13px;
     font-weight: 800;
 
@@ -553,46 +572,52 @@ select {
 
 
 .dashboardProjectOwner {
-    font-size: 20px;
     border-color: #4d7ea8;
-    height: 40px;
 }
 
 .dashboardProjectMember {
     border-color: #72BDA3;
-    height: 30px;
 }
 
 .dashboardProjectTaskWrap {
     grid-column: 1 / span 6;
     grid-row: 4;
     display: flex;
+    flex-direction: row;
+    border-top: solid 1px #fffaff;
+    /*display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center;*/
 }
 
 .dashboardProjectTask {
-    border: 2px solid;
-    border-radius: 50%;
+   
     font-size: 20px;
     font-weight: 800;
-    width: 40px;
-    height: 40px;
+    height: 37px;
     text-align: center;
     line-height: 35px;
+    margin-top: 1rem;
+    margin-right: 10px;
+}
+
+.dashboardProjectTask:last-of-type{
+    margin-right: 0;
 }
 
 .dashboardProjectTaskToDo {
     background-color: var(--red-light);
-
+    width: 33.3%;
 }
 
 .dashboardProjectTaskInProgress {
     background-color: var(--orange-light);
+    width: 33.3%;
 }
 
 .dashboardProjectTaskDone {
     background-color: var(--green-light);
+    width: 33.3%;
 }
 
 /* --------------------

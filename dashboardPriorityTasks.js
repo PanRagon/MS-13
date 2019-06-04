@@ -5,11 +5,12 @@ function renderDashboardTasks(taskArray) {
     taskArray = Array.from(taskArray);
     taskArray = taskArray.filter(task => task.status.toLowerCase() !== "done");
 
-    console.log(taskArray);
     // Sort taskArray on endDate
     for(let task of taskArray) {
         task.rating = findPriorityRating(task)
     }
+
+
     taskArray.sort(function (a, b) {
         return a.rating - b.rating;
     });

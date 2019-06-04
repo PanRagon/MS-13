@@ -429,7 +429,7 @@ class Task {
 		testTask11.addOwner(User.array.find(e => e.firstName === "Bjørn").ID);
 		testTask11.addMember(User.array.find(e => e.firstName === "Turid").ID);
         
-        new Task(1, "Smake på safen");
+        new Task(1, "Smake på saften");
 		let testTask12 = Task.array.find(e => e.ID === 11);
 		testTask12.setStatus("InProgress");
 		testTask12.setCategory(TaskCategory.array.find(e => e.ID === 1));

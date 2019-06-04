@@ -364,6 +364,13 @@ select {
     grid-row: 1;
     padding: 0 8px;
     line-height: 30px;
+}
+
+.dashboardTaskStatusToDo{
+    background-color: var(--red-light);
+}
+
+.dashboardTaskStatusInProgress{
     background-color: var(--orange-light);
 }
 
@@ -477,6 +484,13 @@ select {
     box-shadow:
         inset -5px 0 5px -5px rgba(0,0,0,0.75),
         inset 5px 0 5px -5px rgba(0,0,0,0.75);
+}
+
+.dashboardProjectTopBar{
+    display: grid;
+    grid-column: 1 / span 6;
+    grid-row: 1;
+    border-bottom: solid 1px var(--main-txt-color);
 }
 
 .dashboardProjectHeading {

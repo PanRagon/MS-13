@@ -421,27 +421,30 @@ select {
 }
 
 .dashboardTaskCountdown {
-    grid-column: 2;
-    grid-row: 3;
+    position: relative;
+}
+
+.dashboardTaskCountdownDaysUnit {
     margin: auto;
+    display: inline-block;
+    position: absolute;
+    bottom: 69px;
+    left: 73px;
 
-    height: 115px;
-    width: 115px;
+}
 
-    text-align: center;
-    font-size: 26px;
-    border: 16px solid var(--red-light);
-    border-radius: 50%;
-    padding: 15px;
-    box-shadow:
-            0 0 5px 1px rgba(0,0,0,0.75),
-            inset 0 0 5px 1px rgba(0,0,0,0.75);
+.dashboardTaskCountdownDays {
 }
 
 .dashboardTaskCountdownUnit {
     font-size: 12px;
     line-height: 12px;
     position: relative;
+}
+.ct-chart {
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
 }
 
 /* --------------------

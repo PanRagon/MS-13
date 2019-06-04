@@ -756,25 +756,24 @@ select {
 .bigTaskCountdownDaysUnit {
     margin: auto;
     display: inline-block;
-    position: absolute;
-    bottom: 69px;
+    text-align: center;
     /*left: 73px;*/
 
 }
 
 .bigTaskCountdownDays {
-    width: 20px;
+    text-align: center;
 }
 
 .bigTaskCountdownUnit {
     font-size: 12px;
     line-height: 12px;
     position: relative;
-    width: 20px;
+    text-align: center;
 }
 
 .bigTaskCountdownChart {
-    position: absolute;
+    position: relative;
     bottom: 0px;
     left: -5px;
     

@@ -36,7 +36,6 @@ function dayMonthDateFormatter(date) {
 //Get the percentage of days remaining
 function getPercentageLeft(task) {
     let totalDays = calculateDaysBetween(task.startDate, task.endDate);
-    console.log(totalDays);
     let daysLeft = task.daysToDeadline();
     let daysLeftPercent = (daysLeft / totalDays) * 100;
     if(daysLeftPercent <= 0) {
@@ -53,12 +52,11 @@ function buildChart(task, div) {
     chartDiv.className = "ct-chart ct-golden-section";
     chartDiv.id = chartID;
     chartDiv.style.width = "190px";
+    chartDiv.style.margin = "auto";
     div.appendChild(chartDiv);
 
     let daysLeftPercent = getPercentageLeft(task);
     let totalDaysPercent = 100 - daysLeftPercent;
-    console.log(task.title + " has this percentage left " + daysLeftPercent)
-    console.log(totalDaysPercent);
     let chart = new Chartist.Pie("#" + chartID, {
     series: [{value: totalDaysPercent, className: "chartistColor1"},
     {value: daysLeftPercent, className: "chartistColor2"}],
@@ -73,7 +71,7 @@ function buildChart(task, div) {
 }
 
 function findPriorityRating(task) {
-    let ttd = task.endDate - task.startDate;
+    let ttd = task.endDate - new Date();
     let priority = 0;
     if(task.priority == 1) {
         priority = 0.75;
@@ -82,5 +80,5 @@ function findPriorityRating(task) {
     } else if(task.priority == 3) {
         priority = 1.25; 
     }
-    return (ttd * priority) / 1000000;
+    return (ttd * priority) / 10000000;
 }

@@ -20,16 +20,12 @@ class DragDrop {
     static card = "";
 
     static dragstart() {
-        console.log(this.parentElement);
         DragDrop.card = this;
         this.className += " held";
-
-
-        setTimeout(()=>this.className="invisible", 1);
+        setTimeout(() => this.className="invisible", 1);
     }
 
     static dragend() {
-        console.log("end");
         this.className = "projectViewTask";
     }
 
@@ -38,17 +34,19 @@ class DragDrop {
     }
 
     static dragenter(e) {
-        console.log("enter");
         e.preventDefault();
     }
 
     static drop() {
-        console.log("drop");
         this.append(DragDrop.card);
         
+        Task.array.find(task => task.ID == DragDrop.card.getAttribute("taskid")).status = this.getAttribute("status");
+        console.table(Task.array.find(task => task.ID == DragDrop.card.getAttribute("taskid")));
+
+
+
+        //Task.array.find(task => task.ID === DragDrop.card.ID);
     }
-
-
 }
 
 document.addEventListener("DOMContentLoaded", DragDrop.init, console.log("done"));

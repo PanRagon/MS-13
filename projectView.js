@@ -77,6 +77,7 @@ function renderProjectView(project) {
 
     // To-Do:
     let toDoDiv = document.createElement("div");
+    toDoDiv.setAttribute("status", "todo");
     toDoDiv.classList.add("projectViewToDoWrap");
     toDoDiv.classList.add("projectViewStatusWrap");
         // Header / Title
@@ -88,6 +89,7 @@ function renderProjectView(project) {
 
     // In progress:
     let inProgressDiv = document.createElement("div");
+    inProgressDiv.setAttribute("status", "inprogress");
     inProgressDiv.classList.add("projectViewInProgressWrap");
     inProgressDiv.classList.add("projectViewStatusWrap");
     // Header / Title
@@ -99,6 +101,7 @@ function renderProjectView(project) {
 
     // Done
     let doneDiv = document.createElement("div");
+    doneDiv.setAttribute("status", "done");
     doneDiv.classList.add("projectViewDoneWrap");
     doneDiv.classList.add("projectViewStatusWrap");
     // Header / Title
@@ -112,6 +115,7 @@ function renderProjectView(project) {
     project.tasks.forEach(task => {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("projectViewTask");
+        taskDiv.setAttribute("taskID", task.ID);
         taskDiv.setAttribute("draggable", true);
         // Category
         let categoryDiv = document.createElement("div");
@@ -178,7 +182,7 @@ function renderProjectView(project) {
     taskWrapDiv.appendChild(toDoDiv);
     taskWrapDiv.appendChild(inProgressDiv);
     taskWrapDiv.appendChild(doneDiv);
-    
+
     // Compose:
     projectDiv.appendChild(taskWrapDiv);
 

@@ -60,7 +60,8 @@ function buildChart(task, div) {
     console.log(task.title + " has this percentage left " + daysLeftPercent)
     console.log(totalDaysPercent);
     let chart = new Chartist.Pie("#" + chartID, {
-    series: [daysLeftPercent, totalDaysPercent],
+    series: [{value: totalDaysPercent, className: "chartistColor1"},
+    {value: daysLeftPercent, className: "chartistColor2"}],
     },
     {
         donut: true,

@@ -434,6 +434,14 @@ select {
 
 }
 
+.chartistColor1 {
+    stroke: #FF0000;
+}
+
+.chartistColor2 {
+    stroke: #a09a9c;
+}
+
 .dashboardTaskCountdownDays {
     width: 20px;
 }

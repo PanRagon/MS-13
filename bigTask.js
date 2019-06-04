@@ -71,7 +71,6 @@ function renderBigTask(task) {
     statusDiv.appendChild(toDoOption);
     statusDiv.appendChild(inProgressOption);
     statusDiv.appendChild(doneOption);
-
     taskDiv.appendChild(statusDiv);
 
     // Priority:

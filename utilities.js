@@ -52,7 +52,7 @@ function buildChart(task, div) {
     let chartDiv = document.createElement("div");
     chartDiv.className = "ct-chart ct-golden-section";
     chartDiv.id = chartID;
-    chartDiv.style.width = "150px";
+    chartDiv.style.width = "190px";
     div.appendChild(chartDiv);
 
     let daysLeftPercent = getPercentageLeft(task);
@@ -60,11 +60,12 @@ function buildChart(task, div) {
     console.log(task.title + " has this percentage left " + daysLeftPercent)
     console.log(totalDaysPercent);
     let chart = new Chartist.Pie("#" + chartID, {
-    series: [daysLeftPercent, totalDaysPercent],
+    series: [{value: totalDaysPercent, className: "chartistColor1"},
+    {value: daysLeftPercent, className: "chartistColor2"}],
     },
     {
         donut: true,
-        donutWidth: 10,
+        donutWidth: 19,
         donutSolid: false,
         startAngle: 0,
         showLabel: false,
@@ -75,11 +76,11 @@ function findPriorityRating(task) {
     let ttd = task.endDate - task.startDate;
     let priority = 0;
     if(task.priority == 1) {
-        priority = 0.5;
+        priority = 0.75;
     } else if(task.priority == 2) {
         priority = 1;
     } else if(task.priority == 3) {
-        priority = 1.5; 
+        priority = 1.25; 
     }
-    return ttd * priority;
+    return (ttd * priority) / 1000000;
 }

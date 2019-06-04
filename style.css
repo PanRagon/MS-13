@@ -421,33 +421,48 @@ select {
 }
 
 .dashboardTaskCountdown {
-    grid-column: 2;
-    grid-row: 3;
-    margin: auto;
-
-    height: 115px;
-    width: 115px;
-
+    position: relative;
     text-align: center;
-    font-size: 26px;
-    border: 16px solid var(--red-light);
-    border-radius: 50%;
-    padding: 15px;
-    box-shadow:
-            0 0 5px 1px rgba(0,0,0,0.75),
-            inset 0 0 5px 1px rgba(0,0,0,0.75);
+}
+
+.dashboardTaskCountdownDaysUnit {
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    bottom: 69px;
+    /*left: 73px;*/
+
+}
+
+.chartistColor1 {
+    stroke: #FF0000;
+}
+
+.chartistColor2 {
+    stroke: #a09a9c;
+}
+
+.dashboardTaskCountdownDays {
+    width: 20px;
 }
 
 .dashboardTaskCountdownUnit {
     font-size: 12px;
     line-height: 12px;
     position: relative;
+    width: 20px;
+}
+.ct-chart {
+    position: absolute;
+    bottom: -20px;
+    /*left: -10px;*/
 }
 
 /* --------------------
     DASHBOARD PROJECTS START:
 -------------------- */
 #dashboardProjectContainer {
+<<<<<<< Updated upstream
     margin: 0 auto 3.5rem auto;
     width: 82.8vw;
     overflow: auto;
@@ -456,6 +471,14 @@ select {
     box-shadow:
         inset -5px 0 5px -5px rgba(0,0,0,0.75),
         inset 5px 0 5px -5px rgba(0,0,0,0.75);
+=======
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding-bottom: 3.5rem;
+    margin: 0 auto;
+    justify-content: center;
+>>>>>>> Stashed changes
 }
 
 .dashboardProjectHeading {

@@ -20,17 +20,29 @@ class DragDrop {
     static card = "";
 
     static dragstart() {
-        console.log(this.parentElement);
         DragDrop.card = this;
-        this.className += " held";
 
+        // Add padding for easier drop
+        let statusWraps = document.getElementsByClassName("projectViewStatusWrap");
+        for (let i = 0; i < statusWraps.length; i++) {
+            statusWraps[i].setAttribute("style", "padding-bottom: 113px");
+        }
 
-        setTimeout(()=>this.className="invisible", 1);
+        this.classList.add("held");
+        setTimeout(() => this.classList.add("invisible"), 1);
     }
 
+
     static dragend() {
-        console.log("end");
-        this.className = "projectViewTask";
+        this.classList.remove("held", "invisible");
+
+        // Remove padding on dragend
+        let statusWraps = document.getElementsByClassName("projectViewStatusWrap");
+        for (let i = 0; i < statusWraps.length; i++) {
+            statusWraps[i].removeAttribute("style");
+        }
+
+        updateProjectViewCounters();
     }
 
     static dragover(e) {
@@ -38,17 +50,15 @@ class DragDrop {
     }
 
     static dragenter(e) {
-        console.log("enter");
         e.preventDefault();
     }
 
     static drop() {
-        console.log("drop");
         this.append(DragDrop.card);
-        
+        DragDrop.card.classList.remove("projectViewTaskToDo", "projectViewTaskInProgress", "projectViewTaskDone");
+        DragDrop.card.classList.add("projectViewTask" + this.getAttribute("status"));
+        Task.array.find(task => task.ID == DragDrop.card.getAttribute("taskid")).status = this.getAttribute("status");
     }
-
-
 }
 
 document.addEventListener("DOMContentLoaded", DragDrop.init, console.log("done"));

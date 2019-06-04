@@ -11,9 +11,13 @@
     --task-one: #3E8989;
     --task-two: #5C6784;
     --task-three: #c47425;
+    --task-category: #2978A0;
 
     --extra-one: #2FBF71;
     --extra-two: #1B998B;
+
+    --owner-color: #4D7EA8;
+    --member-color: #72BDA3;
 }
 
 * {
@@ -288,12 +292,12 @@ select {
 
 /* Individual owners */
 .calendarItemOwner{
-    border-color: #4D7EA8;
+    border-color: var(--owner-color);
 }
 
 /* Individual members */
 .calendarItemMember {
-    border-color: #72BDA3;
+    border-color: var(--member-color);
 }
 
 .calendarDate{
@@ -377,7 +381,7 @@ select {
 .dashboardTaskCategory {
     grid-column: 2;
     grid-row: 1;
-    background-color: #2978A0;
+    background-color: var(--task-category);
     padding: 0 8px;
     line-height: 30px;
 }
@@ -420,11 +424,11 @@ select {
 }
 
 .dashboardTaskOwner {
-    border-color: #4D7EA8;
+    border-color: var(--owner-color);
 }
 
 .dashboardTaskMember {
-    border-color: #72BDA3;
+    border-color: var(--member-color);
 }
 
 .dashboardTaskCountdown {
@@ -593,11 +597,11 @@ select {
 
 
 .dashboardProjectOwner {
-    border-color: #4d7ea8;
+    border-color: var(--owner-color);
 }
 
 .dashboardProjectMember {
-    border-color: #72BDA3;
+    border-color: var(--member-color);
 }
 
 .dashboardProjectTaskWrap {
@@ -659,13 +663,27 @@ select {
     color: var(--main-txt-color);
     border: solid 1px var(--main-txt-color);
     padding: 20px;
+    border-radius: 10px;
 }
 
 .bigTaskStatus {
     grid-column: 1 / span 4;
     grid-row: 1;
-    padding: 0 8px;
+    /*padding: 0 20px;*/
     line-height: 50px;
+    color: var(--main-txt-color);
+    font-size: 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+}
+
+.bigTaskStatus:hover{
+    opacity: 0.9;
+    cursor: pointer;
 }
 
 .bigTaskStatusToDo {
@@ -683,35 +701,83 @@ select {
 .bigTaskPriority {
     grid-column: 5 / span 4;
     grid-row: 1;
-    text-align: center;
+    /*padding: 0 8px;*/
     background-color: #72BDA3;
     line-height: 50px;
-
+    color: var(--main-txt-color);
+    font-size: 15px;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+    border-radius: 10px;
+    margin-right: 10px;
 }
+
+.bigTaskPriority:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
 
 .bigTaskCategory {
     grid-column: 9 / span 4;
     grid-row: 1;
     background-color: var(--task-two);
-    padding: 0 8px;
+    /*padding: 0 20px;*/
     line-height: 50px;
+    color: var(--main-txt-color);
+    font-size: 15px;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+    border-radius: 10px;
+}
+
+.bigTaskCategory:hover{
+    opacity: 0.9;
+    cursor: pointer;
 }
 
 .bigTaskLeftBar {
     grid-column: 1 / span 6;
     grid-row: 2;
+    height: 100%;
 }
 
 .bigTaskTitle {
-    margin: 20px;
+    margin-top: 20px;
     text-transform: uppercase;
     text-align: left;
     font-weight: 600;
     font-size: 18px;
+    background: transparent;
+    color: var(--main-txt-color);
+    border: none;
+    outline: 0;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.bigTaskTitle:focus{
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .bigTaskDescription {
-    margin: 20px;
+    margin-top: 20px;
+    background: transparent;
+    color: var(--main-txt-color);
+    width: 100%;
+    border: none;
+    outline: 0;
+    border-radius: 10px;
+    height: 75%;
+    
+}
+
+.bigTaskDescription:focus{
+    background: rgba(0,0,0,0.2);
 }
 
 .bigTaskRightBar {
@@ -741,11 +807,11 @@ select {
 }
 
 .bigTaskOwner {
-    border-color: #4D7EA8;
+    border-color: var(--owner-color);
 }
 
 .bigTaskMember {
-    border-color: #72BDA3;
+    border-color: var(--member-color);
 }
 
 .bigTaskCountdown {
@@ -783,7 +849,6 @@ select {
 .bigTaskProject {
     grid-column: 1 / span 6;
     grid-row: 3;
-    margin-left: 20px;
     line-height: 50px;
 }
 
@@ -888,12 +953,12 @@ select {
 
 
 .projectViewOwner {
-    border-color: #4d7ea8;
+    border-color: var(--owner-color);
 }
 
 
 .projectViewMember {
-    border-color: #72BDA3;
+    border-color: var(--member-color);
 }
 
 .projectViewTaskWrap {
@@ -991,13 +1056,13 @@ select {
 
 
 .projectViewTaskOwner {
-    border-color: #4D7EA8;
+    border-color: var(--owner-color);
     pointer-events: none;
     user-select: none
 }
 
 .projectViewTaskMember {
-    border-color: #72BDA3;
+    border-color: var(--member-color);
     pointer-events: none;
     user-select: none
 }

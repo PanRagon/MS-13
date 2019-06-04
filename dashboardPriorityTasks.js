@@ -111,7 +111,10 @@ function renderDashboardTasks(taskArray) {
         taskContainerDiv.appendChild(taskDivWrap);
 
         //Build the countdown chart
-        buildChart(task, countdownDiv);
+        let chartDiv = document.createElement("div");
+        chartDiv.classList.add("dashboardTaskCountdownChart");
+        countdownDiv.appendChild(chartDiv);
+        buildChart(task, chartDiv);
         
     })
 }

@@ -1,29 +1,3 @@
-function findPriorityRating(task) {
-	let ttd = task.endDate - task.startDate;
-	let priority = 0;
-	if(task.priority == 1) {
-		priority = 0.5;
-	} else if(task.priority == 2) {
-		priority = 1;
-	} else if(task.priority == 3) {
-		priority = 1.5; 
-	}
-	return ttd * priority;
-}
-	//Run all functions to complete the priority list
-
-console.log(findPriorityRating(Task.array[0]));
-console.log(findPriorityRating(Task.array[1]));
-console.log(findPriorityRating(Task.array[2]));
-console.log(findPriorityRating(Task.array[3]));
-console.log(findPriorityRating(Task.array[4]));
-
-
-console.log(Task.array[0].priority);
-console.log(User.array);
-
-
-
 class Category {
 
 	static array = [];

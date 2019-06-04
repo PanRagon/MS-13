@@ -430,16 +430,7 @@ select {
     display: inline-block;
     position: absolute;
     bottom: 69px;
-    /*left: 73px;*/
 
-}
-
-.chartistColor1 {
-    stroke: #FF0000;
-}
-
-.chartistColor2 {
-    stroke: #a09a9c;
 }
 
 .dashboardTaskCountdownDays {
@@ -452,10 +443,19 @@ select {
     position: relative;
     width: 20px;
 }
-.ct-chart {
+
+.dashboardTaskCountdownChart {
     position: absolute;
-    bottom: -20px;
-    /*left: -10px;*/
+    bottom: 25px;
+    left: -5px;
+}
+
+.chartistColor1 {
+    stroke: #FF0000;
+}
+
+.chartistColor2 {
+    stroke: #a09a9c;
 }
 
 /* --------------------
@@ -728,10 +728,35 @@ select {
 }
 
 .bigTaskCountdown {
+    position: relative;
     text-align: center;
 }
 
+.bigTaskCountdownDaysUnit {
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    bottom: 69px;
+    /*left: 73px;*/
+
+}
+
+.bigTaskCountdownDays {
+    width: 20px;
+}
+
 .bigTaskCountdownUnit {
+    font-size: 12px;
+    line-height: 12px;
+    position: relative;
+    width: 20px;
+}
+
+.bigTaskCountdownChart {
+    position: absolute;
+    bottom: 0px;
+    left: -5px;
+
 }
 
 .bigTaskProject {

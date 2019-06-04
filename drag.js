@@ -21,12 +21,27 @@ class DragDrop {
 
     static dragstart() {
         DragDrop.card = this;
+
+        // Add padding for easier drop
+        let statusWraps = document.getElementsByClassName("projectViewStatusWrap");
+        for (let i = 0; i < statusWraps.length; i++) {
+            statusWraps[i].setAttribute("style", "padding-bottom: 113px");
+        }
+
         this.classList.add("held");
         setTimeout(() => this.classList.add("invisible"), 1);
     }
 
+
     static dragend() {
         this.classList.remove("held", "invisible");
+
+        // Remove padding on dragend
+        let statusWraps = document.getElementsByClassName("projectViewStatusWrap");
+        for (let i = 0; i < statusWraps.length; i++) {
+            statusWraps[i].removeAttribute("style");
+        }
+
         updateProjectViewCounters();
     }
 

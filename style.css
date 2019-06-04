@@ -462,6 +462,7 @@ select {
     DASHBOARD PROJECTS START:
 -------------------- */
 #dashboardProjectContainer {
+<<<<<<< Updated upstream
     margin: 0 auto 3.5rem auto;
     width: 82.8vw;
     overflow: auto;
@@ -470,6 +471,14 @@ select {
     box-shadow:
         inset -5px 0 5px -5px rgba(0,0,0,0.75),
         inset 5px 0 5px -5px rgba(0,0,0,0.75);
+=======
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding-bottom: 3.5rem;
+    margin: 0 auto;
+    justify-content: center;
+>>>>>>> Stashed changes
 }
 
 .dashboardProjectHeading {

@@ -364,6 +364,13 @@ select {
     grid-row: 1;
     padding: 0 8px;
     line-height: 30px;
+}
+
+.dashboardTaskStatusToDo{
+    background-color: var(--red-light);
+}
+
+.dashboardTaskStatusInProgress{
     background-color: var(--orange-light);
 }
 

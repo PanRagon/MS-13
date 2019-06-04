@@ -56,8 +56,6 @@ function buildChart(task, div) {
 
     let daysLeftPercent = getPercentageLeft(task);
     let totalDaysPercent = 100 - daysLeftPercent;
-    console.log(task.title + " has this percentage left " + daysLeftPercent)
-    console.log(totalDaysPercent);
     let chart = new Chartist.Pie("#" + chartID, {
     series: [{value: totalDaysPercent, className: "chartistColor1"},
     {value: daysLeftPercent, className: "chartistColor2"}],

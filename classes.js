@@ -426,7 +426,7 @@ class Task {
 		testTask11.setStartDate(new Date(2019, 5, 7));
 		testTask11.setEndDate(new Date(2019, 5, 12));
 		testTask11.setPriority(3);
-		testTask11.addOwner(User.array.find(e => e.firstName === "Bjørm").ID);
+		testTask11.addOwner(User.array.find(e => e.firstName === "Bjørn").ID);
 		testTask11.addMember(User.array.find(e => e.firstName === "Turid").ID);
         
         new Task(1, "Smake på safen");

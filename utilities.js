@@ -52,6 +52,7 @@ function buildChart(task, div) {
     chartDiv.className = "ct-chart ct-golden-section";
     chartDiv.id = chartID;
     chartDiv.style.width = "190px";
+    chartDiv.style.margin = "auto";
     div.appendChild(chartDiv);
 
     let daysLeftPercent = getPercentageLeft(task);

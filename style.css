@@ -377,7 +377,7 @@ select {
 .dashboardTaskCategory {
     grid-column: 2;
     grid-row: 1;
-    background-color: var(--task-two);
+    background-color: #2978A0;
     padding: 0 8px;
     line-height: 30px;
 }

@@ -21,15 +21,16 @@ class DragDrop {
 
     static dragstart() {
         DragDrop.card = this;
-
-        // Add padding for easier drop
-        let statusWraps = document.getElementsByClassName("projectViewStatusWrap");
-        for (let i = 0; i < statusWraps.length; i++) {
-            statusWraps[i].setAttribute("style", "padding-bottom: 113px");
-        }
+        
 
         this.classList.add("held");
-        setTimeout(() => this.classList.add("invisible"), 1);
+        setTimeout(() => this.classList.add("invisible"), 0);
+        
+        //Add padding for easier drag
+        /*let statusWraps = document.getElementsByClassName("projectViewStatusWrap");
+        for (let i = 0; i < statusWraps.length; i++) {
+            statusWraps[i].setAttribute("style", "padding-bottom: 113px");
+        }*/
     }
 
 
@@ -37,10 +38,11 @@ class DragDrop {
         this.classList.remove("held", "invisible");
 
         // Remove padding on dragend
-        let statusWraps = document.getElementsByClassName("projectViewStatusWrap");
+        /*let statusWraps = document.getElementsByClassName("projectViewStatusWrap");
+
         for (let i = 0; i < statusWraps.length; i++) {
             statusWraps[i].removeAttribute("style");
-        }
+        }*/
 
         updateProjectViewCounters();
     }
@@ -53,6 +55,10 @@ class DragDrop {
         e.preventDefault();
     }
 
+    static dragleave(e) {
+        e.preventDefault();
+    }
+
     static drop() {
         this.append(DragDrop.card);
         DragDrop.card.classList.remove("projectViewTaskToDo", "projectViewTaskInProgress", "projectViewTaskDone");
@@ -61,4 +67,4 @@ class DragDrop {
     }
 }
 
-document.addEventListener("DOMContentLoaded", DragDrop.init, console.log("done"));
+document.addEventListener("DOMContentLoaded", DragDrop.init);

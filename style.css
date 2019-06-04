@@ -757,6 +757,8 @@ select {
     margin: auto;
     display: inline-block;
     text-align: center;
+    position: relative;
+    top: 55px;
     /*left: 73px;*/
 
 }
@@ -774,8 +776,8 @@ select {
 
 .bigTaskCountdownChart {
     position: relative;
-    bottom: 0px;
-    left: -5px;
+    bottom: 20px;
+    left: 0px;
 
 }
 

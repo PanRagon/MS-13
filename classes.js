@@ -85,11 +85,13 @@ class User {
 
 	// GETTERS:
 	getProjects() {
-		return Project.array.filter(project => project.members.find(member => member.ID === this.ID) || project.owners.find(owner => owner.ID === this.ID));
+		return Project.array.filter(project => project.members.find(member => member.ID === this.ID) ||
+		project.owners.find(owner => owner.ID === this.ID));
 	}
 
 	getTasks() {
-		return Task.array.filter(task => task.members.find(member => member.ID === this.ID) || task.owners.find(owner => owner.ID === this.ID));
+		return Task.array.filter(task => task.members.find(member => member.ID === this.ID) ||
+		task.owners.find(owner => owner.ID === this.ID));
 	}
 
 	getLogs() {
@@ -685,7 +687,8 @@ class TaskCategory {
 
 	delete() {
 		// Delete category from all tasks in Projects
-		Project.array.forEach(project => project.tasks.forEach(task => task.category = task.category.ID === this.ID ? null : task.category));
+		Project.array.forEach(project => project.tasks.forEach(task => task.category = task.category.ID === this.ID ?
+		null : task.category));
 
 		// Delete category from global Category-array
 		TaskCategory.array = TaskCategory.array.filter(e => e.ID !== this.ID);
@@ -714,7 +717,8 @@ class Comment {
 		// Push to global comment array
 		Comment.array.push(this);
 		// Push to target array
-		let target = this.type === "user" ? User.array : this.type === "project" ? Project.array : this.type === "task" ? Task.array : Comment.array;
+		let target = this.type === "user" ? User.array : this.type === "project" ? Project.array : this.type === "task" ?
+		Task.array : Comment.array;
 		if (target === Comment.array){
 			console.log("Error! Log ID " + this.ID + " has invalid type.");
 		} else {
@@ -739,7 +743,8 @@ class Log {
 		// Push to global Log-array
 		Log.array.push(this);
 		// Push to target array
-		let target = this.type === "user" ? User.array : this.type === "project" ? Project.array : this.type === "task" ? Task.array : Log.array;
+		let target = this.type === "user" ? User.array : this.type === "project" ? Project.array : this.type === 
+		"task" ? Task.array : Log.array;
 		if (target === Log.array){
 			console.log("Error! Log ID " + this.ID + " has invalid type.");
 		} else {

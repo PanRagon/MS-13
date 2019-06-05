@@ -920,22 +920,33 @@ select {
     grid-column: 1 / span 6;
     grid-row: 3;
     line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.bigTaskProject:hover{
+    opacity: 0.8;
 }
 
 .bigTaskStartDate {
-    grid-column: 7 / span 3;
+    grid-column: 6 / span 5;
     grid-row: 3;
-    text-align: left;
-    font-size: 12px;
-    line-height: 50px;
+    /*text-align: left;*/
+    text-align: right;
+    font-size: 14px;
+    line-height: 40px;
 }
 
 .bigTaskEndDate {
-    grid-column: 10 / span 3;
+    grid-column: 6 / span 5;
     grid-row: 3;
+    /*text-align: right;*/
     text-align: right;
-    font-size: 12px;
-    line-height: 50px;
+    font-size: 14px;
+    line-height: 40px;
+    position: relative;
+    top: 20px;
 }
 
 /* ------------------------------

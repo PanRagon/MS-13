@@ -95,11 +95,29 @@ function selected(ev) {
     removeElement(ev);
 }*/
 
-function removeElement(e){
-    let elemId = e.target.id;
-    let elem = document.getElementById(elemId);
-    let userId = parseInt(elem.id);
-    let taskId = elem.parentNode.taskid;
-    console.log(taskId);
+function removeUserTask(e){
+    let elemID = e.target.id;
+    let elem = document.getElementById(elemID);
+    let userID = parseInt(elem.id);
     elem.parentNode.removeChild(elem);
+
+    let taskID = elem.parentElement.getAttribute("taskid");
+    Task.array[taskID].removeOwners(userID);
+    Task.array[taskID].removeMembers(userID);
+}
+
+function removeUserProject(e){
+    let elemID = e.target.id;
+    let elem = document.getElementById(elemID);
+    let userID = parseInt(elem.id);
+    elem.parentNode.removeChild(elem);
+
+    let projectID = elem.getAttribute("projectID");
+    Project.array[projectID].removeOwner(userID);
+    Project.array[projectID].removeMember(userID);
+}
+
+
+function createNewProject(title) {
+    Project.constructor(title);
 }

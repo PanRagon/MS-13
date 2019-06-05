@@ -189,7 +189,7 @@ function renderBigTask(task) {
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeElement);
+        userDiv.addEventListener("click", removeUserTask);
     });
     // Members:
     task.members.forEach(member => {
@@ -207,7 +207,7 @@ function renderBigTask(task) {
         userDiv.appendChild(memberDiv);
         userDiv.appendChild(memberNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeElement);
+        userDiv.addEventListener("click", removeUserTask);
     });
     rightBarDiv.appendChild(usersDiv);
 

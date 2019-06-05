@@ -51,7 +51,8 @@ function renderProjectView(project) {
         let userDiv = document.createElement("div");
         let userID = "user " + owner.ID;
         userDiv.classList.add("projectViewUser");
-        userDiv.id = userID;    
+        userDiv.id = userID;
+        userDiv.setAttribute("projectID", project.ID);  
         let ownerDiv = document.createElement("div");
         ownerDiv.classList.add("projectViewUserIcon");
         ownerDiv.classList.add("projectViewOwner");
@@ -62,7 +63,7 @@ function renderProjectView(project) {
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeElement);
+        userDiv.addEventListener("click", removeUserProject);
     });
         // Members:
     project.members.forEach(member => {
@@ -80,7 +81,7 @@ function renderProjectView(project) {
         userDiv.appendChild(memberDiv);
         userDiv.appendChild(memberNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeElement);
+        userDiv.addEventListener("click", removeUserProject);
     });
     // Compose:
     dropDownDiv.appendChild(usersDiv);

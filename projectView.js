@@ -60,7 +60,7 @@ function renderProjectView(project) {
         ownerNameDiv.innerText = owner.fullName;
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
-        userDiv.addEventListener("click", () => {
+        ownerDiv.addEventListener("click", () => {
             project.removeOwner(owner.ID);
             userDiv.parentElement.removeChild(userDiv);
         });
@@ -79,7 +79,7 @@ function renderProjectView(project) {
         memberNameDiv.innerText = member.fullName;
         userDiv.appendChild(memberDiv);
         userDiv.appendChild(memberNameDiv);
-        userDiv.addEventListener("click", () => {
+        memberDiv.addEventListener("click", () => {
             project.removeMember(member.ID);
             userDiv.parentElement.removeChild(userDiv);
         });

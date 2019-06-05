@@ -189,7 +189,7 @@ function renderBigTask(task) {
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", () => {
+        ownerDiv.addEventListener("click", () => {
             task.removeOwner(owner.ID);
             userDiv.parentElement.removeChild(userDiv);
         });
@@ -210,7 +210,7 @@ function renderBigTask(task) {
         userDiv.appendChild(memberDiv);
         userDiv.appendChild(memberNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", () => {
+        memberDiv.addEventListener("click", () => {
             task.removeMember(member.ID);
             userDiv.parentElement.removeChild(userDiv);
         });

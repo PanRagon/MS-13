@@ -266,7 +266,7 @@ function renderBigTask(task) {
     startDateDiv.classList.add("bigTaskStartDate");
     let startDateInput = document.createElement("input");
     startDateInput.setAttribute("type", "date");
-    startDateInput.style.fontSize = "x-small";
+    startDateInput.style.fontSize = "98%";
     startDateInput.setAttribute("value", task.startDate.toISOString().substr(0, 10));
     startDateInput.addEventListener("change", () => {
         task.startDate = startDateInput.value;
@@ -281,7 +281,7 @@ function renderBigTask(task) {
     endDateDiv.classList.add("bigTaskEndDate");
     let endDateInput = document.createElement("input");
     endDateInput.setAttribute("type", "date");
-    endDateInput.style.fontSize = "x-small";
+    endDateInput.style.fontSize = "98%";
     endDateInput.setAttribute("value", task.endDate.toISOString().substr(0, 10));
     endDateInput.addEventListener("change", () => {
         task.endDate = endDateInput.value;

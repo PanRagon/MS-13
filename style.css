@@ -5,14 +5,16 @@
     --main-txt-color: #FFFAFF;
     --category-txt-color: #212121;
 
-    --green-light: #6edd79;
-    --orange-light: #f0cb5c;
-    --red-light: #dc6f6f;
+    --green-light: #6EDD79;
+    --orange-light: #F0CB5C;
+    --red-light: #DC6f6f;
 
     --task-one: #78BFBF;
     --task-two: #5C6784;
-    --task-three: #c47425;
+    --task-three: #C47425;
     --task-category: #71B7DA;
+
+    --priority-color: #72BDA3;
 
     --extra-one: #2FBF71;
     --extra-two: #1B998B;
@@ -745,7 +747,7 @@ select {
     grid-column: 5 / span 4;
     grid-row: 1;
     /*padding: 0 8px;*/
-    background-color: #72BDA3;
+    background-color: var(--priority-color);
     line-height: 50px;
     color: var(--category-txt-color);
     font-size: 15px;
@@ -766,7 +768,7 @@ select {
 .bigTaskCategory {
     grid-column: 9 / span 4;
     grid-row: 1;
-    background-color: var(--task-two);
+    background-color: var(--task-category);
     /*padding: 0 20px;*/
     line-height: 50px;
     color: var(--category-txt-color);

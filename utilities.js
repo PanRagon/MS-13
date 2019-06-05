@@ -113,8 +113,12 @@ function removeUserProject(e){
     elem.parentNode.removeChild(elem);
 
     let projectID = elem.getAttribute("projectID");
-    Project.array[projectID].removeOwner(userID);
-    Project.array[projectID].removeMember(userID);
+    let project = Project.array[projectID];
+    if(project.owners.includes(userID)) {
+        project.removeOwner(userID);
+    } else if(project.members.includes(userID)) {
+        project.removeMember(userID);
+    }
 }
 
 

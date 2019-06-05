@@ -49,7 +49,7 @@ function renderProjectView(project) {
         // Owners:
     project.owners.forEach(owner => {
         let userDiv = document.createElement("div");
-        let userID = "user " + owner.ID;
+        let userID = owner.ID + " user";
         userDiv.classList.add("projectViewUser");
         userDiv.id = userID;
         userDiv.setAttribute("projectID", project.ID);  

@@ -62,12 +62,12 @@ function renderProjectView(project) {
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeElement(task));
+        userDiv.addEventListener("click", removeElement);
     });
         // Members:
     project.members.forEach(member => {
         let userDiv = document.createElement("div");
-        let userID = "user " + member.ID;
+        let userID = member.ID + " user";
         userDiv.classList.add("projectViewUser");
         userDiv.id = userID;
         let memberDiv = document.createElement("div");

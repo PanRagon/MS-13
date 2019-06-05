@@ -36,14 +36,16 @@ function renderDashboardTasks(taskArray) {
         statusDiv.classList.add("dashboardTaskStatus");
         if (task.status.toLowerCase() === "todo") {
             statusDiv.classList.add("dashboardTaskStatusToDo");
+            statusDiv.innerText = "TODO";
         } else if (task.status.toLowerCase() === "inprogress") {
             statusDiv.classList.add("dashboardTaskStatusInProgress");
+            statusDiv.innerText = "In progress";
         } else if (task.status.toLowerCase() === "done") {
             statusDiv.classList.add("dashboardTaskStatusDone");
+            statusDiv.innerText = "Done";
         } else {
             statusDiv.classList.add("dashboardTaskStatusUnknown");
         }
-        statusDiv.innerText = task.status;
         taskDiv.appendChild(statusDiv);
 
         // Category:

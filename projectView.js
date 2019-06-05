@@ -35,10 +35,13 @@ function renderProjectView(project) {
     let dropDownDiv = document.createElement("div");
     dropDownDiv.classList.add("projectViewDropDown");
         // Description:
-    let descriptionDiv = document.createElement("div");
+    let descriptionDiv = document.createElement("textarea");
     descriptionDiv.classList.add("projectViewDescription");
     descriptionDiv.innerText = project.description;
     dropDownDiv.appendChild(descriptionDiv);
+    descriptionDiv.addEventListener("keyup", () => {
+        project.description = descriptionDiv.value;
+    })
         // USER GENERATION:
     let usersDiv = document.createElement("div");
     usersDiv.classList.add("projectViewUserWrap");

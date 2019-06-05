@@ -157,11 +157,9 @@ function renderBigTask(task) {
     leftBarDiv.appendChild(titleDiv);
 
     // Description:
-    let descriptionDiv = document.createElement("input");
+    let descriptionDiv = document.createElement("textarea");
     descriptionDiv.classList.add("bigTaskDescription");
-    descriptionDiv.setAttribute("taskID", task.ID);
-    descriptionDiv.setAttribute("type", "text");
-    descriptionDiv.setAttribute("value", task.description);
+    descriptionDiv.innerText = task.description;
     descriptionDiv.addEventListener("keyup", () => {
         task.description = descriptionDiv.value;
     });

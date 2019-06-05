@@ -1,5 +1,5 @@
 function appendLeadingZeroes(n){
-    if(n <= 9){
+    if(n <= 9 || n >= 0){
         return "0" + n;
     }
     return n

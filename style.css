@@ -1296,7 +1296,7 @@ select {
 
 }
 
-@media(max-width: 880px){
+@media(max-width: 950px){
     .catchphrase, #verticalLine{
         display: none;
     }

@@ -427,6 +427,14 @@ select {
     border-color: var(--owner-color);
 }
 
+.dashboardTaskOwner:before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    position: relative;
+    bottom: 20px;
+    left: 7px;
+}
+
 .dashboardTaskMember {
     border-color: var(--member-color);
 }
@@ -438,10 +446,10 @@ select {
 
 .dashboardTaskCountdownDaysUnit {
     margin: auto;
-    display: inline-block;
+    /*display: inline-block;*/
     position: absolute;
     bottom: 69px;
-    left: 80px;
+    left: 75px;
 
 }
 
@@ -773,7 +781,7 @@ select {
     outline: 0;
     border-radius: 10px;
     height: 75%;
-    
+    overflow-wrap: break-word;
 }
 
 .bigTaskDescription:focus{

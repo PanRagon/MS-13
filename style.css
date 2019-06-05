@@ -175,6 +175,12 @@ select {
     font-size: 20px;
 }
 
+#renderContainer{
+    width: 82.8vw;
+    overflow: auto;
+    margin: 0 auto;
+}
+
 
 .calendar {
     width: 82.8vw;
@@ -809,6 +815,7 @@ select {
     border-radius: 10px;
     height: 75%;
     overflow-wrap: break-word;
+    font-size: 16px;
 }
 
 .bigTaskDescription:focus{
@@ -835,6 +842,7 @@ select {
     margin-bottom: 10px;
     display: inline-block;
     margin-right: 20px;
+    position: relative;
 }
 
 .bigTaskUserName{
@@ -843,6 +851,17 @@ select {
 
 .bigTaskOwner {
     border-color: var(--owner-color);
+}
+
+.bigTaskOwner:before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    position: absolute;
+    bottom: 20px;
+    left: 2.75px;
+    transform: scaleY(0.6);
+    transform: scaleX(1.5);
+    color: gold;
 }
 
 .bigTaskMember {
@@ -912,8 +931,7 @@ select {
 }
 .projectViewProject {
     margin: auto;
-    width: 82.8vw;
-    max-width: 900px;
+    width: 900px;
     color: var(--main-txt-color);
     padding: 20px;
     border: solid 1px var(--main-txt-color);
@@ -975,6 +993,7 @@ select {
     border-radius: 10px;
     color: var(--main-txt-color);
     font-size: 16px;
+    margin-right: 10px;
 }
 
 .projectViewDescription:focus{
@@ -983,7 +1002,7 @@ select {
 
 .projectViewUserWrap {
     grid-column: 2;
-
+    margin-left: 10px;
 }
 
 .projectViewUser {
@@ -1002,6 +1021,7 @@ select {
     margin-bottom: 10px;
     display: inline-block;
     margin-right: 20px;
+    position: relative;
 }
 
 .projectViewUserName {
@@ -1011,6 +1031,17 @@ select {
 
 .projectViewOwner {
     border-color: var(--owner-color);
+}
+
+.projectViewOwner:before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    position: absolute;
+    bottom: 20px;
+    left: 2.75px;
+    transform: scaleY(0.6);
+    transform: scaleX(1.5);
+    color: gold;
 }
 
 
@@ -1055,7 +1086,7 @@ select {
 .projectViewTask {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 30px auto 30px;
+    grid-template-rows: 30px auto auto;
     padding: 10px;
     border: solid 1px var(--main-txt-color);
     border-radius: 10px;
@@ -1081,18 +1112,21 @@ select {
     grid-column: 1 / span 2;
     grid-row: 2;
     pointer-events: none;
+    font-weight: 600;
+    text-transform: uppercase;
+
 }
 
 .invisible {
   display: none;
 }
 .projectViewTaskUserWrap {
-    grid-column: 2;
+    grid-column: 1 / span 2;
     grid-row: 3;
-    text-align: right;
+    text-align: left;
     pointer-events: none;
-    user-select: none
-
+    user-select: none;
+    padding-top: 10px;
 }
 
 .projectViewTaskUser {
@@ -1104,11 +1138,11 @@ select {
     font-size: 15px;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 10px;
     display: inline-block;
-    margin-left: 5px;
     pointer-events: none;
-    user-select: none
+    user-select: none;
+    margin-right: 5px;
+    position: relative;
 }
 
 
@@ -1116,6 +1150,17 @@ select {
     border-color: var(--owner-color);
     pointer-events: none;
     user-select: none
+}
+
+.projectViewTaskOwner:before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    position: absolute;
+    bottom: 20px;
+    left: 2.75px;
+    transform: scaleY(0.6);
+    transform: scaleX(1.5);
+    color: gold;
 }
 
 .projectViewTaskMember {

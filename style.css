@@ -474,7 +474,7 @@ select {
     /*display: inline-block;*/
     position: absolute;
     bottom: 69px;
-    left: 75px;
+    left: 65px;
 
 }
 
@@ -491,14 +491,13 @@ select {
 .dashboardTaskCountdownUnit {
     font-size: 12px;
     line-height: 12px;
-    position: relative;
     width: 20px;
 }
 
 .dashboardTaskCountdownChart {
-    position: absolute;
-    bottom: 25px;
-    left: -5px;
+    position: relative;
+    top: 20px;
+    right: 15px;
 }
 
 .chartistColor1 {

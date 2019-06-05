@@ -189,7 +189,10 @@ function renderBigTask(task) {
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeUserTask);
+        userDiv.addEventListener("click", () => {
+            task.removeOwner(owner.ID);
+            userDiv.parentElement.removeChild(userDiv);
+        });
     });
     // Members:
     task.members.forEach(member => {
@@ -207,7 +210,10 @@ function renderBigTask(task) {
         userDiv.appendChild(memberDiv);
         userDiv.appendChild(memberNameDiv);
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeUserTask);
+        userDiv.addEventListener("click", () => {
+            task.removeMember(member.ID);
+            userDiv.parentElement.removeChild(userDiv);
+        });
     });
     rightBarDiv.appendChild(usersDiv);
 

@@ -95,8 +95,12 @@ function selected(ev) {
     removeElement(ev);
 }*/
 
-function removeElement(e){
+function removeElement(e, task){
     let elemId = e.target.id;
     let elem = document.getElementById(elemId);
     elem.parentNode.removeChild(elem);
+    task.
+}
+
+function removeElementFromTasks(e){
 }

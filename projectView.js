@@ -49,10 +49,8 @@ function renderProjectView(project) {
         // Owners:
     project.owners.forEach(owner => {
         let userDiv = document.createElement("div");
-        let userID = owner.ID + " user";
         userDiv.classList.add("projectViewUser");
-        userDiv.id = userID;
-        userDiv.setAttribute("projectID", project.ID);  
+        userDiv.setAttribute("projectID", project.ID);
         let ownerDiv = document.createElement("div");
         ownerDiv.classList.add("projectViewUserIcon");
         ownerDiv.classList.add("projectViewOwner");
@@ -62,15 +60,16 @@ function renderProjectView(project) {
         ownerNameDiv.innerText = owner.fullName;
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
+        userDiv.addEventListener("click", () => {
+            project.removeOwner(owner.ID);
+            userDiv.parentElement.removeChild(userDiv);
+        });
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeUserProject);
     });
         // Members:
     project.members.forEach(member => {
         let userDiv = document.createElement("div");
-        let userID = member.ID + " user";
         userDiv.classList.add("projectViewUser");
-        userDiv.id = userID;
         let memberDiv = document.createElement("div");
         memberDiv.classList.add("projectViewUserIcon");
         memberDiv.classList.add("projectViewMember");
@@ -80,8 +79,11 @@ function renderProjectView(project) {
         memberNameDiv.innerText = member.fullName;
         userDiv.appendChild(memberDiv);
         userDiv.appendChild(memberNameDiv);
+        userDiv.addEventListener("click", () => {
+            project.removeMember(member.ID);
+            userDiv.parentElement.removeChild(userDiv);
+        });
         usersDiv.appendChild(userDiv);
-        userDiv.addEventListener("click", removeUserProject);
     });
     // Compose:
     dropDownDiv.appendChild(usersDiv);

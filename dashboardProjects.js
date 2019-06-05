@@ -6,6 +6,10 @@ function renderDashboardProjects(projectArray) {
         // Wrap for inline-block-positioning
         let projectWrapDiv = document.createElement("div");
         projectWrapDiv.classList.add("dashboardProjectWrap");
+        projectWrapDiv.setAttribute("projectID", project.ID);
+        projectWrapDiv.addEventListener("click", () => {
+            renderProjectView(Project.array.find(project => project.ID == projectWrapDiv.getAttribute("projectid")));
+        });
 
         let projectDiv = document.createElement("div");
         projectDiv.classList.add("dashboardProject");
@@ -92,5 +96,3 @@ function renderDashboardProjects(projectArray) {
         projectContainerDiv.appendChild(projectWrapDiv);
     });
 }
-
-renderDashboardProjects(Project.array);

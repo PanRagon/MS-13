@@ -12,9 +12,24 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/ceo4svg.css">
 
+    <!--General Scripts-->
+    <script src="dropdown.js"></script>
     <script src="utilities.js"></script>
     <script src="classes.js"></script>
-    <script src="dropdown.js"></script>
+    <!--Dashboard Scripts-->
+    <script src="renderDashboard.js"></script>
+    <script src="dashboardCalendar.js"></script>
+    <script src="dashboardPriorityTasks.js"></script>
+    <script src="dashboardProjects.js"></script>
+    <!--BigTask Scripts-->
+    <script src="bigTask.js"></script>
+    <script src="confetti.js"></script>
+    <!--ProjectView Scripts-->
+    <script src="projectView.js"></script>
+    <script src="drag.js"></script>
+    <!--Chartist Setup-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.js"></script>
 </head>
 
 <body>
@@ -56,59 +71,20 @@
     </nav>
 </section>
 
-    <h3 class="calendarHeading">
-        <span class="highlight">project</span> calendar
-    </h3>
-    
-    <div class="calendarWrap">
-        
-
-        <div class="calendar" id="calendarContainer">
-
-        </div>
+    <div id="renderContainer">
+        <script>
+            renderDashboard(User.array[0]);
+            /*
+            renderDashboardCalendar(User.array[0].getTasks());
+            renderDashboardTasks(User.array[0].getTasks());
+            renderDashboardProjects(User.array[0].getProjects());
+            */
+        </script>
     </div>
-
-    <h3 class="dashboardTaskHeading">recommended <span class="highlight">tasks</span></h3>
-    <section id="dashboardTaskContainer">
-        <!--TASKS GENERATED VIA JAVASCRIPT-->
-    </section>
-
-    <h3 class="dashboardProjectHeading">
-        your <span class="highlight">projects</span>
-    </h3>
-
-    <section id="dashboardProjectContainer">
-        <!--PROJECTS GENERATED VIA JAVASCRIPT-->
-    </section>
 
     <footer class="mainFooter">
         <p>&copy; MS-13 2019</p>
     </footer>
-
-    <!-- en button hvis vi vil bruke den :)
-
-        <div class="btn-wrapper">
-            <button class="btn" onclick="clickAlert()">
-                <span class="btn-text">
-                    CLICK
-                </span>
-                <span class="arrow">
-                    &#8594;
-                </span>
-            </button>
-        </div>
---> 
-    <!--Chartist -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.js"></script>
-
-    <script src="dashboardCalendar.js"></script>
-    <script src="dashboardPriorityTasks.js"></script>
-    <script src="dashboardProjects.js"></script>
-    <script>
-        renderDashboardCalendar(Task.array);
-        renderDashboardTasks(Task.array);
-    </script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 function renderProjectView(project) {
-    let projectContainerDiv = document.getElementById("projectViewContainer");
+    let projectContainerDiv = document.getElementById("renderContainer");
+    projectContainerDiv.innerHTML = '';
 
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("projectViewProject");
@@ -126,6 +127,9 @@ function renderProjectView(project) {
         taskDiv.classList.add("projectViewTask");
         taskDiv.setAttribute("taskID", task.ID);
         taskDiv.setAttribute("draggable", true);
+        taskDiv.addEventListener("click", () => {
+            renderBigTask(Task.array.find(task => task.ID == taskDiv.getAttribute("taskid")));
+        });
         // Category
         let categoryDiv = document.createElement("div");
         categoryDiv.classList.add("projectViewTaskCategory");
@@ -184,7 +188,7 @@ function renderProjectView(project) {
             inProgressDiv.appendChild(taskDiv);
         } else if (task.status.toLowerCase() === "done") {
             taskDiv.classList.add("projectViewTaskDone");
-            toDoDiv.appendChild(taskDiv);
+            doneDiv.appendChild(taskDiv);
         }
     });
 
@@ -197,6 +201,8 @@ function renderProjectView(project) {
 
     // Render project to container
     projectContainerDiv.appendChild(projectDiv);
+
+    DragDrop.init();
 }
 
 function updateProjectViewCounters() {
@@ -207,5 +213,3 @@ function updateProjectViewCounters() {
     let doneCounter = document.querySelector('.projectViewStatusTitleDone');
     doneCounter.innerHTML = document.getElementsByClassName("projectViewTaskDone").length.toString() + " Done";
 }
-
-renderProjectView(Project.array[0]);

@@ -5,7 +5,7 @@ function bigTaskDateRender(date) {
 
 function renderBigTask(task) {
 
-    let bigTaskWrapper = document.getElementById("bigTaskContainer");
+    let bigTaskWrapper = document.getElementById("renderContainer");
     bigTaskWrapper.innerHTML = "";
 
     let taskDiv = document.createElement("div");
@@ -236,10 +236,15 @@ function renderBigTask(task) {
 
 
     // Project:
+    let project = Project.array.find(project => project.tasks.find(projectTask => projectTask.ID == task.ID));
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("bigTaskProject");
     projectDiv.setAttribute("taskID", task.ID);
+    projectDiv.setAttribute("projectID", project.ID);
     projectDiv.innerText = task.getProject().title;
+    projectDiv.addEventListener("click", () => {
+        renderProjectView(project);
+    });
     taskDiv.appendChild(projectDiv);
 
     // Start date:
@@ -255,12 +260,4 @@ function renderBigTask(task) {
     endDateDiv.setAttribute("taskID", task.ID);
     endDateDiv.innerText = "End: " + bigTaskDateRender(task.endDate);
     taskDiv.appendChild(endDateDiv);
-
-   // bigTaskWrapper.appendChild(taskDiv);
-    //let countdownDiv = document.createElement("div");
-   // bigTaskWrapper.appendChild(countdownDiv);
-    //buildChart(task, countdownDiv);
-
 }
-
-renderBigTask(Task.array[0]);

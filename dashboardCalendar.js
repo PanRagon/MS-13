@@ -104,6 +104,9 @@ function renderDashboardCalendar (taskArray) {
         taskDiv.classList.add("calendarItem");
         taskDiv.setAttribute("taskID", task.ID);
         taskDiv.setAttribute("taskStatus", task.status.toLowerCase());
+        taskDiv.addEventListener("click", () => {
+            renderBigTask(Task.array.find(task => task.ID == taskDiv.getAttribute("taskid")));
+        });
 
         // Add status to taskDiv
         let statusDiv = document.createElement("div");

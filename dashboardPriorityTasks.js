@@ -23,6 +23,9 @@ function renderDashboardTasks(taskArray) {
         taskDivWrap.classList.add("dashboardTaskWrap");
         taskDivWrap.setAttribute("taskID", task.ID);
         taskDivWrap.setAttribute("taskStatus", task.status.toLowerCase());
+        taskDivWrap.addEventListener("click", () => {
+            renderBigTask(Task.array.find(task => task.ID == taskDivWrap.getAttribute("taskid")));
+        });
 
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("dashboardTask");

@@ -176,7 +176,7 @@ function renderBigTask(task) {
     // Owners:
     task.owners.forEach(owner => {
         let userDiv = document.createElement("div");
-        let userID = "user " + owner.ID;
+        let userID = owner.ID + " user";
         userDiv.classList.add("bigTaskUser");
         userDiv.id = userID;
         let ownerDiv = document.createElement("div");
@@ -194,7 +194,7 @@ function renderBigTask(task) {
     // Members:
     task.members.forEach(member => {
         let userDiv = document.createElement("div");
-        let userID = "user " + member.ID;
+        let userID = member.ID + " user";
         userDiv.classList.add("bigTaskUser");
         userDiv.id = userID;
         let memberDiv = document.createElement("div");
@@ -260,6 +260,15 @@ function renderBigTask(task) {
     startDateDiv.setAttribute("taskID", task.ID);
     startDateDiv.innerText = "Start: " + bigTaskDateRender(task.startDate);
     taskDiv.appendChild(startDateDiv);
+
+    let startDateEdit = document.createElement("input");
+    startDateEdit.classList.add("bigTaskStartDate", "invisible");
+    startDateEdit.setAttribute("TaskID", task.ID);
+    startDateEdit.setAttribute("type", "date");
+    taskDiv.appendChild(startDateEdit);
+    startDateEdit.addEventListener("click", () => {
+    startDateEdit.classList.remove("invisible");
+    })
 
     // End date:
     let endDateDiv = document.createElement("div");

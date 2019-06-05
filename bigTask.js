@@ -176,7 +176,9 @@ function renderBigTask(task) {
     // Owners:
     task.owners.forEach(owner => {
         let userDiv = document.createElement("div");
+        let userID = "user " + owner.ID;
         userDiv.classList.add("bigTaskUser");
+        userDiv.id = userID;
         let ownerDiv = document.createElement("div");
         ownerDiv.classList.add("bigTaskUserIcon");
         ownerDiv.classList.add("bigTaskOwner");
@@ -187,11 +189,14 @@ function renderBigTask(task) {
         userDiv.appendChild(ownerDiv);
         userDiv.appendChild(ownerNameDiv);
         usersDiv.appendChild(userDiv);
+        userDiv.addEventListener("click", removeElement);
     });
     // Members:
     task.members.forEach(member => {
         let userDiv = document.createElement("div");
+        let userID = "user " + member.ID;
         userDiv.classList.add("bigTaskUser");
+        userDiv.id = userID;
         let memberDiv = document.createElement("div");
         memberDiv.classList.add("bigTaskUserIcon");
         memberDiv.classList.add("bigTaskMember");
@@ -202,6 +207,7 @@ function renderBigTask(task) {
         userDiv.appendChild(memberDiv);
         userDiv.appendChild(memberNameDiv);
         usersDiv.appendChild(userDiv);
+        userDiv.addEventListener("click", removeElement);
     });
     rightBarDiv.appendChild(usersDiv);
 

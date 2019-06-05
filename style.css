@@ -944,6 +944,17 @@ select {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 26px;
+    resize: none;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: var(--main-txt-color);
+    text-align: center;
+}
+
+.projectViewTitle:focus{
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .projectViewDropDown {
@@ -957,6 +968,17 @@ select {
 
 .projectViewDescription {
     grid-column: 1;
+    resize: none;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: var(--main-txt-color);
+    font-size: 16px;
+}
+
+.projectViewDescription:focus{
+    background: rgba(0,0,0,0.2);
 }
 
 .projectViewUserWrap {

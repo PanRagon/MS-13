@@ -1023,6 +1023,18 @@ select {
 
 }
 
+.projectViewUser:hover::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f057";
+    position: absolute;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 3;
+    color: var(--red-light);
+    background-color: var(--main-bg-color);
+    border-radius: 50%;
+}
+
 .projectViewUserIcon {
     width: 30px;
     height: 30px;

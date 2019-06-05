@@ -105,7 +105,7 @@ class User {
 		new User("Bjørn", "Svart", "Megastor", "bjørnenmega@gmail.com", "Bardufoss, Norway");
 		new User("Nina", "Berg", "Foss", "ninafossefall@gmail.com", "Stange, Norway");
         new User("Arne", "Sør", "Arntsen", "arne.arntsen@gmail.com", "Oslo, Norway");
-        new User("Lil", "Big", "Pimp,", "Lil.b.pimp@gmail.com", "Trondheim, Norway");
+        new User("Lil", "Big", "Pimp", "Lil.b.pimp@gmail.com", "Trondheim, Norway");
         new User("Sigvart", "Heja", "Dagsland", "sig.dags@gmail.com", "Stavanger, Norway");
         new User("Big", "Boy", "Benny", "big.boy.b@gmail.com", "Bergen, Norway");
 	}

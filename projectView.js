@@ -14,9 +14,14 @@ function renderProjectView(project) {
     startDateDiv.innerText = dayMonthDateFormatter(project.startDate);
     topBarDiv.appendChild(startDateDiv);
         // Title:
-    let titleDiv = document.createElement("div");
+    let titleDiv = document.createElement("input");
     titleDiv.classList.add("projectViewTitle");
-    titleDiv.innerText = project.title;
+    titleDiv.setAttribute("projectID", project.ID);
+    titleDiv.setAttribute("type", "text");
+    titleDiv.setAttribute("value", project.title);
+    titleDiv.addEventListener("keyup", () => {
+        project.title = titleDiv.value;
+    });
     topBarDiv.appendChild(titleDiv);
         // End date:
     let endDateDiv = document.createElement("div");
@@ -30,10 +35,13 @@ function renderProjectView(project) {
     let dropDownDiv = document.createElement("div");
     dropDownDiv.classList.add("projectViewDropDown");
         // Description:
-    let descriptionDiv = document.createElement("div");
+    let descriptionDiv = document.createElement("textarea");
     descriptionDiv.classList.add("projectViewDescription");
     descriptionDiv.innerText = project.description;
     dropDownDiv.appendChild(descriptionDiv);
+    descriptionDiv.addEventListener("keyup", () => {
+        project.description = descriptionDiv.value;
+    })
         // USER GENERATION:
     let usersDiv = document.createElement("div");
     usersDiv.classList.add("projectViewUserWrap");
@@ -96,7 +104,8 @@ function renderProjectView(project) {
     let inProgressHeaderDiv = document.createElement("div");
     inProgressHeaderDiv.classList.add("projectViewStatusTitle");
     inProgressHeaderDiv.classList.add("projectViewStatusTitleInProgress");
-    inProgressHeaderDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "inprogress").length.toString() + " In progress";
+    inProgressHeaderDiv.innerText = project.tasks.filter(task => task.status.toLowerCase() === "inprogress").length.toString() 
+    + " In progress";
     inProgressDiv.appendChild(inProgressHeaderDiv);
 
     // Done

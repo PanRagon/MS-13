@@ -21,6 +21,7 @@ function renderDashboardTasks(taskArray) {
     taskArray.forEach(task => {
         let taskDivWrap = document.createElement("div");
         taskDivWrap.classList.add("dashboardTaskWrap");
+        taskDivWrap.classList.add("pointer");
         taskDivWrap.setAttribute("taskID", task.ID);
         taskDivWrap.setAttribute("taskStatus", task.status.toLowerCase());
         taskDivWrap.addEventListener("click", () => {

@@ -6,6 +6,7 @@ function renderDashboardProjects(projectArray) {
         // Wrap for inline-block-positioning
         let projectWrapDiv = document.createElement("div");
         projectWrapDiv.classList.add("dashboardProjectWrap");
+        projectWrapDiv.classList.add("pointer");
         projectWrapDiv.setAttribute("projectID", project.ID);
         projectWrapDiv.addEventListener("click", () => {
             renderProjectView(Project.array.find(project => project.ID == projectWrapDiv.getAttribute("projectid")));

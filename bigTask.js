@@ -239,6 +239,7 @@ function renderBigTask(task) {
     let project = Project.array.find(project => project.tasks.find(projectTask => projectTask.ID == task.ID));
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("bigTaskProject");
+    projectDiv.classList.add("pointer");
     projectDiv.setAttribute("taskID", task.ID);
     projectDiv.setAttribute("projectID", project.ID);
     projectDiv.innerText = task.getProject().title;

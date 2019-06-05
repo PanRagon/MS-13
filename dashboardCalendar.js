@@ -102,6 +102,7 @@ function renderDashboardCalendar (taskArray) {
     taskArray.forEach((task, i) => {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("calendarItem");
+        taskDiv.classList.add("pointer");
         taskDiv.setAttribute("taskID", task.ID);
         taskDiv.setAttribute("taskStatus", task.status.toLowerCase());
         taskDiv.addEventListener("click", () => {

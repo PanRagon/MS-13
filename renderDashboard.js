@@ -6,7 +6,7 @@ function renderDashboard(user) {
         // Calendar Heading
     let calHeader = document.createElement("h3");
     calHeader.classList.add("calendarHeading");
-    calHeader.innerHTML = '<span class="highlight">project</span> calendar';
+    calHeader.innerHTML = '<span class="highlight">task</span> calendar';
     renderTarget.appendChild(calHeader);
         // Calendar contents
     let calWrap = document.createElement("div");

@@ -166,12 +166,6 @@ function renderProjectView(project) {
             usersDiv.appendChild(memberDiv);
         });
         taskDiv.appendChild(usersDiv);
-        // Project
-        let projectDiv = document.createElement("div");
-        projectDiv.classList.add("projectViewTaskProject");
-        projectDiv.setAttribute("taskID", task.ID);
-        projectDiv.innerText = task.getProject().title;
-        taskDiv.appendChild(projectDiv);
         // End date
         let endDateDiv = document.createElement("div");
         endDateDiv.classList.add("projectViewTaskEndDate");

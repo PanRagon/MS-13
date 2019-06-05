@@ -288,11 +288,23 @@ select {
     margin-right: 5px;
     font-size: 13px;
     font-weight: 800;
+    position: relative;
 }
 
 /* Individual owners */
 .calendarItemOwner{
     border-color: var(--owner-color);
+}
+
+.calendarItemOwner:before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    position: absolute;
+    bottom: 20px;
+    left: 2.75px;
+    transform: scaleY(0.6);
+    transform: scaleX(1.5);
+    color: gold;
 }
 
 /* Individual members */
@@ -421,6 +433,7 @@ select {
     margin-right: 5px;
     font-size: 13px;
     font-weight: 800;
+    position: relative;
 }
 
 .dashboardTaskOwner {
@@ -430,9 +443,12 @@ select {
 .dashboardTaskOwner:before{
     font-family: "Font Awesome 5 Free";
     content: "\f521";
-    position: relative;
+    position: absolute;
     bottom: 20px;
-    left: 7px;
+    left: 2.75px;
+    transform: scaleY(0.6);
+    transform: scaleX(1.5);
+    color: gold;
 }
 
 .dashboardTaskMember {
@@ -600,12 +616,23 @@ select {
     margin-right: 5px;
     font-size: 13px;
     font-weight: 800;
-
+    position: relative;
 }
 
 
 .dashboardProjectOwner {
     border-color: var(--owner-color);
+}
+
+.dashboardProjectOwner:before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    position: absolute;
+    bottom: 20px;
+    left: 2.75px;
+    transform: scaleY(0.6);
+    transform: scaleX(1.5);
+    color: gold;
 }
 
 .dashboardProjectMember {

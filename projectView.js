@@ -9,10 +9,14 @@ function renderProjectView(project) {
     let topBarDiv = document.createElement("div");
     topBarDiv.classList.add("projectViewTopBar");
         // Start date:
-    let startDateDiv = document.createElement("div");
+    let startDateDiv = document.createElement("input");
     startDateDiv.classList.add("projectViewDate");
     startDateDiv.classList.add("projectViewStartDate");
-    startDateDiv.innerText = dayMonthDateFormatter(project.startDate);
+    startDateDiv.setAttribute("type", "date");
+    startDateDiv.setAttribute("value", project.startDate.toISOString().substr(0, 10));
+    startDateDiv.addEventListener("change", () => {
+        project.startDate = startDateDiv.value;
+    });
     topBarDiv.appendChild(startDateDiv);
         // Title:
     let titleDiv = document.createElement("input");
@@ -25,10 +29,14 @@ function renderProjectView(project) {
     });
     topBarDiv.appendChild(titleDiv);
         // End date:
-    let endDateDiv = document.createElement("div");
+    let endDateDiv = document.createElement("input");
     endDateDiv.classList.add("projectViewDate");
     endDateDiv.classList.add("projectViewEndDate");
-    endDateDiv.innerText = dayMonthDateFormatter(project.endDate);
+    endDateDiv.setAttribute("type", "date");
+    endDateDiv.setAttribute("value", project.endDate.toISOString().substr(0, 10));
+    endDateDiv.addEventListener("change", () => {
+        project.endDate = endDateDiv.value;
+    });
     topBarDiv.appendChild(endDateDiv);
     projectDiv.appendChild(topBarDiv);
 

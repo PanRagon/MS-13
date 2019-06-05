@@ -262,24 +262,29 @@ function renderBigTask(task) {
 
     // Start date:
     let startDateDiv = document.createElement("div");
+    startDateDiv.classList.add("bigTaskDate");
     startDateDiv.classList.add("bigTaskStartDate");
-    startDateDiv.setAttribute("taskID", task.ID);
-    startDateDiv.innerText = "Start: " + bigTaskDateRender(task.startDate);
+    let startDateInput = document.createElement("input");
+    startDateInput.setAttribute("type", "date");
+    startDateInput.setAttribute("value", task.startDate.toISOString().substr(0, 10));
+    startDateInput.addEventListener("change", () => {
+        task.startDate = startDateInput.value;
+    });
+    startDateDiv.innerHTML = "Start: ";
+    startDateDiv.appendChild(startDateInput);
     taskDiv.appendChild(startDateDiv);
-
-    let startDateEdit = document.createElement("input");
-    startDateEdit.classList.add("bigTaskStartDate", "invisible");
-    startDateEdit.setAttribute("TaskID", task.ID);
-    startDateEdit.setAttribute("type", "date");
-    taskDiv.appendChild(startDateEdit);
-    startDateEdit.addEventListener("click", () => {
-    startDateEdit.classList.remove("invisible");
-    })
 
     // End date:
     let endDateDiv = document.createElement("div");
+    endDateDiv.classList.add("bigTaskDate");
     endDateDiv.classList.add("bigTaskEndDate");
-    endDateDiv.setAttribute("taskID", task.ID);
-    endDateDiv.innerText = "End: " + bigTaskDateRender(task.endDate);
+    let endDateInput = document.createElement("input");
+    endDateInput.setAttribute("type", "date");
+    endDateInput.setAttribute("value", task.endDate.toISOString().substr(0, 10));
+    endDateInput.addEventListener("change", () => {
+        task.endDate = endDateInput.value;
+    });
+    endDateDiv.innerHTML = "End: ";
+    endDateDiv.appendChild(endDateInput);
     taskDiv.appendChild(endDateDiv);
 }

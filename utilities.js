@@ -82,3 +82,21 @@ function findPriorityRating(task) {
     }
     return (ttd * priority) / 10000000;
 }
+
+/*function removeElement(ev) {
+    var data=ev.dataTransfer.getData("Text");
+    var el = document.getElementById(data);
+    el.parentNode.removeChild(el);
+}
+
+function selected(ev) {
+    ev.preventDefault();
+    ev.dataTransfer.setData("text", e.target.id);
+    removeElement(ev);
+}*/
+
+function removeElement(e){
+    let elemId = e.target.id;
+    let elem = document.getElementById(elemId);
+    elem.parentNode.removeChild(elem);
+}

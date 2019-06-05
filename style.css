@@ -3,20 +3,21 @@
     --main-bg-color: #424248;
     --secondary-bg-color: #303036;
     --main-txt-color: #FFFAFF;
+    --category-txt-color: #212121;
 
     --green-light: #6edd79;
     --orange-light: #f0cb5c;
     --red-light: #dc6f6f;
 
-    --task-one: #3E8989;
+    --task-one: #78BFBF;
     --task-two: #5C6784;
     --task-three: #c47425;
-    --task-category: #2978A0;
+    --task-category: #71B7DA;
 
     --extra-one: #2FBF71;
     --extra-two: #1B998B;
 
-    --owner-color: #4D7EA8;
+    --owner-color: #A1BBD3;
     --member-color: #72BDA3;
 }
 
@@ -73,7 +74,7 @@ select {
 }
 
 .active {
-    color: #3E8989 !important;
+    color: var(--task-one) !important;
 }
 
 .dropbtn {
@@ -386,6 +387,7 @@ select {
     grid-row: 1;
     padding: 0 8px;
     line-height: 30px;
+    color: var(--category-txt-color);
 }
 
 .dashboardTaskStatusToDo{
@@ -400,8 +402,10 @@ select {
     grid-column: 2;
     grid-row: 1;
     background-color: var(--task-category);
+    color: var(--category-txt-color);
     padding: 0 8px;
     line-height: 30px;
+    
 }
 
 
@@ -839,6 +843,7 @@ select {
     color: var(--red-light);
     background-color: var(--main-bg-color);
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .bigTaskUserIcon {
@@ -872,7 +877,7 @@ select {
     left: 2.75px;
     transform: scaleY(0.6);
     transform: scaleX(1.5);
-    color: gold;
+    color: #ffd700;
 }
 
 .bigTaskMember {

@@ -25,7 +25,7 @@ function calendarDateFormatter(date){
 // Formats a date as DD MMM
 function dayMonthDateFormatter(date) {
     let months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-    return appendLeadingZeroes(date.getDay()) + " " + months[date.getMonth()];
+    return appendLeadingZeroes(date.getDate()) + " " + months[date.getMonth()];
 }
 
 //Dependancies - Chartist.js

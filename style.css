@@ -69,7 +69,7 @@ select {
 }
 
 .mainNav li {
-    padding: 1rem;
+    /*padding: 1rem 0.5rem 1rem 0;*/
 }
 
 .mainNav a {
@@ -80,6 +80,12 @@ select {
 
 .mainNav a:hover {
     color: var(--task-one);
+}
+
+.stickyNav{
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .active {
@@ -130,6 +136,22 @@ select {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+
+.headerButton{
+    color: var(--main-txt-color);
+    background: transparent;
+    border: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 50px;
+    margin: 0 auto;
+}
+
+.headerLi{
+    line-height: 20px;
+    padding: 0;
+}
+
 .show {
     display: block;
 }
@@ -142,11 +164,7 @@ select {
     color: var(--main-txt-color);
 }
 
-.stickyNav{
-    position: sticky;
-    top: 0;
-    z-index: 2;
-}
+
 
 .catchphrase{
     color: var(--main-txt-color);

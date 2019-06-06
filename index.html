@@ -33,16 +33,16 @@
 
 <body>
     <section class="stickyNav">
-    <nav class="mainNav">
-        
+        <nav class="mainNav">
+
             <div class="iWrapper">
                 <button onclick="renderDashboard(User.array[0])">
                     <i class="fas fa-sitemap fa-2x" id="logo"></i>
                     <span class="text">
-                        Logic
+                        golden
                     </span>
                     <span class="underText">
-                        List
+                        planify
                     </span>
                 </button>
                 <i class="fas fa-grip-lines-vertical fa-2x" id="verticalLine"></i>
@@ -52,26 +52,19 @@
 
             </div>
 
-        <ul>
-            <li class="headerLi"><button id="headerButtonDashboard" class="headerButton" onclick="renderDashboard(User.array[0])">dashboard</button></li>
-            <div class="slash invisible" id="slash1">></div>
-            <li class="headerLi"><button id="headerButtonProject" class="headerButton invisible"></button></li>
-            <div class="slash invisible" id="slash2">></div>
-            <li class="headerLi"><button id="headerButtonTask" class="headerButton invisible"></button></li>
-        </ul>
 
-        <!--dropdown menu-->
-        <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">&#9776;</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#home">overview</a>
-                    <a href="#about">tasks</a>
-                    <a href="#contact">projects</a>
-                </div>
-            </div>
 
-    </nav>
-</section>
+        </nav>
+    </section>
+
+    <ul id="navList">
+        <li class="headerLi"><button id="headerButtonDashboard" class="headerButton"
+                onclick="renderDashboard(User.array[0])">dashboard</button></li>
+        <div class="slash invisible" id="slash1">></div>
+        <li class="headerLi"><button id="headerButtonProject" class="headerButton invisible"></button></li>
+        <div class="slash invisible" id="slash2">></div>
+        <li class="headerLi"><button id="headerButtonTask" class="headerButton invisible"></button></li>
+    </ul>
 
     <div id="renderContainer">
         <script>

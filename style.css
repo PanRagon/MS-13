@@ -55,20 +55,19 @@ select {
     height: 65px;
     width: 100vw;
     padding: 0 8.6vw;
-    margin-top: 0;
-    margin-bottom: 3.5rem;
     justify-content: space-between;
 }
 
-.mainNav ul {
+#navList {
     display: flex;
     list-style: none;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    padding-left: 0;
+    justify-content: flex-start;
+    padding-left: 8.6vw;
     margin: 0;
     height: 100%;
+    padding-top: 4px;
 }
 
 .mainNav li {
@@ -95,49 +94,6 @@ select {
     color: var(--task-one) !important;
 }
 
-.dropbtn {
-    background-color: transparent;
-    color: var(--main-txt-color);
-    font-size: 22px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-}
-
-.dropdown {
-    position: relative;
-    display: none;
-    float: right;
-    padding: 1rem;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.3);
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    right: 0;
-    margin-top: 16px;
-}
-
-.dropdown-content a {
-    color: var(--main-txt-color);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
 
 .headerButton{
@@ -176,8 +132,8 @@ select {
     color: var(--main-txt-color);
     position: relative;
     top: -4px;
-    padding-left: 1rem;
-    font-size: 12px;
+    padding-left: 2rem;
+    font-size: 13px;
 }
 
 .iWrapper {
@@ -185,6 +141,7 @@ select {
     left: 30px;
     top: 15px;*/
     height: 100%;
+    margin-inline-end: -50px;
 }
 
 .iWrapper button{
@@ -193,6 +150,7 @@ select {
     height: 100%;
     cursor: pointer;
     text-transform: uppercase;
+
 }
 
 .text {
@@ -211,6 +169,7 @@ select {
     color: var(--task-one);
     letter-spacing: 2px;
     font-size: 17px;
+
 }
 
 .slash {
@@ -244,7 +203,7 @@ select {
     letter-spacing: 2px;
     width: 82.8vw;
     margin: auto;
-    padding: 8px;
+    padding: 0 8px 8px 8px;
 }
 
 #calendarContainer{
@@ -1019,6 +978,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--main-txt-color);
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    color: var(--main-bg-color);
+}
+
+
 /* A few custom styles for date inputs */
 input[type="date"] {
     appearance: none;
@@ -1382,24 +1346,15 @@ input[type="date"], focus {
 /* media queries */
 
 @media(max-width: 568px){
-    .projects, .tasks{
-        flex-direction: column;
-        align-items: center;
-    }
-    .boxes{
-        width: 82.8vw;
-        height: 35vh;
-    }
-    .dropdown{
-        display:block;
-    }
-    .mainNav ul{
-        display: none;
+
+    .headerButton{
+        font-size: 10px;
     }
 
 }
 
-@media(max-width: 880px){
+
+@media(max-width: 1000px){
     .catchphrase, #verticalLine{
         display: none;
     }

@@ -2,6 +2,9 @@ function renderProjectView(project) {
     let projectContainerDiv = document.getElementById("renderContainer");
     projectContainerDiv.innerHTML = '';
 
+    // Scroll to top
+    window.scrollTo(0, 0);
+
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("projectViewProject");
 

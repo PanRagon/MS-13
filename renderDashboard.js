@@ -2,6 +2,9 @@ function renderDashboard(user) {
     let renderTarget = document.getElementById("renderContainer");
     renderTarget.innerHTML = '';
 
+    // Scroll to top
+    window.scrollTo(0, 0);
+
     // Calendar Rendering
         // Calendar Heading
     let calHeader = document.createElement("h3");

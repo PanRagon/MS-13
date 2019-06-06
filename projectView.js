@@ -15,7 +15,7 @@ function renderProjectView(project) {
     startDateDiv.setAttribute("type", "date");
     startDateDiv.setAttribute("value", project.startDate.toISOString().substr(0, 10));
     startDateDiv.addEventListener("change", () => {
-        project.startDate = startDateDiv.value;
+        project.startDate = new Date(startDateDiv.value);
     });
     topBarDiv.appendChild(startDateDiv);
         // Title:
@@ -35,7 +35,7 @@ function renderProjectView(project) {
     endDateDiv.setAttribute("type", "date");
     endDateDiv.setAttribute("value", project.endDate.toISOString().substr(0, 10));
     endDateDiv.addEventListener("change", () => {
-        project.endDate = endDateDiv.value;
+        project.endDate = new Date(endDateDiv.value);
     });
     topBarDiv.appendChild(endDateDiv);
     projectDiv.appendChild(topBarDiv);

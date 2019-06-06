@@ -269,7 +269,7 @@ function renderBigTask(task) {
     startDateInput.style.fontSize = "98%";
     startDateInput.setAttribute("value", task.startDate.toISOString().substr(0, 10));
     startDateInput.addEventListener("change", () => {
-        task.startDate = startDateInput.value;
+        task.startDate = new Date(startDateInput.value);
     });
     startDateDiv.innerHTML = "Start: ";
     startDateDiv.appendChild(startDateInput);
@@ -284,7 +284,7 @@ function renderBigTask(task) {
     endDateInput.style.fontSize = "98%";
     endDateInput.setAttribute("value", task.endDate.toISOString().substr(0, 10));
     endDateInput.addEventListener("change", () => {
-        task.endDate = endDateInput.value;
+        task.endDate = new Date(endDateInput.value);
     });
     endDateDiv.innerHTML = "End: ";
     endDateDiv.appendChild(endDateInput);

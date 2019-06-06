@@ -262,11 +262,15 @@ function renderBigTask(task) {
             userDiv.appendChild(memberDiv);
             userDiv.appendChild(memberNameDiv);
             addUserDiv.appendChild(userDiv);
-            memberDiv.addEventListener("click", () => {
+            memberDiv.onclick = function() {
                 task.addOwner(user.ID);
+                memberDiv.onclick = null;
+                memberDiv.addEventListener("click", () => {
+                    task.removeOwner(user.ID);
+                    userDiv.parentElement.removeChild(userDiv);
+                });
                 ownersDiv.appendChild(userDiv);
-                addUserDiv.innerHTML = "";
-            })
+            }
         })
     };
     addUserButtonsDiv.appendChild(newOwnerButton);
@@ -300,11 +304,15 @@ function renderBigTask(task) {
             userDiv.appendChild(memberDiv);
             userDiv.appendChild(memberNameDiv);
             addUserDiv.appendChild(userDiv);
-            memberDiv.addEventListener("click", () => {
+            memberDiv.onclick = function() {
                 task.addMember(user.ID);
-                membersDiv.appendChild(userDiv);
-                addUserDiv.innerHTML = "";
-            })
+                memberDiv.onclick = null;
+                memberDiv.addEventListener("click", () => {
+                    task.removeMember(user.ID);
+                    userDiv.parentElement.removeChild(userDiv);
+                });
+                ownersDiv.appendChild(userDiv);
+            }
         })
     };
     addUserButtonsDiv.appendChild(newMemberButton);

@@ -137,11 +137,15 @@ function renderProjectView(project) {
             userDiv.appendChild(memberDiv);
             userDiv.appendChild(memberNameDiv);
             addUserDiv.appendChild(userDiv);
-            memberDiv.addEventListener("click", () => {
+            memberDiv.onclick = function() {
                 project.addOwner(user.ID);
+                memberDiv.onclick = null;
+                memberDiv.addEventListener("click", () => {
+                    project.removeOwner(user.ID);
+                    userDiv.parentElement.removeChild(userDiv);
+                });
                 ownersDiv.appendChild(userDiv);
-                addUserDiv.innerHTML = "";
-            })
+            }
         })
     };
     addUserButtonsDiv.appendChild(newOwnerButton);
@@ -175,11 +179,15 @@ function renderProjectView(project) {
             userDiv.appendChild(memberDiv);
             userDiv.appendChild(memberNameDiv);
             addUserDiv.appendChild(userDiv);
-            memberDiv.addEventListener("click", () => {
+            memberDiv.onclick = function() {
                 project.addMember(user.ID);
-                membersDiv.appendChild(userDiv);
-                addUserDiv.innerHTML = "";
-            })
+                memberDiv.onclick = null;
+                memberDiv.addEventListener("click", () => {
+                    project.removeMember(user.ID);
+                    userDiv.parentElement.removeChild(userDiv);
+                });
+                ownersDiv.appendChild(userDiv);
+            }
         })
     };
     addUserButtonsDiv.appendChild(newMemberButton);
@@ -313,7 +321,6 @@ function renderProjectView(project) {
     newTaskInput.setAttribute("type", "text");
     newTaskDiv.appendChild(newTaskInput);
     newTaskDiv.appendChild(newTaskButton);
-    console.log(newTaskInput.value);
 
     newTaskButton.addEventListener("click", () => {
         if(newTaskInput.value != "") {

@@ -89,12 +89,7 @@ var confetti = {
     function startConfetti() {
         //var width = window.innerWidth;
         //var width = window.innerWidth * 0.828;
-        var width;
-        if (window.innerWidth * 0.828 > 700) {
-            width = 700;
-        } else {
-            width = window.innerWidth * 0.828;
-        }
+        var width = window.innerWidth;
 
         var height = window.innerHeight;
         window.requestAnimationFrame = (function () {
@@ -112,16 +107,14 @@ var confetti = {
             canvas = document.createElement("canvas");
             canvas.setAttribute("id", "confetti-canvas");
             canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none;margin:auto");
-            document.getElementById("renderContainer").appendChild(canvas);
+            document.getElementsByTagName("BODY")[0].appendChild(canvas);
+            canvas.style.zIndex = "40";
+            canvas.style.position = "fixed";
+            canvas.style.top = height;
             canvas.width = width;
             canvas.height = height;
             window.addEventListener("resize", function () {
-                //canvas.width = window.innerWidth;
-                if (window.innerWidth * 0.828 > 700) {
-                    canvas.width = 700;
-                } else {
-                    canvas.width = window.innerWidth * 0.828;
-                }
+                canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             }, true);
             context = canvas.getContext("2d");

@@ -173,6 +173,12 @@ class DragDrop {
         DragDrop.card.classList.remove("projectViewTaskToDo", "projectViewTaskInProgress", "projectViewTaskDone");
         DragDrop.card.classList.add("projectViewTask" + this.getAttribute("status"));
         Task.array.find(task => task.ID === Number(DragDrop.card.getAttribute("taskid"))).status = this.getAttribute("status");
+        if(this.getAttribute("status") == "Done") {
+            confetti.start();
+            setTimeout(function () {
+                confetti.stop()
+            }, 2000);
+        }
     }
 }
 

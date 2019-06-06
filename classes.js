@@ -120,9 +120,11 @@ class Project {
 		this.ID = Project.idCounter++;
 		this.log = [];
 		this.title = title;
-		this.description = null;
-		this.startDate = null;
-		this.endDate = null;
+		this.description = "";
+		this.startDate = new Date();
+		let nextWeek = new Date();
+		nextWeek.setDate(nextWeek.getDate() + 7);
+		this.endDate = nextWeek;
 		this.owners = [];
 		this.members = [];
 		this.tasks =[];
@@ -237,7 +239,7 @@ class Task {
 		this.title = title;
 		this.description = "";
 		this.startDate = new Date();
-		var nextWeek = new Date();
+		let nextWeek = new Date();
 		nextWeek.setDate(nextWeek.getDate() + 7);
 		this.endDate = nextWeek;
 		this.priority = 3;

@@ -55,6 +55,9 @@ function renderProjectView(project) {
     let usersDiv = document.createElement("div");
     usersDiv.classList.add("projectViewUserWrap");
         // Owners:
+    let ownersDiv = document.createElement("div");
+    ownersDiv.classList.add("bigTaskOwnersWrap");
+    usersDiv.appendChild(ownersDiv);
     project.owners.forEach(owner => {
         let userDiv = document.createElement("div");
         userDiv.classList.add("projectViewUser");
@@ -72,9 +75,12 @@ function renderProjectView(project) {
             project.removeOwner(owner.ID);
             userDiv.parentElement.removeChild(userDiv);
         });
-        usersDiv.appendChild(userDiv);
+        ownersDiv.appendChild(userDiv);
     });
         // Members:
+    let membersDiv = document.createElement("div");
+    membersDiv.classList.add("bigTaskMembersWrap");
+    usersDiv.appendChild(membersDiv);
     project.members.forEach(member => {
         let userDiv = document.createElement("div");
         userDiv.classList.add("projectViewUser");
@@ -91,8 +97,92 @@ function renderProjectView(project) {
             project.removeMember(member.ID);
             userDiv.parentElement.removeChild(userDiv);
         });
-        usersDiv.appendChild(userDiv);
+        membersDiv.appendChild(userDiv);
     });
+    // Add users:
+    let addUserButtonsDiv = document.createElement("div");
+    addUserButtonsDiv.classList.add("bigTaskAddUserButtonsWrap");
+    usersDiv.appendChild(addUserButtonsDiv);
+    // Add new owner:
+    let newOwnerButton = document.createElement("button");
+    newOwnerButton.classList.add("bigTaskAddUserButton");
+    newOwnerButton.classList.add("bigTaskOwner");
+    newOwnerButton.classList.add("bigTaskUserIcon");
+    newOwnerButton.innerText = "+";
+    let addUserDiv = document.createElement("div");
+    newOwnerButton.onclick = function() {
+        addUserDiv.innerHTML = "";
+
+        // Filter out existing owners and members
+        let newUsersArray = Array.from(User.array);
+        newUsersArray = newUsersArray.filter(user => !project.members.some(member => member.ID == user.ID));
+        newUsersArray = newUsersArray.filter(user => !project.owners.some(member => member.ID == user.ID));
+
+        // Make list of users
+        newUsersArray.forEach(user => {
+            let userDiv = document.createElement("div");
+            let userID = user.ID + " user";
+            userDiv.classList.add("bigTaskUser");
+            userDiv.id = userID;
+            let memberDiv = document.createElement("div");
+            memberDiv.classList.add("bigTaskUserIcon");
+            memberDiv.classList.add("bigTaskOwner");
+            memberDiv.innerText = user.shortName;
+            let memberNameDiv = document.createElement("div");
+            memberNameDiv.classList.add("bigTaskUserName");
+            memberNameDiv.innerText = user.fullName;
+            userDiv.appendChild(memberDiv);
+            userDiv.appendChild(memberNameDiv);
+            addUserDiv.appendChild(userDiv);
+            memberDiv.addEventListener("click", () => {
+                project.addOwner(user.ID);
+                ownersDiv.appendChild(userDiv);
+                addUserDiv.innerHTML = "";
+            })
+        })
+    };
+    addUserButtonsDiv.appendChild(newOwnerButton);
+    // Add new member:
+    let newMemberButton = document.createElement("button");
+    newMemberButton.classList.add("bigTaskAddUserButton");
+    newMemberButton.classList.add("bigTaskMember");
+    newMemberButton.classList.add("bigTaskUserIcon");
+    newMemberButton.innerText = "+";
+    newMemberButton.onclick = function() {
+        addUserDiv.innerHTML = "";
+
+        // Filter out existing owners and members
+        let newUsersArray = Array.from(User.array);
+        newUsersArray = newUsersArray.filter(user => !project.members.some(member => member.ID == user.ID));
+        newUsersArray = newUsersArray.filter(user => !project.owners.some(member => member.ID == user.ID));
+
+        // Make list of users
+        newUsersArray.forEach(user => {
+            let userDiv = document.createElement("div");
+            let userID = user.ID + " user";
+            userDiv.classList.add("bigTaskUser");
+            userDiv.id = userID;
+            let memberDiv = document.createElement("div");
+            memberDiv.classList.add("bigTaskUserIcon");
+            memberDiv.classList.add("bigTaskMember");
+            memberDiv.innerText = user.shortName;
+            let memberNameDiv = document.createElement("div");
+            memberNameDiv.classList.add("bigTaskUserName");
+            memberNameDiv.innerText = user.fullName;
+            userDiv.appendChild(memberDiv);
+            userDiv.appendChild(memberNameDiv);
+            addUserDiv.appendChild(userDiv);
+            memberDiv.addEventListener("click", () => {
+                project.addMember(user.ID);
+                membersDiv.appendChild(userDiv);
+                addUserDiv.innerHTML = "";
+            })
+        })
+    };
+    addUserButtonsDiv.appendChild(newMemberButton);
+
+    usersDiv.appendChild(addUserDiv);
+
     // Compose:
     dropDownDiv.appendChild(usersDiv);
     projectDiv.appendChild(dropDownDiv);

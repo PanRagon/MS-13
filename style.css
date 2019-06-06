@@ -715,14 +715,13 @@ select {
 }
 
 .bigTaskStatus {
-    grid-column: 1 / span 4;
+    grid-column: 9 / span 4;
     grid-row: 1;
     /*padding: 0 20px;*/
     line-height: 50px;
     color: var(--main-txt-color);
     font-size: 15px;
     border-radius: 10px;
-    margin-right: 10px;
     text-align-last: center;
     text-align: center;
     -ms-text-align-last: center;
@@ -769,13 +768,14 @@ select {
 
 
 .bigTaskCategory {
-    grid-column: 9 / span 4;
+    grid-column: 1 / span 4;
     grid-row: 1;
     background-color: var(--task-two);
     /*padding: 0 20px;*/
     line-height: 50px;
     color: var(--main-txt-color);
     font-size: 15px;
+    margin-right: 10px;
     text-align-last: center;
     text-align: center;
     -ms-text-align-last: center;

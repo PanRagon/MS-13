@@ -1361,6 +1361,25 @@ input[type="date"], focus {
 
 }
 
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px lightgrey; 
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
+
 /* CSS for eksempelknapp */
 /*.btn {
     padding: 0.5rem 1rem;

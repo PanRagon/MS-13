@@ -489,13 +489,15 @@ select {
 
 
 .dashboardTaskCountdownDays {
-    width: 30px;
+    text-align: center;
+    font-size: 24px;
 }
 
 .dashboardTaskCountdownUnit {
     font-size: 12px;
     line-height: 12px;
     position: relative;
+    text-align: center;
     width: 20px;
 }
 
@@ -902,13 +904,14 @@ select {
     display: inline-block;
     text-align: center;
     position: relative;
-    top: 55px;
+    top: 58px;
     /*left: 73px;*/
 
 }
 
 .bigTaskCountdownDays {
     text-align: center;
+    font-size: 24px
 }
 
 .bigTaskCountdownUnit {

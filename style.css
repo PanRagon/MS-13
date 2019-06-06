@@ -172,13 +172,13 @@ select {
     color: var(--main-txt-color);
 }
 
-/*.catchphrase{
+.catchphrase{
     color: var(--main-txt-color);
     position: relative;
     top: -4px;
     padding-left: 1rem;
     font-size: 12px;
-}*/
+}
 
 .iWrapper {
     /*position: absolute;

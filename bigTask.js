@@ -271,6 +271,9 @@ function renderBigTask(task) {
     startDateInput.addEventListener("change", () => {
         task.startDate = new Date(startDateInput.value);
     });
+    startDateInput.addEventListener("blur", () => {
+        renderBigTask(task);
+    })
     startDateDiv.innerHTML = "Start: ";
     startDateDiv.appendChild(startDateInput);
     taskDiv.appendChild(startDateDiv);
@@ -286,6 +289,9 @@ function renderBigTask(task) {
     endDateInput.addEventListener("change", () => {
         task.endDate = new Date(endDateInput.value);
     });
+    endDateInput.addEventListener("blur", () => {
+        renderBigTask(task);
+    })
     endDateDiv.innerHTML = "End: ";
     endDateDiv.appendChild(endDateInput);
     taskDiv.appendChild(endDateDiv);

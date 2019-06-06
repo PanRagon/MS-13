@@ -3,20 +3,23 @@
     --main-bg-color: #424248;
     --secondary-bg-color: #303036;
     --main-txt-color: #FFFAFF;
+    --category-txt-color: #212121;
 
-    --green-light: #6edd79;
-    --orange-light: #f0cb5c;
-    --red-light: #dc6f6f;
+    --green-light: #6EDD79;
+    --orange-light: #F0CB5C;
+    --red-light: #DC6F6F;
 
-    --task-one: #3E8989;
+    --task-one: #78BFBF;
     --task-two: #5C6784;
-    --task-three: #c47425;
-    --task-category: #2978A0;
+    --task-three: #C47425;
+    --task-category: #71B7DA;
+
+    --priority-color: #72BDA3;
 
     --extra-one: #2FBF71;
     --extra-two: #1B998B;
 
-    --owner-color: #4D7EA8;
+    --owner-color: #A1BBD3;
     --member-color: #72BDA3;
 }
 
@@ -80,7 +83,7 @@ select {
 }
 
 .active {
-    color: #3E8989 !important;
+    color: var(--task-one) !important;
 }
 
 .dropbtn {
@@ -393,6 +396,7 @@ select {
     grid-row: 1;
     padding: 0 8px;
     line-height: 30px;
+    color: var(--category-txt-color);
 }
 
 .dashboardTaskStatusToDo{
@@ -409,6 +413,7 @@ select {
     background-color: var(--task-category);
     padding: 0 8px;
     line-height: 30px;
+    color: var(--category-txt-color);
 }
 
 
@@ -705,8 +710,7 @@ select {
 
 .bigTask {
     margin: 0 auto;
-    width: 82.8vw;
-    max-width: 800px;
+    width: 800px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 50px auto 50px auto;
@@ -721,7 +725,7 @@ select {
     grid-row: 1;
     /*padding: 0 20px;*/
     line-height: 50px;
-    color: var(--main-txt-color);
+    color: var(--category-txt-color);
     font-size: 15px;
     border-radius: 10px;
     text-align-last: center;
@@ -751,9 +755,9 @@ select {
     grid-column: 5 / span 4;
     grid-row: 1;
     /*padding: 0 8px;*/
-    background-color: #72BDA3;
+    background-color: var(--priority-color);
     line-height: 50px;
-    color: var(--main-txt-color);
+    color: var(--category-txt-color);
     font-size: 15px;
     text-align-last: center;
     text-align: center;
@@ -772,10 +776,10 @@ select {
 .bigTaskCategory {
     grid-column: 1 / span 4;
     grid-row: 1;
-    background-color: var(--task-two);
+    background-color: var(--task-category);
     /*padding: 0 20px;*/
     line-height: 50px;
-    color: var(--main-txt-color);
+    color: var(--category-txt-color);
     font-size: 15px;
     margin-right: 10px;
     text-align-last: center;
@@ -931,10 +935,13 @@ select {
     grid-column: 1 / span 6;
     grid-row: 3;
     line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .bigTaskStartDate {
-    grid-column: 7 / span 3;
+    grid-column: 7 / span 4;
     grid-row: 3;
     text-align: left;
     font-size: 12px;
@@ -942,11 +949,46 @@ select {
 }
 
 .bigTaskEndDate {
-    grid-column: 10 / span 3;
+    grid-column: 9 / span 4;
     grid-row: 3;
     text-align: right;
     font-size: 12px;
     line-height: 50px;
+}
+
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button { 
+    display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: var(--main-txt-color);
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    color: var(--main-txt-color);
+    font-size: 16px;
+    border:1px solid var(--main-txt-color);
+    background: var(--main-bg-color);
+    padding: 5px;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+input[type="date"], focus {
+    color: var(--main-txt-color);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
 }
 
 /* ------------------------------

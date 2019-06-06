@@ -42,4 +42,14 @@ function renderDashboard(user) {
     renderDashboardCalendar(user.getTasks());
     renderDashboardTasks(user.getTasks());
     renderDashboardProjects(user.getProjects());
+
+    // Add TASK and PROJECT to HEADER
+    let headerDashboardButton = document.getElementById("headerButtonDashboard");
+    headerDashboardButton.classList.add("active");
+    let headerProjectButton = document.getElementById("headerButtonProject");
+    headerProjectButton.classList.add("invisible");
+    headerProjectButton.classList.remove("active");
+    let headerTaskButton = document.getElementById("headerButtonTask");
+    headerTaskButton.classList.add("invisible");
+    headerTaskButton.classList.add("active");
 }

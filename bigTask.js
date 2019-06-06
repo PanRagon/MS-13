@@ -302,4 +302,22 @@ function renderBigTask(task) {
     endDateDiv.innerHTML = "End: ";
     endDateDiv.appendChild(endDateInput);
     taskDiv.appendChild(endDateDiv);
+
+    // Add TASK and PROJECT to HEADER
+    let headerDashboardButton = document.getElementById("headerButtonDashboard");
+    headerDashboardButton.classList.remove("active");
+    let headerProjectButton = document.getElementById("headerButtonProject");
+    headerProjectButton.classList.remove("active");
+    headerProjectButton.classList.remove("invisible");
+    headerProjectButton.onclick = function() {
+        renderProjectView(project);
+    };
+    headerProjectButton.innerText = project.title;
+    let headerTaskButton = document.getElementById("headerButtonTask");
+    headerTaskButton.classList.add("active");
+    headerTaskButton.classList.remove("invisible");
+    headerTaskButton.onclick = function() {
+        renderBigTask(task);
+    };
+    headerTaskButton.innerText = task.title;
 }

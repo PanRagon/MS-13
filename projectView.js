@@ -202,18 +202,31 @@ function renderProjectView(project) {
             doneDiv.appendChild(taskDiv);
         }
     });
-
     taskWrapDiv.appendChild(toDoDiv);
     taskWrapDiv.appendChild(inProgressDiv);
     taskWrapDiv.appendChild(doneDiv);
-
     // Compose:
     projectDiv.appendChild(taskWrapDiv);
 
     // Render project to container
     projectContainerDiv.appendChild(projectDiv);
 
+    // Initialize Drag&Drop
     DragDrop.init();
+
+    // Add TASK and PROJECT to HEADER
+    let headerDashboardButton = document.getElementById("headerButtonDashboard");
+    headerDashboardButton.classList.remove("active");
+    let headerProjectButton = document.getElementById("headerButtonProject");
+    headerProjectButton.classList.add("active");
+    headerProjectButton.classList.remove("invisible");
+    headerProjectButton.onclick = function() {
+        renderProjectView(project);
+    };
+    headerProjectButton.innerText = project.title;
+    let headerTaskButton = document.getElementById("headerButtonTask");
+    headerTaskButton.classList.add("invisible");
+    headerTaskButton.classList.remove("active");
 }
 
 function updateProjectViewCounters() {

@@ -55,6 +55,13 @@ function renderDashboard(user) {
         }
     })
 
+    newProjectInput.addEventListener("keyup", function(event) {
+        if(event.keyCode === 13) {
+            new Project(newProjectInput.value)
+            renderProjectView(Project.array[Project.array.length-1]);
+        }
+    })
+
     proHeader.appendChild(newProjectDiv); 
         // Projects Container
     let proContainer = document.createElement("section");

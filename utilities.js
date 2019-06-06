@@ -122,11 +122,6 @@ function removeUserProject(e){
 }
 
 
-function createNewTask(projectID, title) {
-    new Task(projectID, title);
-}
-
-
 //Create Drag and Drop functionality on project view page
 class DragDrop {
     static init() {

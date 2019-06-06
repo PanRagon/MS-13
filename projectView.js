@@ -324,7 +324,14 @@ function renderProjectView(project) {
 
     newTaskButton.addEventListener("click", () => {
         if(newTaskInput.value != "") {
-            createNewTask(project.ID, newTaskInput.value)
+            new Task(project.ID, newTaskInput.value);
+            renderBigTask(Task.array[Task.array.length-1]);
+        }
+    })
+
+    newTaskInput.addEventListener("keyup", function(event) {
+        if(event.keyCode === 13) {
+            new Task(project.ID, newTaskInput.value);
             renderBigTask(Task.array[Task.array.length-1]);
         }
     })

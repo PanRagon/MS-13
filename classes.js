@@ -319,7 +319,7 @@ class Task {
 	static setup() {
 		new Task(0, "Lage kalenderoversikt");
 		let testTask = Task.array.find(e => e.ID === 0);
-		testTask.setStatus("InProgress");
+		testTask.setStatus("Done");
 		testTask.setCategory(TaskCategory.array.find(e => e.ID === 0));
 		testTask.setDescription("We need to test the Task class");
 		testTask.setStartDate(new Date(2019, 4, 26, 12));
@@ -345,7 +345,7 @@ class Task {
 		testTask3.setDescription("Vi må lage egg så vi kan lage en kake");
 		testTask3.setStartDate(new Date(2019, 5, 2));
 		testTask3.setEndDate(new Date(2019, 5, 14));
-		testTask3.setPriority(1);
+		testTask3.setPriority(2);
 		testTask3.addMember(User.array.find(e => e.firstName === "Linda").ID);
 
 		new Task(0, "Redde svanen");
@@ -355,7 +355,7 @@ class Task {
 		testTask4.setDescription("Det er en svane vi må redde");
 		testTask4.setStartDate(new Date(2019, 4, 31));
 		testTask4.setEndDate(new Date(2019, 5, 8));
-		testTask4.setPriority(3);
+		testTask4.setPriority(1);
 		testTask4.addOwner(User.array.find(e => e.firstName === "Linda").ID);
         
         new Task(0, "Finne kyllingen");
@@ -375,7 +375,7 @@ class Task {
 		testTask6.setDescription("En majestetisk skulptur i gull");
 		testTask6.setStartDate(new Date(2019, 5, 2));
 		testTask6.setEndDate(new Date(2019, 5, 20));
-		testTask6.setPriority(3);
+		testTask6.setPriority(1);
 		testTask6.addOwner(User.array.find(e => e.firstName === "Emil").ID);
 		testTask6.addMember(User.array.find(e => e.firstName === "Linda").ID);
         
@@ -386,7 +386,7 @@ class Task {
 		testTask7.setDescription("Finn frem malekosten");
 		testTask7.setStartDate(new Date(2019, 5, 14));
 		testTask7.setEndDate(new Date(2019, 5, 26));
-		testTask7.setPriority(3);
+		testTask7.setPriority(2);
 		testTask7.addOwner(User.array.find(e => e.firstName === "Linda").ID);
 		testTask7.addMember(User.array.find(e => e.firstName === "Emil").ID);
         
@@ -397,7 +397,7 @@ class Task {
 		testTask8.setDescription("Hva er blandingsforholdet igjen?");
 		testTask8.setStartDate(new Date(2019, 5, 5));
 		testTask8.setEndDate(new Date(2019, 5, 15));
-		testTask8.setPriority(3);
+		testTask8.setPriority(2);
 		testTask8.addOwner(User.array.find(e => e.firstName === "Linda").ID);
         
         new Task(1, "Kverne kjøttet");
@@ -427,9 +427,9 @@ class Task {
 		testTask11.setStatus("ToDo");
 		testTask11.setCategory(TaskCategory.array.find(e => e.ID === 3));
 		testTask11.setDescription("Vi nærmer oss 5%");
-		testTask11.setStartDate(new Date(2019, 5, 7));
-		testTask11.setEndDate(new Date(2019, 5, 13));
-		testTask11.setPriority(3);
+		testTask11.setStartDate(new Date(2019, 5, 10));
+		testTask11.setEndDate(new Date(2019, 5, 17));
+		testTask11.setPriority(1);
 		testTask11.addOwner(User.array.find(e => e.firstName === "Bjørn").ID);
 		testTask11.addMember(User.array.find(e => e.firstName === "Turid").ID);
         testTask11.addMember(User.array.find(e => e.firstName === "Emil").ID);
@@ -441,7 +441,7 @@ class Task {
 		testTask12.setDescription("Saften er laget, men er ikke smakstestet");
 		testTask12.setStartDate(new Date(2019, 5, 14));
 		testTask12.setEndDate(new Date(2019, 5, 20));
-		testTask12.setPriority(3);
+		testTask12.setPriority(1);
 		testTask12.addOwner(User.array.find(e => e.firstName === "Bjørn").ID);
 		testTask12.addMember(User.array.find(e => e.firstName === "Turid").ID);
         
@@ -452,7 +452,7 @@ class Task {
 		testTask13.setDescription("Risen vil brenne seg, det må røres!");
 		testTask13.setStartDate(new Date(2019, 5, 20));
 		testTask13.setEndDate(new Date(2019, 5, 29));
-		testTask13.setPriority(3);
+		testTask13.setPriority(2);
 		testTask13.addOwner(User.array.find(e => e.firstName === "Turid").ID);
 		testTask13.addMember(User.array.find(e => e.firstName === "Bjørn").ID);
         
@@ -475,7 +475,7 @@ class Task {
 		testTask15.setDescription("Vi må laste bilen med bacon");
 		testTask15.setStartDate(new Date(2019, 5, 13));
 		testTask15.setEndDate(new Date(2019, 5, 22));
-		testTask15.setPriority(3);
+		testTask15.setPriority(2);
 		testTask15.addOwner(User.array.find(e => e.firstName === "Turid").ID);
 		testTask15.addMember(User.array.find(e => e.firstName === "Bjørn").ID);
         
@@ -496,9 +496,9 @@ class Task {
 		testTask17.setStatus("ToDo");
 		testTask17.setCategory(TaskCategory.array.find(e => e.ID === 2));
 		testTask17.setDescription("Løsningen er godt plassert under armen");
-		testTask17.setStartDate(new Date(2019, 5, 1));
-		testTask17.setEndDate(new Date(2019, 5, 13));
-		testTask17.setPriority(2);
+		testTask17.setStartDate(new Date(2019, 5, 5));
+		testTask17.setEndDate(new Date(2019, 5, 16));
+		testTask17.setPriority(1);
 		testTask17.addOwner(User.array.find(e => e.firstName === "Nina").ID);
 		testTask17.addMember(User.array.find(e => e.firstName === "Arne").ID);
         testTask17.addMember(User.array.find(e => e.firstName === "Lil").ID);
@@ -629,7 +629,7 @@ class Task {
 		testTask28.setDescription("Husk salt i vannet for bedre smak");
 		testTask28.setStartDate(new Date(2019, 5, 19));
 		testTask28.setEndDate(new Date(2019, 5, 28));
-		testTask28.setPriority(2);
+		testTask28.setPriority(1);
 		testTask28.addOwner(User.array.find(e => e.firstName === "Sigvart").ID);
 		testTask28.addMember(User.array.find(e => e.firstName === "Big").ID);
         
@@ -651,7 +651,7 @@ class Task {
 		testTask30.setDescription("Vi trenger noen som kan levere oppgaven");
 		testTask30.setStartDate(new Date(2019, 5, 15));
 		testTask30.setEndDate(new Date(2019, 5, 23));
-		testTask30.setPriority(2);
+		testTask30.setPriority(1);
 		testTask30.addOwner(User.array.find(e => e.firstName === "Big").ID);
 		testTask30.addMember(User.array.find(e => e.firstName === "Sigvart").ID);
         
@@ -662,7 +662,7 @@ class Task {
 		testTask31.setDescription("Roe nervene før levering");
 		testTask31.setStartDate(new Date(2019, 5, 20));
 		testTask31.setEndDate(new Date(2019, 5, 28));
-		testTask31.setPriority(2);
+		testTask31.setPriority(3);
 		testTask31.addOwner(User.array.find(e => e.firstName === "Emil").ID);
 		testTask31.addMember(User.array.find(e => e.firstName === "Big").ID);
         testTask31.addMember(User.array.find(e => e.firstName === "Sigvart").ID);
@@ -674,7 +674,7 @@ class Task {
 		testTask32.setDescription("Leveres via Voi");
 		testTask32.setStartDate(new Date(2019, 5, 25));
 		testTask32.setEndDate(new Date(2019, 6, 1));
-		testTask32.setPriority(2);
+		testTask32.setPriority(1);
 		testTask32.addOwner(User.array.find(e => e.firstName === "Emil").ID);
 		testTask32.addMember(User.array.find(e => e.firstName === "Sigvart").ID);
 	}

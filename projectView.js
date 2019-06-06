@@ -322,6 +322,13 @@ function renderProjectView(project) {
         }
     })
 
+    newTaskInput.addEventListener("keyup", function(event) {
+        if(event.keyCode === 13) {
+            createNewTask(project.ID, newTaskInput.value)
+            renderBigTask(Task.array[Task.array.length-1]);
+        }
+    })
+
     projectDiv.appendChild(newTaskDiv);
 
     // Initialize Drag&Drop

@@ -320,4 +320,8 @@ function renderBigTask(task) {
         renderBigTask(task);
     };
     headerTaskButton.innerText = task.title;
+    let slash1 = document.getElementById("slash1");
+    slash1.classList.remove("invisible");
+    let slash2 = document.getElementById("slash2");
+    slash2.classList.remove("invisible");
 }

@@ -52,4 +52,8 @@ function renderDashboard(user) {
     let headerTaskButton = document.getElementById("headerButtonTask");
     headerTaskButton.classList.add("invisible");
     headerTaskButton.classList.add("active");
+    let slash1 = document.getElementById("slash1");
+    slash1.classList.add("invisible");
+    let slash2 = document.getElementById("slash2");
+    slash2.classList.add("invisible");
 }

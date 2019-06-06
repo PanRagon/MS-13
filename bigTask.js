@@ -263,6 +263,7 @@ function renderBigTask(task) {
             userDiv.appendChild(memberNameDiv);
             addUserDiv.appendChild(userDiv);
             memberDiv.onclick = function() {
+                addUserDiv.innerHTML = '';
                 task.addOwner(user.ID);
                 memberDiv.onclick = null;
                 memberDiv.addEventListener("click", () => {
@@ -305,6 +306,7 @@ function renderBigTask(task) {
             userDiv.appendChild(memberNameDiv);
             addUserDiv.appendChild(userDiv);
             memberDiv.onclick = function() {
+                addUserDiv.innerHTML = '';
                 task.addMember(user.ID);
                 memberDiv.onclick = null;
                 memberDiv.addEventListener("click", () => {

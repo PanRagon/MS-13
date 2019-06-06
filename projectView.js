@@ -138,6 +138,7 @@ function renderProjectView(project) {
             userDiv.appendChild(memberNameDiv);
             addUserDiv.appendChild(userDiv);
             memberDiv.onclick = function() {
+                addUserDiv.innerHTML = '';
                 project.addOwner(user.ID);
                 memberDiv.onclick = null;
                 memberDiv.addEventListener("click", () => {
@@ -180,6 +181,7 @@ function renderProjectView(project) {
             userDiv.appendChild(memberNameDiv);
             addUserDiv.appendChild(userDiv);
             memberDiv.onclick = function() {
+                addUserDiv.innerHTML = '';
                 project.addMember(user.ID);
                 memberDiv.onclick = null;
                 memberDiv.addEventListener("click", () => {

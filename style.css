@@ -19,7 +19,7 @@
     --extra-one: #2FBF71;
     --extra-two: #1B998B;
 
-    --owner-color: #A1BBD3;
+    --owner-color: #FFD700;
     --member-color: #72BDA3;
 }
 
@@ -1171,14 +1171,17 @@ input[type="date"], focus {
 
 .projectViewStatusTitleToDo {
     background-color: var(--red-light);
+    color: var(--category-txt-color);
 }
 
 .projectViewStatusTitleInProgress {
     background-color: var(--orange-light);
+    color: var(--category-txt-color);
 }
 
 .projectViewStatusTitleDone {
     background-color: var(--green-light);
+    color: var(--category-txt-color);
 }
 
 .projectViewTask {

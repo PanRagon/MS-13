@@ -211,6 +211,26 @@ function renderProjectView(project) {
     // Render project to container
     projectContainerDiv.appendChild(projectDiv);
 
+    let newTaskDiv = document.createElement("div");
+
+    let newTaskButton = document.createElement("button");
+    newTaskButton.innerText = "Create a new task";
+
+    let newTaskInput = document.createElement("input");
+    newTaskInput.setAttribute("type", "text");
+    newTaskDiv.appendChild(newTaskInput);
+    newTaskDiv.appendChild(newTaskButton);
+    console.log(newTaskInput.value);
+
+    newTaskButton.addEventListener("click", () => {
+        if(newTaskInput.value != "") {
+            createNewTask(project.ID, newTaskInput.value)
+            renderBigTask(Task.array[Task.array.length-1]);
+        }
+    })
+
+    projectDiv.appendChild(newTaskDiv);
+
     // Initialize Drag&Drop
     DragDrop.init();
 

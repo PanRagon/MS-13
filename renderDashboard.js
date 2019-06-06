@@ -34,6 +34,25 @@ function renderDashboard(user) {
     proHeader.classList.add("dashboardProjectHeading");
     proHeader.innerHTML = 'your <span class="highlight">projects</span>';
     renderTarget.appendChild(proHeader);
+
+    //New project
+    let newProjectDiv = document.createElement("div");
+    let newProjectButton = document.createElement("button");
+    newProjectButton.innerText = "Create a new project";
+
+    let newProjectInput = document.createElement("input");
+    newProjectInput.setAttribute("type", "text");
+    newProjectDiv.appendChild(newProjectInput);
+    newProjectDiv.appendChild(newProjectButton);
+
+    newProjectButton.addEventListener("click", () => {
+        if(newProjectInput.value != "") {
+            new Project(newProjectInput.value)
+            renderProjectView(Project.array[Project.array.length-1]);
+        }
+    })
+
+    proHeader.appendChild(newProjectDiv); 
         // Projects Container
     let proContainer = document.createElement("section");
     proContainer.id = "dashboardProjectContainer";

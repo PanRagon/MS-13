@@ -254,7 +254,14 @@ function renderBigTask(task) {
     projectDiv.classList.add("pointer");
     projectDiv.setAttribute("taskID", task.ID);
     projectDiv.setAttribute("projectID", project.ID);
-    projectDiv.innerText = task.getProject().title;
+    let projectText = document.createElement("div");
+    projectText.classList.add("bigTaskProjectText");
+    projectText.innerText = "Project:";
+    projectDiv.appendChild(projectText);
+    let projectName = document.createElement("div");
+    projectName.classList.add("bigTaskProjectName");
+    projectName.innerText = task.getProject().title;
+    projectDiv.appendChild(projectName);
     projectDiv.addEventListener("click", () => {
         renderProjectView(project);
     });

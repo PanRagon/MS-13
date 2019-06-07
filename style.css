@@ -1,1547 +1,1396 @@
     /* Color variables */
-:root {
-    --main-bg-color: #424248;
-    --secondary-bg-color: #303036;
-    --main-txt-color: #FFFAFF;
-    --category-txt-color: #212121;
+    :root {
+        --main-bg-color: #424248;
+        --secondary-bg-color: #303036;
+        --main-txt-color: #FFFAFF;
+        --category-txt-color: #212121;
 
-    --green-light: #6EDD79;
-    --orange-light: #F0CB5C;
-    --red-light: #DC6F6F;
+        --green-light: #6EDD79;
+        --orange-light: #F0CB5C;
+        --red-light: #DC6F6F;
 
-    --task-one: #78BFBF;
-    --task-two: #5C6784;
-    --task-three: #C47425;
-    --task-category: #71B7DA;
+        --task-one: #78BFBF;
+        --task-category: #71B7DA;
 
-    --priority-color: #72BDA3;
+        --priority-color: #72BDA3;
 
-    --extra-one: #2FBF71;
-    --extra-two: #1B998B;
+        --extra-one: #2FBF71;
 
-    --owner-color: #FFD700;
-    --member-color: #72BDA3;
-}
+        --owner-color: #FFD700;
+        --member-color: #72BDA3;
+    }
 
-* {
-    box-sizing: border-box;
-    font-family: roboto-mono, monospace;
-}
+    * {
+        box-sizing: border-box;
+        font-family: roboto-mono, monospace;
+    }
 
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    margin: 0;
-    background-color: var(--main-bg-color);
-    /*font-family: supria-sans-condensed, sans-serif;*/
-}
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        margin: 0;
+        background-color: var(--main-bg-color);
+    }
 
-#renderContainer {
-    flex: 1;
-}
+    #renderContainer {
+        flex: 1;
+    }
 
-select {
-    border-radius: 0;
-    border: none;
-    -webkit-appearance: none;
-}
+    select {
+        border-radius: 0;
+        border: none;
+        -webkit-appearance: none;
+    }
 
-.mainNav {
-    display: flex;
-    text-transform: uppercase;
-    background-color: var(--secondary-bg-color);
-    border-bottom: solid 0.7px var(--main-txt-color);
-    height: 65px;
-    width: 100vw;
-    padding: 0 8.6vw;
-    justify-content: space-between;
-}
+    .mainNav {
+        display: flex;
+        text-transform: uppercase;
+        background-color: var(--secondary-bg-color);
+        border-bottom: solid 0.7px var(--main-txt-color);
+        height: 65px;
+        width: 100vw;
+        padding: 0 8.6vw;
+        justify-content: space-between;
+    }
 
-#navList {
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 0;
-    width: 82.8vw;
-    margin: auto;
-    height: 100%;
-    padding-top: 4px;
-}
+    #navList {
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 0;
+        width: 82.8vw;
+        margin: auto;
+        height: 100%;
+        padding-top: 4px;
+    }
 
-.mainNav li {
-    /*padding: 1rem 0.5rem 1rem 0;*/
-}
+    .mainNav li {}
 
-.mainNav a {
-    text-decoration: none;
-    color: var(--main-txt-color);
-    padding: 0.48rem;
-}
+    .mainNav a {
+        text-decoration: none;
+        color: var(--main-txt-color);
+        padding: 0.48rem;
+    }
 
-.mainNav a:hover {
-    color: var(--task-one);
-}
+    .mainNav a:hover {
+        color: var(--task-one);
+    }
 
-.stickyNav{
-    position: sticky;
-    top: 0;
-    z-index: 2;
-}
+    .stickyNav {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
 
-.active {
-    color: var(--task-one) !important;
-}
+    .active {
+        color: var(--task-one) !important;
+    }
 
+    .headerButton {
+        color: var(--main-txt-color);
+        background: transparent;
+        border: none;
+        text-transform: uppercase;
+        font-size: 13px;
+        line-height: 50px;
+        margin: 0 auto;
+        cursor: pointer;
+        padding: 0;
+    }
 
+    .headerButton:hover {
+        color: var(--task-one);
+    }
 
-.headerButton{
-    color: var(--main-txt-color);
-    background: transparent;
-    border: none;
-    text-transform: uppercase;
-    font-size: 13px;
-    line-height: 50px;
-    margin: 0 auto;
-    cursor: pointer;
-    padding: 0;
-}
+    .headerLi {
+        padding: 0;
+    }
 
-.headerButton:hover{
-    color: var(--task-one);
-}
+    #slash1,
+    #slash2 {
+        font-size: 13px;
+        padding: 0 8px;
+    }
 
-.headerLi{
-    padding: 0;
-}
+    .show {
+        display: block;
+    }
 
-#slash1, #slash2{
-    font-size: 13px;
-    padding: 0 8px;
-}
+    #logo {
+        color: var(--task-one);
+        font-size: 30px;
+    }
 
-.show {
-    display: block;
-}
+    #verticalLine {
+        color: var(--main-txt-color);
+    }
 
-#logo {
-    color: var(--task-one);
-    font-size: 30px;
-}
+    .catchphrase {
+        color: var(--main-txt-color);
+        position: relative;
+        top: -4px;
+        padding-left: 2rem;
+        font-size: 13px;
+    }
 
-#verticalLine {
-    color: var(--main-txt-color);
-}
+    .iWrapper {
+        height: 100%;
+        margin-inline-end: -50px;
+    }
 
-.catchphrase{
-    color: var(--main-txt-color);
-    position: relative;
-    top: -4px;
-    padding-left: 2rem;
-    font-size: 13px;
-}
+    .iWrapper button {
+        background: transparent;
+        border: none;
+        height: 100%;
+        cursor: pointer;
+        text-transform: uppercase;
 
-.iWrapper {
-    /*position: absolute;
-    left: 30px;
-    top: 15px;*/
-    height: 100%;
-    margin-inline-end: -50px;
-}
+    }
 
-.iWrapper button{
-    background: transparent;
-    border: none;
-    height: 100%;
-    cursor: pointer;
-    text-transform: uppercase;
+    .text {
+        position: relative;
+        left: 10px;
+        color: #fffaff;
+        top: -10px;
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
 
-}
+    .underText {
+        position: relative;
+        top: 5px;
+        left: -50px;
+        color: var(--task-one);
+        letter-spacing: 2px;
+        font-size: 17px;
 
-.text {
-    position: relative;
-    left: 10px;
-    color: #fffaff;
-    top: -10px;
-    font-size: 17px;
-    letter-spacing: 2px;
-}
+    }
 
-.underText {
-    position: relative;
-    top: 5px;
-    left: -50px;
-    color: var(--task-one);
-    letter-spacing: 2px;
-    font-size: 17px;
+    .slash {
+        color: var(--task-one);
+        font-size: 20px;
+    }
 
-}
-
-.slash {
-    color: var(--task-one);
-    font-size: 20px;
-}
-
-#renderContainer{
-    width: 82.8vw;
-    overflow: auto;
-    margin: 0 auto;
-}
+    #renderContainer {
+        width: 82.8vw;
+        overflow: auto;
+        margin: 0 auto;
+    }
 
 
-.calendar {
-    width: 82.8vw;
-    border: solid 1px var(--main-txt-color);
-    margin: 0 auto;
-}
+    .calendar {
+        width: 82.8vw;
+        border: solid 1px var(--main-txt-color);
+        margin: 0 auto;
+    }
 
-.calendarWrap {
-    padding-bottom: 3.5rem;
-}
+    .calendarWrap {
+        padding-bottom: 3.5rem;
+    }
 
-.calendarHeading {
-    display: block;
-    font-size: 18px;
-    text-transform: uppercase;
-    text-align: left;
-    color: var(--main-txt-color);
-    letter-spacing: 2px;
-    width: 82.8vw;
-    margin: auto;
-    padding: 0 8px 8px 0;
-}
+    .calendarHeading {
+        display: block;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: left;
+        color: var(--main-txt-color);
+        letter-spacing: 2px;
+        width: 82.8vw;
+        margin: auto;
+        padding: 0 8px 8px 0;
+    }
 
-#calendarContainer{
-    position: relative;
-    margin: auto;
+    #calendarContainer {
+        position: relative;
+        margin: auto;
+        display: grid;
+        grid-row-gap: 10px;
+        overflow: auto;
+        background: transparent;
+        padding: 10px 0;
+        box-shadow: inset 0 0 7px 4px rgba(0, 0, 0, 0.75);
+    }
 
-    display: grid;
-    grid-row-gap: 10px;
+    .calendarItem {
+        border: 1px solid var(--main-txt-color);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        padding: 0.4rem;
+        color: var(--main-txt-color);
+        background: var(--main-bg-color);
+    }
 
-    overflow: auto;
+    /* Status Wrapper */
+    .calendarItemStatus {
+        color: var(--red-light);
+        margin-left: 15px;
+    }
 
-    background: transparent;
-    padding: 10px 0;
-    box-shadow: inset 0 0 7px 4px rgba(0,0,0,0.75);
-}
+    .calendarItemStatusToDo {}
 
-.calendarItem {
-    border: 1px solid var(--main-txt-color);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    padding: 0.4rem;
-    color: var(--main-txt-color);
-    background: var(--main-bg-color);
-}
+    .calendarItemStatusToDo:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f111";
+        display: inline-block;
+        background-color: var(--red-light);
+        border-radius: 50%;
+    }
 
-/* Status Wrapper */
-.calendarItemStatus {
-    color: var(--red-light);
-    margin-left: 15px;
-}
+    .calendarItemStatusInProgress {
+        color: var(--orange-light);
+    }
 
-.calendarItemStatusToDo {
+    .calendarItemStatusInProgress:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f111";
+        display: inline-block;
+        background-color: var(--orange-light);
+        border-radius: 50%;
+    }
 
-}
+    .calendarItemStatusDone {
+        color: var(--green-light);
+    }
 
-.calendarItemStatusToDo:before {
-    font-family: "Font Awesome 5 Free";
-    content: "\f111";
-    display: inline-block;
-    background-color: var(--red-light);
-    border-radius: 50%;
-}
+    .calendarItemStatusDone:before {
+        color: var(--green-light);
+        font-family: "Font Awesome 5 Free";
+        content: "\f111";
+        border-radius: 50%;
+        display: inline-block;
+        background-color: var(--green-light);
+    }
 
-.calendarItemStatusInProgress {
-    color: var(--orange-light);
-}
+    .calendarItemStatusUnkown {
+        color: cyan;
+    }
 
-.calendarItemStatusInProgress:before {
-    font-family: "Font Awesome 5 Free";
-    content: "\f111";
-    display: inline-block;
-    background-color: var(--orange-light);
-    border-radius: 50%;
-}
+    .calendarItemTitle {
+        font-size: 16px;
+        margin-left: 15px;
+        margin-right: 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
 
-.calendarItemStatusDone {
-    color: var(--green-light);
-}
+    /* Wrapper for all users on task */
+    .calendarItemUser {
+        border: 2px solid;
+        border-radius: 50%;
+        padding: 3px;
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 13px;
+        font-weight: 800;
+        position: relative;
+    }
 
-.calendarItemStatusDone:before{
-    color: var(--green-light);
-    font-family: "Font Awesome 5 Free";
-    content: "\f111";
-    border-radius: 50%;
-    display: inline-block;
-    background-color: var(--green-light);
-}
+    /* Individual owners */
+    .calendarItemOwner {
+        border-color: var(--owner-color);
+    }
 
-.calendarItemStatusUnkown {
-    color: cyan;
-}
+    .calendarItemOwner:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f521";
+        position: absolute;
+        bottom: 20px;
+        left: 2.75px;
+        transform: scaleY(0.6);
+        transform: scaleX(1.5);
+        color: var(--owner-color);
+    }
 
-.calendarItemTitle {
-    font-size: 16px;
-    margin-left: 15px;
-    margin-right: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
+    /* Individual members */
+    .calendarItemMember {
+        border-color: var(--member-color);
+    }
 
-/* Wrapper for all users on task */
-.calendarItemUser {
-    border: 2px solid;
-    border-radius: 50%;
-    padding: 3px;
-    display: inline-block;
-    margin-right: 5px;
-    font-size: 13px;
-    font-weight: 800;
-    position: relative;
-}
+    .calendarDate {
+        text-align: center;
+        color: var(--main-txt-color);
+    }
 
-/* Individual owners */
-.calendarItemOwner{
-    border-color: var(--owner-color);
-}
+    .calendarDateToday {
+        color: var(--extra-one);
+    }
 
-.calendarItemOwner:before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f521";
-    position: absolute;
-    bottom: 20px;
-    left: 2.75px;
-    transform: scaleY(0.6);
-    transform: scaleX(1.5);
-    color: var(--owner-color);
-}
+    .calendarRowLine {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0) 100%);
+    }
 
-/* Individual members */
-.calendarItemMember {
-    border-color: var(--member-color);
-}
-
-.calendarDate{
-    text-align: center;
-    color: var(--main-txt-color);
-}
-
-.calendarDateToday {
-    color: var(--extra-one);
-}
-
-.calendarRowLine {
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%);
-}
-
-/* --------------------
+    /* --------------------
     TASKS START:
 -------------------- */
-#dashboardTaskContainer {
-    margin: 0 auto 3.5rem auto;
-    width: 82.8vw;
-    overflow: auto;
-    white-space: nowrap;
-    color: var(--main-txt-color);
-    border-radius: 10px;
-    box-shadow:
-        inset -5px 0 5px -5px rgba(0,0,0,0.75),
-        inset 5px 0 5px -5px rgba(0,0,0,0.75);
-}
 
-.dashboardTaskHeading {
-    display: block;
-    font-size: 18px;
-    text-transform: uppercase;
-    text-align: left;
-    color: var(--main-txt-color);
-    letter-spacing: 2px;
-    width: 82.8vw;
-    margin: auto;
-    padding: 0 8px 8px 0;
-}
+    #dashboardTaskContainer {
+        margin: 0 auto 3.5rem auto;
+        width: 82.8vw;
+        overflow: auto;
+        white-space: nowrap;
+        color: var(--main-txt-color);
+        border-radius: 10px;
+        box-shadow:
+            inset -5px 0 5px -5px rgba(0, 0, 0, 0.75),
+            inset 5px 0 5px -5px rgba(0, 0, 0, 0.75);
+    }
 
-.dashboardTaskWrap{
-    display: inline-block;
-    border: 1px solid var(--main-txt-color);
-    width: 400px;
-    overflow: hidden;
-    height: 245px;
-    padding: 0;
-    border-radius: 10px;
-    margin-right: 15px;
-}
+    .dashboardTaskHeading {
+        display: block;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: left;
+        color: var(--main-txt-color);
+        letter-spacing: 2px;
+        width: 82.8vw;
+        margin: auto;
+        padding: 0 8px 8px 0;
+    }
 
-.dashboardTaskWrap:last-of-type{
-    margin-right: 0;
-}
+    .dashboardTaskWrap {
+        display: inline-block;
+        border: 1px solid var(--main-txt-color);
+        width: 400px;
+        overflow: hidden;
+        height: 245px;
+        padding: 0;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
 
-.dashboardTask {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 30px 50px auto;
-    height: 100%;
-}
+    .dashboardTaskWrap:last-of-type {
+        margin-right: 0;
+    }
 
+    .dashboardTask {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 30px 50px auto;
+        height: 100%;
+    }
 
-.dashboardTaskStatus {
-    grid-column: 1;
-    grid-row: 1;
-    padding: 0 8px;
-    line-height: 30px;
-    color: var(--category-txt-color);
-}
+    .dashboardTaskStatus {
+        grid-column: 1;
+        grid-row: 1;
+        padding: 0 8px;
+        line-height: 30px;
+        color: var(--category-txt-color);
+    }
 
-.dashboardTaskStatusToDo{
-    background-color: var(--red-light);
-}
+    .dashboardTaskStatusToDo {
+        background-color: var(--red-light);
+    }
 
-.dashboardTaskStatusInProgress{
-    background-color: var(--orange-light);
-}
+    .dashboardTaskStatusInProgress {
+        background-color: var(--orange-light);
+    }
 
-.dashboardTaskCategory {
-    grid-column: 2;
-    grid-row: 1;
-    background-color: var(--task-category);
-    padding: 0 8px;
-    line-height: 30px;
-    color: var(--category-txt-color);
-}
-
-
-.dashboardTaskTitle {
-    grid-column: 1;
-    grid-row: 2;
-    margin: auto auto 5px 0;
-    text-align: left;
-    padding-left: 8px;
-    font-weight: 600;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-
-.dashboardTaskDescription {
-    grid-column: 1;
-    grid-row: 3;
-    white-space: normal;
-    padding: 0 8px;
-}
+    .dashboardTaskCategory {
+        grid-column: 2;
+        grid-row: 1;
+        background-color: var(--task-category);
+        padding: 0 8px;
+        line-height: 30px;
+        color: var(--category-txt-color);
+    }
 
 
-.dashboardTaskUserWrap {
-    grid-column: 2;
-    grid-row: 2;
-    margin: auto auto 5px 0;
-    padding-left: 8px;
-}
+    .dashboardTaskTitle {
+        grid-column: 1;
+        grid-row: 2;
+        margin: auto auto 5px 0;
+        text-align: left;
+        padding-left: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
 
-.dashboardTaskUser {
-    display: inline-block;
-    border: 2px solid;
-    border-radius: 50%;
-    padding: 3px;
-    margin-right: 5px;
-    font-size: 13px;
-    font-weight: 800;
-    position: relative;
-}
-
-.dashboardTaskOwner {
-    border-color: var(--owner-color);
-}
-
-.dashboardTaskOwner:before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f521";
-    position: absolute;
-    bottom: 20px;
-    left: 2.75px;
-    transform: scaleY(0.6);
-    transform: scaleX(1.5);
-    color: var(--owner-color);
-}
-
-.dashboardTaskMember {
-    border-color: var(--member-color);
-}
-
-.dashboardTaskCountdown {
-    position: relative;
-    text-align: center;
-}
-
-.dashboardTaskCountdownDaysUnit {
-    margin: auto;
-    /*display: inline-block;*/
-    position: absolute;
-    bottom: 69px;
-    left: 75px;
-
-}
-
-.chartistColor1 {
-    stroke: #FF0000;
-}
+    .dashboardTaskDescription {
+        grid-column: 1;
+        grid-row: 3;
+        white-space: normal;
+        padding: 0 8px;
+    }
 
 
+    .dashboardTaskUserWrap {
+        grid-column: 2;
+        grid-row: 2;
+        margin: auto auto 5px 0;
+        padding-left: 8px;
+    }
 
-.dashboardTaskCountdownDays {
-    text-align: center;
-    font-size: 24px;
-}
+    .dashboardTaskUser {
+        display: inline-block;
+        border: 2px solid;
+        border-radius: 50%;
+        padding: 3px;
+        margin-right: 5px;
+        font-size: 13px;
+        font-weight: 800;
+        position: relative;
+    }
 
-.dashboardTaskCountdownUnit {
-    font-size: 12px;
-    line-height: 12px;
-    position: relative;
-    text-align: center;
-    width: 20px;
-}
+    .dashboardTaskOwner {
+        border-color: var(--owner-color);
+    }
 
-.dashboardTaskCountdownChart {
-    position: absolute;
-    bottom: 25px;
-    left: -5px;
-}
+    .dashboardTaskOwner:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f521";
+        position: absolute;
+        bottom: 20px;
+        left: 2.75px;
+        transform: scaleY(0.6);
+        transform: scaleX(1.5);
+        color: var(--owner-color);
+    }
 
-.chartistColor1 {
-    stroke: #a09a9c;
-}
+    .dashboardTaskMember {
+        border-color: var(--member-color);
+    }
 
-.chartistColor2 {
-    stroke: #FF0000;
-}
+    .dashboardTaskCountdown {
+        position: relative;
+        text-align: center;
+    }
 
-/* --------------------
+    .dashboardTaskCountdownDaysUnit {
+        margin: auto;
+        position: absolute;
+        bottom: 69px;
+        left: 75px;
+
+    }
+
+    .chartistColor1 {
+        stroke: #FF0000;
+    }
+
+    .dashboardTaskCountdownDays {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .dashboardTaskCountdownUnit {
+        font-size: 12px;
+        line-height: 12px;
+        position: relative;
+        text-align: center;
+        width: 20px;
+    }
+
+    .dashboardTaskCountdownChart {
+        position: absolute;
+        bottom: 25px;
+        left: -5px;
+    }
+
+    .chartistColor1 {
+        stroke: #a09a9c;
+    }
+
+    .chartistColor2 {
+        stroke: #FF0000;
+    }
+
+    /* --------------------
     DASHBOARD PROJECTS START:
 -------------------- */
-#dashboardProjectContainer {
-    margin: 0 auto 1rem auto;
-    width: 82.8vw;
-    overflow: auto;
-    white-space: nowrap;
-    color: var(--main-txt-color);
-    box-shadow:
-        inset -5px 0 5px -5px rgba(0,0,0,0.75),
-        inset 5px 0 5px -5px rgba(0,0,0,0.75);
-}
 
-.dashboardProjectTopBar{
-    display: grid;
-    grid-column: 1 / span 6;
-    grid-row: 1;
-    border-bottom: solid 1px var(--main-txt-color);
-}
+    #dashboardProjectContainer {
+        margin: 0 auto 1rem auto;
+        width: 82.8vw;
+        overflow: auto;
+        white-space: nowrap;
+        color: var(--main-txt-color);
+        box-shadow:
+            inset -5px 0 5px -5px rgba(0, 0, 0, 0.75),
+            inset 5px 0 5px -5px rgba(0, 0, 0, 0.75);
+    }
 
-.dashboardProjectHeading {
-    display: block;
-    font-size: 18px;
-    text-transform: uppercase;
-    text-align: left;
-    color: var(--main-txt-color);
-    letter-spacing: 2px;
-    width: 82.8vw;
-    margin: auto;
-    padding: 0 8px 8px 0;
-}
+    .dashboardProjectTopBar {
+        display: grid;
+        grid-column: 1 / span 6;
+        grid-row: 1;
+        border-bottom: solid 1px var(--main-txt-color);
+    }
 
+    .dashboardProjectHeading {
+        display: block;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: left;
+        color: var(--main-txt-color);
+        letter-spacing: 2px;
+        width: 82.8vw;
+        margin: auto;
+        padding: 0 8px 8px 0;
+    }
 
+    .dashboardAddProjectWrap {
+        padding-bottom: 2.5rem;
+    }
 
+    .dashboardAddProjectWrap input {
+        background: transparent;
+        border: 1px solid var(--main-txt-color);
+        margin-right: 10px;
+        padding: 4px;
+        color: var(--main-txt-color);
+        font-size: 13px;
+    }
 
-/*.btn {
-    padding: 0.5rem 1rem;
-    margin-top: 50px;
-    background-color: transparent;
-    border: solid 2px #fffaff;
-    border-radius: 5px;
-    color: #fffaff;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 130px;
-    top: 10%;
-    cursor: pointer;
-}
+    .dashboardAddProjectWrap button {
+        background-color: transparent;
+        color: var(--main-txt-color);
+        padding: 4px;
+        border: 1px solid var(--main-txt-color);
+        border-radius: 10px;
+        font-size: 13px;
+    }
 
+    .dashboardAddProjectWrap button:hover {
+        cursor: pointer;
+        background: var(--task-one);
+        color: var(--main-bg-color);
+        border-color: var(--main-bg-color);
+    }
 
-.btn:hover {
-    background-color: #6edd79;
+    .dashboardProjectWrap {
+        display: inline-block;
+        border: 1px solid var(--main-txt-color);
+        overflow: hidden;
+        height: 245px;
+        width: 400px;
+        padding: 0;
+        margin-right: 15px;
+    }
 
-}
+    .dashboardProjectWrap:last-of-type {
+        margin-right: 0;
+    }
 
+    .dashboardProject {
+        display: grid;
 
-.btn-text {
-    font-size: 14px;
-    letter-spacing: 1px;
-}
+        grid-template-columns: repeat(6, auto);
+        grid-template-rows: 30px auto 60px;
 
-.arrow {
-    font-size: 15px;
-    padding-left: 0.5rem;
-}*/
+        border: 1px solid var(--main-txt-color);
+        height: 100%;
+        color: var(--main-txt-color);
+        padding: 0.5rem;
+    }
 
-.dashboardAddProjectWrap{
-    padding-bottom: 2.5rem;
-}
+    .dashboardProjectDate {}
 
-.dashboardAddProjectWrap input{
-    background: transparent;
-    border: 1px solid var(--main-txt-color);
-    margin-right: 10px;
-    padding: 4px;
-    color: var(--main-txt-color);
-    font-size: 13px;
-}
+    .dashboardProjectStartDate {
+        grid-column: 1;
+        grid-row: 1;
+    }
 
-.dashboardAddProjectWrap button{
-    background-color: transparent;
-    color: var(--main-txt-color);
-    padding: 4px;
-    border: 1px solid var(--main-txt-color);
-    border-radius: 10px;
-    font-size: 13px;
-}
+    .dashboardProjectEndDate {
+        grid-column: 6;
+        grid-row: 1;
+        text-align: right;
+    }
 
-.dashboardAddProjectWrap button:hover{
-    /*opacity: 0.8;*/
-    cursor: pointer;
-    background: var(--task-one);
-    color: var(--main-bg-color);
-    border-color: var(--main-bg-color);
-}
+    .dashboardProjectTitle {
+        grid-column: 2 / span 4;
+        grid-row: 1;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 18px
+    }
 
-.dashboardProjectWrap{
-    display: inline-block;
-    border: 1px solid var(--main-txt-color);
-    overflow: hidden;
-    height: 245px;
-    width: 400px;
-    padding: 0;
-    margin-right: 15px;
-}
+    .dashboardProjectDescription {
+        grid-column: 1 / span 4;
+        grid-row: 2;
+        margin-top: 10px;
+        white-space: normal;
+    }
 
-.dashboardProjectWrap:last-of-type{
-    margin-right: 0;
-}
+    .dashboardProjectUserWrap {
+        grid-column: 5 / span 2;
+        grid-row: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.dashboardProject {
-    display: grid;
-
-    grid-template-columns: repeat(6, auto);
-    grid-template-rows: 30px auto 60px;
-
-    border: 1px solid var(--main-txt-color);
-    height: 100%;
-    color: var(--main-txt-color);
-    padding: 0.5rem;
-}
-
-
-
-.dashboardProjectDate {
-
-}
-
-.dashboardProjectStartDate {
-    grid-column: 1;
-    grid-row: 1;
-
-}
-.dashboardProjectEndDate {
-    grid-column: 6;
-    grid-row: 1;
-
-    text-align: right;
-}
-
-.dashboardProjectTitle {
-    grid-column: 2 / span 4;
-    grid-row: 1;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 18px
-}
-
-.dashboardProjectDescription {
-    grid-column: 1 / span 4;
-    grid-row: 2;
-    margin-top: 10px;
-    white-space: normal;
-}
-
-.dashboardProjectUserWrap {
-    grid-column: 5 / span 2;
-    grid-row: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dashboardProjectUser {
-    /*border: 2px solid;
-    border-radius: 50%;
-    padding: 5px;
-    margin-right: 5px;
-    margin-bottom: 30px;
-    font-size: 13px;
-    font-weight: 800;*/
-    display: inline-block;
-    border: 2px solid;
-    border-radius: 50%;
-    padding: 3px;
-    margin-right: 5px;
-    font-size: 13px;
-    font-weight: 800;
-    position: relative;
-}
+    .dashboardProjectUser {
+        display: inline-block;
+        border: 2px solid;
+        border-radius: 50%;
+        padding: 3px;
+        margin-right: 5px;
+        font-size: 13px;
+        font-weight: 800;
+        position: relative;
+    }
 
 
-.dashboardProjectOwner {
-    border-color: var(--owner-color);
-}
+    .dashboardProjectOwner {
+        border-color: var(--owner-color);
+    }
 
-.dashboardProjectOwner:before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f521";
-    position: absolute;
-    bottom: 20px;
-    left: 2.75px;
-    transform: scaleY(0.6);
-    transform: scaleX(1.5);
-    color: var(--owner-color);
-}
+    .dashboardProjectOwner:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f521";
+        position: absolute;
+        bottom: 20px;
+        left: 2.75px;
+        transform: scaleY(0.6);
+        transform: scaleX(1.5);
+        color: var(--owner-color);
+    }
 
-.dashboardProjectMember {
-    border-color: var(--member-color);
-}
+    .dashboardProjectMember {
+        border-color: var(--member-color);
+    }
 
-.dashboardProjectTaskWrap {
-    grid-column: 1 / span 6;
-    grid-row: 4;
-    display: flex;
-    flex-direction: row;
-    border-top: solid 1px #fffaff;
-    /*display: flex;
-    justify-content: space-around;
-    align-items: center;*/
-}
+    .dashboardProjectTaskWrap {
+        grid-column: 1 / span 6;
+        grid-row: 4;
+        display: flex;
+        flex-direction: row;
+        border-top: solid 1px #fffaff;
+    }
 
-.dashboardProjectTask {
-   
-    font-size: 20px;
-    font-weight: 800;
-    height: 37px;
-    text-align: center;
-    line-height: 35px;
-    margin-top: 1rem;
-    margin-right: 10px;
-}
+    .dashboardProjectTask {
 
-.dashboardProjectTask:last-of-type{
-    margin-right: 0;
-}
+        font-size: 20px;
+        font-weight: 800;
+        height: 37px;
+        text-align: center;
+        line-height: 35px;
+        margin-top: 1rem;
+        margin-right: 10px;
+    }
 
-.dashboardProjectTaskToDo {
-    background-color: var(--red-light);
-    width: 33.3%;
-}
+    .dashboardProjectTask:last-of-type {
+        margin-right: 0;
+    }
 
-.dashboardProjectTaskInProgress {
-    background-color: var(--orange-light);
-    width: 33.3%;
-}
+    .dashboardProjectTaskToDo {
+        background-color: var(--red-light);
+        width: 33.3%;
+    }
 
-.dashboardProjectTaskDone {
-    background-color: var(--green-light);
-    width: 33.3%;
-}
+    .dashboardProjectTaskInProgress {
+        background-color: var(--orange-light);
+        width: 33.3%;
+    }
 
-/* --------------------
+    .dashboardProjectTaskDone {
+        background-color: var(--green-light);
+        width: 33.3%;
+    }
+
+    /* --------------------
     BIG TASK START:
 -------------------- */
 
-.bigTaskContainer {
+    .bigTask {
+        margin: 0 auto;
+        width: 800px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 50px auto 50px auto;
+        color: var(--main-txt-color);
+        border: solid 1px var(--main-txt-color);
+        padding: 10px;
+        border-radius: 10px;
+    }
 
-}
+    .bigTaskStatus {
+        grid-column: 9 / span 4;
+        grid-row: 1;
+        line-height: 50px;
+        color: var(--category-txt-color);
+        font-size: 15px;
+        border-radius: 10px;
+        text-align-last: center;
+        text-align: center;
+        -ms-text-align-last: center;
+        -moz-text-align-last: center;
+    }
 
-.bigTask {
-    margin: 0 auto;
-    width: 800px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 50px auto 50px auto;
-    color: var(--main-txt-color);
-    border: solid 1px var(--main-txt-color);
-    padding: 10px;
-    border-radius: 10px;
-}
+    .bigTaskStatus:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
 
-.bigTaskStatus {
-    grid-column: 9 / span 4;
-    grid-row: 1;
-    /*padding: 0 20px;*/
-    line-height: 50px;
-    color: var(--category-txt-color);
-    font-size: 15px;
-    border-radius: 10px;
-    text-align-last: center;
-    text-align: center;
-    -ms-text-align-last: center;
-    -moz-text-align-last: center;
-}
+    .bigTaskStatusToDo {
+        background-color: var(--red-light);
+    }
 
-.bigTaskStatus:hover{
-    opacity: 0.9;
-    cursor: pointer;
-}
+    .bigTaskStatusInProgress {
+        background-color: var(--orange-light);
+    }
 
-.bigTaskStatusToDo {
-    background-color: var(--red-light);
-}
+    .bigTaskStatusDone {
+        background-color: var(--green-light);
+    }
 
-.bigTaskStatusInProgress {
-    background-color: var(--orange-light);
-}
+    .bigTaskPriority {
+        grid-column: 5 / span 4;
+        grid-row: 1;
+        background-color: var(--priority-color);
+        line-height: 50px;
+        color: var(--category-txt-color);
+        font-size: 15px;
+        text-align-last: center;
+        text-align: center;
+        -ms-text-align-last: center;
+        -moz-text-align-last: center;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
 
-.bigTaskStatusDone {
-    background-color: var(--green-light);
-}
-
-.bigTaskPriority {
-    grid-column: 5 / span 4;
-    grid-row: 1;
-    /*padding: 0 8px;*/
-    background-color: var(--priority-color);
-    line-height: 50px;
-    color: var(--category-txt-color);
-    font-size: 15px;
-    text-align-last: center;
-    text-align: center;
-    -ms-text-align-last: center;
-    -moz-text-align-last: center;
-    border-radius: 10px;
-    margin-right: 10px;
-}
-
-.bigTaskPriority:hover{
-    opacity: 0.9;
-    cursor: pointer;
-}
+    .bigTaskPriority:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
 
 
-.bigTaskCategory {
-    grid-column: 1 / span 4;
-    grid-row: 1;
-    background-color: var(--task-category);
-    /*padding: 0 20px;*/
-    line-height: 50px;
-    color: var(--category-txt-color);
-    font-size: 15px;
-    margin-right: 10px;
-    text-align-last: center;
-    text-align: center;
-    -ms-text-align-last: center;
-    -moz-text-align-last: center;
-    border-radius: 10px;
-}
+    .bigTaskCategory {
+        grid-column: 1 / span 4;
+        grid-row: 1;
+        background-color: var(--task-category);
+        line-height: 50px;
+        color: var(--category-txt-color);
+        font-size: 15px;
+        margin-right: 10px;
+        text-align-last: center;
+        text-align: center;
+        -ms-text-align-last: center;
+        -moz-text-align-last: center;
+        border-radius: 10px;
+    }
 
-.bigTaskCategory:hover{
-    opacity: 0.9;
-    cursor: pointer;
-}
+    .bigTaskCategory:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
 
-.bigTaskLeftBar {
-    grid-column: 1 / span 6;
-    grid-row: 2;
-    height: 100%;
-}
+    .bigTaskLeftBar {
+        grid-column: 1 / span 6;
+        grid-row: 2;
+        height: 100%;
+    }
 
-.bigTaskTitle {
-    margin-top: 20px;
-    text-transform: uppercase;
-    text-align: left;
-    font-weight: 600;
-    font-size: 18px;
-    background: transparent;
-    color: var(--main-txt-color);
-    border: none;
-    outline: 0;
-    border-radius: 10px;
-    width: 100%;
-}
+    .bigTaskTitle {
+        margin-top: 20px;
+        text-transform: uppercase;
+        text-align: left;
+        font-weight: 600;
+        font-size: 18px;
+        background: transparent;
+        color: var(--main-txt-color);
+        border: none;
+        outline: 0;
+        border-radius: 10px;
+        width: 100%;
+    }
 
-.bigTaskTitle:focus{
-    background: rgba(0, 0, 0, 0.2);
-}
+    .bigTaskTitle:focus {
+        background: rgba(0, 0, 0, 0.2);
+    }
 
-.bigTaskDescription {
-    margin-top: 20px;
-    background: transparent;
-    color: var(--main-txt-color);
-    width: 100%;
-    border: none;
-    outline: 0;
-    border-radius: 10px;
-    height: 75%;
-    overflow-wrap: break-word;
-    font-size: 16px;
-    resize: none;
-}
+    .bigTaskDescription {
+        margin-top: 20px;
+        background: transparent;
+        color: var(--main-txt-color);
+        width: 100%;
+        border: none;
+        outline: 0;
+        border-radius: 10px;
+        height: 75%;
+        overflow-wrap: break-word;
+        font-size: 16px;
+        resize: none;
+    }
 
-.bigTaskDescription:focus{
-    background: rgba(0,0,0,0.2);
-}
+    .bigTaskDescription:focus {
+        background: rgba(0, 0, 0, 0.2);
+    }
 
-.bigTaskRightBar {
-    grid-column: 7 / span 6;
-    grid-row: 2;
-}
+    .bigTaskRightBar {
+        grid-column: 7 / span 6;
+        grid-row: 2;
+    }
 
-.bigTaskUserWrap {
-    margin: 20px;
-}
-
-
-.bigTaskUser:hover::before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f057";
-    position: absolute;
-    cursor: pointer;
-    font-size: 30px;
-    z-index: 3;
-    color: var(--red-light);
-    background-color: var(--main-bg-color);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.bigTaskNewUser:hover::before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f057";
-    position: absolute;
-    cursor: pointer;
-    font-size: 30px;
-    z-index: 3;
-    color: var(--green-light);
-    background-color: var(--main-bg-color);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: rotate(45deg);
-}
+    .bigTaskUserWrap {
+        margin: 20px;
+    }
 
 
-.bigTaskUserIcon {
-    width: 30px;
-    height: 30px;
-    border: 2px solid;
-    border-radius: 50%;
-    padding: 3px;
-    font-size: 15px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 10px;
-    display: inline-block;
-    margin-right: 20px;
-    position: relative;
-    cursor: pointer;
-}
+    .bigTaskUser:hover::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f057";
+        position: absolute;
+        cursor: pointer;
+        font-size: 30px;
+        z-index: 3;
+        color: var(--red-light);
+        background-color: var(--main-bg-color);
+        border-radius: 50%;
+        pointer-events: none;
+    }
 
-.bigTaskUserName{
-    display: inline-block;
-}
-
-.bigTaskOwner {
-    border-color: var(--owner-color);
-}
-
-.bigTaskOwner:before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f521";
-    position: absolute;
-    bottom: 20px;
-    left: 2.75px;
-    transform: scaleY(0.6);
-    transform: scaleX(1.5);
-    color: var(--owner-color);
-}
-
-.bigTaskMember {
-    border-color: var(--member-color);
-}
-
-.bigTaskAddUserButton{
-    background: transparent;
-    color: var(--main-txt-color);
-}
+    .bigTaskNewUser:hover::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f057";
+        position: absolute;
+        cursor: pointer;
+        font-size: 30px;
+        z-index: 3;
+        color: var(--green-light);
+        background-color: var(--main-bg-color);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: rotate(45deg);
+    }
 
 
-.bigTaskAddUserButton:hover{
-    opacity: 0.8;
-}
+    .bigTaskUserIcon {
+        width: 30px;
+        height: 30px;
+        border: 2px solid;
+        border-radius: 50%;
+        padding: 3px;
+        font-size: 15px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 10px;
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+        cursor: pointer;
+    }
 
-.bigTaskCountdown {
-    position: relative;
-    text-align: center;
-}
+    .bigTaskUserName {
+        display: inline-block;
+    }
 
-.bigTaskCountdownDaysUnit {
-    margin: auto;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    top: 58px;
-    /*left: 73px;*/
+    .bigTaskOwner {
+        border-color: var(--owner-color);
+    }
 
-}
+    .bigTaskOwner:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f521";
+        position: absolute;
+        bottom: 20px;
+        left: 2.75px;
+        transform: scaleY(0.6);
+        transform: scaleX(1.5);
+        color: var(--owner-color);
+    }
 
-.bigTaskCountdownDays {
-    text-align: center;
-    font-size: 24px
-}
+    .bigTaskMember {
+        border-color: var(--member-color);
+    }
 
-.bigTaskCountdownUnit {
-    font-size: 12px;
-    line-height: 12px;
-    position: relative;
-    text-align: center;
-}
-
-.bigTaskCountdownChart {
-    position: relative;
-    bottom: 20px;
-    left: 0;
-}
-
-.bigTaskProject {
-    grid-column: 1 / span 6;
-    grid-row: 3;
-    line-height: 50px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 18px;
-    margin-top: 6px;
-}
-
-.bigTaskProject:hover{
-    opacity: 0.7;
-}
-
-.bigTaskProjectText{
-    font-size: 14px;
-    line-height: 14px;
-}
-
-.bigTaskProjectName{
-    line-height: 30px;
-}
-
-.bigTaskStartDate {
-    grid-column: 7 / span 4;
-    grid-row: 3;
-    text-align: left;
-    font-size: 12px;
-    line-height: 50px;
-}
-
-.bigTaskEndDate {
-    grid-column: 9 / span 4;
-    grid-row: 3;
-    text-align: right;
-    font-size: 12px;
-    line-height: 50px;
-}
-
-/* Removes the clear button from date inputs */
-input[type="date"]::-webkit-clear-button {
-    display: none;
-}
-
-/* Removes the spin button */
-input[type="date"]::-webkit-inner-spin-button { 
-    display: none;
-}
-
-/* Always display the drop down caret */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    color: var(--main-txt-color);
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    color: var(--main-bg-color);
-}
+    .bigTaskAddUserButton {
+        background: transparent;
+        color: var(--main-txt-color);
+    }
 
 
-/* A few custom styles for date inputs */
-input[type="date"] {
-    appearance: none;
-    -webkit-appearance: none;
-    color: var(--main-txt-color);
-    font-size: 16px;
-    border:1px solid var(--main-txt-color);
-    background: var(--main-bg-color);
-    padding: 5px;
-    display: inline-block !important;
-    visibility: visible !important;
-}
+    .bigTaskAddUserButton:hover {
+        opacity: 0.8;
+    }
 
-input[type="date"], focus {
-    color: var(--main-txt-color);
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-}
+    .bigTaskCountdown {
+        position: relative;
+        text-align: center;
+    }
 
-/* ------------------------------
+    .bigTaskCountdownDaysUnit {
+        margin: auto;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        top: 58px;
+        /*left: 73px;*/
+
+    }
+
+    .bigTaskCountdownDays {
+        text-align: center;
+        font-size: 24px
+    }
+
+    .bigTaskCountdownUnit {
+        font-size: 12px;
+        line-height: 12px;
+        position: relative;
+        text-align: center;
+    }
+
+    .bigTaskCountdownChart {
+        position: relative;
+        bottom: 20px;
+        left: 0;
+    }
+
+    .bigTaskProject {
+        grid-column: 1 / span 6;
+        grid-row: 3;
+        line-height: 50px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 18px;
+        margin-top: 6px;
+    }
+
+    .bigTaskProject:hover {
+        opacity: 0.7;
+    }
+
+    .bigTaskProjectText {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .bigTaskProjectName {
+        line-height: 30px;
+    }
+
+    .bigTaskStartDate {
+        grid-column: 7 / span 4;
+        grid-row: 3;
+        text-align: left;
+        font-size: 12px;
+        line-height: 50px;
+    }
+
+    .bigTaskEndDate {
+        grid-column: 9 / span 4;
+        grid-row: 3;
+        text-align: right;
+        font-size: 12px;
+        line-height: 50px;
+    }
+
+    /* Removes the clear button from date inputs */
+    input[type="date"]::-webkit-clear-button {
+        display: none;
+    }
+
+    /* Removes the spin button */
+    input[type="date"]::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    /* Always display the drop down caret */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        color: var(--main-txt-color);
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator:hover {
+        color: var(--main-bg-color);
+    }
+
+
+    /* A few custom styles for date inputs */
+    input[type="date"] {
+        appearance: none;
+        -webkit-appearance: none;
+        color: var(--main-txt-color);
+        font-size: 16px;
+        border: 1px solid var(--main-txt-color);
+        background: var(--main-bg-color);
+        padding: 5px;
+        display: inline-block !important;
+        visibility: visible !important;
+    }
+
+    input[type="date"],
+    focus {
+        color: var(--main-txt-color);
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+    }
+
+    /* ------------------------------
     PROJECT VIEW START:
 ------------------------------ */
 
-#projectViewContainer {
-
-}
-.projectViewProject {
-    margin: auto;
-    width: 900px;
-    color: var(--main-txt-color);
-    padding: 20px;
-    border: solid 1px var(--main-txt-color);
-}
-
-.projectViewTopBar {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    align-items: baseline;
-    border-bottom: solid 1px var(--main-txt-color);
-}
-
-.projectViewDate {
-
-}
-
-.projectViewStartDate {
-
-}
-
-.projectViewEndDate {
-
-}
-
-
-.projectViewTitle {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 26px;
-    resize: none;
-    background: transparent;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    color: var(--main-txt-color);
-    text-align: center;
-}
-
-.projectViewTitle:focus{
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.projectViewDropDown {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    margin-top: 20px;
-    border-bottom: solid 1px var(--main-txt-color);
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-}
-
-.projectViewDescription {
-    grid-column: 1;
-    resize: none;
-    background: transparent;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    color: var(--main-txt-color);
-    font-size: 16px;
-    margin-right: 10px;
-}
-
-.projectViewDescription:focus{
-    background: rgba(0,0,0,0.2);
-}
-
-.projectViewUserWrap {
-    grid-column: 2;
-    margin-left: 10px;
-}
-
-.projectViewUser {
-
-}
-
-.projectViewUser:hover::before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f057";
-    position: absolute;
-    cursor: pointer;
-    font-size: 30px;
-    z-index: 3;
-    color: var(--red-light);
-    background-color: var(--main-bg-color);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.projectViewUserIcon {
-    width: 30px;
-    height: 30px;
-    border: 2px solid;
-    border-radius: 50%;
-    padding: 3px;
-    font-size: 15px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 10px;
-    display: inline-block;
-    margin-right: 20px;
-    position: relative;
-    cursor: pointer;
-}
-
-.projectViewUserName {
-    display: inline-block;
-}
-
-
-.projectViewOwner {
-    border-color: var(--owner-color);
-}
-
-.projectViewOwner:before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f521";
-    position: absolute;
-    bottom: 20px;
-    left: 2.75px;
-    transform: scaleY(0.6);
-    transform: scaleX(1.5);
-    color: var(--owner-color);
-}
-
-
-.projectViewMember {
-    border-color: var(--member-color);
-}
-
-.projectViewTaskWrap {
-    display: grid;
-    grid-template-columns: 33.33% auto 33.33%;
-    grid-column-gap: 10px;
-}
-
-.projectViewToDoWrap {
-    grid-column: 1;
-}
-
-.projectViewInProgressWrap {
-    grid-column: 2;
-}
-
-.projectViewDoneWrap {
-    grid-column: 3;
-}
-
-.projectViewStatusTitle{
-    padding: 10px;
-}
-
-.projectViewStatusTitleToDo {
-    background-color: var(--red-light);
-    color: var(--category-txt-color);
-}
-
-.projectViewStatusTitleInProgress {
-    background-color: var(--orange-light);
-    color: var(--category-txt-color);
-}
-
-.projectViewStatusTitleDone {
-    background-color: var(--green-light);
-    color: var(--category-txt-color);
-}
-
-.projectViewTask {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 30px auto auto;
-    padding: 10px;
-    border: solid 1px var(--main-txt-color);
-    border-radius: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-
-.projectViewTaskStatus {
-    grid-column: 2;
-    grid-row: 3;
-    display: none;
-    pointer-events: none;
-}
-
-.projectViewTaskCategory {
-    grid-column: 1;
-    grid-row: 1;
-    pointer-events: none;
-}
-
-.projectViewTaskTitle {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    pointer-events: none;
-    font-weight: 600;
-    text-transform: uppercase;
-
-}
-
-.invisible {
-  display: none;
-}
-.projectViewTaskUserWrap {
-    grid-column: 1 / span 2;
-    grid-row: 3;
-    text-align: left;
-    pointer-events: none;
-    user-select: none;
-    padding-top: 10px;
-}
-
-.projectViewTaskUser {
-    width: 30px;
-    height: 30px;
-    border: 2px solid;
-    border-radius: 50%;
-    padding: 3px;
-    font-size: 15px;
-    font-weight: 800;
-    text-align: center;
-    display: inline-block;
-    pointer-events: none;
-    user-select: none;
-    margin-right: 5px;
-    position: relative;
-}
-
-
-.projectViewTaskOwner {
-    border-color: var(--owner-color);
-    pointer-events: none;
-    user-select: none
-}
-
-.projectViewTaskOwner:before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f521";
-    position: absolute;
-    bottom: 20px;
-    left: 2.75px;
-    transform: scaleY(0.6);
-    transform: scaleX(1.5);
-    color: var(--owner-color);
-}
-
-.projectViewTaskMember {
-    border-color: var(--member-color);
-    pointer-events: none;
-    user-select: none
-}
-
-.projectViewTaskProject {
-    grid-column: 1;
-    grid-row: 3;
-    pointer-events: none;
-    user-select: none
-}
-
-.projectViewTaskEndDate {
-    grid-column: 2;
-    grid-row: 1;
-    text-align: right;
-}
-
-.projectViewAddTaskWrap{
-    margin-top: 10px;
-}
-
-.projectViewAddTaskWrap input{
-    background: transparent;
-    border: 1px solid var(--main-txt-color);
-    margin-right: 10px;
-    padding: 4px;
-    color: var(--main-txt-color);
-    font-size: 13px;
-}
-
-.projectViewAddTaskWrap button{
-    background-color: transparent;
-    color: var(--main-txt-color);
-    padding: 4px;
-    border: 1px solid var(--main-txt-color);
-    border-radius: 10px;
-    font-size: 13px;
-
-}
-
-.projectViewAddTaskWrap button:hover{
-    /*opacity: 0.8;*/
-    cursor: pointer;
-    background: var(--task-one);
-    color: var(--main-bg-color);
-    border-color: var(--main-bg-color);
-}
-
-.projectViewStatusWrap {
-
-}
-
-.projectViewTaskToDoWrap {
-
-}
-
-.projectViewTaskInProgressWrap {
-
-}
-
-.projectViewTaskDoneWrap {
-
-}
-
-.projectViewTaskStatusToDo {
-
-}
-
-.projectViewTaskStatusInProgress {
-
-}
-
-.projectViewTaskDone {
-
-}
-
-.invisible {
-  display: none;
-}
-.held {
-  border: solid 1px white;
-  background-color: #424248;
-  min-height: 100px;
-  min-width: 200px;
-}
-
-/*.unselectable {
+    #projectViewContainer {}
+
+    .projectViewProject {
+        margin: auto;
+        width: 900px;
+        color: var(--main-txt-color);
+        padding: 20px;
+        border: solid 1px var(--main-txt-color);
+    }
+
+    .projectViewTopBar {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        align-items: baseline;
+        border-bottom: solid 1px var(--main-txt-color);
+    }
+
+    .projectViewTitle {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 26px;
+        resize: none;
+        background: transparent;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: var(--main-txt-color);
+        text-align: center;
+    }
+
+    .projectViewTitle:focus {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .projectViewDropDown {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 20px;
+        border-bottom: solid 1px var(--main-txt-color);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .projectViewDescription {
+        grid-column: 1;
+        resize: none;
+        background: transparent;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: var(--main-txt-color);
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .projectViewDescription:focus {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .projectViewUserWrap {
+        grid-column: 2;
+        margin-left: 10px;
+    }
+
+    .projectViewUser {}
+
+    .projectViewUser:hover::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f057";
+        position: absolute;
+        cursor: pointer;
+        font-size: 30px;
+        z-index: 3;
+        color: var(--red-light);
+        background-color: var(--main-bg-color);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .projectViewUserIcon {
+        width: 30px;
+        height: 30px;
+        border: 2px solid;
+        border-radius: 50%;
+        padding: 3px;
+        font-size: 15px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 10px;
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .projectViewUserName {
+        display: inline-block;
+    }
+
+
+    .projectViewOwner {
+        border-color: var(--owner-color);
+    }
+
+    .projectViewOwner:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f521";
+        position: absolute;
+        bottom: 20px;
+        left: 2.75px;
+        transform: scaleY(0.6);
+        transform: scaleX(1.5);
+        color: var(--owner-color);
+    }
+
+
+    .projectViewMember {
+        border-color: var(--member-color);
+    }
+
+    .projectViewTaskWrap {
+        display: grid;
+        grid-template-columns: 33.33% auto 33.33%;
+        grid-column-gap: 10px;
+    }
+
+    .projectViewToDoWrap {
+        grid-column: 1;
+    }
+
+    .projectViewInProgressWrap {
+        grid-column: 2;
+    }
+
+    .projectViewDoneWrap {
+        grid-column: 3;
+    }
+
+    .projectViewStatusTitle {
+        padding: 10px;
+    }
+
+    .projectViewStatusTitleToDo {
+        background-color: var(--red-light);
+        color: var(--category-txt-color);
+    }
+
+    .projectViewStatusTitleInProgress {
+        background-color: var(--orange-light);
+        color: var(--category-txt-color);
+    }
+
+    .projectViewStatusTitleDone {
+        background-color: var(--green-light);
+        color: var(--category-txt-color);
+    }
+
+    .projectViewTask {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30px auto auto;
+        padding: 10px;
+        border: solid 1px var(--main-txt-color);
+        border-radius: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+
+    .projectViewTaskStatus {
+        grid-column: 2;
+        grid-row: 3;
+        display: none;
+        pointer-events: none;
+    }
+
+    .projectViewTaskCategory {
+        grid-column: 1;
+        grid-row: 1;
+        pointer-events: none;
+    }
+
+    .projectViewTaskTitle {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        pointer-events: none;
+        font-weight: 600;
+        text-transform: uppercase;
+
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    .projectViewTaskUserWrap {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+        text-align: left;
+        pointer-events: none;
+        user-select: none;
+        padding-top: 10px;
+    }
+
+    .projectViewTaskUser {
+        width: 30px;
+        height: 30px;
+        border: 2px solid;
+        border-radius: 50%;
+        padding: 3px;
+        font-size: 15px;
+        font-weight: 800;
+        text-align: center;
+        display: inline-block;
+        pointer-events: none;
+        user-select: none;
+        margin-right: 5px;
+        position: relative;
+    }
+
+
+    .projectViewTaskOwner {
+        border-color: var(--owner-color);
+        pointer-events: none;
+        user-select: none
+    }
+
+    .projectViewTaskOwner:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f521";
+        position: absolute;
+        bottom: 20px;
+        left: 2.75px;
+        transform: scaleY(0.6);
+        transform: scaleX(1.5);
+        color: var(--owner-color);
+    }
+
+    .projectViewTaskMember {
+        border-color: var(--member-color);
+        pointer-events: none;
+        user-select: none
+    }
+
+    .projectViewTaskProject {
+        grid-column: 1;
+        grid-row: 3;
+        pointer-events: none;
+        user-select: none
+    }
+
+    .projectViewTaskEndDate {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: right;
+    }
+
+    .projectViewAddTaskWrap {
+        margin-top: 10px;
+    }
+
+    .projectViewAddTaskWrap input {
+        background: transparent;
+        border: 1px solid var(--main-txt-color);
+        margin-right: 10px;
+        padding: 4px;
+        color: var(--main-txt-color);
+        font-size: 13px;
+    }
+
+    .projectViewAddTaskWrap button {
+        background-color: transparent;
+        color: var(--main-txt-color);
+        padding: 4px;
+        border: 1px solid var(--main-txt-color);
+        border-radius: 10px;
+        font-size: 13px;
+
+    }
+
+    .projectViewAddTaskWrap button:hover {
+        /*opacity: 0.8;*/
+        cursor: pointer;
+        background: var(--task-one);
+        color: var(--main-bg-color);
+        border-color: var(--main-bg-color);
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    .held {
+        border: solid 1px white;
+        background-color: #424248;
+        min-height: 100px;
+        min-width: 200px;
+    }
+
+    /*.unselectable {
     -moz-user-select: none;
     -webkit-user-select: none;
 } */
 
-.pointer{
-    cursor: pointer;
-}
-
-/* -------------------- */
-/* -------------------- */
-
-.highlight {
-    color: var(--task-one);
-}
-
-.mainFooter {
-    text-align: center;
-    color: var(--main-txt-color);
-    height: 64.69px;
-    background-color: var(--secondary-bg-color);
-    border-top: solid 0.7px var(--main-txt-color);
-    margin-top: 3.5rem;
-}
-
-/* media queries */
-
-@media(max-width: 568px){
-
-    .headerButton{
-        font-size: 10px;
+    .pointer {
+        cursor: pointer;
     }
 
-}
+    /* -------------------- */
+    /* -------------------- */
 
-
-@media(max-width: 1000px){
-    .catchphrase, #verticalLine{
-        display: none;
+    .highlight {
+        color: var(--task-one);
     }
 
-}
+    .mainFooter {
+        text-align: center;
+        color: var(--main-txt-color);
+        height: 64.69px;
+        background-color: var(--secondary-bg-color);
+        border-top: solid 0.7px var(--main-txt-color);
+        margin-top: 3.5rem;
+    }
 
-/* Scrollbar */
+    /* media queries */
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
+    @media(max-width: 568px) {
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: grey;
-  border-radius: 8px;
-}
+        .headerButton {
+            font-size: 10px;
+        }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 3px lightgrey;
-  background: var(--secondary-bg-color);
-  border-radius: 10px;
-}
-
-/* CSS for eksempelknapp */
-/*.btn {
-    padding: 0.5rem 1rem;
-    margin-top: 50px;
-    background-color: transparent;
-    border: solid 2px #fffaff;
-    border-radius: 5px;
-    color: #fffaff;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 130px;
-    top: 10%;
-    cursor: pointer;
-}
+    }
 
 
-.btn:hover {
-    background-color: #6edd79;
+    @media(max-width: 1000px) {
 
-}
+        .catchphrase,
+        #verticalLine {
+            display: none;
+        }
 
+    }
 
-.btn-text {
-    font-size: 14px;
-    letter-spacing: 1px;
-}
+    /* Scrollbar */
 
-.arrow {
-    font-size: 15px;
-    padding-left: 0.5rem;
-}*/
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: grey;
+        border-radius: 8px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 3px lightgrey;
+        background: var(--secondary-bg-color);
+        border-radius: 10px;
+    }

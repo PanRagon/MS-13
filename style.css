@@ -599,6 +599,7 @@ select {
     margin-right: 10px;
     padding: 4px;
     color: var(--main-txt-color);
+    font-size: 13px;
 }
 
 .dashboardAddProjectWrap button{
@@ -1375,6 +1376,37 @@ input[type="date"], focus {
     grid-column: 2;
     grid-row: 1;
     text-align: right;
+}
+
+.projectViewAddTaskWrap{
+    margin-top: 10px;
+}
+
+.projectViewAddTaskWrap input{
+    background: transparent;
+    border: 1px solid var(--main-txt-color);
+    margin-right: 10px;
+    padding: 4px;
+    color: var(--main-txt-color);
+    font-size: 13px;
+}
+
+.projectViewAddTaskWrap button{
+    background-color: transparent;
+    color: var(--main-txt-color);
+    padding: 4px;
+    border: 1px solid var(--main-txt-color);
+    border-radius: 10px;
+    font-size: 13px;
+
+}
+
+.projectViewAddTaskWrap button:hover{
+    /*opacity: 0.8;*/
+    cursor: pointer;
+    background: var(--task-one);
+    color: var(--main-bg-color);
+    border-color: var(--main-bg-color);
 }
 
 .projectViewStatusWrap {

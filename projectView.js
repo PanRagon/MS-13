@@ -188,7 +188,7 @@ function renderProjectView(project) {
                 });
                 userDiv.classList.remove("bigTaskNewUser");
                 userDiv.classList.add("bigTaskUser");
-                ownersDiv.appendChild(userDiv);
+                membersDiv.appendChild(userDiv);
             }
         })
     };

@@ -62,7 +62,7 @@ function renderDashboard(user) {
         if (newProjectInput.value != "") {
             new Project(newProjectInput.value)
             renderProjectView(Project.array[Project.array.length - 1]);
-        }
+        }})
 
         newProjectInput.addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
@@ -70,7 +70,6 @@ function renderDashboard(user) {
                 renderProjectView(Project.array[Project.array.length - 1]);
             }
         });
-    });
     renderTarget.appendChild(newProjectDiv);
 
     renderDashboardCalendar(user.getTasks());

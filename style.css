@@ -64,8 +64,9 @@ select {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 8.6vw;
-    margin: 0;
+    padding-left: 0;
+    width: 82.8vw;
+    margin: auto;
     height: 100%;
     padding-top: 4px;
 }
@@ -105,6 +106,11 @@ select {
     line-height: 50px;
     margin: 0 auto;
     cursor: pointer;
+    padding: 0;
+}
+
+.headerButton:hover{
+    color: var(--task-one);
 }
 
 .headerLi{
@@ -113,6 +119,7 @@ select {
 
 #slash1, #slash2{
     font-size: 13px;
+    padding: 0 8px;
 }
 
 .show {
@@ -203,7 +210,7 @@ select {
     letter-spacing: 2px;
     width: 82.8vw;
     margin: auto;
-    padding: 0 8px 8px 8px;
+    padding: 0 8px 8px 0;
 }
 
 #calendarContainer{
@@ -357,7 +364,7 @@ select {
     letter-spacing: 2px;
     width: 82.8vw;
     margin: auto;
-    padding: 8px;
+    padding: 0 8px 8px 0;
 }
 
 .dashboardTaskWrap{
@@ -516,7 +523,7 @@ select {
     DASHBOARD PROJECTS START:
 -------------------- */
 #dashboardProjectContainer {
-    margin: 0 auto 3.5rem auto;
+    margin: 0 auto 1rem auto;
     width: 82.8vw;
     overflow: auto;
     white-space: nowrap;
@@ -542,16 +549,10 @@ select {
     letter-spacing: 2px;
     width: 82.8vw;
     margin: auto;
-    padding: 8px;
+    padding: 0 8px 8px 0;
 }
 
-.dashboardProjectHeading input{
-    background: transparent;
-    border: 1px solid var(--main-txt-color);
-    margin-right: 10px;
-    padding: 4px;
-    color: var(--main-txt-color);
-}
+
 
 
 /*.btn {
@@ -588,12 +589,26 @@ select {
     padding-left: 0.5rem;
 }*/
 
+.dashboardAddProjectWrap{
+    padding-bottom: 2.5rem;
+}
+
+.dashboardAddProjectWrap input{
+    background: transparent;
+    border: 1px solid var(--main-txt-color);
+    margin-right: 10px;
+    padding: 4px;
+    color: var(--main-txt-color);
+    font-size: 13px;
+}
+
 .dashboardAddProjectWrap button{
     background-color: transparent;
     color: var(--main-txt-color);
     padding: 4px;
     border: 1px solid var(--main-txt-color);
     border-radius: 10px;
+    font-size: 13px;
 }
 
 .dashboardAddProjectWrap button:hover{
@@ -1361,6 +1376,37 @@ input[type="date"], focus {
     grid-column: 2;
     grid-row: 1;
     text-align: right;
+}
+
+.projectViewAddTaskWrap{
+    margin-top: 10px;
+}
+
+.projectViewAddTaskWrap input{
+    background: transparent;
+    border: 1px solid var(--main-txt-color);
+    margin-right: 10px;
+    padding: 4px;
+    color: var(--main-txt-color);
+    font-size: 13px;
+}
+
+.projectViewAddTaskWrap button{
+    background-color: transparent;
+    color: var(--main-txt-color);
+    padding: 4px;
+    border: 1px solid var(--main-txt-color);
+    border-radius: 10px;
+    font-size: 13px;
+
+}
+
+.projectViewAddTaskWrap button:hover{
+    /*opacity: 0.8;*/
+    cursor: pointer;
+    background: var(--task-one);
+    color: var(--main-bg-color);
+    border-color: var(--main-bg-color);
 }
 
 .projectViewStatusWrap {

@@ -265,6 +265,8 @@ function renderBigTask(task) {
                     task.removeOwner(user.ID);
                     userDiv.parentElement.removeChild(userDiv);
                 });
+                userDiv.classList.remove("bigTaskNewUser");
+                userDiv.classList.add("bigTaskUser");
                 ownersDiv.appendChild(userDiv);
             }
         })
@@ -306,6 +308,8 @@ function renderBigTask(task) {
                     task.removeMember(user.ID);
                     userDiv.parentElement.removeChild(userDiv);
                 });
+                userDiv.classList.remove("bigTaskNewUser");
+                userDiv.classList.add("bigTaskUser");
                 ownersDiv.appendChild(userDiv);
             }
         })

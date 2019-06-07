@@ -143,6 +143,8 @@ function renderProjectView(project) {
                     project.removeOwner(user.ID);
                     userDiv.parentElement.removeChild(userDiv);
                 });
+                userDiv.classList.remove("bigTaskNewUser");
+                userDiv.classList.add("bigTaskUser");
                 ownersDiv.appendChild(userDiv);
             }
         })
@@ -184,6 +186,8 @@ function renderProjectView(project) {
                     project.removeMember(user.ID);
                     userDiv.parentElement.removeChild(userDiv);
                 });
+                userDiv.classList.remove("bigTaskNewUser");
+                userDiv.classList.add("bigTaskUser");
                 ownersDiv.appendChild(userDiv);
             }
         })

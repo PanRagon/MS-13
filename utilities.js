@@ -46,7 +46,7 @@ function getPercentageLeft(task) {
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.min.css">
 //<script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.js"></script>
 
-
+//Builds the countdown clock
 function buildChart(task, div) {
     let chartID = "chart" + task.ID;
     let chartDiv = document.createElement("div");
@@ -71,6 +71,7 @@ function buildChart(task, div) {
     })
 }
 
+//Algorithm to determine position of tasks in the reccommended tasks
 function findPriorityRating(task) {
     let ttd = task.endDate - new Date();
     let priority = 0;
@@ -117,12 +118,14 @@ class DragDrop {
 
         DragDrop.taskCards = document.getElementsByClassName("projectViewTask");
 
+        //Add drag event listeners to the task cards
         for(const taskCard of DragDrop.taskCards) {
             taskCard.addEventListener("dragstart", DragDrop.dragstart);
             taskCard.addEventListener("dragend", DragDrop.dragend);
         }
         const containers = document.getElementsByClassName("projectViewStatusWrap");
 
+        //Add drag event listeners to the status containers
         for(const container of containers) {
             container.addEventListener("dragover", DragDrop.dragover);
             container.addEventListener("dragenter", DragDrop.dragenter);
@@ -133,13 +136,14 @@ class DragDrop {
 
     static card = "";
 
+    //Start the drag and make the card invisible
     static dragstart() {
         DragDrop.card = this;
         this.classList.add("held");
         setTimeout(() => this.classList.add("invisible"), 0);
     }
 
-
+    //When the drag stops, make the card visible again.
     static dragend() {
         this.classList.remove("held", "invisible");
         updateProjectViewCounters();
@@ -157,6 +161,7 @@ class DragDrop {
         e.preventDefault();
     }
 
+    //Append card to new statusdiv; if status is done, run confetti.
     static drop() {
         this.append(DragDrop.card);
         DragDrop.card.classList.remove("projectViewTaskToDo", "projectViewTaskInProgress", "projectViewTaskDone");

@@ -143,6 +143,8 @@ function renderProjectView(project) {
                     project.removeOwner(user.ID);
                     userDiv.parentElement.removeChild(userDiv);
                 });
+                userDiv.classList.remove("bigTaskNewUser");
+                userDiv.classList.add("bigTaskUser");
                 ownersDiv.appendChild(userDiv);
             }
         })
@@ -184,6 +186,8 @@ function renderProjectView(project) {
                     project.removeMember(user.ID);
                     userDiv.parentElement.removeChild(userDiv);
                 });
+                userDiv.classList.remove("bigTaskNewUser");
+                userDiv.classList.add("bigTaskUser");
                 ownersDiv.appendChild(userDiv);
             }
         })
@@ -310,13 +314,16 @@ function renderProjectView(project) {
     // Render project to container
     projectContainerDiv.appendChild(projectDiv);
 
+    // Add new task:
     let newTaskDiv = document.createElement("div");
+    newTaskDiv.classList.add("projectViewAddTaskWrap");
 
     let newTaskButton = document.createElement("button");
     newTaskButton.innerText = "Create a new task";
 
     let newTaskInput = document.createElement("input");
     newTaskInput.setAttribute("type", "text");
+    newTaskInput.setAttribute("placeholder", "Task title");
     newTaskDiv.appendChild(newTaskInput);
     newTaskDiv.appendChild(newTaskButton);
 

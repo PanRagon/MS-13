@@ -319,7 +319,7 @@ select {
     left: 2.75px;
     transform: scaleY(0.6);
     transform: scaleX(1.5);
-    color: gold;
+    color: var(--owner-color);
 }
 
 /* Individual members */
@@ -465,7 +465,7 @@ select {
     left: 2.75px;
     transform: scaleY(0.6);
     transform: scaleX(1.5);
-    color: gold;
+    color: var(--owner-color);
 }
 
 .dashboardTaskMember {
@@ -718,7 +718,7 @@ select {
     left: 2.75px;
     transform: scaleY(0.6);
     transform: scaleX(1.5);
-    color: gold;
+    color: var(--owner-color);
 }
 
 .dashboardProjectMember {
@@ -972,7 +972,7 @@ select {
     left: 2.75px;
     transform: scaleY(0.6);
     transform: scaleX(1.5);
-    color: gold;
+    color: var(--owner-color);
 }
 
 .bigTaskMember {
@@ -1234,7 +1234,7 @@ input[type="date"], focus {
     left: 2.75px;
     transform: scaleY(0.6);
     transform: scaleX(1.5);
-    color: gold;
+    color: var(--owner-color);
 }
 
 
@@ -1356,7 +1356,7 @@ input[type="date"], focus {
     left: 2.75px;
     transform: scaleY(0.6);
     transform: scaleX(1.5);
-    color: gold;
+    color: var(--owner-color);
 }
 
 .projectViewTaskMember {

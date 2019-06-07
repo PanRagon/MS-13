@@ -124,9 +124,7 @@ function renderProjectView(project) {
         // Make list of users
         newUsersArray.forEach(user => {
             let userDiv = document.createElement("div");
-            let userID = user.ID + " user";
-            userDiv.classList.add("bigTaskUser");
-            userDiv.id = userID;
+            userDiv.classList.add("bigTaskNewUser");
             let memberDiv = document.createElement("div");
             memberDiv.classList.add("bigTaskUserIcon");
             memberDiv.classList.add("bigTaskOwner");
@@ -167,9 +165,7 @@ function renderProjectView(project) {
         // Make list of users
         newUsersArray.forEach(user => {
             let userDiv = document.createElement("div");
-            let userID = user.ID + " user";
-            userDiv.classList.add("bigTaskUser");
-            userDiv.id = userID;
+            userDiv.classList.add("bigTaskNewUser");
             let memberDiv = document.createElement("div");
             memberDiv.classList.add("bigTaskUserIcon");
             memberDiv.classList.add("bigTaskMember");

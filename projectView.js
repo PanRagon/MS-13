@@ -323,6 +323,7 @@ function renderProjectView(project) {
 
     let newTaskInput = document.createElement("input");
     newTaskInput.setAttribute("type", "text");
+    newTaskInput.setAttribute("placeholder", "Task title");
     newTaskDiv.appendChild(newTaskInput);
     newTaskDiv.appendChild(newTaskButton);
 

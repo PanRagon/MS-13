@@ -588,7 +588,7 @@ select {
     padding-left: 0.5rem;
 }*/
 
-.dashboardProjectHeading button{
+.dashboardAddProjectWrap button{
     background-color: transparent;
     color: var(--main-txt-color);
     padding: 4px;
@@ -596,7 +596,7 @@ select {
     border-radius: 10px;
 }
 
-.dashboardProjectHeading button:hover{
+.dashboardAddProjectWrap button:hover{
     /*opacity: 0.8;*/
     cursor: pointer;
     background: var(--task-one);

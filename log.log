@@ -1,0 +1,1740 @@
+* commit f32674a281acebbd887d215413687ca14909de3f
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Fri Jun 7 12:54:37 2019 +0200
+| 
+|     Fixed keyup function on newprojectinput
+| 
+* commit 5b4e1ff59a65a718f2fb5d1f6689220d13262bf5
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Fri Jun 7 12:50:31 2019 +0200
+| 
+|     Cleanup & Title
+|   
+*   commit aa5b7e31bc20ba763cc81f10c30a03e4895951c9
+|\  Merge: 9d9453b 2ef041e
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Fri Jun 7 12:37:43 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 2ef041e2f3141e84521f73c51b83f0310b3af88b
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Fri Jun 7 11:41:52 2019 +0200
+| | 
+| |     gold color changed to variables
+| | 
+* | commit 9d9453babba8240141b286df02ddea4eceacc725
+|/  Author: PanRagon <thebigecko@gmail.com>
+|   Date:   Fri Jun 7 12:37:41 2019 +0200
+|   
+|       Added placeholder text to description areas
+| 
+* commit 8382fb8ea1826bc541f4fb275698636ee5974ff3
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Fri Jun 7 11:16:39 2019 +0200
+| 
+|     Deleted old files
+| 
+* commit 375795238649f17cfdfe76ff1cb54502927f77b1
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Fri Jun 7 11:01:11 2019 +0200
+| 
+|     Fixed priorityRating algorithm
+|   
+*   commit dd91a38d0492a404faf138eb99ad413fab5f2123
+|\  Merge: ddc4e96 9640721
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Fri Jun 7 10:54:38 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 96407210c4becb99a546a2c554e38630f3bc8708
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Fri Jun 7 10:52:40 2019 +0200
+| | 
+| |     input and buttons styled
+| |   
+| *   commit 250813a6fce651eec2511be2902ae72bd3b39947
+| |\  Merge: 88cd174 f5998df
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Fri Jun 7 10:48:07 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 88cd174f011c8d06514e4e5af54d1c8ea4637093
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Fri Jun 7 10:48:02 2019 +0200
+| | | 
+| | |     fixed alignment in dashboard
+| | | 
+* | | commit ddc4e9610f60cd61f4c3bafed0f406f7ab7c2021
+| |/  Author: Erik Olseng <e.olseng@gmail.com>
+|/|   Date:   Fri Jun 7 10:54:32 2019 +0200
+| |   
+| |       Fix new users added to correct DIV
+| |   
+* |   commit f5998df998825b85d3e656734792e06b7ab20262
+|\ \  Merge: 7ac726d acd7f7f
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Fri Jun 7 10:43:17 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | |   
+| * |   commit acd7f7fa5ebf5e5ffca06a9c66af1f8bdb7ed5fb
+| |\ \  Merge: 55fcdd4 b23443c
+| | |/  Author: PanRagon <thebigecko@gmail.com>
+| | |   Date:   Fri Jun 7 10:28:56 2019 +0200
+| | |   
+| | |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| | * commit b23443c85b3d9316c3ac0ce02839da25710772c5
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Fri Jun 7 10:23:51 2019 +0200
+| | | 
+| | |     addproject styling
+| | | 
+| * | commit 55fcdd45c4e293e3321ea6d41639cae1c4b567be
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Fri Jun 7 10:28:48 2019 +0200
+| | | 
+| | |     Placeholder text in new project/new task input
+| | | 
+* | | commit 7ac726d93ed065b106ce8cf93f23b515a685b22a
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Fri Jun 7 10:43:10 2019 +0200
+| | | 
+| | |     Add class to addTask DIV
+| | | 
+* | | commit 43d0d7c9643146e4e3b260ba938b1bac8c3f27db
+| |/  Author: Erik Olseng <e.olseng@gmail.com>
+|/|   Date:   Fri Jun 7 10:27:05 2019 +0200
+| |   
+| |       Fix remove user icon on newly added users
+| | 
+* | commit 70bbc1d11339b466f2c21f8452c6ee2745af0d97
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Fri Jun 7 10:23:16 2019 +0200
+| | 
+| |     Add class to addProject DIV
+| | 
+* | commit 943c3e72aa664522831f7dd22fbef4277f435688
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Fri Jun 7 10:21:20 2019 +0200
+| | 
+| |     plus button new user
+| | 
+* | commit fd6b2090518ea5a6e06bf69c5f312bf41e82ae9a
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Fri Jun 7 10:06:46 2019 +0200
+| | 
+| |     Move AddProject to under dashboardProjects
+| |   
+* |   commit 9b4a1f31c997f1e981faefd4de6602293bb35ebe
+|\ \  Merge: d55e9fa e555485
+| |/  Author: Erik Olseng <e.olseng@gmail.com>
+| |   Date:   Fri Jun 7 09:57:40 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit e5554857b926165133fbc719e843355d786d3ae0
+| |\  Merge: 52e4e7e d70e1e5
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Fri Jun 7 09:57:09 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | |   
+| | *   commit d70e1e535e38857d18edf3df19d20ad03df863f5
+| | |\  Merge: db45ae3 9d41067
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Fri Jun 7 09:56:07 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| | * | commit db45ae351fd1154935a34799263cfdb1a7433412
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Fri Jun 7 09:56:03 2019 +0200
+| | | | 
+| | | |     Update style.css
+| | | | 
+| * | | commit 52e4e7e7852627a9a291d08a8772500932f53339
+| | |/  Author: PanRagon <thebigecko@gmail.com>
+| |/|   Date:   Fri Jun 7 09:56:58 2019 +0200
+| | |   
+| | |       Yet another scrollbar style update
+| | | 
+| * | commit 9d41067de27c558354edc5a5895be5fdec40e71c
+| |/  Author: PanRagon <thebigecko@gmail.com>
+| |   Date:   Fri Jun 7 09:33:04 2019 +0200
+| |   
+| |       Fixed scrollbar style
+| | 
+* | commit d55e9fa3bb5f9d335a993c2255d5f510f4fbaa5b
+|/  Author: Erik Olseng <e.olseng@gmail.com>
+|   Date:   Fri Jun 7 09:57:36 2019 +0200
+|   
+|       Add class to newUserWrap
+| 
+* commit 60e3274c2280d7d907dfa07048fd7ab7c90cf69c
+| Author: Ludvik Blunck <luddmachine@gmail.com>
+| Date:   Fri Jun 7 02:05:16 2019 +0200
+| 
+|     input and button for dashboardprojectheading styled
+| 
+* commit d77d1a3fd0c27080a2c6aa21a9813981fbee5ab2
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Thu Jun 6 23:19:23 2019 +0200
+| 
+|     Small fix to add users
+| 
+* commit 68aa4fa030b587c056f36519c1a3035b0508e1c4
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Thu Jun 6 23:02:52 2019 +0200
+| 
+|     Fix dayMonthDateForatter-output
+|   
+*   commit a1667553257f5f29cafe09df64c009f313a2f598
+|\  Merge: 301eed1 49194cd
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Thu Jun 6 22:19:18 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 49194cdce8a32caa8c7d4e6addb20f9dc61ec2ca
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Thu Jun 6 22:08:57 2019 +0200
+| | 
+| |     Removed redundant createNewTask function
+| | 
+| * commit f8dbc9db63b265b9c18d153f655c6a3372758c37
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Thu Jun 6 22:06:35 2019 +0200
+| | 
+| |     New task and New project rendered on pressing enter
+| | 
+* | commit 301eed143b97b8db215af87a1ab7da3e0b466566
+|/  Author: Erik Olseng <e.olseng@gmail.com>
+|   Date:   Thu Jun 6 22:19:10 2019 +0200
+|   
+|       Fix to be able to remove users after being added without rerendering of page
+| 
+* commit 264d66f99c0c1b815e83191fcd5b4dddc91ec106
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Thu Jun 6 21:47:26 2019 +0200
+| 
+|     Added scrollbar styling
+| 
+* commit d9fef62efbb5a0dc83141570cd480462cda80613
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Thu Jun 6 19:02:58 2019 +0200
+| 
+|     Add scroll to top on new page rendering
+|   
+*   commit 6d6d5910045c26d1844bd964c07685add2488385
+|\  Merge: 468a597 0e81124
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Thu Jun 6 18:59:05 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 0e81124cd800b117830b2c9f5525b5a59b18e382
+| |\  Merge: f01fd45 337634f
+| | | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | | Date:   Thu Jun 6 15:47:01 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit f01fd45ebc3f27f73f2ca50e4fc9d030f2f4df1e
+| | | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | | Date:   Thu Jun 6 15:46:53 2019 +0200
+| | | 
+| | |     Made changes to priorities and dates on tasks
+| | | 
+* | | commit 468a597a54458f6a102e4892fb5489e7d29bc6c4
+| |/  Author: Erik Olseng <e.olseng@gmail.com>
+|/|   Date:   Thu Jun 6 18:58:52 2019 +0200
+| |   
+| |       Add possibility to add members to projects and tasks
+| |   
+* |   commit 337634ff578c00cdd3ee7354fa8454017ac4eb99
+|\ \  Merge: fcb4a8e 150848b
+| |/  Author: Ludvik Blunck <luddmachine@gmail.com>
+| |   Date:   Thu Jun 6 15:45:53 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 150848bed45afbb571d143c10243dada2205de04
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Thu Jun 6 14:54:00 2019 +0200
+| | 
+| |     Added project constructor in dashboard
+| | 
+| * commit 1e740772ab06680e53169b170d0184ca2656bd25
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Thu Jun 6 14:41:20 2019 +0200
+| | 
+| |     Added task constructor in project view
+| | 
+* | commit fcb4a8ec7425f48f7d204289ff2784dbbda0803b
+|/  Author: Ludvik Blunck <luddmachine@gmail.com>
+|   Date:   Thu Jun 6 15:45:38 2019 +0200
+|   
+|       moved navbar under topheading
+| 
+* commit 07fbfdc18a02792816f3daee6c3fb1c0cea09683
+| Author: Ludvik Blunck <luddmachine@gmail.com>
+| Date:   Thu Jun 6 13:27:22 2019 +0200
+| 
+|     header done
+|   
+*   commit 93e7bf93fa1440405473c37954048b7e2dd5aca2
+|\  Merge: f7cfaad e8841af
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Thu Jun 6 13:22:18 2019 +0200
+| | 
+| |     fix merge conflict
+| | 
+| * commit e8841af33e8d620da32464fda688a94669ea13ac
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Thu Jun 6 13:12:20 2019 +0200
+| | 
+| |     Added confetti to project view
+| |   
+| *   commit 82ac8732fa00265908be1d4883d6e6dad9b93a93
+| |\  Merge: 343fc33 5d94fef
+| | | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | | Date:   Thu Jun 6 12:10:03 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 343fc33f2a015dc39f7616f5fc688116dae6279d
+| | | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | | Date:   Thu Jun 6 12:09:52 2019 +0200
+| | | 
+| | |     Name and tagline changes
+| | | 
+* | | commit f7cfaadbbfa79508bfc5bb5627f9efc7a2a707d2
+| |/  Author: Ludvik Blunck <luddmachine@gmail.com>
+|/|   Date:   Thu Jun 6 13:18:59 2019 +0200
+| |   
+| |       NAVBAR COMPLETE
+| | 
+* | commit 5d94fefce9f76f3a7db1bc46c30b61288bc8ddea
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Thu Jun 6 11:54:53 2019 +0200
+| | 
+| |     Add rendering of arrows in header navigation
+| | 
+* | commit 9d78a1506f0c01112e223a0e4158f60ad2241413
+|/  Author: Ludvik Blunck <luddmachine@gmail.com>
+|   Date:   Thu Jun 6 11:51:16 2019 +0200
+|   
+|       Navigation setup
+|   
+*   commit 827fef7e0e3fd3051f17027cde47afbb023fd3c8
+|\  Merge: cd0ca8b afdd4c4
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Thu Jun 6 11:33:10 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit afdd4c447f01128b45818d3f56f3de16f7920b4a
+| |\  Merge: a852498 782022f
+| | | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | | Date:   Thu Jun 6 11:29:46 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | |   
+| | *   commit 782022f170631b5ccfc86582d45b4b9096af4204
+| | |\  Merge: fae2a6d a687d5f
+| | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | Date:   Thu Jun 6 11:07:14 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| | | * commit a687d5f2d1524f4cc6fde500ec3bde74a64c966f
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Thu Jun 6 10:56:08 2019 +0200
+| | | | 
+| | | |     Color changes
+| | | | 
+| | * | commit fae2a6db796f183ba96c53fda654abe0d118cc60
+| | |/  Author: PanRagon <thebigecko@gmail.com>
+| | |   Date:   Thu Jun 6 11:07:00 2019 +0200
+| | |   
+| | |       DragDrop cleanup + Move to utilities
+| | | 
+| * | commit a8524985ae57c778eddf1b52cebda44fbb0bffeb
+| |/  Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| |   Date:   Thu Jun 6 11:29:33 2019 +0200
+| |   
+| |       name changes
+| | 
+* | commit cd0ca8b4bad1cf86a08cd9fc5744d1549840c7d5
+|/  Author: Erik Olseng <e.olseng@gmail.com>
+|   Date:   Thu Jun 6 11:33:04 2019 +0200
+|   
+|       Add header navigation for dash, task and project
+|   
+*   commit 69670337ab598d327ea0a72868e7f7c9222014fd
+|\  Merge: f12e034 35b75ce
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Thu Jun 6 10:37:49 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 35b75ce3bc6f7d08ce6c4ca9aa35444a8d430d6d
+| |\  Merge: c960947 11f3223
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Thu Jun 6 10:34:15 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit c960947478fcce9c3d7780cf18865a7f7be7ece7
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Thu Jun 6 10:34:07 2019 +0200
+| | | 
+| | |     Fixed confetti design
+| | | 
+* | | commit f12e0348f506a36ba98a9afc9cdcc787f5e8d034
+| |/  Author: Ludvik Blunck <luddmachine@gmail.com>
+|/|   Date:   Thu Jun 6 10:37:19 2019 +0200
+| |   
+| |       bigtask project styling
+| | 
+* | commit 11f32230b7025df11180e8743833578a56656f3f
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Thu Jun 6 10:28:51 2019 +0200
+| | 
+| |     Add headerbuttons and project: to bigTask
+| |   
+* |   commit 2d90cbba746880210de25d542d0179809cbf30b8
+|\ \  Merge: c6505cf 962fb20
+| |/  Author: Ludvik Blunck <luddmachine@gmail.com>
+| |   Date:   Thu Jun 6 10:20:40 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 962fb209646144cc2e0c5280b7f63f6ccc72f183
+| |\  Merge: 56546a4 c3dfc4c
+| | | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | | Date:   Thu Jun 6 10:00:22 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| | * commit c3dfc4c7d458dafaafe7d1a79fb041db08511942
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Thu Jun 6 09:58:43 2019 +0200
+| | | 
+| | |     Remake countdownChart after user changes date
+| | |   
+| | *   commit 3bab1ed2bef3e6c37ecdeae8418801f52266a372
+| | |\  Merge: 7211b08 7f8956f
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Thu Jun 6 09:52:38 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| | * | commit 7211b08af7f90fc5f664fec43d0a89eea3b10fb1
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Thu Jun 6 09:52:17 2019 +0200
+| | | | 
+| | | |     Fix date format of edited dates
+| | | | 
+| * | | commit 56546a44c60fa4d7c4501c5f35f53bf3efc305ba
+| | |/  Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| |/|   Date:   Thu Jun 6 10:00:17 2019 +0200
+| | |   
+| | |       Fontsize changes on countdown
+| | | 
+| * | commit 7f8956fcfc2e549194c5280b14745bbd20889ee4
+| | | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | | Date:   Thu Jun 6 09:38:59 2019 +0200
+| | | 
+| | |     Changed status and category placement in Bigtask
+| | | 
+| * | commit bf167fee791b78494e94e4c45a2cb973ef01b75c
+| |/  Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| |   Date:   Thu Jun 6 09:30:34 2019 +0200
+| |   
+| |       Changes to countdown color
+| | 
+* | commit c6505cf733bdabcdb9441edcc087b583d3f1a878
+|/  Author: Ludvik Blunck <luddmachine@gmail.com>
+|   Date:   Thu Jun 6 10:20:34 2019 +0200
+|   
+|       update datestyling and colors
+| 
+* commit 965ec547509e31ae6b11f6067ee3899f8968525d
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Wed Jun 5 23:28:26 2019 +0200
+| 
+|     Fine tuned date fontsize
+| 
+* commit 3fd81c58c433d44627911abba1171c0b908226a1
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Wed Jun 5 23:25:52 2019 +0200
+| 
+|     Set fontsize on start/end date input
+|     
+|     Now it fits
+| 
+* commit 3ef740187ce04081707753866359b76c25ee980d
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed Jun 5 22:49:53 2019 +0200
+| 
+|     Add support for changing start- and endDate on tasks and projects
+| 
+* commit 4cf49746e80a7ca10b54b6ab8228691aa04126bd
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed Jun 5 20:30:47 2019 +0200
+| 
+|     Fix must click user icon to remove from task and project
+|   
+*   commit 7168d96071fe06858b9b0665b723cd46847149a7
+|\  Merge: 0f2a22e 94fa7a6
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Wed Jun 5 16:22:50 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 94fa7a6d317e9e7d8f9db6b1ba237fa89e00bd28
+| |\  Merge: 51f63fb a5a354e
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Wed Jun 5 16:06:30 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 51f63fba4d53045c8908f791ecc3b6a054229855
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Wed Jun 5 16:05:12 2019 +0200
+| | | 
+| | |     Fix to owner and member removal in BigTask and ProjectView
+| | | 
+* | | commit 0f2a22e0acd2b0a254bed2f754a12fb375a729f3
+| |/  Author: PanRagon <thebigecko@gmail.com>
+|/|   Date:   Wed Jun 5 16:22:37 2019 +0200
+| |   
+| |       Made footer sticky
+| |   
+* |   commit a5a354e5e144d79e276e67c93c772e0af4579cee
+|\ \  Merge: 6c2919a ee2a47c
+| |/  Author: PanRagon <thebigecko@gmail.com>
+| |   Date:   Wed Jun 5 15:53:56 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit ee2a47c187d5a9b2bd4d25f7f869752222c8494a
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Wed Jun 5 15:41:41 2019 +0200
+| | 
+| |     bigtask style update
+| | 
+* | commit 6c2919ae217be61aa451962b3a5740d364cb2ae6
+|/  Author: PanRagon <thebigecko@gmail.com>
+|   Date:   Wed Jun 5 15:53:48 2019 +0200
+|   
+|       Update removeUserProject function
+| 
+* commit 55b94105a8cba6bd76e69079cf85a40bef8a8082
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Wed Jun 5 15:39:42 2019 +0200
+| 
+|     Fixed userID order in project view builder
+|   
+*   commit 552efd97688cde202355cc6ffdcb4a95c616fcaf
+|\  Merge: 02140c3 394868a
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Wed Jun 5 15:33:23 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 394868ac8b0992b4ff0e113ec55e7a4b024c41e5
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Wed Jun 5 15:02:27 2019 +0200
+| | 
+| |     updated media queries
+| |   
+| *   commit a7c917274361383354f8b2948bc22a8611d42b55
+| |\  Merge: 4be08f6 bede75e
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Wed Jun 5 15:00:38 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 4be08f68e3cc38437928b8c8d289864e280eb7bf
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Wed Jun 5 15:00:35 2019 +0200
+| | | 
+| | |     Update style.css
+| | | 
+* | | commit 02140c35c64ec8dcba962f1b0d47d88428473bb2
+| |/  Author: PanRagon <thebigecko@gmail.com>
+|/|   Date:   Wed Jun 5 15:33:04 2019 +0200
+| |   
+| |       Added function to remove owners and members on click
+| |   
+* |   commit bede75ed1390a89b318ab3f6d3c3c7e06ec48d02
+|\ \  Merge: 3327ab2 545b7b0
+| |/  Author: PanRagon <thebigecko@gmail.com>
+| |   Date:   Wed Jun 5 15:00:20 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 545b7b05ace7558ef67488a118939efffc7398b6
+| |\  Merge: 2b5d505 4543915
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Wed Jun 5 14:42:33 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 2b5d505f8a011d6f477f4ad538d6390d56084a67
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Wed Jun 5 14:42:29 2019 +0200
+| | | 
+| | |     fixed countdown position dashboardtask
+| | | 
+* | | commit 3327ab28e9fa4acb09418e23e95448e044822c4c
+| |/  Author: PanRagon <thebigecko@gmail.com>
+|/|   Date:   Wed Jun 5 15:00:16 2019 +0200
+| |   
+| |       Fixes
+| | 
+* | commit 45439157002d5adb48d7b4f1093dec847c1d8588
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Wed Jun 5 14:10:38 2019 +0200
+| | 
+| |     Fixed broken function
+| |   
+* |   commit 3c6b5ec61401939e5469168467a95cd9755423fa
+|\ \  Merge: 1dceb42 21847f0
+| |/  Author: PanRagon <thebigecko@gmail.com>
+| |   Date:   Wed Jun 5 14:09:58 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 21847f0422d46f1397f1b91ee71b824f1c03f805
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Wed Jun 5 13:48:50 2019 +0200
+| | 
+| |     Update style.css
+| |   
+| *   commit aa9c2f20bf6e6f8bfc90dbd75da009f4fe576cf6
+| |\  Merge: 955e642 ce0259d
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Wed Jun 5 13:14:05 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 955e642253f3b72c85b55641f938b820c032e04d
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Wed Jun 5 13:13:53 2019 +0200
+| | | 
+| | |     Update style.css
+| | | 
+* | | commit 1dceb427a10618b677f474a2e1ae72dc940c6de9
+| |/  Author: PanRagon <thebigecko@gmail.com>
+|/|   Date:   Wed Jun 5 14:09:54 2019 +0200
+| |   
+| |       Remove user from task/project added
+| | 
+* | commit ce0259d76b34c916d6bdc19dde3df84eb319fcdd
+|/  Author: PanRagon <thebigecko@gmail.com>
+|   Date:   Wed Jun 5 13:13:49 2019 +0200
+|   
+|       Allowed removal of users
+| 
+* commit 852067e3a9397dedc4e7f63c295d9f2f5e891cad
+| Author: Ludvik Blunck <luddmachine@gmail.com>
+| Date:   Wed Jun 5 12:27:59 2019 +0200
+| 
+|     Crosses on hover for users bigtask
+| 
+* commit 1527bf4cc43ad02200219da76da36f9fde94b41f
+| Author: Ludvik Blunck <luddmachine@gmail.com>
+| Date:   Wed Jun 5 11:28:33 2019 +0200
+| 
+|     Update style.css
+|   
+*   commit 03a0d1b80ca3d6384bba5209e5aab4324dcb6036
+|\  Merge: a656a44 b4a6e71
+| | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | Date:   Wed Jun 5 11:13:18 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit b4a6e7190831a5b1aa212af763da89c2fef70c45
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Wed Jun 5 11:09:53 2019 +0200
+| | 
+| |     Update style.css
+| | 
+* | commit a656a44c22d6ff3b85b2f0d98c52f8b816cd6992
+|/  Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+|   Date:   Wed Jun 5 11:13:01 2019 +0200
+|   
+|       Removed UserID 0 from a few tasks
+| 
+* commit f340fe5809bfd51b7021ea2edd3e03ec2b78bd9f
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed Jun 5 11:09:33 2019 +0200
+| 
+|     Add pointer to projects and tasks. Remove project name rendering in projectView tasks
+| 
+* commit c6533a5f668694dd4d211b02e93daf4cbcb62b79
+| Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| Date:   Wed Jun 5 11:05:12 2019 +0200
+| 
+|     Added UserID 0 to more tasks and projects
+| 
+* commit ef8563181892944d386555ee0ff019d1d06ce2d9
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Wed Jun 5 10:48:07 2019 +0200
+| 
+|     added pointer class
+| 
+* commit 91f5a58dc8e46a1ac15f27df90d269dbb05bbd72
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed Jun 5 10:41:52 2019 +0200
+| 
+|     Made project 1-page rendering for persistant datachanges, and made tasks and projects clickable for navigation
+|   
+*   commit 692702eedcdaf5c9933d38d30e47282f299868fe
+|\  Merge: 3f335c2 a0f5ff8
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Wed Jun 5 10:38:19 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit a0f5ff8e5932833f4016ed506b0c275ac9d689ba
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Wed Jun 5 10:21:22 2019 +0200
+| | 
+| |     Fixed leading zeroes
+| |   
+| *   commit 4bef885b5ca9d1ed9f7e30137ab6e5fb9492e9d2
+| |\  Merge: 3f81f4d 5f4194a
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Wed Jun 5 10:21:09 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 3f81f4d627c3eac47a13b1d4d5c141f6a0a0fa31
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Wed Jun 5 10:03:55 2019 +0200
+| | | 
+| | |     Added textarea to project description and task description
+| | | 
+| * | commit e1013dd8c3c94f441037b1859a7257945443e052
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Wed Jun 5 09:53:41 2019 +0200
+| | | 
+| | |     Added indenting to run on sentences
+| | | 
+| * | commit 45d2669874a85501545328bac3bca20ff4da6496
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Wed Jun 5 09:43:08 2019 +0200
+| | | 
+| | |     appendLeadingZeroes no longer appends to numbers less than 0
+| | | 
+* | | commit 3f335c2f7c3f7d74e97d50473c3b42c506b2e970
+| |/  Author: Ludvik Blunck <luddmachine@gmail.com>
+|/|   Date:   Wed Jun 5 10:38:05 2019 +0200
+| |   
+| |       Update style.css
+| | 
+* | commit 5f4194acc9d4c99bba6b24a222087ffd2460a998
+|/  Author: Ludvik Blunck <luddmachine@gmail.com>
+|   Date:   Wed Jun 5 10:14:08 2019 +0200
+|   
+|       different style changes
+|   
+*   commit a9141df96cf347a890d607dcfcd2fb374a053933
+|\  Merge: 577f4ce 10487d0
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Tue Jun 4 17:14:57 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 10487d0c6f504b1f1d0139595a0f983deaf761cc
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Tue Jun 4 17:10:38 2019 +0200
+| | 
+| |     Fixed broken padding function in drag.js
+| | 
+* | commit 577f4ce8930186ccce0f0ed4619c574bf389e066
+|/  Author: Ludvik Blunck <luddmachine@gmail.com>
+|   Date:   Tue Jun 4 17:14:44 2019 +0200
+|   
+|       Update style.css
+|   
+*   commit a642b42dd9c0176edc0d971662d0aa1df25e0dc6
+|\  Merge: d7c7437 52d95dc
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Tue Jun 4 15:48:41 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 52d95dc0472017de7e23c90438088690dcccf284
+| |\  Merge: 1830c1c 44a9520
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Tue Jun 4 15:42:27 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 1830c1c55ee8d2bd05bbf2e33945954636492ec8
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Tue Jun 4 15:42:22 2019 +0200
+| | | 
+| | |     Update style.css
+| | | 
+| * | commit 5841f5580b609334ee9258befd65ef43e04b5173
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Tue Jun 4 15:42:10 2019 +0200
+| | | 
+| | |     Update style.css
+| | | 
+* | | commit d7c7437d7528f100b571bf7663d9153a35673f2b
+| |/  Author: PanRagon <thebigecko@gmail.com>
+|/|   Date:   Tue Jun 4 15:46:08 2019 +0200
+| |   
+| |       Circle positioning
+| | 
+* | commit 44a9520a54cbb333cf9f7d0ede4731a5c5da1b27
+| | Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| | Date:   Tue Jun 4 15:38:51 2019 +0200
+| | 
+| |     bigtask cirle job
+| | 
+* | commit f204a558be7d1797e069518ea714485abf51d296
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Tue Jun 4 15:07:13 2019 +0200
+| | 
+| |     Remove console.logs
+| |   
+* |   commit 465145093d3ac4810707fa119b9a626c92c4a8ed
+|\ \  Merge: 63f796c 76af648
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Tue Jun 4 15:05:32 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 76af648c6bc904eb6e34bb81253b3ab43d007188
+| |/  Author: Morten Lervik Sandvold <Sandvoldm@hotmail.com>
+| |   Date:   Tue Jun 4 15:04:40 2019 +0200
+| |   
+| |       Name change
+| | 
+| * commit 02d8cf09ada33bfbf6ab9474ec9f31c68d8232bc
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Tue Jun 4 14:52:14 2019 +0200
+| | 
+| |     fixed dashboardtasks colors
+| |   
+| *   commit 307b2f0b2031eb435ef475dd0a3f52f6da0b2e4e
+| |\  Merge: 9b72656 a2d3b46
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Tue Jun 4 14:37:51 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| * | commit 9b726565663e107944ef0f005503b120703a1468
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Tue Jun 4 14:37:31 2019 +0200
+| | | 
+| | |     fixed dashboardprojects style
+| | | 
+* | | commit 63f796cc96b39bfd5a44b490d7945493d64d8ca9
+| |/  Author: PanRagon <thebigecko@gmail.com>
+|/|   Date:   Tue Jun 4 15:05:28 2019 +0200
+| |   
+| |       Cleanup + fix findPriorityRating function
+| | 
+* | commit a2d3b46bcfb76f52348b408eb27df076b5828b78
+| | Author: Morten Lervik Sandvold <Sandvold@Mortens-MacBook-Pro.local>
+| | Date:   Tue Jun 4 14:34:55 2019 +0200
+| | 
+| |     Fix bug in task setup
+| |   
+* |   commit 32d0280a7516abd0da0766f4ef58b84151651eb6
+|\ \  Merge: a1d2704 ce6b229
+| |/  Author: Morten Lervik Sandvold <Sandvold@Mortens-MacBook-Pro.local>
+| |   Date:   Tue Jun 4 14:30:00 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit ce6b229f66885c0746e71661e58603ab9016c1a3
+| |\  Merge: 93d361b 4fe6295
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Tue Jun 4 14:21:24 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| | * commit 4fe6295b1d1ff6bf1e5bcfe9e6d6aad1d36147c2
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue Jun 4 14:12:02 2019 +0200
+| | | 
+| | |     Wrap dashboardProjects topbar
+| | |   
+| | *   commit 55c9ca018079acd5064bf836ccd5bffae79e2dc5
+| | |\  Merge: 891750d 2516309
+| | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | Date:   Tue Jun 4 13:52:12 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| | * | commit 891750dc5f9bc1fd3d3b07fdb9a3ccbf352cac93
+| | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | Date:   Tue Jun 4 13:52:05 2019 +0200
+| | | | 
+| | | |     Countdown clock w/ clock added in bigTask.js
+| | | | 
+| * | | commit 93d361bd1171a67ecbffb40d912948eb5ca79d87
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Tue Jun 4 14:16:24 2019 +0200
+| | | | 
+| | | |     countdown change
+| | | | 
+| * | | commit 30870c8c078b85252fff62e5aa66d009a7ec2774
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Tue Jun 4 14:13:19 2019 +0200
+| | | | 
+| | | |     centered days in countdown
+| | | | 
+* | | | commit a1d27048af316308b7e841f1103e1f2240e6219b
+| |_|/  Author: Morten Lervik Sandvold <Sandvold@Mortens-MacBook-Pro.local>
+|/| |   Date:   Tue Jun 4 14:29:48 2019 +0200
+| | |   
+| | |       Changed Names
+| | | 
+* | | commit 2516309d56a23c5973eef95ba748561fd2222010
+| | | Author: Morten Lervik Sandvold <Sandvold@Mortens-MacBook-Pro.local>
+| | | Date:   Tue Jun 4 13:49:06 2019 +0200
+| | | 
+| | |     Status changes
+| | |   
+* | |   commit b5526dd43fd3a95db11868bcf9402f1ddc7a962b
+|\ \ \  Merge: 84458c9 285d74f
+| |/ /  Author: Morten Lervik Sandvold <Sandvold@Mortens-MacBook-Pro.local>
+| | |   Date:   Tue Jun 4 13:34:01 2019 +0200
+| | |   
+| | |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | |   
+| * |   commit 285d74fd5034b469409c68e5fc60062194be514a
+| |\ \  Merge: 590c4b8 a83e7ba
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Tue Jun 4 13:26:27 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| * | | commit 590c4b805be73a1be07fa0665a4831fe884707de
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Tue Jun 4 13:26:16 2019 +0200
+| | | | 
+| | | |     names in title
+| | | | 
+* | | | commit 84458c9dc0ad5628e5a8237ad1bf695a6406a1d7
+| |/ /  Author: Morten Lervik Sandvold <Sandvold@Mortens-MacBook-Pro.local>
+|/| |   Date:   Tue Jun 4 13:33:45 2019 +0200
+| | |   
+| | |       Fix task categories
+| | | 
+* | | commit a83e7baab42ab56540be5eb1d78a43f75b0e487f
+| | | Author: Morten Lervik Sandvold <Sandvold@Mortens-MacBook-Pro.local>
+| | | Date:   Tue Jun 4 13:20:04 2019 +0200
+| | | 
+| | |     Add Tasks, Projects, Users and Category to initial setup
+| | | 
+* | | commit 0f623a25a852e1e8617d84a640ea2ef6e00bdfc4
+| |/  Author: Erik Olseng <e.olseng@gmail.com>
+|/|   Date:   Tue Jun 4 13:00:08 2019 +0200
+| |   
+| |       Add padding on drag for easier drops
+| | 
+* | commit f68d4d636c53a14e51367aea1478a7cebd883cb5
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Tue Jun 4 11:46:50 2019 +0200
+| | 
+| |     Bugfix on dragDrop
+| |   
+* |   commit 7afa7b3ebd84cef0077c54a4e28a386b5e5e946a
+|\ \  Merge: fd48acc 004b625
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue Jun 4 11:35:56 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | |   
+| * |   commit 004b625134a7c869e5f446e98f761facbc2bfe5a
+| |\ \  Merge: 7ac0b8c 1c0dd6d
+| | |/  Author: PanRagon <thebigecko@gmail.com>
+| | |   Date:   Tue Jun 4 11:33:48 2019 +0200
+| | |   
+| | |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| | * commit 1c0dd6d625315d2ff7a078409eea5b26eef4d575
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Tue Jun 4 11:01:38 2019 +0200
+| | | 
+| | |     Update style.css
+| | | 
+| * | commit 7ac0b8c88f20fa9955a7bf04de0281c97124e638
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Tue Jun 4 11:33:44 2019 +0200
+| | | 
+| | |     Added colors to chart
+| | | 
+| * | commit a5b6891a47c6f0375c2d260974b69fdbdf934673
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Tue Jun 4 11:19:47 2019 +0200
+| | | 
+| | |     Positioning fix
+| | |     
+| | |     Still needs to be adjusted to center
+| | | 
+| * | commit 4f4f8be19c216245a19080b3ca680c0ae2403b15
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Tue Jun 4 11:12:48 2019 +0200
+| | | 
+| | |     Added positioning on countdown clock and days
+| | | 
+| * | commit 62ed44cc15252106e8ac7dae5d69cef695acf137
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Tue Jun 4 10:03:34 2019 +0200
+| | | 
+| | |     Priority rating of tasks implemented
+| | | 
+* | | commit fd48acc86055fc9cf1301350883b4574c3bb9ac0
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue Jun 4 11:35:36 2019 +0200
+| | | 
+| | |     Add update of status amount in projectView
+| | | 
+* | | commit 00eb529acaabb92263a37d82e634d5682e0bda1a
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue Jun 4 10:56:08 2019 +0200
+| | | 
+| | |     Add task.status update on DragDrop
+| | | 
+* | | commit b4fb34a6ee9ddc07f4b8b9cd65b6d0150d570446
+| |/  Author: Erik Olseng <e.olseng@gmail.com>
+|/|   Date:   Tue Jun 4 10:32:58 2019 +0200
+| |   
+| |       Compressed projectView Task-rendering
+| |   
+* |   commit 77d19db008620c6b379d6a046e6b727b9386dbc7
+|\ \  Merge: 23889b0 661c78f
+| |/  Author: Erik Olseng <e.olseng@gmail.com>
+| |   Date:   Tue Jun 4 09:51:33 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 661c78ff4243cc74d07c827890fbdbb01da8ec2a
+| |\  Merge: 03629cd 54988ee
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Tue Jun 4 09:40:36 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | |   
+| | *   commit 54988ee95eaf5d2af8547c416f6330d169c5f4b1
+| | |\  Merge: e385edd bdc4014
+| | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | Date:   Mon Jun 3 23:00:36 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | |   
+| | * |   commit e385edd6dc91a3bb7d1b8414da1d6c20ac3f4ff7
+| | |\ \  Merge: 015d772 ebb493d
+| | | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | | Date:   Thu May 30 23:43:15 2019 +0200
+| | | | | 
+| | | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | | 
+| | * | | commit 015d772bc558a3f3ee663313f8ebac0e059f45dd
+| | | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | | Date:   Thu May 30 23:42:49 2019 +0200
+| | | | | 
+| | | | |     Started task rendering
+| | | | | 
+| * | | | commit 03629cdfa9e8e9f245a57ad8d69d5861457c7da9
+| | | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | | Date:   Tue Jun 4 09:40:32 2019 +0200
+| | | | | 
+| | | | |     Pre-merge commit
+| | | | | 
+* | | | | commit 23889b0e72902ae9b83b5cc3741eaaca5bd8c0b2
+| |_|_|/  Author: Erik Olseng <e.olseng@gmail.com>
+|/| | |   Date:   Tue Jun 4 09:51:19 2019 +0200
+| | | |   
+| | | |       Wrap dashboardProjects in wrapper
+| | | | 
+* | | | commit bdc40142e2c3decac99699079ed8f317e3725419
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Mon Jun 3 19:23:08 2019 +0200
+| | | | 
+| | | |     Add editing of priority and category in bigTask
+| | | |   
+* | | |   commit d75cbde414e6a4d9f1da41c7e6b6996172cf6701
+|\ \ \ \  Merge: b13db40 542199b
+| |/ / /  Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | |   Date:   Mon Jun 3 15:28:15 2019 +0200
+| | | |   
+| | | |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| * | | commit 542199b7e6ae223fac1de7252919b3b113074c22
+| | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | Date:   Mon Jun 3 13:24:24 2019 +0200
+| | | | 
+| | | |     Fixed implemenation of drag function on projectview
+| | | |     
+| | | |     Ghost styling might still need some work
+| | | | 
+* | | | commit b13db40ed9952ad8e7a5591d26d739653bd63aa1
+|/ / /  Author: Ludvik Blunck <luddmachine@gmail.com>
+| | |   Date:   Mon Jun 3 15:27:01 2019 +0200
+| | |   
+| | |       added sticky nav
+| | | 
+* | | commit f4758a288f658bb16adba7ba0f27f128a37d348e
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Mon Jun 3 12:12:53 2019 +0200
+| | | 
+| | |     added things
+| | |   
+* | |   commit 8696688fc6efaf079aab38e162e0d457b297afbb
+|\ \ \  Merge: e48717b 1535acd
+| | | | Author: Gyda Hjemaas <gydahjemaas@Gydas-MacBook-Pro.local>
+| | | | Date:   Mon Jun 3 10:58:15 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | |   
+| * | |   commit 1535acd491b18556e6df571c7e28f3fa0b8b3e9a
+| |\ \ \  Merge: 517e119 183bb03
+| | | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | | Date:   Mon Jun 3 10:48:03 2019 +0200
+| | | | | 
+| | | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | | 
+| * | | | commit 517e11914cbd8ad0bd31e88e2ea3c0a6ca3181c5
+| | | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | | Date:   Mon Jun 3 10:47:12 2019 +0200
+| | | | | 
+| | | | |     Implemented first draft drag and drop to project view
+| | | | | 
+* | | | | commit e48717bcbf1d5181a6df569d3425b253454373a4
+| |/ / /  Author: Gyda Hjemaas <gydahjemaas@Gydas-MacBook-Pro.local>
+|/| | |   Date:   Mon Jun 3 10:57:34 2019 +0200
+| | | |   
+| | | |       fixed confetti visuals
+| | | | 
+* | | | commit 183bb03b1eeaa69939dae38b36a750e32912923e
+| | | | Author: Gyda Hjemaas <gydahjemaas@Gydas-MacBook-Pro.local>
+| | | | Date:   Mon Jun 3 10:36:45 2019 +0200
+| | | | 
+| | | |     add confetti to big task
+| | | | 
+* | | | commit 4c0c2f30ae6fab60921bcffa24d1de88c045d13f
+|/ / /  Author: Erik Olseng <e.olseng@gmail.com>
+| | |   Date:   Mon Jun 3 09:47:20 2019 +0200
+| | |   
+| | |       Fix dashCal editing startDate of first task
+| | | 
+* | | commit d95f3c93421ae29dc5fcd7b9e7b126d410e8ac4b
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Sun Jun 2 19:22:35 2019 +0200
+| | | 
+| | |     Moved dragdrop class into projectview, pending implementation
+| | | 
+* | | commit 0eaff9852ac032ea6a71cd9f52c4d65346b50446
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Sun Jun 2 18:53:55 2019 +0200
+| | | 
+| | |     Fixed countdown clock and moved into utilities.
+| | |   
+* | |   commit eb1aa54c212ff91f6cec73ec54cfede09db4cf11
+|\ \ \  Merge: 1fdc9d9 e27c219
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Sun Jun 2 17:15:42 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| * | | commit e27c21972ac4f3b80e023714c6c8ccfe36f02e52
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Fri May 31 18:37:52 2019 +0200
+| | | | 
+| | | |     almost finished project design
+| | | | 
+* | | | commit 1fdc9d964e47e44dae6ada5f4e56300c28997a94
+|/ / /  Author: Erik Olseng <e.olseng@gmail.com>
+| | |   Date:   Sun Jun 2 17:15:07 2019 +0200
+| | |   
+| | |       Add ability to edit status, title and description on bigTask
+| | | 
+* | | commit c5882fdb2243cd886f4c806f84d8351646449c71
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Fri May 31 18:35:09 2019 +0200
+| | | 
+| | |     Minor fix
+| | |   
+* | |   commit 3e478d9e0aaab6b61d198a94629e9e8e76402d13
+|\ \ \  Merge: 329fc43 3141bed
+| | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | Date:   Fri May 31 18:33:53 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| * | | commit 3141bedaeb8cdcd1d84f502eb175b2a16d6e007a
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 18:12:27 2019 +0200
+| | | | 
+| | | |     Typo fix in projectView.js
+| | | | 
+| * | | commit b79bdf2b2c17876fe76bfb59d29b8e2820ee3414
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Fri May 31 17:51:12 2019 +0200
+| | | | 
+| | | |     style for bigtask
+| | | | 
+| * | | commit a7d3b748901911332fa30665db46e6b122f26884
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 17:37:04 2019 +0200
+| | | | 
+| | | |     Fix date in bigTask
+| | | | 
+| * | | commit 9ddc759b9c9973d3ed2637c2a18dfc32e8322c37
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 17:32:45 2019 +0200
+| | | | 
+| | | |     New minor fixes
+| | | | 
+| * | | commit 0592f45b504bed83ebf05863cf83d67bfba202dd
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 17:30:47 2019 +0200
+| | | | 
+| | | |     Add full name render to bigTask
+| | | | 
+* | | | commit 329fc43c239a48df51c4a6d6add1aa331035e1a7
+|/ / /  Author: PanRagon <thebigecko@gmail.com>
+| | |   Date:   Fri May 31 18:33:50 2019 +0200
+| | |   
+| | |       Rendered countdown clock in task card
+| | |   
+* | |   commit b6ea9f2d1410b71965fb27c0b54684048e8cf466
+|\ \ \  Merge: 4f51557 c804779
+| | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | Date:   Fri May 31 17:08:51 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| * | | commit c804779fe53e058c8f1ed9753493ee82f2481791
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 16:49:42 2019 +0200
+| | | | 
+| | | |     Fix styles.css error
+| | | | 
+| * | | commit cf6b11399c1c0afb8e6a11f02b64307c4f7fd93a
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 16:47:29 2019 +0200
+| | | | 
+| | | |     Minor tweak to bigTask grid setup
+| | | | 
+| * | | commit 648b1f00fbf9c84b6f0ea635926961fc7be6caf1
+| | | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | | Date:   Fri May 31 16:41:34 2019 +0200
+| | | | 
+| | | |     bigtask first draft
+| | | | 
+* | | | commit 4f51557d6dac0e463d08206c40bd3da4271653db
+|/ / /  Author: PanRagon <thebigecko@gmail.com>
+| | |   Date:   Fri May 31 17:08:46 2019 +0200
+| | |   
+| | |       Fixed circle countdown size
+| | |   
+* | |   commit 5ddce78241563782533c48979872c61d5cafb77b
+|\ \ \  Merge: d6d729c 9d1f907
+| | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | Date:   Fri May 31 16:34:32 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | 
+| * | | commit 9d1f907ccd8b9732ad78a797fb771dfc16d61e11
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 16:17:25 2019 +0200
+| | | | 
+| | | |     Move utility-functions to utilities.js
+| | | | 
+* | | | commit d6d729c5cc1216281ff0877536a806f2d82891b1
+|/ / /  Author: PanRagon <thebigecko@gmail.com>
+| | |   Date:   Fri May 31 16:34:28 2019 +0200
+| | |   
+| | |       Cleanup
+| | | 
+* | | commit 7daba5a2ffaf5e12764bc6f65232492bf317eb25
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Fri May 31 16:07:01 2019 +0200
+| | | 
+| | |     Fix merge conflict in bigTask.js
+| | |   
+* | |   commit 77f1042368f81757293ae87f66c9e235296fe77f
+|\ \ \  Merge: fe64a2a 9658983
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 16:04:55 2019 +0200
+| | | | 
+| | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | |   
+| * | |   commit 96589831fd4ea76a09e3767820e497582a4988ba
+| |\ \ \  Merge: 44b2d95 5fb8ea5
+| | | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | | Date:   Fri May 31 15:57:04 2019 +0200
+| | | | | 
+| | | | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | | | 
+| * | | | commit 44b2d958608be7553df9aabaa024c756c8c0e88e
+| | | | | Author: PanRagon <thebigecko@gmail.com>
+| | | | | Date:   Fri May 31 15:56:59 2019 +0200
+| | | | | 
+| | | | |     Created countdown circles
+| | | | | 
+* | | | | commit fe64a2a1feeca9c8550ebb1f5f6ee6cc2a9a0c93
+| |/ / /  Author: Erik Olseng <e.olseng@gmail.com>
+|/| | |   Date:   Fri May 31 16:04:32 2019 +0200
+| | | |   
+| | | |       Minor fixes to bigTask rendering
+| | | | 
+* | | | commit 5fb8ea5fec0f0cf15abc69ce7974686e7f7d2266
+| | | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | | Date:   Fri May 31 15:53:28 2019 +0200
+| | | | 
+| | | |     Render projectView and grid layout
+| | | | 
+* | | | commit 01c7a3bd0d788eabee17eb48616884ab84a3c463
+|/ / /  Author: Ludvik Blunck <luddmachine@gmail.com>
+| | |   Date:   Fri May 31 13:25:26 2019 +0200
+| | |   
+| | |       dashboard projects first draft
+| | | 
+* | | commit 6d3260813df56079bf5adcf6a71155b598d48ada
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Fri May 31 11:59:32 2019 +0200
+| | | 
+| | |     Add grid-setup to dashboardProject
+| | | 
+* | | commit dbcc352c5ba028620a2c04d34057167b3e77fd6c
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Fri May 31 11:39:10 2019 +0200
+| | | 
+| | |     Design grid for bigTask
+| | | 
+* | | commit 04f70b624144c7680499a1aa83cff76ef1d6c1c3
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Fri May 31 09:53:28 2019 +0200
+| | | 
+| | |     Add comments-class and backend support
+| | | 
+* | | commit f54a97a5cb946a2629d39cf36d9b70c50b2d3455
+| |/  Author: Erik Olseng <e.olseng@gmail.com>
+|/|   Date:   Fri May 31 09:26:11 2019 +0200
+| |   
+| |       Add lines in calendar
+| | 
+* | commit ebb493df6e44792a08ccc0b04e9d9b72b5704075
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Thu May 30 23:19:53 2019 +0200
+| | 
+| |     First rendering of bigTask-view
+| | 
+* | commit 1c971b18385ce6eb0ae8119b0e7a378f8b04bd5b
+|/  Author: Erik Olseng <e.olseng@gmail.com>
+|   Date:   Thu May 30 22:00:26 2019 +0200
+|   
+|       Fix calendar rendering mutating array + other minor tweaks
+| 
+* commit c739f9fd96e8294e31d56b28fe05ad98d789cb2f
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Thu May 30 16:23:56 2019 +0200
+| 
+|     Redo dashboard calendar rendering to support already startet tasks
+| 
+* commit af94a314d625549359e3d5ae924ec0e206c56827
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Thu May 30 15:01:42 2019 +0200
+| 
+|     Add attribute tag for status and category to tasks in HTML
+| 
+* commit 7b70d7be97ac573a314e26bd8fb8d0c6097703f3
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Thu May 30 14:31:02 2019 +0200
+| 
+|     No longer renders tasks to recommended tasks and calendar with status done
+| 
+* commit e044d2d83fdf412ef4f169336cf0b769e3f7205e
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Thu May 30 14:11:48 2019 +0200
+| 
+|     Add clearing of HTML before rendering tasks to dashboard
+|   
+*   commit 0aa43eb2de1b726e06e08ba8e3ed70bf70aba464
+|\  Merge: 062da6d 5141f38
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Wed May 29 16:30:12 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 5141f38eabfbb516e1256b744e6b59d490de8df8
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Wed May 29 16:25:00 2019 +0200
+| | 
+| |     minor design improvements
+| | 
+* | commit 062da6dd2b432360036d7a748d19f137092c555c
+|/  Author: PanRagon <thebigecko@gmail.com>
+|   Date:   Wed May 29 16:29:54 2019 +0200
+|   
+|       Added category class
+| 
+* commit f0efb9b43a2ea8416128f2a83b73bbc2e414988e
+| Author: Ludvik Blunck <luddmachine@gmail.com>
+| Date:   Wed May 29 15:54:28 2019 +0200
+| 
+|     improved design
+| 
+* commit 87da7c43f04ab18a6f0c79206150fe6b861f3647
+| Author: Ludvik Blunck <luddmachine@gmail.com>
+| Date:   Wed May 29 14:29:36 2019 +0200
+| 
+|     style dashboard taske
+| 
+* commit 8103551cd9970a1988bde1fe668b52717d8fba7e
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Wed May 29 13:37:03 2019 +0200
+| 
+|     Update classes.js
+| 
+* commit 7af8807b4d02c78bf2627602ab89881539558c11
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Wed May 29 13:34:11 2019 +0200
+| 
+|     Added class to calculate task priority rating
+| 
+* commit 7dab17a5f7bacdefff0451e264920eaa1f690ffd
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed May 29 12:50:14 2019 +0200
+| 
+|     Redo dashboard rendering for CSS Grid
+| 
+* commit 3e3987078b7a905656d679f8178cd82399594359
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed May 29 12:22:54 2019 +0200
+| 
+|     Add wrap to dashboardTask for inline-block display
+| 
+* commit ea90ab22c9377cf850de0f6d146a009d756a5a2f
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed May 29 11:45:35 2019 +0200
+| 
+|     Refactor dashboardTask and project-rendering
+| 
+* commit b0e39239f7c61ec0d16c36a994340d797f197a49
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed May 29 11:07:14 2019 +0200
+| 
+|     Fix error in last commit
+| 
+* commit 00b75654ff2745e831598cb28c62b2e262a285fa
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed May 29 11:04:29 2019 +0200
+| 
+|     Fix calendarItemUserWrap
+| 
+* commit 3c2e04a38ac3d9ce84ed9f613d9cb9a509d10afd
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed May 29 09:48:23 2019 +0200
+| 
+|     Fix bug
+| 
+* commit cdbe02f170b121b746f506ee509f218d517071cc
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Wed May 29 09:47:19 2019 +0200
+| 
+|     Daily update to tasks
+| 
+* commit c51854702286dfeedd2c86114b1af6e0ac952fd4
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Tue May 28 23:01:31 2019 +0200
+| 
+|     Add project rendering to dashboard
+| 
+* commit 7ef63093f41ba8da2113dfd148ba0aadd426bc2e
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Tue May 28 18:45:14 2019 +0200
+| 
+|     Deleted unused files and folders
+| 
+* commit b75437ac7cd5ab213f9e6903c1d73d1b171d9070
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Tue May 28 18:40:34 2019 +0200
+| 
+|     Add rendering of tasks in tasks.js
+| 
+* commit a402219f4819d29afd96f23f34501bc39430d8d4
+| Author: Erik Olseng <e.olseng@gmail.com>
+| Date:   Tue May 28 16:30:44 2019 +0200
+| 
+|     merge calendar styling into main
+| 
+* commit 01dc6fc6c8e7313389cf21c3a30559cb735400ae
+| Author: Ludvik Blunck <luddmachine@gmail.com>
+| Date:   Tue May 28 16:26:29 2019 +0200
+| 
+|     start calendar stylingt
+|   
+*   commit df1598f746eb1c4b8649a8f1cb0e9e80fa570820
+|\  Merge: 6354b18 89c97f0
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Tue May 28 15:32:34 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 89c97f0e2d6957c324d3fdcff6c36a3ea36c97d4
+| |\  Merge: 3d322a0 cdd7fe5
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue May 28 15:32:00 2019 +0200
+| | | 
+| | |     MERGE
+| | | 
+| * | commit 3d322a0c0b4a1b69e129468073bee8a9c1a3eb7a
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue May 28 15:27:29 2019 +0200
+| | | 
+| | |     Integrate calendarView.js to KalenderSide for styling
+| | | 
+* | | commit 6354b18f324c88980fa452309273854066ffe670
+| |/  Author: PanRagon <thebigecko@gmail.com>
+|/|   Date:   Tue May 28 15:32:02 2019 +0200
+| |   
+| |       Removed old files
+| |   
+* |   commit cdd7fe51cba8e50a82e8aec8d9c6394b36460fcb
+|\ \  Merge: 24dedee 0b40362
+| |/  Author: PanRagon <thebigecko@gmail.com>
+| |   Date:   Tue May 28 15:25:48 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 0b4036291382a21b637840e2811c31235902ea0b
+| | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | Date:   Tue May 28 15:06:16 2019 +0200
+| | 
+| |     add dashboard style
+| | 
+* | commit 24dedee01ea54339b19abadc2694c52329155f49
+|/  Author: PanRagon <thebigecko@gmail.com>
+|   Date:   Tue May 28 15:25:42 2019 +0200
+|   
+|       Drag and Drop functionality fully designed
+|       
+|       Drag and Drop functionality for use on the project page is fully designed and ready for implementation.
+|   
+*   commit 39ff916dfcf2a34d30c7d172831a0ba961f1ecea
+|\  Merge: d4b1105 5a99517
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Tue May 28 14:52:13 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 5a9951749f13c9e6ebae910dd95a3ee78727588c
+| |\  Merge: f3dabf1 a3de430
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue May 28 14:50:21 2019 +0200
+| | | 
+| | |     Push fix
+| | | 
+| * | commit f3dabf192e935e2a4d7523e4cd69eb799cd287c7
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue May 28 14:44:49 2019 +0200
+| | | 
+| | |     Add rendering of info in calendar tasks + minor other fixes 2
+| | | 
+| * | commit 9dac11be3cb18e53c7c899cf80d148e8af3956b4
+| | | Author: Erik Olseng <e.olseng@gmail.com>
+| | | Date:   Tue May 28 14:41:28 2019 +0200
+| | | 
+| | |     Add rendering of info in calendar tasks + minor other fixes
+| | | 
+* | | commit d4b1105a5afbde20d8aae4ff2ba01aba35db1dbb
+| |/  Author: PanRagon <thebigecko@gmail.com>
+|/|   Date:   Tue May 28 14:51:11 2019 +0200
+| |   
+| |       Update CalendarView.js
+| |   
+* |   commit a3de430a48d032b7c3872ab47bc2bf8ed0e5b5ff
+|\ \  Merge: 9ed8f26 7d9bfdc
+| |/  Author: PanRagon <thebigecko@gmail.com>
+| |   Date:   Tue May 28 14:42:21 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit 7d9bfdc2d933c21e37c8781601fe8b68d689eed3
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Tue May 28 11:23:27 2019 +0200
+| | 
+| |     Clean up calendarView.js and copied calendarView.js and classes.js to root for testing and implementation
+| | 
+* | commit 9ed8f265ed30dc773bab4970f040f31c03f56a5e
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Tue May 28 14:37:49 2019 +0200
+| | 
+| |     Added drag and drop functionality
+| |   
+* |   commit 01a2446761e2a8ece8c335df8db92b4d73040a3c
+|\ \  Merge: 4dfb929 bdb0339
+| |/  Author: PanRagon <thebigecko@gmail.com>
+| |   Date:   Mon May 27 21:37:24 2019 +0200
+| |   
+| |       Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | 
+| * commit bdb0339b89975d41a6564d9e0df3994b24969746
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Mon May 27 21:25:01 2019 +0200
+| | 
+| |     Rewrite classes.js to use classes and added alot of funtionality
+| | 
+* | commit 4dfb929bfcee16f218dbea36d8b50a4ead013328
+|/  Author: PanRagon <thebigecko@gmail.com>
+|   Date:   Mon May 27 18:08:39 2019 +0200
+|   
+|       Added Drag and Drop
+| 
+* commit 3796a63d7d457bb7e26d0eff8435ca2a5df33921
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Mon May 27 13:33:22 2019 +0200
+| 
+|     Cleaned classes.js
+| 
+* commit 9e06c644ef17cd8bc97b2940b53d69353d8aee2a
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Mon May 27 13:21:54 2019 +0200
+| 
+|     Added new server file for rendering of objects
+|   
+*   commit c137cca118fb5001e2a707b419a3e5c9f55767ca
+|\  Merge: cd2e2d1 26ed5f3
+| | Author: Erik Magnus Eriksen Olseng <42612106+eolseng@users.noreply.github.com>
+| | Date:   Mon May 27 10:41:34 2019 +0200
+| | 
+| |     Merge pull request #3 from PanRagon/new/CalendarView
+| |     
+| |     final commit before merge
+| | 
+| * commit 26ed5f33cd6114a26c882c7c9949dca660bbbc42
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Mon May 27 10:40:50 2019 +0200
+| | 
+| |     final commit before merge
+| |   
+* |   commit cd2e2d198a7d7c3ac5dc7f7db62968994740daee
+|\ \  Merge: af78f6c 8c50a78
+| |/  Author: Erik Magnus Eriksen Olseng <42612106+eolseng@users.noreply.github.com>
+| |   Date:   Mon May 27 10:39:08 2019 +0200
+| |   
+| |       Merge pull request #2 from PanRagon/new/CalendarView
+| |       
+| |       New/calendar view
+| | 
+| * commit 8c50a780519811470efcde4d71047483b6f71536
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Mon May 27 09:48:37 2019 +0200
+| | 
+| |     Redo rendering to 24 columns/day and bug fixing
+| | 
+| * commit 43513c99f5fc8e51968343447d1a60cd0f828790
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Mon May 27 09:08:46 2019 +0200
+| | 
+| |     Clean up code in new file
+| | 
+| * commit a81d4ab142203c1ed5e5ea242acc18bd7eb28c65
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Sun May 26 18:15:48 2019 +0200
+| | 
+| |     Hack out calendar view based on tasks
+| | 
+| * commit c630853c75a74986d084ecf9f4e0bd80b883b3e0
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Sun May 26 15:32:11 2019 +0200
+| | 
+| |     Initial commit to new branch
+| | 
+* | commit af78f6c3c9e9725d08814052ceb30e7181fe902f
+|/  Author: PanRagon <thebigecko@gmail.com>
+|   Date:   Sun May 26 18:59:59 2019 +0200
+|   
+|       New role class
+|   
+*   commit 1b2f1b4d7adc7522d0f15e08ee6ddab5867cec35
+|\  Merge: 7942775 8aed568
+| | Author: Erik Magnus Eriksen Olseng <42612106+eolseng@users.noreply.github.com>
+| | Date:   Sun May 26 12:35:08 2019 +0200
+| | 
+| |     Merge pull request #1 from PanRagon/new/log
+| |     
+| |     Merge functionality for logging and getting logs, tasks and project by user ID
+| |   
+| *   commit 8aed568d2debbf304c18441b32520fe9d62ea3bf
+| |\  Merge: 6870e51 7942775
+| |/  Author: Erik Magnus Eriksen Olseng <42612106+eolseng@users.noreply.github.com>
+|/|   Date:   Sun May 26 12:34:03 2019 +0200
+| |   
+| |       Merge branch 'master' into new/log
+| | 
+* | commit 79427752660dfeb935b996a57cb85f0a811484fb
+| | Author: PanRagon <thebigecko@gmail.com>
+| | Date:   Sun May 26 01:15:11 2019 +0200
+| | 
+| |     Cleaned up class constructor ID input and added some HTML
+| | 
+| * commit 6870e515bb47d062b2696aae90d0d600579b9fe0
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Sun May 26 12:26:55 2019 +0200
+| | 
+| |     Add functions to get logs, projects and tasks by user ID
+| | 
+| * commit b70ea2deb84f567a68c697a69a9921fac84e8520
+|/  Author: Erik Olseng <e.olseng@gmail.com>
+|   Date:   Sun May 26 01:03:49 2019 +0200
+|   
+|       Add log functionality
+| 
+* commit 9191b7c0611ccbc82663c1f94bfdae374c4b5632
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Fri May 24 14:27:49 2019 +0200
+| 
+|     Finished building classes and instantiated first project
+| 
+* commit 22b36d0e15db7fc14b92e61f42c8855826d4c659
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Fri May 24 11:37:11 2019 +0200
+| 
+|     Added first draft of constructors and classes
+| 
+* commit dae54669fbcdbce6b1526e7b0179db02c489616d
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Thu May 23 20:09:14 2019 +0200
+| 
+|     Added first class constructor
+| 
+* commit 786497f6dfb9fa769283b8cecf09857da35a4e0e
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Thu May 23 14:16:56 2019 +0200
+| 
+|     Added testing enviroment for JS functionality
+| 
+* commit b85babe83a01e71b777187b4ab40e65d1c741c6f
+| Author: PanRagon <thebigecko@gmail.com>
+| Date:   Thu May 23 13:30:25 2019 +0200
+| 
+|     Create testing.js
+| 
+* commit 499e04d7ccf6bc40a788bb0e57bcfd5fd084726b
+  Author: PanRagon <thebigecko@gmail.com>
+  Date:   Thu May 23 13:24:20 2019 +0200
+  
+      Initial commit

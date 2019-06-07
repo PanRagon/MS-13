@@ -54,7 +54,7 @@ function renderProjectView(project) {
     dropDownDiv.appendChild(descriptionDiv);
     descriptionDiv.addEventListener("keyup", () => {
         project.description = descriptionDiv.value;
-    })
+    });
         // USER GENERATION:
     let usersDiv = document.createElement("div");
     usersDiv.classList.add("projectViewUserWrap");
@@ -333,14 +333,14 @@ function renderProjectView(project) {
             new Task(project.ID, newTaskInput.value);
             renderBigTask(Task.array[Task.array.length-1]);
         }
-    })
+    });
 
     newTaskInput.addEventListener("keyup", function(event) {
         if(event.keyCode === 13) {
             new Task(project.ID, newTaskInput.value);
             renderBigTask(Task.array[Task.array.length-1]);
         }
-    })
+    });
 
     projectDiv.appendChild(newTaskDiv);
 

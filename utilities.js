@@ -84,33 +84,6 @@ function findPriorityRating(task) {
     return (ttd * priority) / 10000000;
 }
 
-function removeUserTask(e){
-    let elemID = e.target.id;
-    let elem = document.getElementById(elemID);
-    let userID = parseInt(elem.id);
-    elem.parentNode.removeChild(elem);
-
-    let taskID = elem.parentElement.getAttribute("taskid");
-    Task.array[taskID].removeOwners(userID);
-    Task.array[taskID].removeMembers(userID);
-}
-
-function removeUserProject(e){
-    let elemID = e.target.id;
-    let elem = document.getElementById(elemID);
-    let userID = parseInt(elem.id);
-    elem.parentNode.removeChild(elem);
-
-    let projectID = elem.getAttribute("projectID");
-    let project = Project.array[projectID];
-    if(project.owners.includes(userID)) {
-        project.removeOwner(userID);
-    } else if(project.members.includes(userID)) {
-        project.removeMember(userID);
-    }
-}
-
-
 //Create Drag and Drop functionality on project view page
 class DragDrop {
     static init() {

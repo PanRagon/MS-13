@@ -60,13 +60,13 @@ function renderDashboard(user) {
 
     newProjectButton.addEventListener("click", () => {
         if (newProjectInput.value != "") {
-            new Project(newProjectInput.value)
+            new Project(newProjectInput.value);
             renderProjectView(Project.array[Project.array.length - 1]);
-        }})
+        }});
 
         newProjectInput.addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
-                new Project(newProjectInput.value)
+                new Project(newProjectInput.value);
                 renderProjectView(Project.array[Project.array.length - 1]);
             }
         });

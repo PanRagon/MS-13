@@ -1,8 +1,4 @@
 // UTILITY FUNCTIONS:
-function bigTaskDateRender(date) {
-    return appendLeadingZeroes(date.getDate()) + "." + appendLeadingZeroes(date.getMonth() + 1) + "." + date.getFullYear();
-}
-
 function renderBigTask(task) {
 
     // Scroll to top
@@ -383,7 +379,7 @@ function renderBigTask(task) {
     });
     startDateInput.addEventListener("blur", () => {
         renderBigTask(task);
-    })
+    });
     startDateDiv.innerHTML = "Start: ";
     startDateDiv.appendChild(startDateInput);
     taskDiv.appendChild(startDateDiv);
@@ -401,7 +397,7 @@ function renderBigTask(task) {
     });
     endDateInput.addEventListener("blur", () => {
         renderBigTask(task);
-    })
+    });
     endDateDiv.innerHTML = "End: ";
     endDateDiv.appendChild(endDateInput);
     taskDiv.appendChild(endDateDiv);

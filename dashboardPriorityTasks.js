@@ -95,15 +95,15 @@ function renderDashboardTasks(taskArray) {
         let countdownDaysDiv = document.createElement("div");
         countdownDaysDiv.classList.add("dashboardTaskCountdownDaysUnit");
 
-        let dayUnit = "DAYS"
+        let dayUnit = "DAYS";
         if(task.daysToDeadline() === 1) {dayUnit = "DAY"}
         let dayUnitDiv = document.createElement("div");
         dayUnitDiv.classList.add("dashboardTaskCountdownUnit");
         dayUnitDiv.innerText = dayUnit;
 
         let days = appendLeadingZeroes(task.daysToDeadline());
-        let daysDiv = document.createElement("div")
-        daysDiv.classList.add("dashboardTaskCountdownDays")
+        let daysDiv = document.createElement("div");
+        daysDiv.classList.add("dashboardTaskCountdownDays");
         daysDiv.innerText = days;
 
         countdownDaysDiv.appendChild(daysDiv);
@@ -112,7 +112,7 @@ function renderDashboardTasks(taskArray) {
         taskDiv.appendChild(countdownDiv);
 
         // Wrap it up
-        taskDivWrap.appendChild(taskDiv)
+        taskDivWrap.appendChild(taskDiv);
 
         // Render task to container
         taskContainerDiv.appendChild(taskDivWrap);

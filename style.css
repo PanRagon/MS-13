@@ -545,6 +545,62 @@ select {
     padding: 8px;
 }
 
+.dashboardProjectHeading input{
+    background: transparent;
+    border: 1px solid var(--main-txt-color);
+    margin-right: 10px;
+    padding: 4px;
+    color: var(--main-txt-color);
+}
+
+
+/*.btn {
+    padding: 0.5rem 1rem;
+    margin-top: 50px;
+    background-color: transparent;
+    border: solid 2px #fffaff;
+    border-radius: 5px;
+    color: #fffaff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 130px;
+    top: 10%;
+    cursor: pointer;
+}
+
+
+.btn:hover {
+    background-color: #6edd79;
+
+}
+
+
+.btn-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    font-size: 15px;
+    padding-left: 0.5rem;
+}*/
+
+.dashboardProjectHeading button{
+    background-color: transparent;
+    color: var(--main-txt-color);
+    padding: 4px;
+    border: 1px solid var(--main-txt-color);
+    border-radius: 10px;
+}
+
+.dashboardProjectHeading button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 .dashboardProjectWrap{
     display: inline-block;
     border: 1px solid var(--main-txt-color);
@@ -889,6 +945,16 @@ select {
 
 .bigTaskMember {
     border-color: var(--member-color);
+}
+
+.bigTaskAddUserButton{
+    background: transparent;
+    color: var(--main-txt-color);
+}
+
+
+.bigTaskAddUserButton:hover{
+    opacity: 0.8;
 }
 
 .bigTaskCountdown {

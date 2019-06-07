@@ -45,6 +45,7 @@ function renderDashboard(user) {
 
     let newProjectInput = document.createElement("input");
     newProjectInput.setAttribute("type", "text");
+    newProjectInput.setAttribute("placeholder", "Project title");
     newProjectDiv.appendChild(newProjectInput);
     newProjectDiv.appendChild(newProjectButton);
 

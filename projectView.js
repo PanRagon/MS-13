@@ -48,6 +48,7 @@ function renderProjectView(project) {
     dropDownDiv.classList.add("projectViewDropDown");
         // Description:
     let descriptionDiv = document.createElement("textarea");
+    descriptionDiv.setAttribute("placeholder", "Enter project description");
     descriptionDiv.classList.add("projectViewDescription");
     descriptionDiv.innerText = project.description;
     dropDownDiv.appendChild(descriptionDiv);

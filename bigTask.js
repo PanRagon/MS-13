@@ -162,6 +162,7 @@ function renderBigTask(task) {
     // Description:
     let descriptionDiv = document.createElement("textarea");
     descriptionDiv.classList.add("bigTaskDescription");
+    descriptionDiv.setAttribute("placeholder", "Enter task description");
     descriptionDiv.innerText = task.description;
     descriptionDiv.addEventListener("keyup", () => {
         task.description = descriptionDiv.value;

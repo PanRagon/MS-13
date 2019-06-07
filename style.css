@@ -1431,7 +1431,8 @@ input[type="date"], focus {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
+  height: 10px;
 }
 
 /* Track */
@@ -1442,7 +1443,7 @@ input[type="date"], focus {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 5px lightgrey;
+  box-shadow: inset 0 0 3px lightgrey;
   background: var(--secondary-bg-color);
   border-radius: 10px;
 }

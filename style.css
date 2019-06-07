@@ -147,7 +147,6 @@
         height: 100%;
         cursor: pointer;
         text-transform: uppercase;
-
     }
 
     .text {
@@ -399,7 +398,6 @@
         line-height: 30px;
         color: var(--category-txt-color);
     }
-
 
     .dashboardTaskTitle {
         grid-column: 1;
@@ -834,7 +832,6 @@
         margin: 20px;
     }
 
-
     .bigTaskUser:hover::before {
         font-family: "Font Awesome 5 Free";
         content: "\f057";
@@ -923,8 +920,6 @@
         text-align: center;
         position: relative;
         top: 58px;
-        /*left: 73px;*/
-
     }
 
     .bigTaskCountdownDays {
@@ -983,6 +978,8 @@
         font-size: 12px;
         line-height: 50px;
     }
+
+    /*Date picker styling*/
 
     /* Removes the clear button from date inputs */
     input[type="date"]::-webkit-clear-button {
@@ -1198,7 +1195,6 @@
         cursor: pointer;
     }
 
-
     .projectViewTaskStatus {
         grid-column: 2;
         grid-row: 3;
@@ -1218,7 +1214,6 @@
         pointer-events: none;
         font-weight: 600;
         text-transform: uppercase;
-
     }
 
     .invisible {
@@ -1249,7 +1244,6 @@
         margin-right: 5px;
         position: relative;
     }
-
 
     .projectViewTaskOwner {
         border-color: var(--owner-color);
@@ -1307,11 +1301,9 @@
         border: 1px solid var(--main-txt-color);
         border-radius: 10px;
         font-size: 13px;
-
     }
 
     .projectViewAddTaskWrap button:hover {
-        /*opacity: 0.8;*/
         cursor: pointer;
         background: var(--task-one);
         color: var(--main-bg-color);
@@ -1328,11 +1320,6 @@
         min-height: 100px;
         min-width: 200px;
     }
-
-    /*.unselectable {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-} */
 
     .pointer {
         cursor: pointer;
@@ -1394,3 +1381,6 @@
         background: var(--secondary-bg-color);
         border-radius: 10px;
     }
+
+
+    /* ------ CSS END ------ */

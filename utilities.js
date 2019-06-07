@@ -28,11 +28,6 @@ function dayMonthDateFormatter(date) {
     return appendLeadingZeroes(date.getDate()) + " " + months[date.getMonth()];
 }
 
-//Dependancies - Chartist.js
-//Import following in to HTML
-//<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.min.css">
-//<script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.js"></script>
-
 //Get the percentage of days remaining
 function getPercentageLeft(task) {
     let totalDays = calculateDaysBetween(task.startDate, task.endDate);
@@ -45,6 +40,12 @@ function getPercentageLeft(task) {
     }
     return daysLeftPercent;
 }
+
+//Dependancies - Chartist.js
+//Import following in to HTML
+//<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.min.css">
+//<script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.js"></script>
+
 
 function buildChart(task, div) {
     let chartID = "chart" + task.ID;
@@ -82,18 +83,6 @@ function findPriorityRating(task) {
     }
     return (ttd * priority) / 10000000;
 }
-
-/*function removeElement(ev) {
-    var data=ev.dataTransfer.getData("Text");
-    var el = document.getElementById(data);
-    el.parentNode.removeChild(el);
-}
-
-function selected(ev) {
-    ev.preventDefault();
-    ev.dataTransfer.setData("text", e.target.id);
-    removeElement(ev);
-}*/
 
 function removeUserTask(e){
     let elemID = e.target.id;

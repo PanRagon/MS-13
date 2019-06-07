@@ -1,3 +1,47 @@
+* commit 0f5139bf621c278f024e4fb24a8f445135fede56
+| Author: Ludvik Blunck <luddmachine@gmail.com>
+| Date:   Fri Jun 7 13:07:36 2019 +0200
+| 
+|     PRETTIFY CSS
+|   
+*   commit 3d80137505cc1090ef64e91c428182aedb19e922
+|\  Merge: fec8fe6 0bd962c
+| | Author: Erik Olseng <e.olseng@gmail.com>
+| | Date:   Fri Jun 7 13:04:27 2019 +0200
+| | 
+| |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| |   
+| *   commit 0bd962c454ac3121b3ad7bda65391697b03a5bd8
+| |\  Merge: 4381a23 00b9353
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Fri Jun 7 13:03:08 2019 +0200
+| | | 
+| | |     Merge branch 'master' of https://github.com/PanRagon/MS-13
+| | | 
+| | * commit 00b935382e9f64928d5a8e0b7ee0eb52d3d45d86
+| | | Author: Ludvik Blunck <luddmachine@gmail.com>
+| | | Date:   Fri Jun 7 12:57:01 2019 +0200
+| | | 
+| | |     cleaning of format
+| | | 
+| * | commit 4381a239f4216535de46af348d89d6847fd8a6ca
+| | | Author: PanRagon <thebigecko@gmail.com>
+| | | Date:   Fri Jun 7 13:03:05 2019 +0200
+| | | 
+| | |     Delete calendarview.js
+| | | 
+| * | commit d11515909dee0a1341c48075a967a04c5f65ddec
+| |/  Author: PanRagon <thebigecko@gmail.com>
+| |   Date:   Fri Jun 7 13:02:46 2019 +0200
+| |   
+| |       Cleanup & Commenting
+| | 
+* | commit fec8fe637a310fb29a5749c366602a4b58252e41
+|/  Author: Erik Olseng <e.olseng@gmail.com>
+|   Date:   Fri Jun 7 13:04:20 2019 +0200
+|   
+|       Fix unterminated statements and removed unused functions
+| 
 * commit f32674a281acebbd887d215413687ca14909de3f
 | Author: PanRagon <thebigecko@gmail.com>
 | Date:   Fri Jun 7 12:54:37 2019 +0200

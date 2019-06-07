@@ -182,9 +182,7 @@ function renderBigTask(task) {
     usersDiv.appendChild(ownersDiv);
     task.owners.forEach(owner => {
         let userDiv = document.createElement("div");
-        let userID = owner.ID + " user";
         userDiv.classList.add("bigTaskUser");
-        userDiv.id = userID;
         let ownerDiv = document.createElement("div");
         ownerDiv.classList.add("bigTaskUserIcon");
         ownerDiv.classList.add("bigTaskOwner");
@@ -207,9 +205,7 @@ function renderBigTask(task) {
     usersDiv.appendChild(membersDiv);
     task.members.forEach(member => {
         let userDiv = document.createElement("div");
-        let userID = member.ID + " user";
         userDiv.classList.add("bigTaskUser");
-        userDiv.id = userID;
         let memberDiv = document.createElement("div");
         memberDiv.classList.add("bigTaskUserIcon");
         memberDiv.classList.add("bigTaskMember");
@@ -238,6 +234,7 @@ function renderBigTask(task) {
     newOwnerButton.classList.add("bigTaskUserIcon");
     newOwnerButton.innerText = "+";
     let addUserDiv = document.createElement("div");
+    addUserDiv.classList.add("bigTaskNewUserWrap");
     newOwnerButton.onclick = function() {
         addUserDiv.innerHTML = "";
 
@@ -249,9 +246,7 @@ function renderBigTask(task) {
         // Make list of users
         newUsersArray.forEach(user => {
             let userDiv = document.createElement("div");
-            let userID = user.ID + " user";
-            userDiv.classList.add("bigTaskUser");
-            userDiv.id = userID;
+            userDiv.classList.add("bigTaskNewUser");
             let memberDiv = document.createElement("div");
             memberDiv.classList.add("bigTaskUserIcon");
             memberDiv.classList.add("bigTaskOwner");
@@ -292,9 +287,7 @@ function renderBigTask(task) {
         // Make list of users
         newUsersArray.forEach(user => {
             let userDiv = document.createElement("div");
-            let userID = user.ID + " user";
-            userDiv.classList.add("bigTaskUser");
-            userDiv.id = userID;
+            userDiv.classList.add("bigTaskNewUser");
             let memberDiv = document.createElement("div");
             memberDiv.classList.add("bigTaskUserIcon");
             memberDiv.classList.add("bigTaskMember");

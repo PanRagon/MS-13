@@ -38,8 +38,17 @@ function renderDashboard(user) {
     proHeader.innerHTML = 'your <span class="highlight">projects</span>';
     renderTarget.appendChild(proHeader);
 
+
+
+
+        // Projects Container
+    let proContainer = document.createElement("section");
+    proContainer.id = "dashboardProjectContainer";
+    renderTarget.appendChild(proContainer);
+
     //New project
     let newProjectDiv = document.createElement("div");
+    newProjectDiv.classList.add("dashboardAddProjectWrap");
     let newProjectButton = document.createElement("button");
     newProjectButton.innerText = "Create a new project";
 
@@ -50,24 +59,19 @@ function renderDashboard(user) {
     newProjectDiv.appendChild(newProjectButton);
 
     newProjectButton.addEventListener("click", () => {
-        if(newProjectInput.value != "") {
+        if (newProjectInput.value != "") {
             new Project(newProjectInput.value)
-            renderProjectView(Project.array[Project.array.length-1]);
+            renderProjectView(Project.array[Project.array.length - 1]);
         }
-    })
 
-    newProjectInput.addEventListener("keyup", function(event) {
-        if(event.keyCode === 13) {
-            new Project(newProjectInput.value)
-            renderProjectView(Project.array[Project.array.length-1]);
-        }
-    })
-
-    proHeader.appendChild(newProjectDiv); 
-        // Projects Container
-    let proContainer = document.createElement("section");
-    proContainer.id = "dashboardProjectContainer";
-    renderTarget.appendChild(proContainer);
+        newProjectInput.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                new Project(newProjectInput.value)
+                renderProjectView(Project.array[Project.array.length - 1]);
+            }
+        });
+    });
+    renderTarget.appendChild(newProjectDiv);
 
     renderDashboardCalendar(user.getTasks());
     renderDashboardTasks(user.getTasks());

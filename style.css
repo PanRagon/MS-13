@@ -600,7 +600,8 @@ select {
     /*opacity: 0.8;*/
     cursor: pointer;
     background: var(--task-one);
-    color: var(--main-txt-color);
+    color: var(--main-bg-color);
+    border-color: var(--main-bg-color);
 }
 
 .dashboardProjectWrap{
@@ -907,6 +908,20 @@ select {
     background-color: var(--main-bg-color);
     border-radius: 50%;
     pointer-events: none;
+}
+
+.bigTaskNewUser:hover::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f057";
+    position: absolute;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 3;
+    color: var(--green-light);
+    background-color: var(--main-bg-color);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: rotate(45deg);
 }
 
 

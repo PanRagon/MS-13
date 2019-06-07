@@ -74,11 +74,11 @@ function findPriorityRating(task) {
     let ttd = task.endDate - new Date();
     let priority = 0;
     if(task.priority == 1) {
-        priority = 0.75;
+        priority = 1.25;
     } else if(task.priority == 2) {
         priority = 1;
     } else if(task.priority == 3) {
-        priority = 1.25; 
+        priority = 0.75; 
     }
     return (ttd * priority) / 10000000;
 }

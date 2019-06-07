@@ -314,7 +314,9 @@ function renderProjectView(project) {
     // Render project to container
     projectContainerDiv.appendChild(projectDiv);
 
+    // Add new task:
     let newTaskDiv = document.createElement("div");
+    newTaskDiv.classList.add("projectViewAddTaskWrap");
 
     let newTaskButton = document.createElement("button");
     newTaskButton.innerText = "Create a new task";

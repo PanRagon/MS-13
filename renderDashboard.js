@@ -48,6 +48,7 @@ function renderDashboard(user) {
 
     //New project
     let newProjectDiv = document.createElement("div");
+    newProjectDiv.classList.add("dashboardAddProjectWrap");
     let newProjectButton = document.createElement("button");
     newProjectButton.innerText = "Create a new project";
 
